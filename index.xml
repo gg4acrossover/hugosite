@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GG4aCrossover</title>
+    <link>https://gg4acrossover.github.io/hugosite/</link>
+    <description>Recent content on GG4aCrossover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <copyright>All rights reserved - 2016</copyright>
+    <lastBuildDate>Mon, 05 Sep 2016 16:36:42 +0700</lastBuildDate>
+    <atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Code sạch, code khô thoáng</title>
+      <link>https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/</link>
+      <pubDate>Mon, 05 Sep 2016 16:36:42 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/</guid>
+      <description>
+
+&lt;p&gt;Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. :smile:&lt;/p&gt;
+
+&lt;h3 id=&#34;sử-dụng-immutable&#34;&gt;Sử dụng immutable&lt;/h3&gt;
+
+&lt;p&gt;Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	NSArray *pFruit = @[@&amp;quot;orange&amp;quot;, @&amp;quot;apple&amp;quot;, @&amp;quot;lemon&amp;quot;, @&amp;quot;strawberry&amp;quot;];
+	NSDictionary *pDict = @{ @&amp;quot;name&amp;quot; : @&amp;quot;Tom&amp;quot;,  @&amp;quot;age&amp;quot; : @18};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thay vì viết:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	NSArray *pFruit = [NSArray arrayWithObjects:@&amp;quot;orange&amp;quot;, @&amp;quot;apple&amp;quot;, @&amp;quot;lemon&amp;quot;, @&amp;quot;strawberry&amp;quot;, nil];
+	NSDictionary *pDict2 = [NSDictionary dictionaryWithObjectsAndKeys:@&amp;quot;value1&amp;quot;,@&amp;quot;key1&amp;quot;,@&amp;quot;value2&amp;quot;, @&amp;quot;key2&amp;quot;, nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Như thế code nhìn trông gọn và dễ đọc hơn, đối với các biến dạng số hoặc bool được đưa vào trong dictionary để gửi lên server ta cũng nên làm như vậy.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	NSNumber *pIsNew = @YES;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thay vì&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	NSNumber *pIsNew = [NSNumber numberWithBool:YES];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sử dụng category&lt;/p&gt;
+
+&lt;p&gt;Frame được sử dụng nhiều khi viết code iOS, ta có thể tạo ra một file chứa các c function chuyên làm việc với frame, hay tạo ra một macro. Ví dụ như muốn lấy originX của 1 uiview:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	CGFloat ORIGIN_X( CGRect rec)
+	{
+            return rec.origin.x;
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hoặc ngắn hơn với macro&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#define posX(v)                  v.frame.origin.x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tuy nhiên sử dụng category cũng là một lựa chọn thời thượng. Giả sử bạn có thể lấy originX bằng cách sau:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CGFloat originX = [PopUpView getX];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Khá ngắn gọn, clear, dễ chỉnh sửa. Category còn đặc biệt với những ai hay gửi nhận dữ liệu lên server, đôi khi dictionary sẽ trả về một cái object null. Việc check null ở nhiều chỗ khác nhau khá là tốn thời gian nếu cứ phải viết đi viết lại như thế này&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if(dict[@&amp;quot;key&amp;quot;] &amp;amp;&amp;amp; ![dict[@&amp;quot;key&amp;quot;] isEqual: [NSNull null]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ta có thể đưa vào category theo cách sau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (id)safeValueForKey:(NSString *)key {
+    id value = [self valueForKey:key];
+     
+    if (value &amp;amp;&amp;amp; ![value isEqual: [NSNull null]]) {
+        return value;
+    }
+     
+    return nil;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sau đó ở tất cả mọi nơi chỉ cần gọi&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NSString *pValue = [dict safeValueForKey: @&amp;quot;key&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;sử-dụng-block&#34;&gt;Sử dụng block&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;UIView *pCircle2 = ({
+	UIView *pView = [[UIView alloc]
+					initWithFrame:CGRectMake(80.0f, 80.0f, 90.0f, 90.0f)];
+	pView.backgroundColor = [UIColor redColor];
+	CAShapeLayer *shape = [CAShapeLayer layer];
+	CGFloat r = CGRectGetWidth(pView.frame)*0.5f;
+	CGPoint center = CGPointMake( r, r);
+	UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center
+							    radius:r
+							startAngle:0
+							  endAngle:2*M_PI
+							 clockwise:YES];
+	shape.path = path.CGPath;
+	pView.layer.mask = shape;
+	pView;
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Gộp các đoạn code sử dụng chung cho một mục đích vào trong 1 block, với cách này thì giá trị return tương ứng với dòng cuối trong block.&lt;/p&gt;
+
+&lt;h3 id=&#34;cách-đặt-tên&#34;&gt;Cách đặt tên&lt;/h3&gt;
+
+&lt;p&gt;Nhiều tài liệu của apple cũng có nói về cách đặt tên. Mọi người hãy chú ý delegate của uitableview hay uicollectionview sẽ thấy có nhiều điểm tương đồng trong cách đặt tên hàm.
+Ví dụ guide của apple &lt;a href=&#34;https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF&#34;&gt;datten&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Từ cách đặt tên trên ta có thể tạo ra enum như sau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;typedef NS_ENUM(NSUInteger, GGAnimationViewType) {
+    GGAnimationViewTypeFadeIn,
+    GGAnimationViewTypeFadeOut,
+    GGAnimationViewTypeEaseIn,
+    GGAnimationViewTypeEaseOut
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Công thức chung là [tên class][tên enum], cụ thể như ví dụ trên [GGAnimationView][Type].
+Các giá trị enum [tên class][tên enum][các giá trị]. Các giá trị FadeIn, FadeOut,&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;Tóm lại là code càng ngắn gọn càng dễ hiểu, trừ cách đặt tên biến ra :v.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ưu tiên toán tử</title>
+      <link>https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/</link>
+      <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/</guid>
+      <description>&lt;p&gt;Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mọi người thấy            mọi người hay nghĩ               thực tế
+*p.f                      (*p).f                           *(p.f)
+int *ap[]                 int (*ap)[]                     int *(ap[])
+a &amp;amp; b != 0                (a &amp;amp; b) != 0                    a &amp;amp; (b != 0)
+a &amp;lt;&amp;lt; 4 + b                (a &amp;lt;&amp;lt; 4) + b                    a &amp;lt;&amp;lt; (4 + b)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;!= và == sẽ được ưu tiên hơn các toán tử bitwise.
+Các phép tính toán học sẽ ưu tiên hơn phép dịch bit.
+Con trỏ tới mảng, và mảng con trỏ chắc gặp nhiều.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int main(int argc, const char * argv[])
+{
+    int a[] = { 2, 4, 6};
+    
+    // 1, con tro toi mang
+    int (*pta)[] = &amp;amp;a;
+    printf(&amp;quot;%i \n&amp;quot;, *(*pta +2)); // phan tu thu 3
+    
+    // 2, mang con tro
+    int *pa[3];
+    
+    pa[0] = &amp;amp;a[0];
+    pa[1] = &amp;amp;a[1];
+    pa[2] = &amp;amp;a[2];
+    
+    printf(&amp;quot;%i \n&amp;quot;, **(pa+2)); // phan tu thu 3
+    
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;P/S: :d vừa rồi cty mình nhận 1 dự án maintain (code c) toàn bitwise, khoai lòi mắt T_T.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tạo function trong swift</title>
+      <link>https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/</link>
+      <pubDate>Mon, 05 Sep 2016 16:27:24 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/</guid>
+      <description>
+
+&lt;p&gt;Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).&lt;/p&gt;
+
+&lt;h3 id=&#34;tạo-function-1-param&#34;&gt;Tạo function 1 param&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;func sayHello(name: String) -&amp;gt; String 
+{
+    return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot;    
+}
+
+print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;func-có-nhiều-hơn-1-param&#34;&gt;Func có nhiều hơn 1 param&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String
+{
+    return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName
+}
+
+print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
+Ta có thể làm rõ nghĩa của cả param đầu tiên bằng cách cho thêm external name. Mỗi khi thêm external name thì ta bắt buộc phải sử dụng nó khi gọi hàm.
+Ở ví dụ dưới đây external name là &lt;em&gt;to&lt;/em&gt; và &lt;em&gt;and&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func sayHello(to person: String, and anotherPerson: String) -&amp;gt; String 
+{
+    return &amp;quot;Hello \(person) and \(anotherPerson)!&amp;quot;
+}
+print(sayHello(to: &amp;quot;Bill&amp;quot;, and: &amp;quot;Ted&amp;quot;)) // Hello Bill and Ted!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func someFunction(firstParameterName: Int, _ secondParameterName: Int) 
+{
+    // function body goes here
+    // firstParameterName and secondParameterName refer to
+    // the argument values for the first and second parameters
+}
+someFunction(1, 2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết
+&amp;gt; someFunction(1, secondParameterName:2)&lt;/p&gt;
+
+&lt;h3 id=&#34;func-với-param-dạng&#34;&gt;Func với param dạng &amp;hellip;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;func arithmeticMean(numbers: Double...) -&amp;gt; Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+arithmeticMean(1, 2, 3, 4, 5) // 3.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
+Lưu ý: tất cả những param truyền vào phải cùng một kiểu dữ liệu.&lt;/p&gt;
+
+&lt;h3 id=&#34;thay-đổi-giá-trị-param-trong-func&#34;&gt;Thay đổi giá trị param trong func&lt;/h3&gt;
+
+&lt;p&gt;Theo mặc định, param truyền vào sẽ là const, tức là ta không thể thay đổi giá trị của nó. Để thay đổi có hai cách, cách đầu tiên là sử dụng keyword var như ở ví dụ sau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var minMaxValue = minMax([2,1,5,9,8])!;
+print(minMaxValue.1); // max
+
+let minAndMax = minMax([]);
+print(minAndMax?.min);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;func alignRight(var string: String, totalLength: Int, pad: Character) -&amp;gt; String {
+    let amountToPad = totalLength - string.characters.count
+    if amountToPad &amp;lt; 1 {
+        return string
+    }
+    let padString = String(pad)
+    for _ in 1...amountToPad {
+        string = padString + string
+    }
+    return string
+}
+var originalString = &amp;quot;hello&amp;quot;
+var paddedString = alignRight(originalString, totalLength: 10, pad: &amp;quot;-&amp;quot;)
+print(originalString, terminator:&amp;quot;&amp;quot;) // hello
+print(paddedString, terminator:&amp;quot;&amp;quot;) // -----hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
+Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài func alignRight sẽ không bị thay đổi theo. Vậy để thay đổi giá trị của originalString ta phải làm sao? Ta sử dụng cách thứ hai là In-Out param.&lt;/p&gt;
+
+&lt;h3 id=&#34;in-out-param&#34;&gt;In-Out param&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;func swapTwoInts(inout a: Int, inout _ b: Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+var someInt = 3
+var anotherInt = 107
+swapTwoInts(&amp;amp;someInt, &amp;amp;anotherInt)
+print(&amp;quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&amp;quot;)
+// prints &amp;quot;someInt is now 107, and anotherInt is now 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Khi gọi những hàm có keyword inout ta phải thêm &amp;amp; đằng trước tên biến.&lt;/p&gt;
+
+&lt;p&gt;Đây là những điều cơ bản nhất khi triển khai 1 func trong swift. Để đi sâu hơn, bạn nên tham khảo tài liệu của apple.&lt;/p&gt;
+
+&lt;p&gt;P/S: những ví dụ trên tham khảo trong swift 2.0 programming của apple. Tài liệu này mới cập nhật, hình như chưa có bản pdf. :stuck_out_tongue:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 những cái hay dùng</title>
+      <link>https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/</link>
+      <pubDate>Mon, 05 Sep 2016 16:21:13 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/</guid>
+      <description>
+
+&lt;p&gt;Bài tham khảo từ link:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer&#34;&gt;http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;sử-dụng-auto&#34;&gt;Sử dụng auto&lt;/h1&gt;
+
+&lt;p&gt;Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue&lt;/p&gt;
+
+&lt;p&gt;VD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auto a = 1; // is equal with int a = 1
+auto a = 1f // is equal with float a = 1.f
+auto a = new foo(); // is equal with *a = new foo();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.
+VD: &amp;gt; auto a; // error&lt;/p&gt;
+
+&lt;h1 id=&#34;sử-dụng-nullptr&#34;&gt;Sử dụng nullptr&lt;/h1&gt;
+
+&lt;p&gt;Để gán giá trị null cho con trỏ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int *p = nullptr;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;foreach&#34;&gt;ForEach&lt;/h1&gt;
+
+&lt;p&gt;Duyệt tất cả các phần tử của mảng
+VD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int arr[5] = {1, 2, 3, 4, 5};
+for( auto &amp;amp;a : arr)
+{
+    cout&amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl; // in ra màn hình 1, 2, 3, 4, 5
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;override-và-final&#34;&gt;Override và final&lt;/h1&gt;
+
+&lt;p&gt;Cái này là một định danh.
+Giả sử với vd sau:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class B
+{
+public:
+    virtual void f(short)
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;B::f&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+};
+
+class D : public B
+{
+public:
+    virtual void f(int)
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;D::f&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Trường hợp này, function f ở class D là overload (vì param truyền vào là khác kiểu nhau).
+Hoặc với vd khác:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class B
+{
+public:
+    virtual void f(int) const
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;B::f &amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+};
+
+class D : public B
+{
+public:
+    virtual void f(int)
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;D::f&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ở trường hợp này function f ở class D vẫn là overload chứ ko phải là override. Để tránh gây nhầm lẫn, C++11 thêm định danh là override và final giống như trong java. 2 từ khóa này có thể đi liền nhau &amp;ldquo;override final&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class B
+{
+public:
+    virtual void f(short)
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;B::f&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+    void g(short)
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;B::g&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+};
+
+class D : public B
+{
+public:
+    virtual void f(int) override
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;D::f&amp;quot; &amp;lt;&amp;lt; std::endl;
+    }
+    virtual void g(int) override
+    {
+        std::cout &amp;lt;&amp;lt; &amp;quot;D::g&amp;quot; &amp;lt;&amp;lt; std::endl;   // error
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lưu ý: override chỉ có tác dụng nếu function ở class base là virtual.&lt;/p&gt;
+
+&lt;h1 id=&#34;enum-class&#34;&gt;Enum class&lt;/h1&gt;
+
+&lt;p&gt;VD có 2 enum&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enum TV { on, off};
+enum LAMP { on, off};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cả 2 enum này đều có key giống nhau, dẫn đến compiler không phân biệt
+được. Cách giải quyết ở phiên bản cũ là dùng namespace, tuy nhiên ở
+C++11 cái này đơn giản hơn bằng cách sử dụng enum class như sau:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enum class TV
+{
+    on, off
+};
+enum class LAMP
+{
+    on, off
+};
+
+TV::on;
+LAMP::on; // no error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;lambda&#34;&gt;Lambda&lt;/h1&gt;
+
+&lt;p&gt;Đây là điểm mới mà C++03 không có&lt;/p&gt;
+
+&lt;p&gt;Cấu trúc nó là &lt;em&gt;capture-list&lt;/em&gt; { body };&lt;/p&gt;
+
+&lt;p&gt;VD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int a = 10;
+auto func1 = [=]()
+{
+    int x = a;
+    std::cout&amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+    //a += 10; // error
+};
+auto func2 = [&amp;amp;]()
+{
+    a += 10;
+};
+
+func1(); // x = 10;
+func2(); // a = 20;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;[&amp;amp;] sẽ giúp complier hiểu được là biến a được khai báo
+bên ngoài lambda function sẽ được tham chiếu vào trong lambda function.
+Còn [=] có nghĩa là copy giá trị của a vào trong hàm lambda, tuy nhiên
+không thể thay đổi giá trị của a. (chỉ có tác dụng copy).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enum flag c&#43;&#43;</title>
+      <link>https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/</link>
+      <pubDate>Mon, 05 Sep 2016 15:51:57 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/</guid>
+      <description>
+
+&lt;p&gt;Hôm nọ đọc trên DNH có bài hướng dẫn về bit field&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.wikiwand.com/en/Bit_field&#34;&gt;Daynhauhoc&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise&lt;/p&gt;
+
+&lt;h1 id=&#34;bitwise&#34;&gt;Bitwise&lt;/h1&gt;
+
+&lt;p&gt;Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa. Giả sử bạn làm game, nhân vật của bạn có thể có nhiều hơn một thuộc tính như CHAO, NORLMAL, MAGIC&amp;hellip;Bạn sẽ tạo mấy biến để lưu trữ thuộc tính nhân vật?&lt;/p&gt;
+
+&lt;p&gt;Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
+Giống như cách define sau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#define KEY_UP       (1 &amp;lt;&amp;lt; 0)  // 000001
+#define KEY_RIGHT    (1 &amp;lt;&amp;lt; 1)  // 000010
+#define KEY_DOWN     (1 &amp;lt;&amp;lt; 2)  // 000100
+#define KEY_LEFT     (1 &amp;lt;&amp;lt; 3)  // 001000
+#define KEY_BUTTON1  (1 &amp;lt;&amp;lt; 4)  // 010000
+#define KEY_BUTTON2  (1 &amp;lt;&amp;lt; 5)  // 100000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enum FLAG
+{
+         UNKNOW    = 0, 
+         NORMAL    = 1 &amp;lt;&amp;lt; 0,
+         MAGIC     = 1 &amp;lt;&amp;lt; 1,
+         CHAO      = 1 &amp;lt;&amp;lt; 2
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hàm main&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int main(int argc, const char * argv[])
+{
+         FLAG flag = MAGIC | CHAO;
+   
+         if( flag &amp;amp; NORMAL)
+         {
+         	cout&amp;lt;&amp;lt;&amp;quot;Normal&amp;quot;&amp;lt;&amp;lt;endl;
+         }   
+   
+         if( flag &amp;amp; CHAO)
+         {
+   		cout&amp;lt;&amp;lt;&amp;quot;Chao&amp;quot;&amp;lt;&amp;lt;endl;
+         }
+   
+         return 0;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tuy nhiên nếu bạn chạy ngay code này thì sẽ lỗi. Ta cần phải overload toán tử | (OR)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;inline FLAG operator|(FLAG a, FLAG b)
+{
+    return static_cast&amp;lt;FLAG&amp;gt; ( static_cast&amp;lt;int&amp;gt;(a) | 
+                               static_cast&amp;lt;int&amp;gt;(b));
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
+Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MAGIC             00000010 
+CHAO              00000100 
+MAGIC | CHAO      00000110
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Khi ta thực hiện phép toán &amp;amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MAGIC | CHAO      	00000110 
+CHAO              	00000100
+CHAO &amp;amp; (MAGIC | CHAO)   00000100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
+Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp;amp; với cờ đó.&lt;/p&gt;
+
+&lt;p&gt;P/S: Lập trình ios thì các bạn sẽ thấy cái này khá nhiều.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://gg4acrossover.github.io/hugosite/about/</link>
+      <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/about/</guid>
+      <description>&lt;p&gt;Tôi là developer nhân dân :D, chuyên môn của tôi là lập trình IOS, lập trình game sử dụng cocos2dx. Tôi có hứng thú tìm tòi thêm một chút về javascript nữa. Ngoài lập trình tôi chơi bóng rổ và khoái bi.a, thích đọc sách. Hãy liên lạc với tôi nếu bạn có chung sở thích :D.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Các thuộc tính của property trong objC</title>
+      <link>https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/</link>
+      <pubDate>Thu, 01 Sep 2016 17:22:59 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/</guid>
+      <description>
+
+&lt;p&gt;Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.&lt;/p&gt;
+
+&lt;p&gt;Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.&lt;/p&gt;
+
+&lt;h1 id=&#34;stack&#34;&gt;Stack&lt;/h1&gt;
+
+&lt;p&gt;Stack là vùng bộ nhớ để chứa biến local, biến tạm. Khi bạn tạo ra đối tượng và được lưu trên stack thì việc quản lý bộ nhớ diễn ra một cách tự động. Thế nên bạn không phải bận tâm đến vấn đề memory leak.&lt;/p&gt;
+
+&lt;h1 id=&#34;heap&#34;&gt;Heap&lt;/h1&gt;
+
+&lt;p&gt;Vùng bộ nhớ mà bạn muốn sử dụng tự phải cấp phát và giải phóng khi cần thiết. Bạn trực tiếp quản lý nó, thế nên khả năng rò rỉ bộ nhớ có thể xảy ra. Như C, ta đã malloc thì phải free. Vấn đề này dễ thở hơn khi sử dụng JAVA hay Obj-C (cơ chế garbage collection).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;============&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lợi thế trong việc sử dụng stack là tốc độ nhanh, sự đơn giản (tự động hủy khi hàm return hoặc khi ra khỏi scope). Tuy nhiên, khi lập trình chúng ta có xu hướng muốn quản lý lifetime của đối tượng, thế nên ta sử dụng heap khá thường xuyên.&lt;/p&gt;
+
+&lt;p&gt;Đối tượng trong obj-c thì hầu hết được lưu ở heap. Apple dịu dàng nghĩ ra strong, weak, copy, assign để coder quản lý bộ nhớ thuận tiện hơn (nhờ ARC). Nhưng nhiều thuộc tính như thế dễ làm coder băn khoăn cái nào nên dùng, cái nào không.&lt;/p&gt;
+
+&lt;h1 id=&#34;strong&#34;&gt;Strong&lt;/h1&gt;
+
+&lt;p&gt;Cơ chế quản lý bộ nhớ của ARC là nó sẽ đếm số reference đến một đối tượng cụ thể nào đó. Khi con số reference này bằng 0 thì đối tượng đó tự động giải phóng khỏi bộ nhớ. Ta không phải hủy bằng tay nữa. Strong sẽ làm cho reference tới đối tượng tăng lên 1 đơn vị, khi đó ta nói đối tượng có 1 owner. Một đối tượng có thể có nhiều owner. Nhưng tốt hơn hết là cố gắng làm sao để một đối tượng chỉ có 1 hoặc 2 owner thôi. Vì sao sẽ nói ở phần weak.&lt;/p&gt;
+
+&lt;p&gt;Ta sử dụng strong đối với các UIView, UITableView,&amp;hellip; khi tự tạo View bằng code, chứ không phải bằng storyboard hay xib.&lt;/p&gt;
+
+&lt;h1 id=&#34;weak&#34;&gt;Weak&lt;/h1&gt;
+
+&lt;p&gt;Cũng tương tự như strong, ngoại trừ việc nó không tăng số owner tới đối tượng . Weak không trực tiếp can thiệp vào việc hủy của đối tượng, vốn là công việc của strong. Vậy tác dụng của weak là gì? Nếu ta có nhiều owner (strong) đến đối tượng thì sẽ rắc rối cho việc giải phóng bộ nhớ, thế nên ta cần dùng đến weak.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://s3-ap-southeast-1.amazonaws.com/kipalog.com/173cc1b2eae8a7c4.png_tn5mgte0n5&#34; alt=&#34;Kipalog&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Như ta thấy ở hình trên, Person và Apartment có reference qua nhau. Khi john và number73 không còn owner đến 2 thực thể này nữa thì 2 thực thể này vẫn không bị hủy. Lý do là vì owner tới 2 đối tượng này chưa về 0. (vẫn đang strong qua lại)&lt;/p&gt;
+
+&lt;p&gt;Phương án giải quyết như sau&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://s3-ap-southeast-1.amazonaws.com/kipalog.com/0f3a1ba4a040045d.png_w7vzy9u63n&#34; alt=&#34;Kipalog&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Liên kết giống như trên hay bắt gặp khi sử dụng delegate. Vậy nên ta hay dùng weak đối với delegate. Nếu các bạn tạo file xib và kéo thả giao diện vào trong class thì tất cả các đối tượng đều đã có owner trong file xib. Đấy là lý do Properties trong class chỉ liên kết weak với đối tượng, tránh xảy ra hiện tượng nhiều liên kết strong.&lt;/p&gt;
+
+&lt;h1 id=&#34;assign&#34;&gt;Assign&lt;/h1&gt;
+
+&lt;p&gt;Dùng cho các biến nguyên thủy như NSInteger, CGFloat, CGPoint, CGRect&amp;hellip;&lt;/p&gt;
+
+&lt;h1 id=&#34;copy&#34;&gt;Copy&lt;/h1&gt;
+
+&lt;p&gt;Copy được sử dụng đối với những đối tượng Mutable như NSMutableArray, NSMutableDictionary&amp;hellip;hoặc Immutable. Giả sử ta có đối tượng A, ta muốn tạo ra đối tượng B giống hệt A rồi thay đổi B mà không làm ảnh hưởng đến A thì lúc đó copy phát huy tác dụng.&lt;/p&gt;
+
+&lt;p&gt;NSString có thể sử dụng thuộc tính strong nhưng nhiều lập trình viên sử dụng copy hơn. Ta có đoạn code như sau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NSMutableString *pStrMutable = [[NSMutableString alloc] initWithCapacity:100];
+[pStrMutable setString:@&amp;quot;HelloWorld&amp;quot;];
+NSString *pStrImmutable = pStrMutable; // helloWorld
+[pStrMutable setString:@&amp;quot;another text&amp;quot;];
+NSLog(@&amp;quot;%@&amp;quot;, pStrImmutable); // another text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;NSMutableString &lt;em&gt;có thể làm NSString&lt;/em&gt; trỏ đến một text khác, làm sai lệch text mà ta mong muốn. Ta nên sử dụng copy với những đối tượng có cả Immutable và mutable như String, Dictionary.&lt;/p&gt;
+
+&lt;p&gt;Ngoài ra copy còn sử dụng với block ^{}. Block cũng là một đối tượng trong obj-c nhưng có một điều đặc biệt, đối tượng này lưu ở stack. Như giải thích ở phần stack thì ta sẽ không quản lý được lifetime của đối tượng lưu trong stack mà việc này diễn ra tự động mỗi khi hàm return hay ra khỏi scope. Thuộc tính copy để tạo ra 1 bản&amp;hellip;copy của block, lưu ở heap. Lúc này ARC sẽ quản lý việc giải phóng bộ nhớ giúp ta.&lt;/p&gt;
+
+&lt;p&gt;Một số link hay để tham khảo:
+&lt;a href=&#34;http://www.objc.io/issue-7/value-objects.html&#34;&gt;objc.io&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

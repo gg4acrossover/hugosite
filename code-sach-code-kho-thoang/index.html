@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" Code sạch, code khô thoáng &middot;  GG4aCrossover" />
+  	<meta property="og:site_name" content="GG4aCrossover" />
+  	<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2016-09-05T16:36:42&#43;07:00" />
+
+    
+    <meta property="og:article:tag" content="objc" />
+    
+    <meta property="og:article:tag" content="ios" />
+    
+    
+
+  <title>
+     Code sạch, code khô thoáng &middot;  GG4aCrossover
+  </title>
+
+    <meta name="description" content="Life is like riding a bicycle. To keep your balance, you must keep moving." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://gg4acrossover.github.io/hugosite/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://gg4acrossover.github.io/hugosite/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="GG4aCrossover" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.16" />
+
+    <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h4>My Site</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/about/">About me</a>
+            </li>
+        
+            <h4>Social</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/gg4acrossover">Github</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/viet142">Twitter</a>
+            </li>
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="https://gg4acrossover.github.io/hugosite/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Code sạch, code khô thoáng</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2016-09-05T16:36:42&#43;07:00">
+            Sep 5, 2016
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/objc/">#objc</a></span>
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/ios/">#ios</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. :smile:</p>
+
+<h3 id="sử-dụng-immutable">Sử dụng immutable</h3>
+
+<p>Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:</p>
+
+<pre><code>	NSArray *pFruit = @[@&quot;orange&quot;, @&quot;apple&quot;, @&quot;lemon&quot;, @&quot;strawberry&quot;];
+	NSDictionary *pDict = @{ @&quot;name&quot; : @&quot;Tom&quot;,  @&quot;age&quot; : @18};
+</code></pre>
+
+<p>Thay vì viết:</p>
+
+<pre><code>	NSArray *pFruit = [NSArray arrayWithObjects:@&quot;orange&quot;, @&quot;apple&quot;, @&quot;lemon&quot;, @&quot;strawberry&quot;, nil];
+	NSDictionary *pDict2 = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;value1&quot;,@&quot;key1&quot;,@&quot;value2&quot;, @&quot;key2&quot;, nil];
+</code></pre>
+
+<p>Như thế code nhìn trông gọn và dễ đọc hơn, đối với các biến dạng số hoặc bool được đưa vào trong dictionary để gửi lên server ta cũng nên làm như vậy.</p>
+
+<pre><code>	NSNumber *pIsNew = @YES;
+</code></pre>
+
+<p>Thay vì</p>
+
+<pre><code>	NSNumber *pIsNew = [NSNumber numberWithBool:YES];
+</code></pre>
+
+<p>Sử dụng category</p>
+
+<p>Frame được sử dụng nhiều khi viết code iOS, ta có thể tạo ra một file chứa các c function chuyên làm việc với frame, hay tạo ra một macro. Ví dụ như muốn lấy originX của 1 uiview:</p>
+
+<pre><code>	CGFloat ORIGIN_X( CGRect rec)
+	{
+            return rec.origin.x;
+	}
+</code></pre>
+
+<p>Hoặc ngắn hơn với macro</p>
+
+<pre><code>#define posX(v)                  v.frame.origin.x
+</code></pre>
+
+<p>Tuy nhiên sử dụng category cũng là một lựa chọn thời thượng. Giả sử bạn có thể lấy originX bằng cách sau:</p>
+
+<pre><code>CGFloat originX = [PopUpView getX];
+</code></pre>
+
+<p>Khá ngắn gọn, clear, dễ chỉnh sửa. Category còn đặc biệt với những ai hay gửi nhận dữ liệu lên server, đôi khi dictionary sẽ trả về một cái object null. Việc check null ở nhiều chỗ khác nhau khá là tốn thời gian nếu cứ phải viết đi viết lại như thế này</p>
+
+<pre><code>if(dict[@&quot;key&quot;] &amp;&amp; ![dict[@&quot;key&quot;] isEqual: [NSNull null]])
+</code></pre>
+
+<p>Ta có thể đưa vào category theo cách sau</p>
+
+<pre><code>- (id)safeValueForKey:(NSString *)key {
+    id value = [self valueForKey:key];
+     
+    if (value &amp;&amp; ![value isEqual: [NSNull null]]) {
+        return value;
+    }
+     
+    return nil;
+}
+</code></pre>
+
+<p>Sau đó ở tất cả mọi nơi chỉ cần gọi</p>
+
+<pre><code>NSString *pValue = [dict safeValueForKey: @&quot;key&quot;];
+</code></pre>
+
+<h3 id="sử-dụng-block">Sử dụng block</h3>
+
+<pre><code>UIView *pCircle2 = ({
+	UIView *pView = [[UIView alloc]
+					initWithFrame:CGRectMake(80.0f, 80.0f, 90.0f, 90.0f)];
+	pView.backgroundColor = [UIColor redColor];
+	CAShapeLayer *shape = [CAShapeLayer layer];
+	CGFloat r = CGRectGetWidth(pView.frame)*0.5f;
+	CGPoint center = CGPointMake( r, r);
+	UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center
+							    radius:r
+							startAngle:0
+							  endAngle:2*M_PI
+							 clockwise:YES];
+	shape.path = path.CGPath;
+	pView.layer.mask = shape;
+	pView;
+});
+</code></pre>
+
+<p>Gộp các đoạn code sử dụng chung cho một mục đích vào trong 1 block, với cách này thì giá trị return tương ứng với dòng cuối trong block.</p>
+
+<h3 id="cách-đặt-tên">Cách đặt tên</h3>
+
+<p>Nhiều tài liệu của apple cũng có nói về cách đặt tên. Mọi người hãy chú ý delegate của uitableview hay uicollectionview sẽ thấy có nhiều điểm tương đồng trong cách đặt tên hàm.
+Ví dụ guide của apple <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF">datten</a></p>
+
+<p>Từ cách đặt tên trên ta có thể tạo ra enum như sau</p>
+
+<pre><code>typedef NS_ENUM(NSUInteger, GGAnimationViewType) {
+    GGAnimationViewTypeFadeIn,
+    GGAnimationViewTypeFadeOut,
+    GGAnimationViewTypeEaseIn,
+    GGAnimationViewTypeEaseOut
+};
+</code></pre>
+
+<p>Công thức chung là [tên class][tên enum], cụ thể như ví dụ trên [GGAnimationView][Type].
+Các giá trị enum [tên class][tên enum][các giá trị]. Các giá trị FadeIn, FadeOut,&hellip;.</p>
+
+<p>Tóm lại là code càng ngắn gọn càng dễ hiểu, trừ cách đặt tên biến ra :v.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://gg4acrossover.github.io/hugosite/">GG4aCrossover</a></h4>
+  
+  <p>Coder nhân dân</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">HaNoi, VietNam</span>
+    <span class="author-link icon-link"><a href="http://gg4acrossover.github.io/">http://gg4acrossover.github.io/</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Code%20s%e1%ba%a1ch%2c%20code%20kh%c3%b4%20tho%c3%a1ng&nbsp;-&nbsp;GG4aCrossover&amp;url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcode-sach-code-kho-thoang%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcode-sach-code-kho-thoang%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcode-sach-code-kho-thoang%2f&amp;description=Code%20s%e1%ba%a1ch%2c%20code%20kh%c3%b4%20tho%c3%a1ng"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcode-sach-code-kho-thoang%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'gg4acrossover';
+  var disqus_url = 'https:\/\/gg4acrossover.github.io\/hugosite\/code-sach-code-kho-thoang\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">GG4aCrossover</a> All rights reserved - 2016</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://gg4acrossover.github.io/hugosite/js/jquery.js"></script>
+    <script type="text/javascript" src="https://gg4acrossover.github.io/hugosite/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://gg4acrossover.github.io/hugosite/js/index.js"></script>
+    
+</body>
+</html>
+
