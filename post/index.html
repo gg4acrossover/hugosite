@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="vi-EN">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -131,10 +131,38 @@
 	   
 <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/hugosite/transition-animation/">Transition Animation</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Giới thiệu Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm: NavigationController TabbarController Presentations và dismiss Mình sẽ tập trung vào custom animation push và pop với NavigationController. Với các phương thức chuyển viewcontroller khác thì làm tương tự. Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B. <a class="read-more" href="/hugosite/transition-animation/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+        
+            GG4aCrossover
+        
+        on
+            
+                <a href="https://gg4acrossover.github.io/hugosite/tags/objc/">#objc</a>,
+            
+        
+        <time class="post-date" datetime="2016-09-20T16:01:11&#43;07:00">
+            20 Sep 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/hugosite/code-sach-code-kho-thoang/">Code sạch, code khô thoáng</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. :smile: Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau: NSArray *pFruit = @[@&quot;orange&quot;, @&quot;apple&quot;, @&quot;lemon&quot;, @&quot;strawberry&quot;]; NSDictionary *pDict = @{ @&quot;name&quot; : @&quot;Tom&quot;, @&quot;age&quot; : @18}; Thay vì viết: NSArray *pFruit = [NSArray arrayWithObjects:@&quot;orange&quot;, @&quot;apple&quot;, @&quot;lemon&quot;, @&quot;strawberry&quot;, nil]; NSDictionary *pDict2 = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;value1&quot;,@&quot;key1&quot;,@&quot;value2&quot;, @&quot;key2&quot;, nil]; Như thế code nhìn trông gọn và dễ đọc hơn, đối với các biến dạng số hoặc bool được đưa vào trong dictionary để gửi lên server ta cũng nên làm như vậy. <a class="read-more" href="/hugosite/code-sach-code-kho-thoang/">&raquo;</a></p>
+        <p>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄 Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau: NSArray *pFruit = @[@&quot;orange&quot;, @&quot;apple&quot;, @&quot;lemon&quot;, @&quot;strawberry&quot;]; NSDictionary *pDict = @{ @&quot;name&quot; : @&quot;Tom&quot;, @&quot;age&quot; : @18}; Thay vì viết: NSArray *pFruit = [NSArray arrayWithObjects:@&quot;orange&quot;, @&quot;apple&quot;, @&quot;lemon&quot;, @&quot;strawberry&quot;, nil]; NSDictionary *pDict2 = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;value1&quot;,@&quot;key1&quot;,@&quot;value2&quot;, @&quot;key2&quot;, nil]; Như thế code nhìn trông gọn và dễ đọc hơn, đối với các biến dạng số hoặc bool được đưa vào trong dictionary để gửi lên server ta cũng nên làm như vậy. <a class="read-more" href="/hugosite/code-sach-code-kho-thoang/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -247,34 +275,6 @@
             
         
         <time class="post-date" datetime="2016-09-05T16:21:13&#43;07:00">
-            5 Sep 2016
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/hugosite/enum-flag-c-plus-plus/">Enum flag c&#43;&#43;</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field Daynhauhoc Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa. <a class="read-more" href="/hugosite/enum-flag-c-plus-plus/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-        
-            GG4aCrossover
-        
-        on
-            
-                <a href="https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/">#c&#43;&#43;</a>,
-            
-        
-        <time class="post-date" datetime="2016-09-05T15:51:57&#43;07:00">
             5 Sep 2016
         </time>
     </footer>

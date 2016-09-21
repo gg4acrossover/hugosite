@@ -5,10 +5,190 @@
     <link>https://gg4acrossover.github.io/hugosite/post/</link>
     <description>Recent content in Post on GG4aCrossover</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
+    <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Mon, 05 Sep 2016 16:36:42 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 20 Sep 2016 16:01:11 +0700</lastBuildDate>
     <atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Transition Animation</title>
+      <link>https://gg4acrossover.github.io/hugosite/transition-animation/</link>
+      <pubDate>Tue, 20 Sep 2016 16:01:11 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/transition-animation/</guid>
+      <description>
+
+&lt;h3 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h3&gt;
+
+&lt;p&gt;Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NavigationController&lt;/li&gt;
+&lt;li&gt;TabbarController&lt;/li&gt;
+&lt;li&gt;Presentations và dismiss&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mình sẽ tập trung vào custom animation &lt;em&gt;push&lt;/em&gt; và &lt;em&gt;pop&lt;/em&gt; với &lt;em&gt;NavigationController&lt;/em&gt;. Với các phương thức chuyển viewcontroller khác thì làm tương tự.&lt;/p&gt;
+
+&lt;h3 id=&#34;mô-hình-hóa&#34;&gt;Mô hình hóa&lt;/h3&gt;
+
+&lt;p&gt;Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gg4acrossover.github.io/hugosite/hugosite/images/note/1.jpg&#34; alt=&#34;image1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Đầu tiên, ta cần khởi tạo &lt;em&gt;transtion&lt;/em&gt; và xác định được 2 viewcontroller cần di chuyển, lúc này A đang được chứa bởi &lt;em&gt;container&lt;/em&gt;(là view chứa để control việc di chuyển)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gg4acrossover.github.io/hugosite/hugosite/images/note/2.jpg&#34; alt=&#34;image2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tiếp theo add viewcontroller B vào container đang chứa A.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gg4acrossover.github.io/hugosite/hugosite/images/note/3.jpg&#34; alt=&#34;image2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cuối cùng là thực hiện animation chuyển đổi giữa 2 màn hình, quá trình kết thúc khi A được remove khỏi container&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gg4acrossover.github.io/hugosite/hugosite/images/note/4.jpg&#34; alt=&#34;image2&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;implement&#34;&gt;Implement&lt;/h3&gt;
+
+&lt;p&gt;Để thực hiện được mô hình trên, ta sử dụng những protocol sau&lt;/p&gt;
+
+&lt;h4 id=&#34;uinavigationcontrollerdelegate&#34;&gt;UINavigationControllerDelegate&lt;/h4&gt;
+
+&lt;p&gt;Protocol có 2 method giúp ta xác định được cách thức transition&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (nullable id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerInteractiveTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;navigationController&lt;/span&gt;:(UINavigationController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)navigationController
+                          &lt;span style=&#34;color: #A0A000&#34;&gt;interactionControllerForAnimationController&lt;/span&gt;:(id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerAnimatedTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;) animationController NS_AVAILABLE_IOS(&lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt;_0);
+
+&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (nullable id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerAnimatedTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;navigationController&lt;/span&gt;:(UINavigationController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)navigationController
+                                   &lt;span style=&#34;color: #A0A000&#34;&gt;animationControllerForOperation&lt;/span&gt;:(UINavigationControllerOperation)operation
+                                                &lt;span style=&#34;color: #A0A000&#34;&gt;fromViewController&lt;/span&gt;:(UIViewController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)fromVC
+                                                  &lt;span style=&#34;color: #A0A000&#34;&gt;toViewController&lt;/span&gt;:(UIViewController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)toVC  NS_AVAILABLE_IOS(&lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt;_0);
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hàm đầu tiên dùng để bắt các sự kiện touch vào màn hình, trả về object implement &lt;em&gt;UIViewControllerInteractiveTransitioning&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hàm thứ hai thực hiện việc push/pop khi ta click action (next/back) trên thanh navigation bar, trả về object implement &lt;em&gt;UIViewControllerAnimatedTransitioning&lt;/em&gt;. Các params giúp ta xác định được &lt;em&gt;fromVC&lt;/em&gt; là viewcontroller nào, &lt;em&gt;toVC&lt;/em&gt; là viewcontroller nào. Ở trường hợp di chuyển từ A sang B thì A là &lt;em&gt;fromVC&lt;/em&gt; và B là &lt;em&gt;toVC&lt;/em&gt;.
+Cuối cùng là param &lt;em&gt;operation&lt;/em&gt;, đây là enum gồm có 3 value để xác định trạng thái push hay pop&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; UINavigationControllerOperationNone,
+ UINavigationControllerOperationPush,
+ UINavigationControllerOperationPop,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;uiviewcontrolleranimatedtransitioning&#34;&gt;UIViewControllerAnimatedTransitioning&lt;/h4&gt;
+
+&lt;p&gt;có 2 phương thức&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (NSTimeInterval)&lt;span style=&#34;color: #A0A000&#34;&gt;transitionDuration&lt;/span&gt;:(nullable id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
+
+&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (&lt;span style=&#34;color: #00BB00; font-weight: bold&#34;&gt;void&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;animateTransition&lt;/span&gt;:(id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (NSTimeInterval)&lt;span style=&#34;color: #A0A000&#34;&gt;transitionDuration&lt;/span&gt;:(nullable id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
+
+&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (&lt;span style=&#34;color: #00BB00; font-weight: bold&#34;&gt;void&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;animateTransition&lt;/span&gt;:(id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Để thực hiện animation ta cần 2 thông số, thông số đầu tiên là duration, hàm đầu tiên giúp ta xác định được điều đó. Phương thức thứ hai dùng để implement animation chuyển đổi. Trong hàm này ta cần đưa ra thông báo để biết được quá trình push/pop được hoàn thành&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;[transitionContext &lt;span style=&#34;color: #A0A000&#34;&gt;completeTransition&lt;/span&gt;:&lt;span style=&#34;color: #666666&#34;&gt;!&lt;/span&gt;[transitionContext transitionWasCancelled]];
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Bước 1:&lt;/strong&gt; Tạo ra object implement protocol &lt;em&gt;UIViewControllerAnimatedTransitioning&lt;/em&gt;, trước hết xác định duration&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (NSTimeInterval)&lt;span style=&#34;color: #A0A000&#34;&gt;transitionDuration&lt;/span&gt;:(id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext
+{
+    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;0.25&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Định nghĩa một animation đơn giản&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt; * using example in &lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt; * https://www.objc.io/issues/5-ios7/view-controller-transitions/ &lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt; */&lt;/span&gt;
+
+&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (&lt;span style=&#34;color: #00BB00; font-weight: bold&#34;&gt;void&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;animateTransition&lt;/span&gt;:(id&lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext
+{
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;//1.&lt;/span&gt;
+    UIViewController&lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; toViewController &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [transitionContext &lt;span style=&#34;color: #A0A000&#34;&gt;viewControllerForKey&lt;/span&gt;:UITransitionContextToViewControllerKey];
+    UIViewController&lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; fromViewController &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [transitionContext &lt;span style=&#34;color: #A0A000&#34;&gt;viewControllerForKey&lt;/span&gt;:UITransitionContextFromViewControllerKey];
+
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;//2.&lt;/span&gt;
+    [[transitionContext containerView] &lt;span style=&#34;color: #A0A000&#34;&gt;addSubview&lt;/span&gt;:toViewController.view];
+    toViewController.view.alpha &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;0&lt;/span&gt;;
+
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;//3.&lt;/span&gt;
+    [UIView &lt;span style=&#34;color: #A0A000&#34;&gt;animateWithDuration&lt;/span&gt;:[self &lt;span style=&#34;color: #A0A000&#34;&gt;transitionDuration&lt;/span&gt;:transitionContext] &lt;span style=&#34;color: #A0A000&#34;&gt;animations&lt;/span&gt;:&lt;span style=&#34;color: #666666&#34;&gt;^&lt;/span&gt;{
+        fromViewController.view.transform &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; CGAffineTransformMakeScale(&lt;span style=&#34;color: #666666&#34;&gt;0.1&lt;/span&gt;, &lt;span style=&#34;color: #666666&#34;&gt;0.1&lt;/span&gt;);
+        toViewController.view.alpha &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;1&lt;/span&gt;;
+    } &lt;span style=&#34;color: #A0A000&#34;&gt;completion&lt;/span&gt;:&lt;span style=&#34;color: #666666&#34;&gt;^&lt;/span&gt;(BOOL finished) {
+        fromViewController.view.transform &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; CGAffineTransformIdentity;
+
+        &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;//4.&lt;/span&gt;
+        [transitionContext &lt;span style=&#34;color: #A0A000&#34;&gt;completeTransition&lt;/span&gt;:&lt;span style=&#34;color: #666666&#34;&gt;!&lt;/span&gt;[transitionContext transitionWasCancelled]];
+
+    }];
+
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Phân tích chút nào:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bước 1: xác định toViewController và fromViewController&lt;/li&gt;
+&lt;li&gt;Bước 2: add toViewController.view vào trong container&lt;/li&gt;
+&lt;li&gt;Bước 3: thực hiện animation.&lt;/li&gt;
+&lt;li&gt;Bước 4: thông báo animation kết thúc qua câu lệnh &lt;em&gt;completeTransition&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Bước 2:&lt;/strong&gt;
+Tạo object implement protocol &lt;em&gt;UINavigationControllerDelegate&lt;/em&gt;, trong object này ta cần truyền vào object đã implement &lt;em&gt;UIViewControllerAnimatedTransitioning&lt;/em&gt; trước đó.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt;(id&lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerAnimatedTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;navigationController&lt;/span&gt;:(UINavigationController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)navigationController
+                                 &lt;span style=&#34;color: #A0A000&#34;&gt;animationControllerForOperation&lt;/span&gt;:(UINavigationControllerOperation)operation
+                                              &lt;span style=&#34;color: #A0A000&#34;&gt;fromViewController&lt;/span&gt;:(UIViewController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)fromVC
+                                                &lt;span style=&#34;color: #A0A000&#34;&gt;toViewController&lt;/span&gt;:(UIViewController &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;)toVC
+{
+    &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;// return your custom animation transition&lt;/span&gt;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Bước 3&lt;/strong&gt;
+Setting ở viewcontroller, như ở trên ta có viewcontroller A -&amp;gt; B. Ở A ta cần làm như sau trước khi push.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;//1.&lt;/span&gt;
+self.navigationController.delegate &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;/* your custom UINavigationControllerDelegate */&lt;/span&gt;;
+&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;//2.&lt;/span&gt;
+[self.navigationController &lt;span style=&#34;color: #A0A000&#34;&gt;pushViewController&lt;/span&gt;:B &lt;span style=&#34;color: #A0A000&#34;&gt;animated&lt;/span&gt;:YES];
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ở bước này ta đã có thể push/pop với animation, nhưng để &lt;em&gt;full service&lt;/em&gt; ta sẽ gắn thêm &lt;em&gt;interactive animations&lt;/em&gt;. Tuy nhiên ở giới hạn bài viết này mình sẽ chỉ nói về animation cho push và pop. Bạn có thể tìm hiểu chi tiết hơn ở &lt;a href=&#34;https://github.com/objcio/issue5-view-controller-transitions&#34;&gt;ví dụ&lt;/a&gt; của trang &lt;a href=&#34;https://www.objc.io/&#34;&gt;objc.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Một animation mình làm&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/l2Sq1x6bWR3i9S8sU/giphy.gif&#34; alt=&#34;gif&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bài viết có tham khảo&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.objc.io/issues/5-ios7/view-controller-transitions/&#34;&gt;https://www.objc.io/issues/5-ios7/view-controller-transitions/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://whoisryannystrom.com/2013/10/01/View-Controller-Transition-Orientation/&#34;&gt;http://whoisryannystrom.com/2013/10/01/View-Controller-Transition-Orientation/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Code sạch, code khô thoáng</title>
@@ -18,7 +198,7 @@
       <guid>https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/</guid>
       <description>
 
-&lt;p&gt;Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. :smile:&lt;/p&gt;
+&lt;p&gt;Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄&lt;/p&gt;
 
 &lt;h3 id=&#34;sử-dụng-immutable&#34;&gt;Sử dụng immutable&lt;/h3&gt;
 
