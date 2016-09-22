@@ -186,7 +186,7 @@
 
 <p>Hàm đầu tiên dùng để bắt các sự kiện touch vào màn hình, trả về object implement <em>UIViewControllerInteractiveTransitioning</em>.</p>
 
-<p>Hàm thứ hai thực hiện việc push/pop khi ta click action (next/back) trên thanh navigation bar, trả về object implement <em>UIViewControllerAnimatedTransitioning</em>. Các params giúp ta xác định được <em>fromVC</em> là viewcontroller nào, <em>toVC</em> là viewcontroller nào. Ở trường hợp di chuyển từ A sang B thì A là <em>fromVC</em> và B là <em>toVC</em>.
+<p>Hàm thứ hai xác định cách thức push/pop khi ta click action (next/back) trên thanh navigation bar, trả về object implement <em>UIViewControllerAnimatedTransitioning</em>. Các params giúp ta xác định được <em>fromVC</em> là viewcontroller nào, <em>toVC</em> là viewcontroller nào. Ở trường hợp di chuyển từ A sang B thì A là <em>fromVC</em> và B là <em>toVC</em>.
 Cuối cùng là param <em>operation</em>, đây là enum gồm có 3 value để xác định trạng thái push hay pop</p>
 
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span> UINavigationControllerOperationNone,
@@ -198,12 +198,6 @@ Cuối cùng là param <em>operation</em>, đây là enum gồm có 3 value đ�
 <h4 id="uiviewcontrolleranimatedtransitioning">UIViewControllerAnimatedTransitioning</h4>
 
 <p>có 2 phương thức</p>
-
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #666666">-</span> (NSTimeInterval)<span style="color: #A0A000">transitionDuration</span>:(nullable id <span style="color: #666666">&lt;</span>UIViewControllerContextTransitioning<span style="color: #666666">&gt;</span>)transitionContext;
-
-<span style="color: #666666">-</span> (<span style="color: #00BB00; font-weight: bold">void</span>)<span style="color: #A0A000">animateTransition</span>:(id <span style="color: #666666">&lt;</span>UIViewControllerContextTransitioning<span style="color: #666666">&gt;</span>)transitionContext;
-</pre></div>
-
 
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #666666">-</span> (NSTimeInterval)<span style="color: #A0A000">transitionDuration</span>:(nullable id <span style="color: #666666">&lt;</span>UIViewControllerContextTransitioning<span style="color: #666666">&gt;</span>)transitionContext;
 

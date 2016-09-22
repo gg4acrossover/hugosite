@@ -68,7 +68,7 @@
 
 &lt;p&gt;Hàm đầu tiên dùng để bắt các sự kiện touch vào màn hình, trả về object implement &lt;em&gt;UIViewControllerInteractiveTransitioning&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Hàm thứ hai thực hiện việc push/pop khi ta click action (next/back) trên thanh navigation bar, trả về object implement &lt;em&gt;UIViewControllerAnimatedTransitioning&lt;/em&gt;. Các params giúp ta xác định được &lt;em&gt;fromVC&lt;/em&gt; là viewcontroller nào, &lt;em&gt;toVC&lt;/em&gt; là viewcontroller nào. Ở trường hợp di chuyển từ A sang B thì A là &lt;em&gt;fromVC&lt;/em&gt; và B là &lt;em&gt;toVC&lt;/em&gt;.
+&lt;p&gt;Hàm thứ hai xác định cách thức push/pop khi ta click action (next/back) trên thanh navigation bar, trả về object implement &lt;em&gt;UIViewControllerAnimatedTransitioning&lt;/em&gt;. Các params giúp ta xác định được &lt;em&gt;fromVC&lt;/em&gt; là viewcontroller nào, &lt;em&gt;toVC&lt;/em&gt; là viewcontroller nào. Ở trường hợp di chuyển từ A sang B thì A là &lt;em&gt;fromVC&lt;/em&gt; và B là &lt;em&gt;toVC&lt;/em&gt;.
 Cuối cùng là param &lt;em&gt;operation&lt;/em&gt;, đây là enum gồm có 3 value để xác định trạng thái push hay pop&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; UINavigationControllerOperationNone,
@@ -80,12 +80,6 @@ Cuối cùng là param &lt;em&gt;operation&lt;/em&gt;, đây là enum gồm có 
 &lt;h4 id=&#34;uiviewcontrolleranimatedtransitioning&#34;&gt;UIViewControllerAnimatedTransitioning&lt;/h4&gt;
 
 &lt;p&gt;có 2 phương thức&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (NSTimeInterval)&lt;span style=&#34;color: #A0A000&#34;&gt;transitionDuration&lt;/span&gt;:(nullable id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
-
-&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (&lt;span style=&#34;color: #00BB00; font-weight: bold&#34;&gt;void&lt;/span&gt;)&lt;span style=&#34;color: #A0A000&#34;&gt;animateTransition&lt;/span&gt;:(id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
-&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; (NSTimeInterval)&lt;span style=&#34;color: #A0A000&#34;&gt;transitionDuration&lt;/span&gt;:(nullable id &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt;UIViewControllerContextTransitioning&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt;)transitionContext;
 
