@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on GG4aCrossover</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/hugo/</link>
+    <description>Recent content in Hugo on GG4aCrossover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-EN</language>
+    <copyright>All rights reserved - 2016</copyright>
+    <lastBuildDate>Wed, 11 Jan 2017 14:27:47 +0700</lastBuildDate>
+    <atom:link href="https://gg4acrossover.github.io/hugosite/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Tạo static site với hugo</title>
+      <link>https://gg4acrossover.github.io/hugosite/hugo-tutorial/</link>
+      <pubDate>Wed, 11 Jan 2017 14:27:47 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/hugo-tutorial/</guid>
+      <description>&lt;p&gt;Blog hiện tại của mình sử dụng hugo.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;https://gohugo.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Đây là một static website engine, cài đặt đơn giản, có thể deploy trực tiếp trên github. Mặc dù hugo được quảng cáo bởi hiệu năng tốt nhưng điều kéo mình đến với engine này là thư viện theme khổng lồ mà không kém phần lung linh của nó.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;http://themes.gohugo.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Trên trang chủ đã hướng dẫn chi tiết cách tạo site và gắn theme cho website nên mình không trình bày lại nữa.
+Blog mình sử dụng theme casper, dưới đây là đoạn template để chuyển page của nó.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;nav class=&amp;quot;pagination&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt;
+	{{if .HasPrev}}
+	    &amp;lt;a class=&amp;quot;newer-posts&amp;quot; href=&amp;quot;{{ &amp;quot;&amp;quot; | absURL -}}{{&amp;quot;page/&amp;quot;}}{{- add .PageNumber -1}}&amp;quot;&amp;gt;&amp;amp;larr; Newer Posts&amp;lt;/a&amp;gt;
+	{{end}}
+	&amp;lt;span class=&amp;quot;page-number&amp;quot;&amp;gt;Page {{ .PageNumber }} of {{.TotalPages}}&amp;lt;/span&amp;gt;
+	{{if .HasNext}}
+	    &amp;lt;a class=&amp;quot;older-posts&amp;quot; href=&amp;quot;{{ &amp;quot;&amp;quot; | absURL -}}{{&amp;quot;page/&amp;quot;}}{{- add .PageNumber 1}}&amp;quot;&amp;gt;Older Posts &amp;amp;rarr;&amp;lt;/a&amp;gt;
+	{{end}}
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
