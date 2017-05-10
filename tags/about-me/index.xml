@@ -8,7 +8,9 @@
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
     <lastBuildDate>Mon, 05 Sep 2016 13:17:19 +0700</lastBuildDate>
-    <atom:link href="https://gg4acrossover.github.io/hugosite/tags/about-me/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/about-me/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>About me</title>
@@ -16,8 +18,7 @@
       <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/about/</guid>
-      <description>&lt;p&gt;Tôi là developer nhân dân :D, chuyên môn của tôi là lập trình IOS, lập trình game sử dụng cocos2dx. Tôi có hứng thú tìm tòi thêm một chút về javascript nữa. Ngoài lập trình tôi chơi bóng rổ và khoái bi.a, thích đọc sách. Hãy liên lạc với tôi nếu bạn có chung sở thích :D.&lt;/p&gt;
-</description>
+      <description>Tôi là developer nhân dân :D, chuyên môn của tôi là lập trình IOS, lập trình game sử dụng cocos2dx. Tôi có hứng thú tìm tòi thêm một chút về javascript nữa. Ngoài lập trình tôi chơi bóng rổ và khoái bi.a, thích đọc sách. Hãy liên lạc với tôi nếu bạn có chung sở thích :D.</description>
     </item>
     
   </channel>

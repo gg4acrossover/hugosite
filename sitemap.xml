@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2017-01-11T14:27:47+07:00</lastmod>
+    <loc>https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/</loc>
+    <lastmod>2017-05-10T11:25:40+07:00</lastmod>
   </url>
   
   <url>
@@ -49,6 +49,65 @@
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/</loc>
     <lastmod>2016-09-01T17:22:59+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/about-me/</loc>
+    <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</loc>
+    <lastmod>2016-09-05T16:32:39+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/</loc>
+    <lastmod>2017-05-10T11:25:40+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
+    <lastmod>2017-01-11T14:27:47+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
+    <lastmod>2016-09-05T16:36:42+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/objc/</loc>
+    <lastmod>2016-09-20T16:01:11+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
+    <lastmod>2017-05-10T11:25:40+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
+    <lastmod>2017-05-10T11:25:40+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
+    <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

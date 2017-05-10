@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on GG4aCrossover</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/</link>
+    <description>Recent content in Tags on GG4aCrossover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-EN</language>
+    <copyright>All rights reserved - 2016</copyright>
+    <lastBuildDate>Mon, 05 Sep 2016 13:17:19 +0700</lastBuildDate>
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/about-me/</link>
+      <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/about-me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</link>
+      <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/hugo/</link>
+      <pubDate>Wed, 11 Jan 2017 14:27:47 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ios</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/ios/</link>
+      <pubDate>Mon, 05 Sep 2016 16:36:42 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Objc</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/objc/</link>
+      <pubDate>Tue, 20 Sep 2016 16:01:11 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/objc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swift</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/swift/</link>
+      <pubDate>Wed, 10 May 2017 11:25:40 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/swift/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

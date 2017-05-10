@@ -8,7 +8,9 @@
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
     <lastBuildDate>Mon, 05 Sep 2016 16:32:39 +0700</lastBuildDate>
-    <atom:link href="https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ưu tiên toán tử</title>
@@ -16,42 +18,8 @@
       <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/</guid>
-      <description>&lt;p&gt;Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mọi người thấy            mọi người hay nghĩ               thực tế
-*p.f                      (*p).f                           *(p.f)
-int *ap[]                 int (*ap)[]                     int *(ap[])
-a &amp;amp; b != 0                (a &amp;amp; b) != 0                    a &amp;amp; (b != 0)
-a &amp;lt;&amp;lt; 4 + b                (a &amp;lt;&amp;lt; 4) + b                    a &amp;lt;&amp;lt; (4 + b)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;!= và == sẽ được ưu tiên hơn các toán tử bitwise.
-Các phép tính toán học sẽ ưu tiên hơn phép dịch bit.
-Con trỏ tới mảng, và mảng con trỏ chắc gặp nhiều.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int main(int argc, const char * argv[])
-{
-    int a[] = { 2, 4, 6};
-    
-    // 1, con tro toi mang
-    int (*pta)[] = &amp;amp;a;
-    printf(&amp;quot;%i \n&amp;quot;, *(*pta +2)); // phan tu thu 3
-    
-    // 2, mang con tro
-    int *pa[3];
-    
-    pa[0] = &amp;amp;a[0];
-    pa[1] = &amp;amp;a[1];
-    pa[2] = &amp;amp;a[2];
-    
-    printf(&amp;quot;%i \n&amp;quot;, **(pa+2)); // phan tu thu 3
-    
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;P/S: :d vừa rồi cty mình nhận 1 dự án maintain (code c) toàn bitwise, khoai lòi mắt T_T.&lt;/p&gt;
-</description>
+      <description>Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)
+mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b != 0) a &amp;lt;&amp;lt; 4 + b (a &amp;lt;&amp;lt; 4) + b a &amp;lt;&amp;lt; (4 + b)  !</description>
     </item>
     
     <item>
@@ -60,178 +28,11 @@ Con trỏ tới mảng, và mảng con trỏ chắc gặp nhiều.&lt;/p&gt;
       <pubDate>Mon, 05 Sep 2016 16:21:13 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/</guid>
-      <description>
-
-&lt;p&gt;Bài tham khảo từ link:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer&#34;&gt;http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;sử-dụng-auto&#34;&gt;Sử dụng auto&lt;/h1&gt;
-
-&lt;p&gt;Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue&lt;/p&gt;
-
-&lt;p&gt;VD:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;auto a = 1; // is equal with int a = 1
-auto a = 1f // is equal with float a = 1.f
-auto a = new foo(); // is equal with *a = new foo();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.
-VD: &amp;gt; auto a; // error&lt;/p&gt;
-
-&lt;h1 id=&#34;sử-dụng-nullptr&#34;&gt;Sử dụng nullptr&lt;/h1&gt;
-
-&lt;p&gt;Để gán giá trị null cho con trỏ&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int *p = nullptr;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;foreach&#34;&gt;ForEach&lt;/h1&gt;
-
-&lt;p&gt;Duyệt tất cả các phần tử của mảng
-VD:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int arr[5] = {1, 2, 3, 4, 5};
-for( auto &amp;amp;a : arr)
-{
-    cout&amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl; // in ra màn hình 1, 2, 3, 4, 5
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;override-và-final&#34;&gt;Override và final&lt;/h1&gt;
-
-&lt;p&gt;Cái này là một định danh.
-Giả sử với vd sau:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class B
-{
-public:
-    virtual void f(short)
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;B::f&amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-};
-
-class D : public B
-{
-public:
-    virtual void f(int)
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;D::f&amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Trường hợp này, function f ở class D là overload (vì param truyền vào là khác kiểu nhau).
-Hoặc với vd khác:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class B
-{
-public:
-    virtual void f(int) const
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;B::f &amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-};
-
-class D : public B
-{
-public:
-    virtual void f(int)
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;D::f&amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ở trường hợp này function f ở class D vẫn là overload chứ ko phải là override. Để tránh gây nhầm lẫn, C++11 thêm định danh là override và final giống như trong java. 2 từ khóa này có thể đi liền nhau &amp;ldquo;override final&amp;rdquo;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class B
-{
-public:
-    virtual void f(short)
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;B::f&amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-    void g(short)
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;B::g&amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-};
-
-class D : public B
-{
-public:
-    virtual void f(int) override
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;D::f&amp;quot; &amp;lt;&amp;lt; std::endl;
-    }
-    virtual void g(int) override
-    {
-        std::cout &amp;lt;&amp;lt; &amp;quot;D::g&amp;quot; &amp;lt;&amp;lt; std::endl;   // error
-    }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Lưu ý: override chỉ có tác dụng nếu function ở class base là virtual.&lt;/p&gt;
-
-&lt;h1 id=&#34;enum-class&#34;&gt;Enum class&lt;/h1&gt;
-
-&lt;p&gt;VD có 2 enum&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;enum TV { on, off};
-enum LAMP { on, off};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Cả 2 enum này đều có key giống nhau, dẫn đến compiler không phân biệt
-được. Cách giải quyết ở phiên bản cũ là dùng namespace, tuy nhiên ở
-C++11 cái này đơn giản hơn bằng cách sử dụng enum class như sau:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;enum class TV
-{
-    on, off
-};
-enum class LAMP
-{
-    on, off
-};
-
-TV::on;
-LAMP::on; // no error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;lambda&#34;&gt;Lambda&lt;/h1&gt;
-
-&lt;p&gt;Đây là điểm mới mà C++03 không có&lt;/p&gt;
-
-&lt;p&gt;Cấu trúc nó là &lt;em&gt;capture-list&lt;/em&gt; { body };&lt;/p&gt;
-
-&lt;p&gt;VD:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int a = 10;
-auto func1 = [=]()
-{
-    int x = a;
-    std::cout&amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
-    //a += 10; // error
-};
-auto func2 = [&amp;amp;]()
-{
-    a += 10;
-};
-
-func1(); // x = 10;
-func2(); // a = 20;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;[&amp;amp;] sẽ giúp complier hiểu được là biến a được khai báo
-bên ngoài lambda function sẽ được tham chiếu vào trong lambda function.
-Còn [=] có nghĩa là copy giá trị của a vào trong hàm lambda, tuy nhiên
-không thể thay đổi giá trị của a. (chỉ có tác dụng copy).&lt;/p&gt;
-</description>
+      <description>Bài tham khảo từ link:
+ http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
+ Sử dụng auto Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
+VD:
+auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.</description>
     </item>
     
     <item>
@@ -240,91 +41,10 @@ không thể thay đổi giá trị của a. (chỉ có tác dụng copy).&lt;/p
       <pubDate>Mon, 05 Sep 2016 15:51:57 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/</guid>
-      <description>
-
-&lt;p&gt;Hôm nọ đọc trên DNH có bài hướng dẫn về bit field&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.wikiwand.com/en/Bit_field&#34;&gt;Daynhauhoc&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise&lt;/p&gt;
-
-&lt;h1 id=&#34;bitwise&#34;&gt;Bitwise&lt;/h1&gt;
-
-&lt;p&gt;Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa. Giả sử bạn làm game, nhân vật của bạn có thể có nhiều hơn một thuộc tính như CHAO, NORLMAL, MAGIC&amp;hellip;Bạn sẽ tạo mấy biến để lưu trữ thuộc tính nhân vật?&lt;/p&gt;
-
-&lt;p&gt;Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
-Giống như cách define sau&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#define KEY_UP       (1 &amp;lt;&amp;lt; 0)  // 000001
-#define KEY_RIGHT    (1 &amp;lt;&amp;lt; 1)  // 000010
-#define KEY_DOWN     (1 &amp;lt;&amp;lt; 2)  // 000100
-#define KEY_LEFT     (1 &amp;lt;&amp;lt; 3)  // 001000
-#define KEY_BUTTON1  (1 &amp;lt;&amp;lt; 4)  // 010000
-#define KEY_BUTTON2  (1 &amp;lt;&amp;lt; 5)  // 100000
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;enum FLAG
-{
-         UNKNOW    = 0, 
-         NORMAL    = 1 &amp;lt;&amp;lt; 0,
-         MAGIC     = 1 &amp;lt;&amp;lt; 1,
-         CHAO      = 1 &amp;lt;&amp;lt; 2
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hàm main&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int main(int argc, const char * argv[])
-{
-         FLAG flag = MAGIC | CHAO;
-   
-         if( flag &amp;amp; NORMAL)
-         {
-         	cout&amp;lt;&amp;lt;&amp;quot;Normal&amp;quot;&amp;lt;&amp;lt;endl;
-         }   
-   
-         if( flag &amp;amp; CHAO)
-         {
-   		cout&amp;lt;&amp;lt;&amp;quot;Chao&amp;quot;&amp;lt;&amp;lt;endl;
-         }
-   
-         return 0;
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Tuy nhiên nếu bạn chạy ngay code này thì sẽ lỗi. Ta cần phải overload toán tử | (OR)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;inline FLAG operator|(FLAG a, FLAG b)
-{
-    return static_cast&amp;lt;FLAG&amp;gt; ( static_cast&amp;lt;int&amp;gt;(a) | 
-                               static_cast&amp;lt;int&amp;gt;(b));
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
-Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MAGIC             00000010 
-CHAO              00000100 
-MAGIC | CHAO      00000110
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Khi ta thực hiện phép toán &amp;amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MAGIC | CHAO      	00000110 
-CHAO              	00000100
-CHAO &amp;amp; (MAGIC | CHAO)   00000100
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
-Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp;amp; với cờ đó.&lt;/p&gt;
-
-&lt;p&gt;P/S: Lập trình ios thì các bạn sẽ thấy cái này khá nhiều.&lt;/p&gt;
-</description>
+      <description>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
+ Daynhauhoc
+ Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
+Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa.</description>
     </item>
     
   </channel>

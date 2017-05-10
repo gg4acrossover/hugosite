@@ -8,7 +8,9 @@
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
     <lastBuildDate>Mon, 05 Sep 2016 16:36:42 +0700</lastBuildDate>
-    <atom:link href="https://gg4acrossover.github.io/hugosite/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Code sạch, code khô thoáng</title>
@@ -16,119 +18,9 @@
       <pubDate>Mon, 05 Sep 2016 16:36:42 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/</guid>
-      <description>
-
-&lt;p&gt;Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄&lt;/p&gt;
-
-&lt;h3 id=&#34;sử-dụng-immutable&#34;&gt;Sử dụng immutable&lt;/h3&gt;
-
-&lt;p&gt;Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	NSArray *pFruit = @[@&amp;quot;orange&amp;quot;, @&amp;quot;apple&amp;quot;, @&amp;quot;lemon&amp;quot;, @&amp;quot;strawberry&amp;quot;];
-	NSDictionary *pDict = @{ @&amp;quot;name&amp;quot; : @&amp;quot;Tom&amp;quot;,  @&amp;quot;age&amp;quot; : @18};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Thay vì viết:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	NSArray *pFruit = [NSArray arrayWithObjects:@&amp;quot;orange&amp;quot;, @&amp;quot;apple&amp;quot;, @&amp;quot;lemon&amp;quot;, @&amp;quot;strawberry&amp;quot;, nil];
-	NSDictionary *pDict2 = [NSDictionary dictionaryWithObjectsAndKeys:@&amp;quot;value1&amp;quot;,@&amp;quot;key1&amp;quot;,@&amp;quot;value2&amp;quot;, @&amp;quot;key2&amp;quot;, nil];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Như thế code nhìn trông gọn và dễ đọc hơn, đối với các biến dạng số hoặc bool được đưa vào trong dictionary để gửi lên server ta cũng nên làm như vậy.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	NSNumber *pIsNew = @YES;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Thay vì&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	NSNumber *pIsNew = [NSNumber numberWithBool:YES];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Sử dụng category&lt;/p&gt;
-
-&lt;p&gt;Frame được sử dụng nhiều khi viết code iOS, ta có thể tạo ra một file chứa các c function chuyên làm việc với frame, hay tạo ra một macro. Ví dụ như muốn lấy originX của 1 uiview:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	CGFloat ORIGIN_X( CGRect rec)
-	{
-            return rec.origin.x;
-	}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hoặc ngắn hơn với macro&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#define posX(v)                  v.frame.origin.x
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Tuy nhiên sử dụng category cũng là một lựa chọn thời thượng. Giả sử bạn có thể lấy originX bằng cách sau:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CGFloat originX = [PopUpView getX];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Khá ngắn gọn, clear, dễ chỉnh sửa. Category còn đặc biệt với những ai hay gửi nhận dữ liệu lên server, đôi khi dictionary sẽ trả về một cái object null. Việc check null ở nhiều chỗ khác nhau khá là tốn thời gian nếu cứ phải viết đi viết lại như thế này&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;if(dict[@&amp;quot;key&amp;quot;] &amp;amp;&amp;amp; ![dict[@&amp;quot;key&amp;quot;] isEqual: [NSNull null]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ta có thể đưa vào category theo cách sau&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;- (id)safeValueForKey:(NSString *)key {
-    id value = [self valueForKey:key];
-     
-    if (value &amp;amp;&amp;amp; ![value isEqual: [NSNull null]]) {
-        return value;
-    }
-     
-    return nil;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Sau đó ở tất cả mọi nơi chỉ cần gọi&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;NSString *pValue = [dict safeValueForKey: @&amp;quot;key&amp;quot;];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;sử-dụng-block&#34;&gt;Sử dụng block&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;UIView *pCircle2 = ({
-	UIView *pView = [[UIView alloc]
-					initWithFrame:CGRectMake(80.0f, 80.0f, 90.0f, 90.0f)];
-	pView.backgroundColor = [UIColor redColor];
-	CAShapeLayer *shape = [CAShapeLayer layer];
-	CGFloat r = CGRectGetWidth(pView.frame)*0.5f;
-	CGPoint center = CGPointMake( r, r);
-	UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center
-							    radius:r
-							startAngle:0
-							  endAngle:2*M_PI
-							 clockwise:YES];
-	shape.path = path.CGPath;
-	pView.layer.mask = shape;
-	pView;
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Gộp các đoạn code sử dụng chung cho một mục đích vào trong 1 block, với cách này thì giá trị return tương ứng với dòng cuối trong block.&lt;/p&gt;
-
-&lt;h3 id=&#34;cách-đặt-tên&#34;&gt;Cách đặt tên&lt;/h3&gt;
-
-&lt;p&gt;Nhiều tài liệu của apple cũng có nói về cách đặt tên. Mọi người hãy chú ý delegate của uitableview hay uicollectionview sẽ thấy có nhiều điểm tương đồng trong cách đặt tên hàm.
-Ví dụ guide của apple &lt;a href=&#34;https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF&#34;&gt;datten&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Từ cách đặt tên trên ta có thể tạo ra enum như sau&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;typedef NS_ENUM(NSUInteger, GGAnimationViewType) {
-    GGAnimationViewTypeFadeIn,
-    GGAnimationViewTypeFadeOut,
-    GGAnimationViewTypeEaseIn,
-    GGAnimationViewTypeEaseOut
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Công thức chung là [tên class][tên enum], cụ thể như ví dụ trên [GGAnimationView][Type].
-Các giá trị enum [tên class][tên enum][các giá trị]. Các giá trị FadeIn, FadeOut,&amp;hellip;.&lt;/p&gt;
-
-&lt;p&gt;Tóm lại là code càng ngắn gọn càng dễ hiểu, trừ cách đặt tên biến ra :v.&lt;/p&gt;
-</description>
+      <description>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄
+Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:
+	NSArray *pFruit = @[@&amp;quot;orange&amp;quot;, @&amp;quot;apple&amp;quot;, @&amp;quot;lemon&amp;quot;, @&amp;quot;strawberry&amp;quot;]; NSDictionary *pDict = @{ @&amp;quot;name&amp;quot; : @&amp;quot;Tom&amp;quot;, @&amp;quot;age&amp;quot; : @18};  Thay vì viết:</description>
     </item>
     
     <item>
@@ -137,121 +29,8 @@ Các giá trị enum [tên class][tên enum][các giá trị]. Các giá trị F
       <pubDate>Mon, 05 Sep 2016 16:27:24 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/</guid>
-      <description>
-
-&lt;p&gt;Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).&lt;/p&gt;
-
-&lt;h3 id=&#34;tạo-function-1-param&#34;&gt;Tạo function 1 param&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func sayHello(name: String) -&amp;gt; String 
-{
-    return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot;    
-}
-
-print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;func-có-nhiều-hơn-1-param&#34;&gt;Func có nhiều hơn 1 param&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String
-{
-    return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName
-}
-
-print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
-Ta có thể làm rõ nghĩa của cả param đầu tiên bằng cách cho thêm external name. Mỗi khi thêm external name thì ta bắt buộc phải sử dụng nó khi gọi hàm.
-Ở ví dụ dưới đây external name là &lt;em&gt;to&lt;/em&gt; và &lt;em&gt;and&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func sayHello(to person: String, and anotherPerson: String) -&amp;gt; String 
-{
-    return &amp;quot;Hello \(person) and \(anotherPerson)!&amp;quot;
-}
-print(sayHello(to: &amp;quot;Bill&amp;quot;, and: &amp;quot;Ted&amp;quot;)) // Hello Bill and Ted!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func someFunction(firstParameterName: Int, _ secondParameterName: Int) 
-{
-    // function body goes here
-    // firstParameterName and secondParameterName refer to
-    // the argument values for the first and second parameters
-}
-someFunction(1, 2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết
-&amp;gt; someFunction(1, secondParameterName:2)&lt;/p&gt;
-
-&lt;h3 id=&#34;func-với-param-dạng&#34;&gt;Func với param dạng &amp;hellip;&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func arithmeticMean(numbers: Double...) -&amp;gt; Double {
-    var total: Double = 0
-    for number in numbers {
-        total += number
-    }
-    return total / Double(numbers.count)
-}
-arithmeticMean(1, 2, 3, 4, 5) // 3.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
-Lưu ý: tất cả những param truyền vào phải cùng một kiểu dữ liệu.&lt;/p&gt;
-
-&lt;h3 id=&#34;thay-đổi-giá-trị-param-trong-func&#34;&gt;Thay đổi giá trị param trong func&lt;/h3&gt;
-
-&lt;p&gt;Theo mặc định, param truyền vào sẽ là const, tức là ta không thể thay đổi giá trị của nó. Để thay đổi có hai cách, cách đầu tiên là sử dụng keyword var như ở ví dụ sau&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var minMaxValue = minMax([2,1,5,9,8])!;
-print(minMaxValue.1); // max
-
-let minAndMax = minMax([]);
-print(minAndMax?.min);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;func alignRight(var string: String, totalLength: Int, pad: Character) -&amp;gt; String {
-    let amountToPad = totalLength - string.characters.count
-    if amountToPad &amp;lt; 1 {
-        return string
-    }
-    let padString = String(pad)
-    for _ in 1...amountToPad {
-        string = padString + string
-    }
-    return string
-}
-var originalString = &amp;quot;hello&amp;quot;
-var paddedString = alignRight(originalString, totalLength: 10, pad: &amp;quot;-&amp;quot;)
-print(originalString, terminator:&amp;quot;&amp;quot;) // hello
-print(paddedString, terminator:&amp;quot;&amp;quot;) // -----hello
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
-Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài func alignRight sẽ không bị thay đổi theo. Vậy để thay đổi giá trị của originalString ta phải làm sao? Ta sử dụng cách thứ hai là In-Out param.&lt;/p&gt;
-
-&lt;h3 id=&#34;in-out-param&#34;&gt;In-Out param&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func swapTwoInts(inout a: Int, inout _ b: Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
-var someInt = 3
-var anotherInt = 107
-swapTwoInts(&amp;amp;someInt, &amp;amp;anotherInt)
-print(&amp;quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&amp;quot;)
-// prints &amp;quot;someInt is now 107, and anotherInt is now 3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Khi gọi những hàm có keyword inout ta phải thêm &amp;amp; đằng trước tên biến.&lt;/p&gt;
-
-&lt;p&gt;Đây là những điều cơ bản nhất khi triển khai 1 func trong swift. Để đi sâu hơn, bạn nên tham khảo tài liệu của apple.&lt;/p&gt;
-
-&lt;p&gt;P/S: những ví dụ trên tham khảo trong swift 2.0 programming của apple. Tài liệu này mới cập nhật, hình như chưa có bản pdf. :stuck_out_tongue:&lt;/p&gt;
-</description>
+      <description>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
     </item>
     
   </channel>

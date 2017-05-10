@@ -7,8 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Mon, 05 Sep 2016 16:27:24 +0700</lastBuildDate>
-    <atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 May 2017 11:25:40 +0700</lastBuildDate>
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tạo progressHUD đơn giản</title>
+      <link>https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/</link>
+      <pubDate>Wed, 10 May 2017 11:25:40 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/</guid>
+      <description>Giới thiệu ProgressHUD là thành phần không thể thiếu trong các app mobile, thường được sử dụng mỗi khi load data từ server. Mình hay dùng tool hỗ trợ, tỉ như thằng SVProgressHUD hay thằng MBProgressHUD. Tuy nhiên thi thoảng tự sướng chút cho nó yomost 😄. Ví dụ này mình sẽ viết bằng swift 3
+Ý tưởng Mình sẽ tạo 1 window với rootViewController có nhiệm vụ làm container cho thằng HUD.</description>
+    </item>
     
     <item>
       <title>Tạo function trong swift</title>
@@ -16,121 +28,8 @@
       <pubDate>Mon, 05 Sep 2016 16:27:24 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/</guid>
-      <description>
-
-&lt;p&gt;Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).&lt;/p&gt;
-
-&lt;h3 id=&#34;tạo-function-1-param&#34;&gt;Tạo function 1 param&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func sayHello(name: String) -&amp;gt; String 
-{
-    return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot;    
-}
-
-print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;func-có-nhiều-hơn-1-param&#34;&gt;Func có nhiều hơn 1 param&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String
-{
-    return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName
-}
-
-print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
-Ta có thể làm rõ nghĩa của cả param đầu tiên bằng cách cho thêm external name. Mỗi khi thêm external name thì ta bắt buộc phải sử dụng nó khi gọi hàm.
-Ở ví dụ dưới đây external name là &lt;em&gt;to&lt;/em&gt; và &lt;em&gt;and&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func sayHello(to person: String, and anotherPerson: String) -&amp;gt; String 
-{
-    return &amp;quot;Hello \(person) and \(anotherPerson)!&amp;quot;
-}
-print(sayHello(to: &amp;quot;Bill&amp;quot;, and: &amp;quot;Ted&amp;quot;)) // Hello Bill and Ted!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func someFunction(firstParameterName: Int, _ secondParameterName: Int) 
-{
-    // function body goes here
-    // firstParameterName and secondParameterName refer to
-    // the argument values for the first and second parameters
-}
-someFunction(1, 2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết
-&amp;gt; someFunction(1, secondParameterName:2)&lt;/p&gt;
-
-&lt;h3 id=&#34;func-với-param-dạng&#34;&gt;Func với param dạng &amp;hellip;&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func arithmeticMean(numbers: Double...) -&amp;gt; Double {
-    var total: Double = 0
-    for number in numbers {
-        total += number
-    }
-    return total / Double(numbers.count)
-}
-arithmeticMean(1, 2, 3, 4, 5) // 3.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
-Lưu ý: tất cả những param truyền vào phải cùng một kiểu dữ liệu.&lt;/p&gt;
-
-&lt;h3 id=&#34;thay-đổi-giá-trị-param-trong-func&#34;&gt;Thay đổi giá trị param trong func&lt;/h3&gt;
-
-&lt;p&gt;Theo mặc định, param truyền vào sẽ là const, tức là ta không thể thay đổi giá trị của nó. Để thay đổi có hai cách, cách đầu tiên là sử dụng keyword var như ở ví dụ sau&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var minMaxValue = minMax([2,1,5,9,8])!;
-print(minMaxValue.1); // max
-
-let minAndMax = minMax([]);
-print(minAndMax?.min);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;func alignRight(var string: String, totalLength: Int, pad: Character) -&amp;gt; String {
-    let amountToPad = totalLength - string.characters.count
-    if amountToPad &amp;lt; 1 {
-        return string
-    }
-    let padString = String(pad)
-    for _ in 1...amountToPad {
-        string = padString + string
-    }
-    return string
-}
-var originalString = &amp;quot;hello&amp;quot;
-var paddedString = alignRight(originalString, totalLength: 10, pad: &amp;quot;-&amp;quot;)
-print(originalString, terminator:&amp;quot;&amp;quot;) // hello
-print(paddedString, terminator:&amp;quot;&amp;quot;) // -----hello
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
-Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài func alignRight sẽ không bị thay đổi theo. Vậy để thay đổi giá trị của originalString ta phải làm sao? Ta sử dụng cách thứ hai là In-Out param.&lt;/p&gt;
-
-&lt;h3 id=&#34;in-out-param&#34;&gt;In-Out param&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;func swapTwoInts(inout a: Int, inout _ b: Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
-var someInt = 3
-var anotherInt = 107
-swapTwoInts(&amp;amp;someInt, &amp;amp;anotherInt)
-print(&amp;quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&amp;quot;)
-// prints &amp;quot;someInt is now 107, and anotherInt is now 3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Khi gọi những hàm có keyword inout ta phải thêm &amp;amp; đằng trước tên biến.&lt;/p&gt;
-
-&lt;p&gt;Đây là những điều cơ bản nhất khi triển khai 1 func trong swift. Để đi sâu hơn, bạn nên tham khảo tài liệu của apple.&lt;/p&gt;
-
-&lt;p&gt;P/S: những ví dụ trên tham khảo trong swift 2.0 programming của apple. Tài liệu này mới cập nhật, hình như chưa có bản pdf. :stuck_out_tongue:&lt;/p&gt;
-</description>
+      <description>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
     </item>
     
   </channel>
