@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Wed, 10 May 2017 11:25:40 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 29 May 2017 15:11:07 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tạo APIClient với swift 3</title>
+      <link>https://gg4acrossover.github.io/hugosite/tao-progress-hud-don-gian/</link>
+      <pubDate>Mon, 29 May 2017 15:11:07 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tao-progress-hud-don-gian/</guid>
+      <description>1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó).</description>
+    </item>
     
     <item>
       <title>Tạo progressHUD đơn giản</title>
