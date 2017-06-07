@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/slim-tableview/</loc>
+    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/</loc>
     <lastmod>2017-05-29T15:11:07+07:00</lastmod>
   </url>
@@ -75,7 +80,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,7 +92,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
-    <lastmod>2016-09-05T16:36:42+07:00</lastmod>
+    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -99,13 +104,19 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
     <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift3/</loc>
+    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="vi-EN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/agate.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99127158-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Slim tableview"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@viet142"/>
+
+
+
+  	<meta property="og:title" content="Slim tableview &middot; GG4aCrossover" />
+  	<meta property="og:site_name" content="GG4aCrossover" />
+  	<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/slim-tableview/" />
+
+    
+        
+            <meta property="og:image" content="/hugosite/images/cover.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-06-07T16:14:26&#43;07:00" />
+
+    
+    <meta property="article:tag" content="ios" />
+    
+    <meta property="article:tag" content="swift3" />
+    
+    
+
+    <title>Slim tableview &middot; GG4aCrossover</title>
+
+    
+    <meta name="description" content="1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
+ e = m" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/hugosite/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/hugosite/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/hugosite/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/hugosite/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="GG4aCrossover" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.20.7" />
+
+    <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/slim-tableview/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": http://gg4acrossover.github.io/,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Coder nhân dân
+        
+    },
+    "headline": Slim tableview,
+    "name": Slim tableview,
+    "wordCount": 568,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://gg4acrossover.github.io/hugosite/slim-tableview/,
+    "datePublished": 2017-06-07T16:14Z,
+    "dateModified": 2017-06-07T16:14Z,
+    
+    "keywords": ios, swift3,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://gg4acrossover.github.io/hugosite/slim-tableview/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/viet142">Twitter</a>
+            </li>
+        
+            <h4>Social</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/gg4acrossover">Github</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/about/">About me</a>
+            </li>
+        
+            <h4>My Site</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/">Home</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/hugosite/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Slim tableview</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-06-07T16:14:26&#43;07:00">
+            Jun 7, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/ios/">#ios</a></span>
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/swift3/">#swift3</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h3 id="1-tản-mạn">1.Tản mạn</h3>
+
+<p>Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.</p>
+
+<blockquote>
+<p>e = mc2</p>
+</blockquote>
+
+<p><img src="/hugosite/images/note/emc_1x.png" alt="image2" /></p>
+
+<p>Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra. Newton khi đưa ra định luật đó, chắc không ngờ rằng nó có thể dịu dàng đúng (theo một cách mới) với cả ngành IT này. Thế nên viết ngắn đi mà vẫn dễ hiểu luôn luôn được những lười biếng coder coi là tôn chỉ.</p>
+
+<p>Khi sử dụng <em>tableview</em> chúng ta luôn đi theo một format chung, thậm chí gõ đến thuộc lòng, không cần <em>autocomplete</em>.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">self.listTbl.</span><span style="color: #66d9ef">register</span><span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">UINib(</span> <span style="color: #f8f8f2">nibName:</span> <span style="color: #f8f8f2">String(describing:</span> <span style="color: #f8f8f2">GGArtistryCell.self),</span> <span style="color: #f8f8f2">bundle:</span> <span style="color: #f8f8f2">nil),</span> 
+	<span style="color: #f8f8f2">forCellReuseIdentifier:</span> <span style="color: #e6db74">&quot;cell&quot;</span><span style="color: #f8f8f2">)</span>
+</pre></div>
+
+
+<p>Cả những khi dequeue nữa</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">cell</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tableView.dequeueReusableCell(withIdentifier:</span> <span style="color: #e6db74">&quot;cell&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">for</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">indexPath)</span>
+</pre></div>
+
+
+<p>Những đoạn code này hơi dài, vậy nên chúng ta, những lười biếng coder, nên làm ngắn nó đi tí.
+Mình sẽ sử dụng <strong>protocol</strong> và <strong>generics</strong> để việc đăng kí và dequeue cell ngắn gọn hơn.</p>
+
+<h3 id="2-make-up">2. Make up</h3>
+
+<p>Làm việc với objc, mình hay tạo baseCell có 2 hàm <em>getNib</em> và <em>getNibName</em> (cho identifier) để việc đăng kí cell trở nên ngắn gọn hơn. Tuy nhiên ở swift, mình sẽ sử dụng <strong>protocol</strong>.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">/**</span>
+<span style="color: #75715e">    cell protocol for uicollectionview, uitableview</span>
+<span style="color: #75715e"> */</span>
+<span style="color: #f8f8f2">protocol</span> <span style="color: #f8f8f2">GGBaseCellProtocol</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">getNibName()</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">String</span> <span style="color: #75715e">// return nibname of cell</span>
+    <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">getNib()</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">UINib</span> <span style="color: #75715e">// return nib of cell</span>
+<span style="color: #f8f8f2">}</span>
+
+
+<span style="color: #75715e">/**</span>
+<span style="color: #75715e">    default implement for cell</span>
+<span style="color: #75715e"> */</span>
+<span style="color: #f8f8f2">extension</span> <span style="color: #f8f8f2">GGBaseCellProtocol</span> <span style="color: #f8f8f2">where</span> <span style="color: #f8f8f2">Self</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">UIView</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #75715e">/// collectionView get nibname</span>
+    <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">getNibName()</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">String(describing:</span> <span style="color: #f8f8f2">self)</span>
+    <span style="color: #f8f8f2">}</span>
+    
+    <span style="color: #75715e">/// collectionView get nib</span>
+    <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">getNib()</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">UINib</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">UINib.init(nibName:</span> <span style="color: #f8f8f2">self.getNibName(),</span> <span style="color: #f8f8f2">bundle:</span> <span style="color: #f8f8f2">nil)</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>Tạo extension cho protocol để ta không phải khai báo đi, khai báo lại 2 hàm <em>getNib</em> và <em>getNibName</em> ở mỗi class implement lại protocol này. Khi đó ta chỉ cần cho custom cell của mình kế thừa lại protocol. Khá là linh động. Code lúc đó sẽ ngắn đi chút ít nhưng nhìn clear hơn.</p>
+
+<p>Ví dụ như thế này</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">self.listTbl.</span><span style="color: #66d9ef">register</span><span style="color: #f8f8f2">(GGArtistryCell.getNib(),</span> 
+	<span style="color: #f8f8f2">forCellReuseIdentifier:</span> <span style="color: #f8f8f2">GGArtistryCell.getNibName())</span>
+</pre></div>
+
+
+<p>Khá là đẹp rồi phải không? tuy nhiên ta có thể code ngắn hơn nữa bằng cách sử dụng <strong>generics</strong>.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">extension</span> <span style="color: #f8f8f2">UITableView</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">on_register</span><span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">GGBaseCellProtocol</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">(type:</span> <span style="color: #f8f8f2">T.Type)</span>  <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">self.</span><span style="color: #66d9ef">register</span><span style="color: #f8f8f2">(T.getNib(),</span> <span style="color: #f8f8f2">forCellReuseIdentifier:</span> <span style="color: #f8f8f2">T.getNibName())</span>
+    <span style="color: #f8f8f2">}</span>
+    
+    <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">on_dequeue</span><span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">GGBaseCellProtocol</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">(idxPath</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">IndexPath)</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">guard</span> <span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">cell</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self.dequeueReusableCell(withIdentifier:</span> <span style="color: #f8f8f2">T.getNibName(),</span> <span style="color: #66d9ef">for</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">idxPath)</span> <span style="color: #f8f8f2">as</span><span style="color: #f92672">?</span> <span style="color: #f8f8f2">T</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">fatalError(</span><span style="color: #e6db74">&quot;couldnt dequeue cell with identifier \(T.getNibName())&quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">}</span>
+        
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">cell</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>Để cho gọn, mình tạo extension cho UITableView, với 2 hàm <em>on_register</em> và <em>on_dequeue</em> làm 2 việc mà ai cũng biết là việc gì rồi.</p>
+
+<p>Khi đó bước đăng kí cell sẽ ngắn đi như sau:</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">self.listTbl.on_register(type:</span> <span style="color: #f8f8f2">GGArtistryCell.self)</span>
+</pre></div>
+
+
+<p>So với trước thì ngắn gọn đi khá nhiều, coder không phải viết dài dòng nữa.</p>
+
+<p>Tiếp đến là dequeue cũng ngắn không kém phần</p>
+
+<p>Thay vì:</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">cell</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self.listTbl.dequeueReusableCell(withIdentifier:</span> <span style="color: #f8f8f2">GGArtistryCell.getNibName(),</span> <span style="color: #66d9ef">for</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">indexPath)</span> <span style="color: #f8f8f2">as</span><span style="color: #f92672">?</span> <span style="color: #f8f8f2">GGArtistryCell</span> <span style="color: #f8f8f2">{</span>
+	<span style="color: #75715e">// your code</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>Ta chỉ cần</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">cell</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">GGArtistryCell</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self.listTbl.on_dequeue(idxPath:</span> <span style="color: #f8f8f2">indexPath)</span>
+</pre></div>
+
+
+<p>Bây giờ mình đã có thể lười đi tí 😄</p>
+
+<p>Ta có thể áp dụng phương pháp này cho cả collectionView</p>
+
+<h3 id="3-kết">3. Kết</h3>
+
+<p>Lời cuối sẽ là một <a href="https://twitter.com/realbadiostips/status/867791220323500032">siêu tip</a> để code ngắn gọn</p>
+
+<blockquote>
+<p>MVC = Most Viable Cocoapod.</p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://gg4acrossover.github.io/hugosite/">GG4aCrossover</a></h4>
+  
+  <p>Coder nhân dân</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">HaNoi, VietNam</span>
+    <span class="author-link icon-link"><a href="http://gg4acrossover.github.io/">http://gg4acrossover.github.io/</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Slim%20tableview&nbsp;-&nbsp;GG4aCrossover&amp;url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fslim-tableview%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fslim-tableview%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fslim-tableview%2f&amp;description=Slim%20tableview"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fslim-tableview%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'gg4acrossover';
+  var disqus_url = 'https:\/\/gg4acrossover.github.io\/hugosite\/slim-tableview\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/hugosite/tao-api-client-swift-3/">
+          <section class="post">
+              <h2>Tạo APIClient với swift 3</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">GG4aCrossover</a> All rights reserved - 2016</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/hugosite/js/jquery.js"></script>
+    <script type="text/javascript" src="/hugosite/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/hugosite/js/index.js"></script>
+    
+</body>
+</html>
+

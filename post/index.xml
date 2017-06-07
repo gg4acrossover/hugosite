@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Mon, 29 May 2017 15:11:07 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 07 Jun 2017 16:14:26 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Slim tableview</title>
+      <link>https://gg4acrossover.github.io/hugosite/slim-tableview/</link>
+      <pubDate>Wed, 07 Jun 2017 16:14:26 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/slim-tableview/</guid>
+      <description>1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
+ e = mc2
+ Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra.</description>
+    </item>
     
     <item>
       <title>Tạo APIClient với swift 3</title>
