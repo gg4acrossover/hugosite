@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/filter-sort-in-action/</loc>
+    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
+  </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/slim-tableview/</loc>
@@ -80,7 +86,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
+    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -92,7 +98,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
-    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
+    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -104,13 +110,19 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
+    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
     <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift-3/</loc>
+    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
     <priority>0</priority>
   </url>
   
