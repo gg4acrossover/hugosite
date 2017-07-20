@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi-EN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/agate.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99127158-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Cách tạo query đơn giản"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@viet142"/>
+
+
+
+  	<meta property="og:title" content="Cách tạo query đơn giản &middot; GG4aCrossover" />
+  	<meta property="og:site_name" content="GG4aCrossover" />
+  	<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/" />
+
+    
+        
+            <meta property="og:image" content="/hugosite/images/cover.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-07-20T10:43:13&#43;07:00" />
+
+    
+    <meta property="article:tag" content="swift3" />
+    
+    <meta property="article:tag" content="ios" />
+    
+    
+
+    <title>Cách tạo query đơn giản &middot; GG4aCrossover</title>
+
+    
+    <meta name="description" content="Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
+Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng t" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/hugosite/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/hugosite/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/hugosite/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/hugosite/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="GG4aCrossover" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.20.7" />
+
+    <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": http://gg4acrossover.github.io/,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Coder nhân dân
+        
+    },
+    "headline": Cách tạo query đơn giản,
+    "name": Cách tạo query đơn giản,
+    "wordCount": 455,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/,
+    "datePublished": 2017-07-20T10:43Z,
+    "dateModified": 2017-07-20T10:43Z,
+    
+    "keywords": swift3, ios,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/viet142">Twitter</a>
+            </li>
+        
+            <h4>Social</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/gg4acrossover">Github</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/about/">About me</a>
+            </li>
+        
+            <h4>My Site</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/">Home</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/hugosite/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Cách tạo query đơn giản</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-07-20T10:43:13&#43;07:00">
+            Jul 20, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/swift3/">#swift3</a></span>
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/ios/">#ios</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.</p>
+
+<p>Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm. Dưới đây mình sẽ trình bày cách mình tạo query builder bằng enum và reduce trong swift.</p>
+
+<h3 id="enum">Enum</h3>
+
+<p>Enum dùng khá nhiều trong swift, với việc tạo 1 chuỗi query thì enum là lựa chọn không hề tồi.</p>
+
+<p>Giả sử ta có các query filter, fields, sort, hints,&hellip;ta có thể tạo enum với mỗi case là 1 query mà ta mong muốn như sau</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">ONNodeQuery</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">filterSport</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;filter={</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">Title</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">:</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">SPORTS</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">}&quot;</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">fieldsParentChild</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;fields=[</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">Title</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">,</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">parent</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">, </span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">children</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">,</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">descendants</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">]&quot;</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">sortTitle</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;sort=[[</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">Title</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">,1]]&quot;</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">hints</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;hints=true&amp;hintLevel=%@&quot;</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">filterAncestors</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">ancestors</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">:{</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">$in</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">: [ </span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">%@</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74"> ]}&quot;</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>Với case <em>hint</em> hoặc <em>filterAncestors</em> ta cần truyền param từ bên ngoài theo string format qua <em>%@</em></p>
+
+<p>Mình tạo tiếp enum khác để truyền param vào những query nói trên và 1 struct helper với nhiệm vụ nối các câu lệnh query</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">ONNodeQueryParam</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">query(ONNodeQuery)</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">addParam(str</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">String)</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">addAnd</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">struct</span> <span style="color: #f8f8f2">ONMakeQuery</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">var</span> <span style="color: #f8f8f2">toDrawQuery</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">String</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&quot;</span>
+    
+    <span style="color: #f8f8f2">mutating</span> <span style="color: #f8f8f2">func</span> <span style="color: #f8f8f2">handler(cmd</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">ONNodeQueryParam)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">switch</span> <span style="color: #f8f8f2">cmd</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.query(let</span> <span style="color: #f8f8f2">query)</span><span style="color: #f92672">:</span>
+            <span style="color: #f8f8f2">self.toDrawQuery</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">query.rawValue</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.addParam(let</span> <span style="color: #f8f8f2">str)</span><span style="color: #f92672">:</span>
+            <span style="color: #f8f8f2">self.toDrawQuery</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">String(format:</span> <span style="color: #f8f8f2">self.toDrawQuery,</span> <span style="color: #f8f8f2">str)</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.addAnd:</span>
+            <span style="color: #f8f8f2">self.toDrawQuery</span> <span style="color: #f92672">+=</span> <span style="color: #e6db74">&quot;&amp;&quot;</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+</p>
+
+<p>Biến toDrawQuery gán giá trị default để ko phải tạo init method.</p>
+
+<p>Ok, hiện tại mình đã đủ tool để ghép nối các query thành 1 chuỗi</p>
+
+<p>Ta tạo 1 mảng query như sau</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">query</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[ONNodeQueryParam]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[.query(.filterSport),</span> <span style="color: #f8f8f2">.addAnd,</span>
+                                  <span style="color: #f8f8f2">.query(.fieldsParentChild),</span> <span style="color: #f8f8f2">.addAnd,</span>
+                                  <span style="color: #f8f8f2">.query(.sortTitle),</span> <span style="color: #f8f8f2">.addAnd,</span>
+                                  <span style="color: #f8f8f2">.query(.hints),</span> <span style="color: #f8f8f2">.addParam(str:</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f8f8f2">)]</span>
+</pre></div>
+</p>
+
+<p>Cũng khá dễ hiểu: ta cần lấy ra các node sport với 1 số trường mong muốn (child, parent), lấy ra hints với 20 records, nối các query bằng kí tự &ldquo;&amp;&ldquo;.</p>
+
+<p>Tạo chuỗi query bằng struct như sau</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">var</span> <span style="color: #f8f8f2">makeQuery</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ONMakeQuery()</span>
+
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">query</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">makeQuery.handler(cmd:</span> <span style="color: #f8f8f2">i)</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #f8f8f2">print(makeQuery.toDrawQuery)</span> <span style="color: #75715e">// query we need</span>
+</pre></div>
+
+
+<p>Tuy nhiên giờ functional programming khá là phổ biến, ta có thể dùng cách khác ngắn hơn mà không cần tạo struct, đó là sử dụng reduce</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">toDrawQuery</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">query.reduce(</span><span style="color: #e6db74">&quot;&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span> <span style="color: #f8f8f2">(text,</span> <span style="color: #f8f8f2">value)</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">String</span> <span style="color: #66d9ef">in</span>
+    <span style="color: #66d9ef">switch</span> <span style="color: #f8f8f2">value</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.query(let</span> <span style="color: #f8f8f2">query)</span><span style="color: #f92672">:</span>
+            <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">text</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">query.rawValue</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.addParam(let</span> <span style="color: #f8f8f2">str)</span><span style="color: #f92672">:</span>
+            <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">String(format:</span> <span style="color: #f8f8f2">text,</span> <span style="color: #f8f8f2">str)</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.addAnd:</span>
+            <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">text</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;&amp;&quot;</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>Khá là đơn giản phải không :D.</p>
+
+<p>Code <a href="https://gist.github.com/gg4acrossover/7d49d0c2c922486e37f622c73808597c">ví dụ</a></p>
+
+<p>Tham khảo <a href="http://www.cocoawithlove.com/blog/statements-messages-reducers.html">Statements, messages and reducers</a></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://gg4acrossover.github.io/hugosite/">GG4aCrossover</a></h4>
+  
+  <p>Coder nhân dân</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">HaNoi, VietNam</span>
+    <span class="author-link icon-link"><a href="http://gg4acrossover.github.io/">http://gg4acrossover.github.io/</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=C%c3%a1ch%20t%e1%ba%a1o%20query%20%c4%91%c6%a1n%20gi%e1%ba%a3n&nbsp;-&nbsp;GG4aCrossover&amp;url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcach-tao-query-don-gian%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcach-tao-query-don-gian%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcach-tao-query-don-gian%2f&amp;description=C%c3%a1ch%20t%e1%ba%a1o%20query%20%c4%91%c6%a1n%20gi%e1%ba%a3n"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fcach-tao-query-don-gian%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'gg4acrossover';
+  var disqus_url = 'https:\/\/gg4acrossover.github.io\/hugosite\/cach-tao-query-don-gian\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/hugosite/filter-sort-in-action/">
+          <section class="post">
+              <h2>Filter, sort in action</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">GG4aCrossover</a> All rights reserved - 2016</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/hugosite/js/jquery.js"></script>
+    <script type="text/javascript" src="/hugosite/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/hugosite/js/index.js"></script>
+    
+</body>
+</html>
+
