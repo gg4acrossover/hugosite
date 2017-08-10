@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag2 on GG4aCrossover</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/tag2/</link>
+    <description>Recent content in Tag2 on GG4aCrossover</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-EN</language>
+    <copyright>All rights reserved - 2016</copyright>
+    <lastBuildDate>Wed, 09 Aug 2017 16:41:23 +0700</lastBuildDate>
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Register user và thực hiện test</title>
+      <link>https://gg4acrossover.github.io/hugosite/register-user-test/</link>
+      <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/register-user-test/</guid>
+      <description>Giới thiệu Việc xác thực quá trình đăng kí mới user là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate thông tin ngay chính màn hình đăng ký, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.</description>
+    </item>
+    
+  </channel>
+</rss>

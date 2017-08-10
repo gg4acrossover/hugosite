@@ -84,5 +84,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Tag1</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/tag1/</link>
+      <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/tag1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tag2</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/tag2/</link>
+      <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
