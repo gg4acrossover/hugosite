@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi-EN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/agate.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99127158-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="enum result"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@viet142"/>
+
+
+
+  	<meta property="og:title" content="enum result &middot; GG4aCrossover" />
+  	<meta property="og:site_name" content="GG4aCrossover" />
+  	<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/enum-swift/" />
+
+    
+        
+            <meta property="og:image" content="/hugosite/images/cover.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-10-14T10:34:47&#43;07:00" />
+
+    
+    <meta property="article:tag" content="swift" />
+    
+    <meta property="article:tag" content="ios" />
+    
+    
+
+    <title>enum result &middot; GG4aCrossover</title>
+
+    
+    <meta name="description" content="Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
+Kiểu phổ thông C" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/hugosite/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/hugosite/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/hugosite/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/hugosite/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="GG4aCrossover" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.20.7" />
+
+    <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/enum-swift/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": http://gg4acrossover.github.io/,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Coder nhân dân
+        
+    },
+    "headline": enum result,
+    "name": enum result,
+    "wordCount": 232,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://gg4acrossover.github.io/hugosite/enum-swift/,
+    "datePublished": 2017-10-14T10:34Z,
+    "dateModified": 2017-10-14T10:34Z,
+    
+    "keywords": swift, ios,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://gg4acrossover.github.io/hugosite/enum-swift/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/viet142">Twitter</a>
+            </li>
+        
+            <h4>Social</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/gg4acrossover">Github</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/about/">About me</a>
+            </li>
+        
+            <h4>My Site</h4>
+            <li class="nav-opened" role="presentation">
+            	<a href="/hugosite/">Home</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/hugosite/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">enum result</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-10-14T10:34:47&#43;07:00">
+            Oct 14, 2017
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/swift/">#swift</a></span>
+         
+          <span class="post-tag small"><a href="https://gg4acrossover.github.io/hugosite/tags/ios/">#ios</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h3 id="giới-thiệu">Giới thiệu</h3>
+
+<p>Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D</p>
+
+<h3 id="kiểu-phổ-thông">Kiểu phổ thông</h3>
+
+<p>Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">Result</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">T</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">success(T)</span>
+    <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">failure(Error)</span>
+    
+    <span style="color: #f8f8f2">public</span> <span style="color: #f8f8f2">var</span> <span style="color: #f8f8f2">value:</span> <span style="color: #f8f8f2">T</span><span style="color: #f92672">?</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">switch</span> <span style="color: #f8f8f2">self</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.success(let</span> <span style="color: #f8f8f2">v)</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">v</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.failure:</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">nil</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+    
+    <span style="color: #f8f8f2">public</span> <span style="color: #f8f8f2">var</span> <span style="color: #f8f8f2">error:</span> <span style="color: #f8f8f2">Error</span><span style="color: #f92672">?</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">switch</span> <span style="color: #f8f8f2">self</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.success:</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">nil</span>
+        <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.failure(let</span> <span style="color: #f8f8f2">e)</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">e</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>và để sử dụng Result ta sẽ switch - case như này:</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">switch</span> <span style="color: #f8f8f2">result</span> <span style="color: #f8f8f2">{</span>
+<span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.success(let</span> <span style="color: #f8f8f2">value)</span><span style="color: #f92672">:</span>
+ 	<span style="color: #75715e">// your code</span>
+<span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">.failure(let</span> <span style="color: #f8f8f2">error)</span><span style="color: #f92672">:</span>
+	<span style="color: #75715e">// your code</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+</p>
+
+<h3 id="kiểu-for-fun">Kiểu for fun</h3>
+
+<p>Mình không thích switch - case cho lắm, vậy nên sẽ &ldquo;hack&rdquo; chút theo ý mình thích.
+Ở enum vừa rồi, mình sẽ thêm 2 hàm:</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">func</span> <span style="color: #a6e22e">isSuccess</span><span style="color: #f8f8f2">(complete:</span> <span style="color: #f8f8f2">@escaping</span> <span style="color: #f8f8f2">(T)</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">Void)</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">Result</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">T</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">guard</span> <span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self.value</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">self</span>
+    <span style="color: #f8f8f2">}</span>
+    
+    <span style="color: #f8f8f2">complete(value)</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">self</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #f8f8f2">func</span> <span style="color: #960050; background-color: #1e0010">`</span><span style="color: #66d9ef">else</span><span style="color: #960050; background-color: #1e0010">`</span><span style="color: #f8f8f2">(complete:</span> <span style="color: #f8f8f2">@escaping</span> <span style="color: #f8f8f2">(Error)</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">Void)</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">guard</span> <span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">err</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self.error</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">return</span>
+    <span style="color: #f8f8f2">}</span>
+    
+    <span style="color: #f8f8f2">complete(err)</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+</p>
+
+<p>Vậy là từ giờ mình có thể check kết quả theo cách sau</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">let</span> <span style="color: #f8f8f2">r:</span> <span style="color: #f8f8f2">Result</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Int</span><span style="color: #f92672">&gt;</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">.success(</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #f8f8f2">r.isSuccess</span> <span style="color: #f8f8f2">{</span> <span style="color: #f8f8f2">(value)</span> <span style="color: #66d9ef">in</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;show value:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">value)</span>
+<span style="color: #f8f8f2">}.</span><span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span> <span style="color: #f8f8f2">(err)</span> <span style="color: #66d9ef">in</span>
+    <span style="color: #f8f8f2">print(err)</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://gg4acrossover.github.io/hugosite/">GG4aCrossover</a></h4>
+  
+  <p>Coder nhân dân</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">HaNoi, VietNam</span>
+    <span class="author-link icon-link"><a href="http://gg4acrossover.github.io/">http://gg4acrossover.github.io/</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=enum%20result&nbsp;-&nbsp;GG4aCrossover&amp;url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fenum-swift%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fenum-swift%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fenum-swift%2f&amp;description=enum%20result"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fenum-swift%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'gg4acrossover';
+  var disqus_url = 'https:\/\/gg4acrossover.github.io\/hugosite\/enum-swift\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/hugosite/register-user-test/">
+          <section class="post">
+              <h2>Register user và thực hiện test</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">GG4aCrossover</a> All rights reserved - 2016</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/hugosite/js/jquery.js"></script>
+    <script type="text/javascript" src="/hugosite/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/hugosite/js/index.js"></script>
+    
+</body>
+</html>
+

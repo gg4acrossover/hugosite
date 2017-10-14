@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/enum-swift/</loc>
+    <lastmod>2017-10-14T10:34:47+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/register-user-test/</loc>
     <lastmod>2017-08-09T16:41:23+07:00</lastmod>
   </url>
@@ -95,7 +100,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <lastmod>2017-10-14T10:34:47+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +112,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
-    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <lastmod>2017-10-14T10:34:47+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,13 +124,13 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <lastmod>2017-10-14T10:34:47+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
-    <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <lastmod>2017-10-14T10:34:47+07:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Wed, 09 Aug 2017 16:41:23 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 14 Oct 2017 10:34:47 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>enum result</title>
+      <link>https://gg4acrossover.github.io/hugosite/enum-swift/</link>
+      <pubDate>Sat, 14 Oct 2017 10:34:47 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/enum-swift/</guid>
+      <description>Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
+Kiểu phổ thông Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire
+enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T? { switch self { case .</description>
+    </item>
     
     <item>
       <title>Register user và thực hiện test</title>
