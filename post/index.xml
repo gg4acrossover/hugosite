@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Sat, 14 Oct 2017 10:34:47 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 06 Nov 2017 16:50:29 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Date là gì, có ăn được không?</title>
+      <link>https://gg4acrossover.github.io/hugosite/date-la-gi/</link>
+      <pubDate>Mon, 06 Nov 2017 16:50:29 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/date-la-gi/</guid>
+      <description>Date Date là một đối tượng gần như không thể thiếu trong các app hiện nay. Nó xuất hiện trong lịch, trong thương mại điện tử, trong các app nhắc việc. Làm việc với date tưởng chừng như đơn giản nhưng lại là vấn đề hết sức đau đầu vì nó mang tính tương đối :D. Tỉ như ở Việt Nam, người dân đang vội vã đón con cuối chiều, nhưng ở nước khác, họ lại đang cafe buổi sáng.</description>
+    </item>
     
     <item>
       <title>Enum result</title>
