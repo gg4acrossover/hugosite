@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Mon, 06 Nov 2017 16:50:29 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 18 Nov 2017 10:10:10 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Codable swift 4</title>
+      <link>https://gg4acrossover.github.io/hugosite/codable-swift4/</link>
+      <pubDate>Sat, 18 Nov 2017 10:10:10 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/codable-swift4/</guid>
+      <description>Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</description>
+    </item>
     
     <item>
       <title>Date là gì, có ăn được không?</title>
