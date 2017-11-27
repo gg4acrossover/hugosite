@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Sat, 18 Nov 2017 10:10:10 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2017 11:36:01 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Method dispath trong protocol</title>
+      <link>https://gg4acrossover.github.io/hugosite/method-dispatch/</link>
+      <pubDate>Sat, 25 Nov 2017 11:36:01 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/method-dispatch/</guid>
+      <description>Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
+ Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức.</description>
+    </item>
     
     <item>
       <title>Codable swift 4</title>
