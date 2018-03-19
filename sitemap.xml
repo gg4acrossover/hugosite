@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/method-dispatch/</loc>
@@ -114,12 +115,6 @@
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2017-11-25T11:36:01+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
     <lastmod>2017-01-11T14:27:47+07:00</lastmod>
     <priority>0</priority>
@@ -164,6 +159,12 @@
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
     <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/</loc>
+    <lastmod>2017-11-25T11:36:01+07:00</lastmod>
     <priority>0</priority>
   </url>
   
