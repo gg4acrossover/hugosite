@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/stretchy-header/</loc>
+    <lastmod>2018-04-28T01:44:57+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/method-dispatch/</loc>
+    <lastmod>2017-11-25T11:36:01+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/codable-swift4/</loc>
+    <lastmod>2017-11-18T10:10:10+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/date-la-gi/</loc>
+    <lastmod>2017-11-06T16:50:29+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/enum-swift/</loc>
+    <lastmod>2017-10-14T10:34:47+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/register-user-test/</loc>
+    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/</loc>
+    <lastmod>2017-07-20T10:43:13+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/filter-sort-in-action/</loc>
     <lastmod>2017-07-03T14:53:55+07:00</lastmod>
   </url>
@@ -85,12 +120,6 @@
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
     <lastmod>2017-01-11T14:27:47+07:00</lastmod>
     <priority>0</priority>
@@ -98,7 +127,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
-    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
+    <lastmod>2018-04-28T01:44:57+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -110,13 +139,13 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
+    <lastmod>2018-04-28T01:44:57+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
-    <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <lastmod>2017-11-25T11:36:01+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,13 +157,25 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift3/</loc>
-    <lastmod>2017-06-07T16:14:26+07:00</lastmod>
+    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift4/</loc>
+    <lastmod>2018-04-28T01:44:57+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
     <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/</loc>
+    <lastmod>2018-04-28T01:44:57+07:00</lastmod>
     <priority>0</priority>
   </url>
   

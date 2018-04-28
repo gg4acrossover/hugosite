@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swift4 on VietHQ</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/swift4/</link>
+    <description>Recent content in Swift4 on VietHQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-EN</language>
+    <copyright>All rights reserved - 2016</copyright>
+    <lastBuildDate>Sat, 28 Apr 2018 01:44:57 +0700</lastBuildDate>
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stretchy header</title>
+      <link>https://gg4acrossover.github.io/hugosite/stretchy-header/</link>
+      <pubDate>Sat, 28 Apr 2018 01:44:57 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/stretchy-header/</guid>
+      <description>1.Tản mạn Tạo stretchy header là kỹ thuật không mới nhưng cho hiệu ứng khá đẹp mắt, hiện nay vẫn được nhiều app ưa chuộng dùng lại. Trước đây, hồi còn chưa ra swift, thấy trò này hay quá, mình cũng mày mò tự tạo một cái, tuy nhiên chưa có cơ hội áp dụng vào dự án thực tế. Ở công ty hiện tại, mình được chủ động hơn trong công việc, nên cũng tùy tiện gắn stretchy header vào cho có chút phá cách.</description>
+    </item>
+    
+  </channel>
+</rss>

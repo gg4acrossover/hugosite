@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swift on GG4aCrossover</title>
+    <title>Swift on VietHQ</title>
     <link>https://gg4acrossover.github.io/hugosite/tags/swift/</link>
-    <description>Recent content in Swift on GG4aCrossover</description>
+    <description>Recent content in Swift on VietHQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Mon, 29 May 2017 15:11:07 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2017 11:36:01 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Method dispath trong protocol</title>
+      <link>https://gg4acrossover.github.io/hugosite/method-dispatch/</link>
+      <pubDate>Sat, 25 Nov 2017 11:36:01 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/method-dispatch/</guid>
+      <description>Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
+ Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức.</description>
+    </item>
+    
+    <item>
+      <title>Codable swift 4</title>
+      <link>https://gg4acrossover.github.io/hugosite/codable-swift4/</link>
+      <pubDate>Sat, 18 Nov 2017 10:10:10 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/codable-swift4/</guid>
+      <description>Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</description>
+    </item>
+    
+    <item>
+      <title>Date là gì, có ăn được không?</title>
+      <link>https://gg4acrossover.github.io/hugosite/date-la-gi/</link>
+      <pubDate>Mon, 06 Nov 2017 16:50:29 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/date-la-gi/</guid>
+      <description>Date Date là một đối tượng gần như không thể thiếu trong các app hiện nay. Nó xuất hiện trong lịch, trong thương mại điện tử, trong các app nhắc việc. Làm việc với date tưởng chừng như đơn giản nhưng lại là vấn đề hết sức đau đầu vì nó mang tính tương đối :D. Tỉ như ở Việt Nam, người dân đang vội vã đón con cuối chiều, nhưng ở nước khác, họ lại đang cafe buổi sáng.</description>
+    </item>
+    
+    <item>
+      <title>Enum result</title>
+      <link>https://gg4acrossover.github.io/hugosite/enum-swift/</link>
+      <pubDate>Sat, 14 Oct 2017 10:34:47 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/enum-swift/</guid>
+      <description>Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
+Kiểu phổ thông Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire
+enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T? { switch self { case .</description>
+    </item>
     
     <item>
       <title>Tạo APIClient với swift 3</title>
