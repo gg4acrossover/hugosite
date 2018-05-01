@@ -125,9 +125,13 @@
 
 <p>Tạo stretchy header là kỹ thuật không mới nhưng cho hiệu ứng khá đẹp mắt, hiện nay vẫn được nhiều app ưa chuộng dùng lại. Trước đây, hồi còn chưa ra swift, thấy trò này hay quá, mình cũng mày mò tự tạo một cái, tuy nhiên chưa có cơ hội áp dụng vào dự án thực tế. Ở công ty hiện tại, mình được chủ động hơn trong công việc, nên cũng tùy tiện gắn stretchy header vào cho có chút phá cách. Ngoài ra mình cũng thấy một bạn post hỏi cách tạo stretchy header trên cộng đồng IOS, nên tiện lúc ngứa tay, mình post lên dây chia sẻ <em>mình đã tạo stretchy header ra sao</em>.</p>
 
+<h3 id="2-hướng-đi">2. Hướng đi</h3>
+
+<p>Mình không sử dụng <em>header</em> mặc định của <em>UITableView</em>. Thế nên mình triển khai theo cách tạo một khoảng trống phía trên UITableView(UIScrollView nói chung), khoảng trống này đủ rộng để hiển thị <em>header</em> mình tạo. Sau đó điều chỉnh <em>frame</em> của <em>header</em> cập nhật theo sự kiện <em>scroll</em>. Có nhiều cách để cập nhật lại frame của header ví dụ như sử dụng hàm <em>scrollViewDidScroll</em> trong <em>UIScrollViewDelegate</em>, hoặc sử dụng <em>KVO</em> để bắt sự thay đổi của thuộc tính contentOffset. Trong ví dụ lần này mình sử dụng cả 2 cách trên.</p>
+
 <h3 id="2-cách-đơn-giản-nhất">2. Cách đơn giản nhất</h3>
 
-<p>Viết code chú trọng giản tiện, code càng ít bug càng nhỏ. Mình lựa ra 3 bước chính để tạo stretchy header (chú ý: mình không dùng header mặc định của tableview)</p>
+<p>Viết code chú trọng giản tiện, code càng ít bug càng nhỏ. Như hướng đi trên, mình phân ra làm 3 bước quan trọng:</p>
 
 <ul>
 <li>Bước 1: Tạo content inset top cho tableview, mục đích là tạo ra 1 khoảng trống để gắn header.</li>
@@ -149,16 +153,18 @@
 
 <h3 id="3-cách-tạo-trường-hợp-tổng-quát">3. Cách tạo trường hợp tổng quát</h3>
 
-<p>Để tạo trường hợp tổng quát thì mình gắn header vào trong scrollview(tableview). Đây là cách mà các thư viện hay sử dụng. Để làm được theo cách này ta cần phải biết thêm về KVO, biết cách tạo property cho extension. Nghe thôi cũng đã thêm nhiều thứ rồi nhỉ? Các bước tiến hành cũng na ná như cách đầu tiên, tuy nhiên có lưu ý nho nhỏ:</p>
+<p>Để tạo trường hợp tổng quát thì mình gắn header vào trong *scrollview(tableview)(. Đây là cách mà các thư viện hay sử dụng. Để làm được theo cách này ta cần phải biết thêm về KVO, biết cách thêm property vào extension của các class có sẵn trong <em>Cocoa</em>. Nghe thôi cũng đã thêm nhiều thứ rồi nhỉ? Các bước tiến hành cũng na ná như cách đầu tiên, tuy nhiên có lưu ý nho nhỏ:</p>
 
 <ul>
 <li>Vị trí originY của stretchy header lúc này thường là <em>contentOffset.y</em> của scrollview.</li>
-<li>Vì gắn custom view vào scroll view nên ta cần điều chỉnh frame của header theo sự thay đổi của <em>contentOffset.y</em>. Tiện dụng nhất là sử dụng KVO, ta không nên bắt trực tiếp trong hàm <em>scrollViewDidScroll</em></li>
+<li>Vì gắn custom view vào scroll view nên ta cần điều chỉnh frame của header theo sự thay đổi của <em>contentOffset.y</em>. Sử dụng KVO trong trường hợp này là hợp lý.</li>
 </ul>
 
 <h3 id="4-gắn-vào-trong-tableview">4. Gắn vào trong Tableview</h3>
 
 <p>Cách này tương tự cách làm tổng quát, tuy nhiên không cần dùng đến KVO, không cần đến extension, thế nên việc xử lý đơn giản đi khá nhiều. Nhược điểm của nó là khi cần áp dụng vào tableview khác thì Ctrl Only C từ chỗ này qua chỗ khác :D, nói chung là cũng nhanh. Vậy nên mọi người dựa vào 2 cách trên để tự làm cách này nhé. Good luck!</p>
+
+<p><a href="https://github.com/gg4acrossover/stretchy-header">Source code</a> để mọi người tham khảo.</p>
 
 <p>Dưới đây là thành quả cho có tí động lực</p>
 
@@ -222,15 +228,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/">Tạo progressHUD đơn giản</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/">Tạo function trong swift</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/">Cách tạo query đơn giản</a></li>            
+        
                       
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/">C&#43;&#43;11 những cái hay dùng</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/">Tạo APIClient với swift 3</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/codable-swift4/">Codable swift 4</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/">Các thuộc tính của property trong objC</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
