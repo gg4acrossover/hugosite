@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://gg4acrossover.github.io/hugosite/favicon.ico" />
     <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/" />
 
-     <meta name="description" content="1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Floa" /> 
+     <meta name="description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các " /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Strong type và bài toán qui đổi tiền tệ"/>
-    <meta name="twitter:description" content="1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Floa"/>
+    <meta name="twitter:description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các "/>
     <meta name="twitter:url" content="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/" />
     <meta name="twitter:site" content="@"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Floa" />
+    <meta property="og:description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các " />
 
     <meta property="article:published_time" content="2018-06-08T15:04:33&#43;07:00" />
     <meta property="article:tag" content="swift4" /><meta property="article:tag" content="ios" />
@@ -121,9 +121,7 @@
         <div class="kg-card-markdown">
         
 
-<h3 id="1-strong-type-là-gì-tại-sao-lại-cần">1. Strong type là gì? Tại sao lại cần?</h3>
-
-<p><em>Strong type</em> là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu <em>Float</em>, làm thế nào để phân biệt được dữ liệu ta đang nhập vào là vnd, aud, hay usd. Hoặc với ví dụ khác, ta phân loại token theo quyền hạn của user (miễn phí/mất phí) chẳng hạn, trong khi token chỉ là một <em>String</em>. Nếu không có sự rõ ràng, nhập nhằng, rất có thể ta sẽ nhầm lẫn, nhất là trong những dự án lớn.</p>
+<h3 id="strong-type-là-gì-tại-sao-lại-cần">Strong type là gì? Tại sao lại cần?</h3>
 
 <p><em>Strong type</em> là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)</p>
 
@@ -138,7 +136,7 @@
     }
 }</code></pre></div>
 
-<p>Ngân hàng chỉ cho gửi VND, ta gửi bình thường theo cách sau</p>
+<p>Ngân hàng chỉ cho gửi VND, nhưng chưa có cơ chế check. Ta gửi VND bình thường theo cách sau</p>
 
 <blockquote>
 <p>Bank(100) // VND</p>
@@ -150,15 +148,11 @@
 <p>Bank(100) // vẫn được chấp nhận</p>
 </blockquote>
 
-<p>Vậy nên ta cần một kiểu dữ liệu mới để người dùng chỉ nhập được duy nhất VND. Đây là lúc <em>Strong type</em> phát huy tác dụng.</p>
+<p>Vậy nên ta cần một kiểu dữ liệu mới để người dùng chỉ nhập được duy nhất VND. Đây là lúc <strong>Strong type</strong> phát huy tác dụng.</p>
 
-<h3 id="2-ứng-dụng-vào-bài-toán-thực-tế">2. Ứng dụng vào bài toán thực tế</h3>
+<h3 id="cách-thức-tạo-strong-type">Cách thức tạo Strong type</h3>
 
-<p>Mình chọn bài toán phân biệt các loại tiền vnd, usd, aud và qui đổi ngoại tệ. Với cách qui đổi này bạn có thể convert qua lại giữa các loại tiền đơn giản hơn, tính tổng tiền vnd, usd, aud chỉ với phép tính cộng. Đây là trường hợp ứng dụng <em>Strong type</em> mang lại hiệu quả cao.</p>
-
-<h3 id="3-implement">3. Implement</h3>
-
-<p>VND, USD, AUD là đơn vị tiền tệ của mỗi quốc gia. Ta coi mỗi loại tiền là 1 <em>Unit</em>, Ta cần một cái gì đó để xác định 3 <em>Unit</em> trên dùng chung một mục đích và có thể convert qua lại lẫn nhau, nói cách khác là cùng chung một nhóm.
+<p>VND, USD, AUD là đơn vị tiền tệ của mỗi quốc gia. Ta coi mỗi loại tiền là 1 <em>Unit</em>, Ta cần một cái gì đó để xác định 3 <em>Unit</em> trên cùng chung một nhóm.
 Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>MyUnit</em> để định nghĩa các đơn vị trong nhóm.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Define UnitFamily to group all of units have the same family
@@ -173,9 +167,9 @@ Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>My
     <span style="color:#66d9ef">static</span> var converted: UnitConverter { get }
 }</code></pre></div>
 
-<p>Ở đây ta để ý rằng <em>UnitFamily</em> có chứa 1 type <em>BaseUnit</em> nhưng không sử dụng đến, tại sao lại cần đến nó? Như ta biết trong thực tế, bất cứ công thức qui đổi nào đều cần dùng một đơn vị chuẩn. Giống như F = ma, m luôn là kg. Thế nên <em>BaseUnit</em> có thể hiểu là một <em>Unit</em> bất kì trong group được lấy ra làm chuẩn.</p>
+<p>Ở đây ta để ý rằng <em>UnitFamily</em> có chứa 1 type <em>BaseUnit</em> nhưng không sử dụng đến, tại sao lại cần đến nó? Như ta biết trong thực tế, bất cứ công thức qui đổi nào đều cần dùng một đơn vị chuẩn. Giống như <strong>F = ma</strong>, <em>m</em> luôn là <em>kg</em>. Thế nên <em>BaseUnit</em> có thể hiểu là một <em>Unit</em> bất kì trong group được lấy ra làm chuẩn.</p>
 
-<p>Tiếp theo ta cần tạo ra <em>Strong type</em> để không nhầm lẫn <em>Unit</em> này với <em>Unit</em> khác.</p>
+<p>Tiếp theo ta cần tạo ra <strong>Strong type</strong> để không nhầm lẫn <em>Unit</em> này với <em>Unit</em> khác.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Unit wrapper, this one help us convert data type easier
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> MyMeasurement<span style="color:#f92672">&lt;</span>UnitType: MyUnit<span style="color:#f92672">&gt;</span> {
@@ -185,8 +179,9 @@ Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>My
     }
 }</code></pre></div>
 
-<p>Giống như định nghĩa <em>Struct ID</em> ở trên, <em>UnitType</em> không được sờ đến trong <em>MyMeasurement</em>. Ta đã có <em>Strong type</em> theo cách rất đơn giản phải không?
-Để convert được giữa các đơn vị theo cách chung nhất thì ta tạo <em>extension</em> cho <em>MyMeasurement</em> và có sử dụng <em>generic</em>.</p>
+<p><em>UnitType</em> không được sờ đến trong <em>MyMeasurement</em>, tác dụng của nó là <strong>định danh</strong>, qua đó hình thành <strong>Strong type</strong>, cũng có thể gọi là <em>Phantom Types</em>. Ta đã có <strong>Strong type</strong> theo cách rất đơn giản phải không? Tiếp theo là vấn đề convert.</p>
+
+<p>Để convert được giữa các đơn vị theo cách chung nhất thì ta tạo <em>extension</em> cho <em>MyMeasurement</em> và có sử dụng <em>generic</em>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension MyMeasurement {
     func converted<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span>(to: TargetUnit.Type) <span style="color:#f92672">-&gt;</span> MyMeasurement<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span> where
@@ -240,7 +235,7 @@ let aud <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f9
 let salaryValue <span style="color:#f92672">=</span> vnd.value <span style="color:#f92672">+</span> aud.converted(to: VND.self).value
 let salary <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(salaryValue)</code></pre></div>
 
-<p>Ta phải qua ngân hàng để chuyển đổi đồng dollar Úc qua VND nhưng ta bận và muốn ngân hàng tự qui đổi cho mình. Vậy nên ngân hàng tạo ra phương thức chuyển tiền giúp người dùng tiện lợi hơn</p>
+<p>Ta phải qua ngân hàng để chuyển đổi đồng dollar Úc qua VND nhưng điều đó quá bất tiện, ta yêu cầu ngân hàng tạo phương thức qui đổi tiền tệ cho mình. Tất nhiên là ngân hàng đáp ứng</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">func <span style="color:#f92672">+</span> <span style="color:#f92672">&lt;</span>Unit1,Unit2<span style="color:#f92672">&gt;</span>(lhs: MyMeasurement<span style="color:#f92672">&lt;</span>Unit1<span style="color:#f92672">&gt;</span>, rhs: MyMeasurement<span style="color:#f92672">&lt;</span>Unit2<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">-&gt;</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>
     where
@@ -259,9 +254,20 @@ let salary <span style="color:#f92672">=</span> MyMeasurement<span style="color:
 let aud <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>AUD<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">10</span>)
 let newSalary <span style="color:#f92672">=</span> vnd <span style="color:#f92672">+</span> aud</code></pre></div>
 
-<p>OK giờ ta có lương, ta muốn tiết kiệm nên làm sổ tiết kiệm VND. Ta bận nên nhờ bạn đến gửi hộ, bạn mang theo $ nhưng do ngân hàng nâng cấp hệ thống kiểm tra đầu vào nên bạn không gửi tùy tiện được. Bank cảnh báo lỗi luôn</p>
+<p>OK giờ ta có lương, ta muốn tiết kiệm nên làm sổ tiết kiệm VND. Ta bận nên nhờ bạn đến gửi hộ (như lần trước), bạn mang theo $ nhưng lần này ngân hàng nâng cấp hệ thống kiểm tra đầu vào nên bạn không gửi tùy tiện được. Bank cảnh báo lỗi luôn</p>
 
-<p>Nhưng về sau ta không muốn ra tận ngân hàng để gửi tiền nữa, muốn gửi trực tuyến. Ngân hàng lại cải tiến đáp ứng khách hàng.</p>
+<p><img src="/hugosite/images/note/strong-type.png" alt="image" /></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> Bank {
+    let money: MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>
+    init(_ money: MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>) {
+        self.money <span style="color:#f92672">=</span> money
+    }
+}</code></pre></div>
+
+<p>Để ý rằng <em>money: Double</em> được thay thế bằng MyMeasurement là <strong>Strong type</strong></p>
+
+<p>Nhưng về sau ta không muốn ra tận ngân hàng để gửi tiền nữa, muốn gửi trực tuyến. Ngân hàng lại cải tiến đáp ứng khách hàng bằng cách sử dụng tool <em>ExpressibleByIntegerLiteral</em> và <em>ExpressibleByFloatLiteral</em> mà Apple cung cấp.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension MyMeasurement: ExpressibleByIntegerLiteral {
     init(integerLiteral value: IntegerLiteralType) {
@@ -280,6 +286,11 @@ extension MyMeasurement: ExpressibleByFloatLiteral {
 <blockquote>
 <p>Bank(5.2) // ngân hàng vẫn check format VND</p>
 </blockquote>
+
+<p>Mọi người có thể lấy full <a href="https://gist.github.com/gg4acrossover/2e62a7f67bc86c3bca48f81f8b508f28">Source code</a> ở đây.</p>
+
+<p>Tham khảo:
+<a href="https://oleb.net/blog/2016/08/measurements-and-units-with-phantom-types/">Measurement</a> ở blog <a href="https://oleb.net/">https://oleb.net/</a></p>
     
         </div>
     </section>
@@ -339,13 +350,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/">Enum flag c&#43;&#43;</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/">Tạo APIClient với swift 3</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/">Ưu tiên toán tử</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
         
           <li><a href="https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/">Tạo progressHUD đơn giản</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/">Tạo function trong swift</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/register-user-test/">Register user và thực hiện test</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
