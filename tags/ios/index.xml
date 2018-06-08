@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Sat, 28 Apr 2018 01:44:57 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jun 2018 15:04:33 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Strong type và bài toán qui đổi tiền tệ</title>
+      <link>https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/</link>
+      <pubDate>Fri, 08 Jun 2018 15:04:33 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
+      <description>1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Float, làm thế nào để phân biệt được dữ liệu ta đang nhập vào là vnd, aud, hay usd. Hoặc với ví dụ khác, ta phân loại token theo quyền hạn của user (miễn phí/mất phí) chẳng hạn, trong khi token chỉ là một String.</description>
+    </item>
     
     <item>
       <title>Stretchy header</title>

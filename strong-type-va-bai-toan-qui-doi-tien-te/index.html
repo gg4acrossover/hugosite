@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi-EN" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Strong type và bài toán qui đổi tiền tệ &middot; VietHQ</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://gg4acrossover.github.io/hugosite/favicon.ico" />
+    <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/" />
+
+     <meta name="description" content="1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Floa" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://gg4acrossover.github.io/hugosite/images/cover/3.jpg"/>
+    
+ 
+    <meta name="twitter:title" content="Strong type và bài toán qui đổi tiền tệ"/>
+    <meta name="twitter:description" content="1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Floa"/>
+    <meta name="twitter:url" content="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/" />
+    <meta name="twitter:site" content="@"/>
+
+    <meta property="og:site_name" content="VietHQ" />
+    <meta property="og:title" content="Strong type và bài toán qui đổi tiền tệ &middot; VietHQ" />
+    <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="1. Strong type là gì? Tại sao lại cần? Strong type là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu Floa" />
+
+    <meta property="article:published_time" content="2018-06-08T15:04:33&#43;07:00" />
+    <meta property="article:tag" content="swift4" /><meta property="article:tag" content="ios" />
+
+    <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/3.jpg"/>
+
+
+    <meta name="generator" content="Hugo 0.37.1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="https://twitter.com/viet142">Twitter</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://github.com/gg4acrossover">Github</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/hugosite/about/">About me</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/hugosite/">Home</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2018-06-08">8 June 2018</time>
+                <span class="date-divider">/</span> <a href="https://gg4acrossover.github.io/hugosite/tags/swift4/">#swift4</a>&nbsp;<a href="https://gg4acrossover.github.io/hugosite/tags/ios/">#ios</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Strong type và bài toán qui đổi tiền tệ</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://gg4acrossover.github.io/hugosite/images/cover/3.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        
+
+<h3 id="1-strong-type-là-gì-tại-sao-lại-cần">1. Strong type là gì? Tại sao lại cần?</h3>
+
+<p><em>Strong type</em> là kĩ thuật giúp ta nhập vào chính xác kiểu dữ liệu ta mong muốn. Giả sử ta có một biến tiền tệ với kiểu <em>Float</em>, làm thế nào để phân biệt được dữ liệu ta đang nhập vào là vnd, aud, hay usd. Hoặc với ví dụ khác, ta phân loại token theo quyền hạn của user (miễn phí/mất phí) chẳng hạn, trong khi token chỉ là một <em>String</em>. Nếu không có sự rõ ràng, nhập nhằng, rất có thể ta sẽ nhầm lẫn, nhất là trong những dự án lớn.</p>
+
+<p><em>Strong type</em> là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)</p>
+
+<p>Một ví dụ điển hình và đơn giản nhất:</p>
+
+<p>Ta có một <em>struct Bank</em> để gửi tiền</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> Bank {
+    let money: Double
+    init(_ money: Double) {
+        self.money <span style="color:#f92672">=</span> money
+    }
+}</code></pre></div>
+
+<p>Ngân hàng chỉ cho gửi VND, ta gửi bình thường theo cách sau</p>
+
+<blockquote>
+<p>Bank(100) // VND</p>
+</blockquote>
+
+<p>Nhưng một hôm, ta bận và nhờ bạn gửi hộ, bạn lại gửi $</p>
+
+<blockquote>
+<p>Bank(100) // vẫn được chấp nhận</p>
+</blockquote>
+
+<p>Vậy nên ta cần một kiểu dữ liệu mới để người dùng chỉ nhập được duy nhất VND. Đây là lúc <em>Strong type</em> phát huy tác dụng.</p>
+
+<h3 id="2-ứng-dụng-vào-bài-toán-thực-tế">2. Ứng dụng vào bài toán thực tế</h3>
+
+<p>Mình chọn bài toán phân biệt các loại tiền vnd, usd, aud và qui đổi ngoại tệ. Với cách qui đổi này bạn có thể convert qua lại giữa các loại tiền đơn giản hơn, tính tổng tiền vnd, usd, aud chỉ với phép tính cộng. Đây là trường hợp ứng dụng <em>Strong type</em> mang lại hiệu quả cao.</p>
+
+<h3 id="3-implement">3. Implement</h3>
+
+<p>VND, USD, AUD là đơn vị tiền tệ của mỗi quốc gia. Ta coi mỗi loại tiền là 1 <em>Unit</em>, Ta cần một cái gì đó để xác định 3 <em>Unit</em> trên dùng chung một mục đích và có thể convert qua lại lẫn nhau, nói cách khác là cùng chung một nhóm.
+Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>MyUnit</em> để định nghĩa các đơn vị trong nhóm.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Define UnitFamily to group all of units have the same family
+</span><span style="color:#75715e"></span>protocol UnitFamily {
+    associatedtype BaseUnit
+}
+
+<span style="color:#75715e">// Define MyUnit, own unit will be based on MyUnit protocol
+</span><span style="color:#75715e"></span>protocol MyUnit {
+    associatedtype Family: UnitFamily
+    <span style="color:#66d9ef">static</span> var symbol: String { get }
+    <span style="color:#66d9ef">static</span> var converted: UnitConverter { get }
+}</code></pre></div>
+
+<p>Ở đây ta để ý rằng <em>UnitFamily</em> có chứa 1 type <em>BaseUnit</em> nhưng không sử dụng đến, tại sao lại cần đến nó? Như ta biết trong thực tế, bất cứ công thức qui đổi nào đều cần dùng một đơn vị chuẩn. Giống như F = ma, m luôn là kg. Thế nên <em>BaseUnit</em> có thể hiểu là một <em>Unit</em> bất kì trong group được lấy ra làm chuẩn.</p>
+
+<p>Tiếp theo ta cần tạo ra <em>Strong type</em> để không nhầm lẫn <em>Unit</em> này với <em>Unit</em> khác.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Unit wrapper, this one help us convert data type easier
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> MyMeasurement<span style="color:#f92672">&lt;</span>UnitType: MyUnit<span style="color:#f92672">&gt;</span> {
+    let value: Double
+    init(_ value: Double) {
+        self.value <span style="color:#f92672">=</span> value
+    }
+}</code></pre></div>
+
+<p>Giống như định nghĩa <em>Struct ID</em> ở trên, <em>UnitType</em> không được sờ đến trong <em>MyMeasurement</em>. Ta đã có <em>Strong type</em> theo cách rất đơn giản phải không?
+Để convert được giữa các đơn vị theo cách chung nhất thì ta tạo <em>extension</em> cho <em>MyMeasurement</em> và có sử dụng <em>generic</em>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension MyMeasurement {
+    func converted<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span>(to: TargetUnit.Type) <span style="color:#f92672">-&gt;</span> MyMeasurement<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span> where
+        TargetUnit: MyUnit, UnitType.Family <span style="color:#f92672">==</span> TargetUnit.Family {
+            let valueInBase <span style="color:#f92672">=</span> UnitType.converted.baseUnitValue(fromValue: self.value)
+            let convertValue <span style="color:#f92672">=</span> TargetUnit.converted.value(fromBaseUnitValue: valueInBase)
+            <span style="color:#66d9ef">return</span> MyMeasurement<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span>(convertValue)
+    }
+}</code></pre></div>
+
+<p>Bây giờ ta bắt đầu định nghĩa các loại tiền với kiểu dữ liệu Enum. Các <em>Unit</em> VND, USD, AUD đều chung 1 nhóm (Family) <em>MyCurrency</em></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Group
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> MyCurrency: UnitFamily {
+    typealias BaseUnit <span style="color:#f92672">=</span> VND
+}
+
+<span style="color:#75715e">// Unit
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> VND: MyUnit {
+    typealias Family <span style="color:#f92672">=</span> MyCurrency
+    <span style="color:#66d9ef">static</span> var symbol: String {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;VND&#34;</span>
+    }
+    
+    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span>)
+}
+
+<span style="color:#66d9ef">enum</span> USD: MyUnit {
+    typealias Family <span style="color:#f92672">=</span> MyCurrency
+    <span style="color:#66d9ef">static</span> var symbol: String {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;$&#34;</span>
+    }
+    
+    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">22.5</span>)
+}
+
+<span style="color:#66d9ef">enum</span> AUD: MyUnit {
+    typealias Family <span style="color:#f92672">=</span> MyCurrency
+    <span style="color:#66d9ef">static</span> var symbol: String {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;AUD&#34;</span>
+    }
+    
+    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">17.3</span>)
+}</code></pre></div>
+
+<p>OK, mọi thứ đã được định nghĩa một cách ổn thỏa. Bây giờ sếp trả lương cho ta theo 2 đợt, đợt 1 lấy vnd, đợt 2 lấy dollar Úc, ta muốn qui đổi ra VND để tiêu cho dễ.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let vnd <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">20</span>)
+let aud <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>AUD<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">10</span>)
+
+let salaryValue <span style="color:#f92672">=</span> vnd.value <span style="color:#f92672">+</span> aud.converted(to: VND.self).value
+let salary <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(salaryValue)</code></pre></div>
+
+<p>Ta phải qua ngân hàng để chuyển đổi đồng dollar Úc qua VND nhưng ta bận và muốn ngân hàng tự qui đổi cho mình. Vậy nên ngân hàng tạo ra phương thức chuyển tiền giúp người dùng tiện lợi hơn</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">func <span style="color:#f92672">+</span> <span style="color:#f92672">&lt;</span>Unit1,Unit2<span style="color:#f92672">&gt;</span>(lhs: MyMeasurement<span style="color:#f92672">&lt;</span>Unit1<span style="color:#f92672">&gt;</span>, rhs: MyMeasurement<span style="color:#f92672">&lt;</span>Unit2<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">-&gt;</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>
+    where
+    Unit1: MyUnit
+    , Unit2: MyUnit
+    , Unit1.Family <span style="color:#f92672">==</span> Unit2.Family
+    , Unit1.Family <span style="color:#f92672">==</span> VND.Family {
+        let lhsToVND <span style="color:#f92672">=</span> Unit1.converted.baseUnitValue(fromValue: lhs.value)
+        let rhsToVND <span style="color:#f92672">=</span> Unit2.converted.baseUnitValue(fromValue: rhs.value)
+        <span style="color:#66d9ef">return</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(lhsToVND <span style="color:#f92672">+</span> rhsToVND)
+}</code></pre></div>
+
+<p>Giờ ta chỉ cần thực hiện lệnh qua phần mềm để tự động chuyển về VND, nhẹ hơn 1 dòng :v</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let vnd <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">20</span>)
+let aud <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>AUD<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">10</span>)
+let newSalary <span style="color:#f92672">=</span> vnd <span style="color:#f92672">+</span> aud</code></pre></div>
+
+<p>OK giờ ta có lương, ta muốn tiết kiệm nên làm sổ tiết kiệm VND. Ta bận nên nhờ bạn đến gửi hộ, bạn mang theo $ nhưng do ngân hàng nâng cấp hệ thống kiểm tra đầu vào nên bạn không gửi tùy tiện được. Bank cảnh báo lỗi luôn</p>
+
+<p>Nhưng về sau ta không muốn ra tận ngân hàng để gửi tiền nữa, muốn gửi trực tuyến. Ngân hàng lại cải tiến đáp ứng khách hàng.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension MyMeasurement: ExpressibleByIntegerLiteral {
+    init(integerLiteral value: IntegerLiteralType) {
+        self.value <span style="color:#f92672">=</span> Double(value)
+    }
+}
+
+extension MyMeasurement: ExpressibleByFloatLiteral {
+    init(floatLiteral value: FloatLiteralType) {
+        self.value <span style="color:#f92672">=</span> Double(value)
+    }
+}</code></pre></div>
+
+<p>Bây giờ thì ta chỉ cần thao tác</p>
+
+<blockquote>
+<p>Bank(5.2) // ngân hàng vẫn check format VND</p>
+</blockquote>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://gg4acrossover.github.io/hugosite/" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://gg4acrossover.github.io/">viethq</a></h4>
+                <p>VietHQ - Tìm đơn giản trong phức tạp</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/gg4acrossover.github.io\/hugosite\/strong-type-va-bai-toan-qui-doi-tien-te\/";  
+this.page.identifier = "https:\/\/gg4acrossover.github.io\/hugosite\/strong-type-va-bai-toan-qui-doi-tien-te\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://gg4acrossover.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" style="background-color: #090a0b;">
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; VietHQ &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://gg4acrossover.github.io/hugosite/tags/swift4/">#swift4</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/">Enum flag c&#43;&#43;</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/">Ưu tiên toán tử</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/">Tạo progressHUD đơn giản</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/">Tạo function trong swift</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://gg4acrossover.github.io/hugosite/tags/swift4/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://gg4acrossover.github.io/hugosite/stretchy-header/">
+      <div class="post-card-image" style="background-image: url(https://gg4acrossover.github.io/hugosite/images/cover/3.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://gg4acrossover.github.io/hugosite/stretchy-header/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #swift4 
+              #ios  </span>
+              
+              <h2 class="post-card-title">Stretchy header</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>1.Tản mạn Tạo stretchy header là kỹ thuật không mới nhưng cho hiệu ứng khá đẹp mắt, hiện nay vẫn được nhiều app ưa chuộng dùng lại. Trước đây, hồi còn chưa ra swift, thấy trò này hay quá, mình cũng mày mò tự tạo một cái, tuy nhiên chưa có cơ hội áp dụng vào dự án thực tế. Ở công ty hiện tại, mình được chủ động hơn trong công việc, nên cũng tùy tiện gắn stretchy header vào cho có chút phá cách. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://gg4acrossover.github.io/hugosite/" alt="Author" />
+          <span class="post-card-author"><a href="/">viethq</a></span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://gg4acrossover.github.io/">
+      
+      <span>VietHQ</span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Strong type và bài toán qui đổi tiền tệ</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/></svg>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Strong%20type%20v%c3%a0%20b%c3%a0i%20to%c3%a1n%20qui%20%c4%91%e1%bb%95i%20ti%e1%bb%81n%20t%e1%bb%87&amp;url=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fstrong-type-va-bai-toan-qui-doi-tien-te%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgg4acrossover.github.io%2fhugosite%2fstrong-type-va-bai-toan-qui-doi-tien-te%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href=https://gg4acrossover.github.io/hugosite/>viethq</a>  <br>
+      
+    </section>
+    <nav class="site-footer-nav">
+        <a href=https://gg4acrossover.github.io/hugosite/>Latest Posts</a>
+        
+        
+        
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://gg4acrossover.github.io/hugosite/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>
