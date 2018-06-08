@@ -167,7 +167,11 @@ Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>My
     <span style="color:#66d9ef">static</span> var converted: UnitConverter { get }
 }</code></pre></div>
 
-<p>Ở đây ta để ý rằng <em>UnitFamily</em> có chứa 1 type <em>BaseUnit</em> nhưng không sử dụng đến, tại sao lại cần đến nó? Như ta biết trong thực tế, bất cứ công thức qui đổi nào đều cần dùng một đơn vị chuẩn. Giống như <strong>F = ma</strong>, <em>m</em> luôn là <em>kg</em>. Thế nên <em>BaseUnit</em> có thể hiểu là một <em>Unit</em> bất kì trong group được lấy ra làm chuẩn.</p>
+<p>Ở đây ta để ý rằng <em>UnitFamily</em> có chứa 1 type <em>BaseUnit</em> nhưng không sử dụng đến, tại sao lại cần đến nó? Như ta biết trong thực tế, bất cứ công thức qui đổi nào đều cần dùng một đơn vị chuẩn. Giống như <strong>F = ma</strong>, <em>m</em> luôn là <em>kg</em>, mọi khối lượng đều phải qui chuẩn về <em>kg</em> để đảm bảo tính đúng đắn của công thức. .</p>
+
+<p>Thế nên <em>BaseUnit</em> có thể hiểu là một <em>Unit</em> bất kì trong group được lấy ra làm chuẩn.</p>
+
+<p>Ngoài ta trong <em>MyUnit</em> còn có đối tượng dùng để convert dữ liệu là <strong>UnitConverter</strong>. Đối tượng này có sẵn trong thư viện của táo khuyết và được giới thiệu trong phiên bản ios 10.</p>
 
 <p>Tiếp theo ta cần tạo ra <strong>Strong type</strong> để không nhầm lẫn <em>Unit</em> này với <em>Unit</em> khác.</p>
 
@@ -192,7 +196,7 @@ Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>My
     }
 }</code></pre></div>
 
-<p>Bây giờ ta bắt đầu định nghĩa các loại tiền với kiểu dữ liệu Enum. Các <em>Unit</em> VND, USD, AUD đều chung 1 nhóm (Family) <em>MyCurrency</em></p>
+<p>Bây giờ ta bắt đầu định nghĩa các loại tiền với kiểu dữ liệu Enum. Các <em>Unit</em> VND, USD, AUD đều chung 1 nhóm (Family) <em>MyCurrency</em>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Group
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> MyCurrency: UnitFamily {
@@ -206,7 +210,8 @@ Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>My
         <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;VND&#34;</span>
     }
     
-    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span>)
+    <span style="color:#75715e">// chuẩn không cần chỉnh
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span>)
 }
 
 <span style="color:#66d9ef">enum</span> USD: MyUnit {
@@ -218,14 +223,13 @@ Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>My
     <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">22.5</span>)
 }
 
-<span style="color:#66d9ef">enum</span> AUD: MyUnit {
-    typealias Family <span style="color:#f92672">=</span> MyCurrency
-    <span style="color:#66d9ef">static</span> var symbol: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;AUD&#34;</span>
-    }
-    
-    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">17.3</span>)
-}</code></pre></div>
+<span style="color:#f92672">//</span> more ...</code></pre></div>
+
+<p>Ta lấy VND để làm chuẩn cho việc qui đổi, thế nên ta khởi tạo đối tượng <em>UnitConverter</em> trong <em>enum VND</em> như sau</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span>)</code></pre></div>
+
+<p>Các đơn vị khác nhân theo tỉ giá đối với VND.</p>
 
 <p>OK, mọi thứ đã được định nghĩa một cách ổn thỏa. Bây giờ sếp trả lương cho ta theo 2 đợt, đợt 1 lấy vnd, đợt 2 lấy dollar Úc, ta muốn qui đổi ra VND để tiêu cho dễ.</p>
 
@@ -350,11 +354,11 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/">Tạo APIClient với swift 3</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
-        
           <li><a href="https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/">Tạo progressHUD đơn giản</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/filter-sort-in-action/">Filter, sort in action</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/date-la-gi/">Date là gì, có ăn được không?</a></li>            
         
           <li><a href="https://gg4acrossover.github.io/hugosite/register-user-test/">Register user và thực hiện test</a></li>            
         </ul>
