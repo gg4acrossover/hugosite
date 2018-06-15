@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-EN</language>
     <copyright>All rights reserved - 2016</copyright>
-    <lastBuildDate>Fri, 08 Jun 2018 15:04:33 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 17:21:29 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tổng hợp một số tip Swift</title>
+      <link>https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/</link>
+      <pubDate>Fri, 15 Jun 2018 17:21:29 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/</guid>
+      <description>Tổng hợp một số tip Swift mà mình hay dùng *  Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
+typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.</description>
+    </item>
     
     <item>
       <title>Strong type và bài toán qui đổi tiền tệ</title>
