@@ -12,7 +12,8 @@
     <link rel="shortcut icon" href="https://gg4acrossover.github.io/hugosite/favicon.ico" />
     <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/" />
 
-     <meta name="description" content="Tổng hợp một số tip Swift mà mình hay dùng *  Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng t" /> 
+     <meta name="description" content="Tổng hợp một số tip Swift mà mình hay dùng
+Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì " /> 
 
      
     
@@ -21,7 +22,8 @@
     
  
     <meta name="twitter:title" content="Tổng hợp một số tip Swift"/>
-    <meta name="twitter:description" content="Tổng hợp một số tip Swift mà mình hay dùng *  Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng t"/>
+    <meta name="twitter:description" content="Tổng hợp một số tip Swift mà mình hay dùng
+Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì "/>
     <meta name="twitter:url" content="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/" />
     <meta name="twitter:site" content="@"/>
 
@@ -31,7 +33,8 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Tổng hợp một số tip Swift mà mình hay dùng *  Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng t" />
+    <meta property="og:description" content="Tổng hợp một số tip Swift mà mình hay dùng
+Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì " />
 
     <meta property="article:published_time" content="2018-06-15T17:21:29&#43;07:00" />
     <meta property="article:tag" content="swift4" />
@@ -121,9 +124,7 @@
         <div class="kg-card-markdown">
         
 
-<ul>
-<li>Tổng hợp một số tip Swift mà mình hay dùng *</li>
-</ul>
+<p><em>Tổng hợp một số tip Swift mà mình hay dùng</em></p>
 
 <h3 id="measurement">Measurement</h3>
 
@@ -136,7 +137,8 @@ let twoMinutes <span style="color:#f92672">=</span> s <span style="color:#f92672
 
 twoMinutes.value <span style="color:#f92672">//</span> <span style="color:#ae81ff">120.0</span> s</code></pre></div>
 
-<p>Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại. VD: 1p + 60s = 120s</p>
+<p>Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại. VD: 1p + 60s = 120s
+Có khá nhiều kiểu Unit cho bạn lựa chọn.</p>
 
 <h3 id="slim-tableview">Slim tableview</h3>
 
@@ -185,10 +187,12 @@ extension UITableView {
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">self.tableview.on_register(YourCell.self)
 let cell: YourCell <span style="color:#f92672">=</span> self.tableview.on_dequeue(idxPath: indexPath)</code></pre></div></p>
 
-<h3 id="self"><code>Self</code></h3>
+<p>Áp dụng tương tự với CollectionView.</p>
+
+<h3 id="self">Self</h3>
 
 <p>Nếu bạn đã từng dành cả tuổi thanh xuân để viết weakSelf, strongSelf thì đây là giải pháp cho bạn.
-Viết <code>self</code> sẽ giúp bạn sử dụng <em>self</em> như một biến, thay vì dùng nó như keyword.</p>
+Viết `self` sẽ giúp bạn sử dụng <em>self</em> như một biến, thay vì dùng nó như keyword.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">guard let <span style="color:#960050;background-color:#1e0010">`</span>self<span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#f92672">=</span> self <span style="color:#66d9ef">else</span> {
     <span style="color:#75715e">// return ...
@@ -290,15 +294,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-                      
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/">Strong type và bài toán qui đổi tiền tệ</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/">Các thuộc tính của property trong objC</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/filter-sort-in-action/">Filter, sort in action</a></li>            
         
           <li><a href="https://gg4acrossover.github.io/hugosite/slim-tableview/">Slim tableview</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/">Tạo APIClient với swift 3</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/">Các thuộc tính của property trong objC</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/hugo-tutorial/">Tạo static site với hugo</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

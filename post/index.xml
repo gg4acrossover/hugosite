@@ -18,8 +18,9 @@
       <pubDate>Fri, 15 Jun 2018 17:21:29 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/</guid>
-      <description>Tổng hợp một số tip Swift mà mình hay dùng *  Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
-typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.</description>
+      <description>Tổng hợp một số tip Swift mà mình hay dùng
+Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
+typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.0 s Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại.</description>
     </item>
     
     <item>
