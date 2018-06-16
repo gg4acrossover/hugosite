@@ -113,24 +113,24 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/">
-      <div class="post-card-image" style="background-image: url(https://gg4acrossover.github.io/hugosite/images/cover/5.jpg)"></div>
+    <a class="post-card-image-link" href="https://gg4acrossover.github.io/hugosite/method-dispatch/">
+      <div class="post-card-image" style="background-image: url(https://gg4acrossover.github.io/hugosite/images/cover/9.jpg)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/">
+      <a class="post-card-content-link" href="https://gg4acrossover.github.io/hugosite/method-dispatch/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #swift4  </span>
+              #swift 
+              #ios  </span>
               
-              <h2 class="post-card-title">Tổng hợp một số tip Swift</h2>
+              <h2 class="post-card-title">Method dispath trong protocol</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Tổng hợp một số tip Swift mà mình hay dùng
-Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
-typealias Duration = Measurement&lt;UnitDuration&gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.0 s Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại. ...  </p>
+                <p>Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
+ Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức. ...  </p>
               
           </section>
       </a>
@@ -138,37 +138,6 @@ typealias Duration = Measurement&lt;UnitDuration&gt; let s = Duration(value: 60.
       <footer class="post-card-meta">
           <img class="author-profile-image" src="https://gg4acrossover.github.io/hugosite/" alt="Author" />
           <span class="post-card-author"><a href="/">viethq</a></span>
-      </footer>
-    </div>
-</article>
- 
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/">
-      <div class="post-card-image" style="background-image: url(https://gg4acrossover.github.io/hugosite/images/cover/4.jpg)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #c&#43;&#43;  </span>
-              
-              <h2 class="post-card-title">Ưu tiên toán tử</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)
-mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp; b != 0 (a &amp; b) != 0 a &amp; (b != 0) a &lt;&lt; 4 + b (a &lt;&lt; 4) + b a &lt;&lt; (4 + b)  ! ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="https://gg4acrossover.github.io/hugosite/" alt="Author" />
-          <span class="post-card-author"><a href="/">VietHQ</a></span>
       </footer>
     </div>
 </article>
@@ -201,6 +170,37 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
       <footer class="post-card-meta">
           <img class="author-profile-image" src="https://gg4acrossover.github.io/hugosite/" alt="Author" />
           <span class="post-card-author"><a href="/">viethq</a></span>
+      </footer>
+    </div>
+</article>
+ 
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://gg4acrossover.github.io/hugosite/codable-swift4/">
+      <div class="post-card-image" style="background-image: url(https://gg4acrossover.github.io/hugosite/images/cover/2.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://gg4acrossover.github.io/hugosite/codable-swift4/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #swift 
+              #ios  </span>
+              
+              <h2 class="post-card-title">Codable swift 4</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://gg4acrossover.github.io/hugosite/" alt="Author" />
+          <span class="post-card-author"><a href="/">crossover</a></span>
       </footer>
     </div>
 </article>
