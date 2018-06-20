@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>C&#43;&#43;11 những cái hay dùng - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" />
+  <meta name="description" content="Bài tham khảo từ link:
+ http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
+ Sử dụng auto Trong C&#43;&#43;11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
+VD:
+auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="C&#43;&#43;11 những cái hay dùng" />
+<meta property="og:description" content="Bài tham khảo từ link:
+ http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
+ Sử dụng auto Trong C&#43;&#43;11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
+VD:
+auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/" />
+
+
+
+<meta property="article:published_time" content="2016-09-05T16:21:13&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-09-05T16:21:13&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="C&#43;&#43;11 những cái hay dùng">
+<meta itemprop="description" content="Bài tham khảo từ link:
+ http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
+ Sử dụng auto Trong C&#43;&#43;11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
+VD:
+auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.">
+
+
+<meta itemprop="datePublished" content="2016-09-05T16:21:13&#43;07:00" />
+<meta itemprop="dateModified" content="2016-09-05T16:21:13&#43;07:00" />
+<meta itemprop="wordCount" content="561">
+
+
+
+<meta itemprop="keywords" content="c&#43;&#43;," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;11 những cái hay dùng"/>
+<meta name="twitter:description" content="Bài tham khảo từ link:
+ http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
+ Sử dụng auto Trong C&#43;&#43;11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
+VD:
+auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">C&#43;&#43;11 những cái hay dùng</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-09-05 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#sử-dụng-auto">Sử dụng auto</a></li>
+<li><a href="#sử-dụng-nullptr">Sử dụng nullptr</a></li>
+<li><a href="#foreach">ForEach</a></li>
+<li><a href="#override-và-final">Override và final</a></li>
+<li><a href="#enum-class">Enum class</a></li>
+<li><a href="#lambda">Lambda</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>Bài tham khảo từ link:</p>
+
+<blockquote>
+<p><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer">http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer</a></p>
+</blockquote>
+
+<h1 id="sử-dụng-auto">Sử dụng auto</h1>
+
+<p>Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue</p>
+
+<p>VD:</p>
+
+<pre><code>auto a = 1; // is equal with int a = 1
+auto a = 1f // is equal with float a = 1.f
+auto a = new foo(); // is equal with *a = new foo();
+</code></pre>
+
+<p>Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.
+VD: &gt; auto a; // error</p>
+
+<h1 id="sử-dụng-nullptr">Sử dụng nullptr</h1>
+
+<p>Để gán giá trị null cho con trỏ</p>
+
+<pre><code>int *p = nullptr;
+</code></pre>
+
+<h1 id="foreach">ForEach</h1>
+
+<p>Duyệt tất cả các phần tử của mảng
+VD:</p>
+
+<pre><code>int arr[5] = {1, 2, 3, 4, 5};
+for( auto &amp;a : arr)
+{
+    cout&lt;&lt; a &lt;&lt; endl; // in ra màn hình 1, 2, 3, 4, 5
+}
+</code></pre>
+
+<h1 id="override-và-final">Override và final</h1>
+
+<p>Cái này là một định danh.
+Giả sử với vd sau:</p>
+
+<pre><code>class B
+{
+public:
+    virtual void f(short)
+    {
+        std::cout &lt;&lt; &quot;B::f&quot; &lt;&lt; std::endl;
+    }
+};
+
+class D : public B
+{
+public:
+    virtual void f(int)
+    {
+        std::cout &lt;&lt; &quot;D::f&quot; &lt;&lt; std::endl;
+    }
+};
+</code></pre>
+
+<p>Trường hợp này, function f ở class D là overload (vì param truyền vào là khác kiểu nhau).
+Hoặc với vd khác:</p>
+
+<pre><code>class B
+{
+public:
+    virtual void f(int) const
+    {
+        std::cout &lt;&lt; &quot;B::f &quot; &lt;&lt; std::endl;
+    }
+};
+
+class D : public B
+{
+public:
+    virtual void f(int)
+    {
+        std::cout &lt;&lt; &quot;D::f&quot; &lt;&lt; std::endl;
+    }
+};
+</code></pre>
+
+<p>Ở trường hợp này function f ở class D vẫn là overload chứ ko phải là override. Để tránh gây nhầm lẫn, C++11 thêm định danh là override và final giống như trong java. 2 từ khóa này có thể đi liền nhau &ldquo;override final&rdquo;</p>
+
+<pre><code>class B
+{
+public:
+    virtual void f(short)
+    {
+        std::cout &lt;&lt; &quot;B::f&quot; &lt;&lt; std::endl;
+    }
+    void g(short)
+    {
+        std::cout &lt;&lt; &quot;B::g&quot; &lt;&lt; std::endl;
+    }
+};
+
+class D : public B
+{
+public:
+    virtual void f(int) override
+    {
+        std::cout &lt;&lt; &quot;D::f&quot; &lt;&lt; std::endl;
+    }
+    virtual void g(int) override
+    {
+        std::cout &lt;&lt; &quot;D::g&quot; &lt;&lt; std::endl;   // error
+    }
+};
+</code></pre>
+
+<p>Lưu ý: override chỉ có tác dụng nếu function ở class base là virtual.</p>
+
+<h1 id="enum-class">Enum class</h1>
+
+<p>VD có 2 enum</p>
+
+<pre><code>enum TV { on, off};
+enum LAMP { on, off};
+</code></pre>
+
+<p>Cả 2 enum này đều có key giống nhau, dẫn đến compiler không phân biệt
+được. Cách giải quyết ở phiên bản cũ là dùng namespace, tuy nhiên ở
+C++11 cái này đơn giản hơn bằng cách sử dụng enum class như sau:</p>
+
+<pre><code>enum class TV
+{
+    on, off
+};
+enum class LAMP
+{
+    on, off
+};
+
+TV::on;
+LAMP::on; // no error
+</code></pre>
+
+<h1 id="lambda">Lambda</h1>
+
+<p>Đây là điểm mới mà C++03 không có</p>
+
+<p>Cấu trúc nó là <em>capture-list</em> { body };</p>
+
+<p>VD:</p>
+
+<pre><code>int a = 10;
+auto func1 = [=]()
+{
+    int x = a;
+    std::cout&lt;&lt; x &lt;&lt; std::endl;
+    //a += 10; // error
+};
+auto func2 = [&amp;]()
+{
+    a += 10;
+};
+
+func1(); // x = 10;
+func2(); // a = 20;
+</code></pre>
+
+<p>[&amp;] sẽ giúp complier hiểu được là biến a được khai báo
+bên ngoài lambda function sẽ được tham chiếu vào trong lambda function.
+Còn [=] có nghĩa là copy giá trị của a vào trong hàm lambda, tuy nhiên
+không thể thay đổi giá trị của a. (chỉ có tác dụng copy).</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-09-05</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/tao-func-trong-swift/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tạo function trong swift</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/enum-flag-c-plus-plus/">
+            <span class="next-text nav-default">Enum flag c&#43;&#43;</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://gg4acrossover.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

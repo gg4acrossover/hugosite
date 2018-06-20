@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tạo function trong swift - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" />
+  <meta name="description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; &#43; name &#43; &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; &#43; name &#43; &amp;quot;, &amp;quot; &#43; anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/post/tao-func-trong-swift/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Tạo function trong swift" />
+<meta property="og:description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;!&quot; } print( sayHello(&quot;Peter&quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;, &quot; &#43; anotherName } print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/post/tao-func-trong-swift/" />
+
+
+
+<meta property="article:published_time" content="2016-09-05T16:27:24&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-09-05T16:27:24&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Tạo function trong swift">
+<meta itemprop="description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;!&quot; } print( sayHello(&quot;Peter&quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;, &quot; &#43; anotherName } print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.">
+
+
+<meta itemprop="datePublished" content="2016-09-05T16:27:24&#43;07:00" />
+<meta itemprop="dateModified" content="2016-09-05T16:27:24&#43;07:00" />
+<meta itemprop="wordCount" content="648">
+
+
+
+<meta itemprop="keywords" content="swift,ios," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tạo function trong swift"/>
+<meta name="twitter:description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;!&quot; } print( sayHello(&quot;Peter&quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;, &quot; &#43; anotherName } print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tạo function trong swift</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-09-05 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#tạo-function-1-param">Tạo function 1 param</a></li>
+<li><a href="#func-có-nhiều-hơn-1-param">Func có nhiều hơn 1 param</a></li>
+<li><a href="#func-với-param-dạng">Func với param dạng &hellip;</a></li>
+<li><a href="#thay-đổi-giá-trị-param-trong-func">Thay đổi giá trị param trong func</a></li>
+<li><a href="#in-out-param">In-Out param</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).</p>
+
+<h3 id="tạo-function-1-param">Tạo function 1 param</h3>
+
+<pre><code>func sayHello(name: String) -&gt; String 
+{
+    return &quot;Hello &quot; + name + &quot;!&quot;    
+}
+
+print( sayHello(&quot;Peter&quot;)) // Hello Perter!
+</code></pre>
+
+<h3 id="func-có-nhiều-hơn-1-param">Func có nhiều hơn 1 param</h3>
+
+<pre><code>func sayHelloAgain(name : String, anotherName: String) -&gt; String
+{
+    return &quot;Hello &quot; + name + &quot;, &quot; + anotherName
+}
+
+print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom
+</code></pre>
+
+<p>ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
+Ta có thể làm rõ nghĩa của cả param đầu tiên bằng cách cho thêm external name. Mỗi khi thêm external name thì ta bắt buộc phải sử dụng nó khi gọi hàm.
+Ở ví dụ dưới đây external name là <em>to</em> và <em>and</em></p>
+
+<pre><code>func sayHello(to person: String, and anotherPerson: String) -&gt; String 
+{
+    return &quot;Hello \(person) and \(anotherPerson)!&quot;
+}
+print(sayHello(to: &quot;Bill&quot;, and: &quot;Ted&quot;)) // Hello Bill and Ted!
+</code></pre>
+
+<p>Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.</p>
+
+<pre><code>func someFunction(firstParameterName: Int, _ secondParameterName: Int) 
+{
+    // function body goes here
+    // firstParameterName and secondParameterName refer to
+    // the argument values for the first and second parameters
+}
+someFunction(1, 2)
+</code></pre>
+
+<p>Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết
+&gt; someFunction(1, secondParameterName:2)</p>
+
+<h3 id="func-với-param-dạng">Func với param dạng &hellip;</h3>
+
+<pre><code>func arithmeticMean(numbers: Double...) -&gt; Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+arithmeticMean(1, 2, 3, 4, 5) // 3.0
+</code></pre>
+
+<p>Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
+Lưu ý: tất cả những param truyền vào phải cùng một kiểu dữ liệu.</p>
+
+<h3 id="thay-đổi-giá-trị-param-trong-func">Thay đổi giá trị param trong func</h3>
+
+<p>Theo mặc định, param truyền vào sẽ là const, tức là ta không thể thay đổi giá trị của nó. Để thay đổi có hai cách, cách đầu tiên là sử dụng keyword var như ở ví dụ sau</p>
+
+<pre><code>var minMaxValue = minMax([2,1,5,9,8])!;
+print(minMaxValue.1); // max
+
+let minAndMax = minMax([]);
+print(minAndMax?.min);
+</code></pre>
+
+<pre><code>func alignRight(var string: String, totalLength: Int, pad: Character) -&gt; String {
+    let amountToPad = totalLength - string.characters.count
+    if amountToPad &lt; 1 {
+        return string
+    }
+    let padString = String(pad)
+    for _ in 1...amountToPad {
+        string = padString + string
+    }
+    return string
+}
+var originalString = &quot;hello&quot;
+var paddedString = alignRight(originalString, totalLength: 10, pad: &quot;-&quot;)
+print(originalString, terminator:&quot;&quot;) // hello
+print(paddedString, terminator:&quot;&quot;) // -----hello
+</code></pre>
+
+<p>Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
+Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài func alignRight sẽ không bị thay đổi theo. Vậy để thay đổi giá trị của originalString ta phải làm sao? Ta sử dụng cách thứ hai là In-Out param.</p>
+
+<h3 id="in-out-param">In-Out param</h3>
+
+<pre><code>func swapTwoInts(inout a: Int, inout _ b: Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+var someInt = 3
+var anotherInt = 107
+swapTwoInts(&amp;someInt, &amp;anotherInt)
+print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;)
+// prints &quot;someInt is now 107, and anotherInt is now 3
+</code></pre>
+
+<p>Khi gọi những hàm có keyword inout ta phải thêm &amp; đằng trước tên biến.</p>
+
+<p>Đây là những điều cơ bản nhất khi triển khai 1 func trong swift. Để đi sâu hơn, bạn nên tham khảo tài liệu của apple.</p>
+
+<p>P/S: những ví dụ trên tham khảo trong swift 2.0 programming của apple. Tài liệu này mới cập nhật, hình như chưa có bản pdf. 😛</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-09-05</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/ios/">ios</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/uu-tien-toan-tu/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ưu tiên toán tử</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/c-plus-11-nhung-cai-hay-dung/">
+            <span class="next-text nav-default">C&#43;&#43;11 những cái hay dùng</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://gg4acrossover.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

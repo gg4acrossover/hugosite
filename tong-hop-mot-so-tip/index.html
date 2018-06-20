@@ -42,7 +42,7 @@ Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng m�
     <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/5.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
@@ -175,7 +175,7 @@ extension UITableView {
     
     func on_dequeue<span style="color:#f92672">&lt;</span> T : ONBaseCellProtocol<span style="color:#f92672">&gt;</span>(idxPath : IndexPath) <span style="color:#f92672">-&gt;</span> T {
         guard let cell <span style="color:#f92672">=</span> self.dequeueReusableCell(withIdentifier: T.getNibName(), <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> idxPath) as<span style="color:#f92672">?</span> T <span style="color:#66d9ef">else</span> {
-            fatalError(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;couldnt dequeue cell with identifier \(T.getNibName())&#34;</span>)
+            fatalError(<span style="color:#e6db74">&#34;couldnt dequeue cell with identifier \(T.getNibName())&#34;</span>)
         }
         
         <span style="color:#66d9ef">return</span> cell
@@ -294,15 +294,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/">Ưu tiên toán tử</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/">Cách tạo query đơn giản</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/">Strong type và bài toán qui đổi tiền tệ</a></li>            
-        
-                      
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/">C&#43;&#43;11 những cái hay dùng</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/slim-tableview/">Slim tableview</a></li>            
         
           <li><a href="https://gg4acrossover.github.io/hugosite/filter-sort-in-action/">Filter, sort in action</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/method-dispatch/">Method dispath trong protocol</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

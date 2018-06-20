@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swift4 on VietHQ</title>
-    <link>https://gg4acrossover.github.io/hugosite/tags/swift4/</link>
-    <description>Recent content in Swift4 on VietHQ</description>
+    <title>Swift4 on Even - A super concise theme for Hugo</title>
+    <link>https://gg4acrossover.github.io/tags/swift4/</link>
+    <description>Recent content in Swift4 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi-EN</language>
-    <copyright>All rights reserved - 2016</copyright>
+    <language>en</language>
     <lastBuildDate>Fri, 15 Jun 2018 17:21:29 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/tags/swift4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tổng hợp một số tip Swift</title>
-      <link>https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/</link>
+      <link>https://gg4acrossover.github.io/post/tong-hop-mot-so-tip/</link>
       <pubDate>Fri, 15 Jun 2018 17:21:29 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/</guid>
+      <guid>https://gg4acrossover.github.io/post/tong-hop-mot-so-tip/</guid>
       <description>Tổng hợp một số tip Swift mà mình hay dùng
 Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
 typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.0 s Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại.</description>
@@ -25,10 +24,10 @@ typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(va
     
     <item>
       <title>Strong type và bài toán qui đổi tiền tệ</title>
-      <link>https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/</link>
+      <link>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</link>
       <pubDate>Fri, 08 Jun 2018 15:04:33 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
+      <guid>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
       <description>Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
 Một ví dụ điển hình và đơn giản nhất:
 Ta có một struct Bank để gửi tiền</description>
@@ -36,10 +35,10 @@ Ta có một struct Bank để gửi tiền</description>
     
     <item>
       <title>Stretchy header</title>
-      <link>https://gg4acrossover.github.io/hugosite/stretchy-header/</link>
+      <link>https://gg4acrossover.github.io/post/stretchy-header/</link>
       <pubDate>Sat, 28 Apr 2018 01:44:57 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/stretchy-header/</guid>
+      <guid>https://gg4acrossover.github.io/post/stretchy-header/</guid>
       <description>1.Tản mạn Tạo stretchy header là kỹ thuật không mới nhưng cho hiệu ứng khá đẹp mắt, hiện nay vẫn được nhiều app ưa chuộng dùng lại. Trước đây, hồi còn chưa ra swift, thấy trò này hay quá, mình cũng mày mò tự tạo một cái, tuy nhiên chưa có cơ hội áp dụng vào dự án thực tế. Ở công ty hiện tại, mình được chủ động hơn trong công việc, nên cũng tùy tiện gắn stretchy header vào cho có chút phá cách.</description>
     </item>
     

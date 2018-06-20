@@ -1,191 +1,248 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="https://gg4acrossover.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/</loc>
+    <loc>https://gg4acrossover.github.io/post/tong-hop-mot-so-tip/</loc>
     <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/</loc>
+    <loc>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</loc>
     <lastmod>2018-06-08T15:04:33+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/stretchy-header/</loc>
+    <loc>https://gg4acrossover.github.io/post/stretchy-header/</loc>
     <lastmod>2018-04-28T01:44:57+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/method-dispatch/</loc>
+    <loc>https://gg4acrossover.github.io/post/method-dispatch/</loc>
     <lastmod>2017-11-25T11:36:01+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/codable-swift4/</loc>
+    <loc>https://gg4acrossover.github.io/post/codable-swift4/</loc>
     <lastmod>2017-11-18T10:10:10+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/date-la-gi/</loc>
+    <loc>https://gg4acrossover.github.io/post/date-la-gi/</loc>
     <lastmod>2017-11-06T16:50:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/enum-swift/</loc>
+    <loc>https://gg4acrossover.github.io/post/enum-swift/</loc>
     <lastmod>2017-10-14T10:34:47+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/register-user-test/</loc>
+    <loc>https://gg4acrossover.github.io/post/register-user-test/</loc>
     <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/</loc>
+    <loc>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</loc>
     <lastmod>2017-07-20T10:43:13+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/filter-sort-in-action/</loc>
+    <loc>https://gg4acrossover.github.io/post/filter-sort-in-action/</loc>
     <lastmod>2017-07-03T14:53:55+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/slim-tableview/</loc>
+    <loc>https://gg4acrossover.github.io/post/slim-tableview/</loc>
     <lastmod>2017-06-07T16:14:26+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/</loc>
+    <loc>https://gg4acrossover.github.io/post/tao-api-client-swift-3/</loc>
     <lastmod>2017-05-29T15:11:07+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/</loc>
+    <loc>https://gg4acrossover.github.io/post/progress-hud-don-gian/</loc>
     <lastmod>2017-05-10T11:25:40+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/hugo-tutorial/</loc>
+    <loc>https://gg4acrossover.github.io/post/hugo-tutorial/</loc>
     <lastmod>2017-01-11T14:27:47+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/transition-animation/</loc>
+    <loc>https://gg4acrossover.github.io/post/transition-animation/</loc>
     <lastmod>2016-09-20T16:01:11+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/</loc>
+    <loc>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</loc>
     <lastmod>2016-09-05T16:36:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/</loc>
+    <loc>https://gg4acrossover.github.io/post/uu-tien-toan-tu/</loc>
     <lastmod>2016-09-05T16:32:39+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/</loc>
+    <loc>https://gg4acrossover.github.io/post/tao-func-trong-swift/</loc>
     <lastmod>2016-09-05T16:27:24+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/</loc>
+    <loc>https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/</loc>
     <lastmod>2016-09-05T16:21:13+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/</loc>
+    <loc>https://gg4acrossover.github.io/post/enum-flag-c-plus-plus/</loc>
     <lastmod>2016-09-05T15:51:57+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/about/</loc>
+    <loc>https://gg4acrossover.github.io/about/</loc>
     <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/</loc>
+    <loc>https://gg4acrossover.github.io/post/first-time-to-hugo/</loc>
     <lastmod>2016-09-01T17:22:59+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/about-me/</loc>
+    <loc>https://gg4acrossover.github.io/tags/about-me/</loc>
     <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</loc>
+    <loc>https://gg4acrossover.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2016-09-05T16:32:39+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
+    <loc>https://gg4acrossover.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
+    <loc>https://gg4acrossover.github.io/</loc>
+    <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/tags/hugo/</loc>
     <lastmod>2017-01-11T14:27:47+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
+    <loc>https://gg4acrossover.github.io/tags/ios/</loc>
     <lastmod>2018-06-08T15:04:33+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/objc/</loc>
+    <loc>https://gg4acrossover.github.io/tags/objc/</loc>
     <lastmod>2016-09-20T16:01:11+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
+    <loc>https://gg4acrossover.github.io/post/</loc>
     <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
+    <loc>https://gg4acrossover.github.io/tags/swift/</loc>
     <lastmod>2017-11-25T11:36:01+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift-3/</loc>
+    <loc>https://gg4acrossover.github.io/tags/swift-3/</loc>
     <lastmod>2017-07-03T14:53:55+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift3/</loc>
+    <loc>https://gg4acrossover.github.io/tags/swift3/</loc>
     <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift4/</loc>
+    <loc>https://gg4acrossover.github.io/tags/swift4/</loc>
     <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
+    <loc>https://gg4acrossover.github.io/tags/</loc>
     <lastmod>2016-09-05T13:17:19+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   

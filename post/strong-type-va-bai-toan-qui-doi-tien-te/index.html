@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Strong type và bài toán qui đổi tiền tệ - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" />
+  <meta name="description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
+Một ví dụ điển hình và đơn giản nhất:
+Ta có một struct Bank để gửi tiền" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Strong type và bài toán qui đổi tiền tệ" />
+<meta property="og:description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
+Một ví dụ điển hình và đơn giản nhất:
+Ta có một struct Bank để gửi tiền" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/" />
+
+
+
+<meta property="article:published_time" content="2018-06-08T15:04:33&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-06-08T15:04:33&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Strong type và bài toán qui đổi tiền tệ">
+<meta itemprop="description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
+Một ví dụ điển hình và đơn giản nhất:
+Ta có một struct Bank để gửi tiền">
+
+
+<meta itemprop="datePublished" content="2018-06-08T15:04:33&#43;07:00" />
+<meta itemprop="dateModified" content="2018-06-08T15:04:33&#43;07:00" />
+<meta itemprop="wordCount" content="1032">
+
+
+
+<meta itemprop="keywords" content="swift4,ios," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Strong type và bài toán qui đổi tiền tệ"/>
+<meta name="twitter:description" content="Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
+Một ví dụ điển hình và đơn giản nhất:
+Ta có một struct Bank để gửi tiền"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Strong type và bài toán qui đổi tiền tệ</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-06-08 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#strong-type-là-gì-tại-sao-lại-cần">Strong type là gì? Tại sao lại cần?</a></li>
+<li><a href="#cách-thức-tạo-strong-type">Cách thức tạo Strong type</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h3 id="strong-type-là-gì-tại-sao-lại-cần">Strong type là gì? Tại sao lại cần?</h3>
+
+<p><em>Strong type</em> là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)</p>
+
+<p>Một ví dụ điển hình và đơn giản nhất:</p>
+
+<p>Ta có một <em>struct Bank</em> để gửi tiền</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> Bank {
+    let money: Double
+    init(_ money: Double) {
+        self.money <span style="color:#f92672">=</span> money
+    }
+}</code></pre></div>
+
+<p>Ngân hàng chỉ cho gửi VND, nhưng chưa có cơ chế check. Ta gửi VND bình thường theo cách sau</p>
+
+<blockquote>
+<p>Bank(100) // VND</p>
+</blockquote>
+
+<p>Nhưng một hôm, ta bận và nhờ bạn gửi hộ, bạn lại gửi $</p>
+
+<blockquote>
+<p>Bank(100) // vẫn được chấp nhận</p>
+</blockquote>
+
+<p>Vậy nên ta cần một kiểu dữ liệu mới để người dùng chỉ nhập được duy nhất VND. Đây là lúc <strong>Strong type</strong> phát huy tác dụng.</p>
+
+<h3 id="cách-thức-tạo-strong-type">Cách thức tạo Strong type</h3>
+
+<p>VND, USD, AUD là đơn vị tiền tệ của mỗi quốc gia. Ta coi mỗi loại tiền là 1 <em>Unit</em>, Ta cần một cái gì đó để xác định 3 <em>Unit</em> trên cùng chung một nhóm.
+Thế nên ta định nghĩa 2 protocol: <em>UnitFamily</em> tạo nhóm, <em>MyUnit</em> để định nghĩa các đơn vị trong nhóm.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Define UnitFamily to group all of units have the same family
+</span><span style="color:#75715e"></span>protocol UnitFamily {
+    associatedtype BaseUnit
+}
+
+<span style="color:#75715e">// Define MyUnit, own unit will be based on MyUnit protocol
+</span><span style="color:#75715e"></span>protocol MyUnit {
+    associatedtype Family: UnitFamily
+    <span style="color:#66d9ef">static</span> var symbol: String { get }
+    <span style="color:#66d9ef">static</span> var converted: UnitConverter { get }
+}</code></pre></div>
+
+<p>Ở đây ta để ý rằng <em>UnitFamily</em> có chứa 1 type <em>BaseUnit</em> nhưng không sử dụng đến, tại sao lại cần đến nó? Như ta biết trong thực tế, bất cứ công thức qui đổi nào đều cần dùng một đơn vị chuẩn. Giống như <strong>F = ma</strong>, <em>m</em> luôn là <em>kg</em>, mọi khối lượng đều phải qui chuẩn về <em>kg</em> để đảm bảo tính đúng đắn của công thức. .</p>
+
+<p>Thế nên <em>BaseUnit</em> có thể hiểu là một <em>Unit</em> bất kì trong group được lấy ra làm chuẩn.</p>
+
+<p>Ngoài ta trong <em>MyUnit</em> còn có đối tượng dùng để convert dữ liệu là <strong>UnitConverter</strong>. Đối tượng này có sẵn trong thư viện của táo khuyết và được giới thiệu trong phiên bản ios 10.</p>
+
+<p>Tiếp theo ta cần tạo ra <strong>Strong type</strong> để không nhầm lẫn <em>Unit</em> này với <em>Unit</em> khác.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Unit wrapper, this one help us convert data type easier
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> MyMeasurement<span style="color:#f92672">&lt;</span>UnitType: MyUnit<span style="color:#f92672">&gt;</span> {
+    let value: Double
+    init(_ value: Double) {
+        self.value <span style="color:#f92672">=</span> value
+    }
+}</code></pre></div>
+
+<p><em>UnitType</em> không được sờ đến trong <em>MyMeasurement</em>, tác dụng của nó là <strong>định danh</strong>, qua đó hình thành <strong>Strong type</strong>, cũng có thể gọi là <em>Phantom Types</em>. Ta đã có <strong>Strong type</strong> theo cách rất đơn giản phải không? Ta sẽ đi sâu vào hiệu quả của <em>Strong type</em> sau, trước hết ta nối tiếp đến vấn đề convert.</p>
+
+<p>Để convert được giữa các đơn vị theo cách chung nhất thì ta tạo <em>extension</em> cho <em>MyMeasurement</em> và có sử dụng <em>generic</em>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension MyMeasurement {
+    func converted<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span>(to: TargetUnit.Type) <span style="color:#f92672">-&gt;</span> MyMeasurement<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span> where
+        TargetUnit: MyUnit, UnitType.Family <span style="color:#f92672">==</span> TargetUnit.Family {
+            let valueInBase <span style="color:#f92672">=</span> UnitType.converted.baseUnitValue(fromValue: self.value)
+            let convertValue <span style="color:#f92672">=</span> TargetUnit.converted.value(fromBaseUnitValue: valueInBase)
+            <span style="color:#66d9ef">return</span> MyMeasurement<span style="color:#f92672">&lt;</span>TargetUnit<span style="color:#f92672">&gt;</span>(convertValue)
+    }
+}</code></pre></div>
+
+<p>Bây giờ ta bắt đầu định nghĩa các loại tiền với kiểu dữ liệu Enum. Các <em>Unit</em> VND, USD, AUD đều chung 1 nhóm (Family) <em>MyCurrency</em>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// Group
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> MyCurrency: UnitFamily {
+    typealias BaseUnit <span style="color:#f92672">=</span> VND
+}
+
+<span style="color:#75715e">// Unit
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> VND: MyUnit {
+    typealias Family <span style="color:#f92672">=</span> MyCurrency
+    <span style="color:#66d9ef">static</span> var symbol: String {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;VND&#34;</span>
+    }
+    
+    <span style="color:#75715e">// chuẩn không cần chỉnh
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span>)
+}
+
+<span style="color:#66d9ef">enum</span> USD: MyUnit {
+    typealias Family <span style="color:#f92672">=</span> MyCurrency
+    <span style="color:#66d9ef">static</span> var symbol: String {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;$&#34;</span>
+    }
+    
+    <span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">22.5</span>)
+}
+
+<span style="color:#f92672">//</span> more ...</code></pre></div>
+
+<p>Ta lấy VND để làm chuẩn cho việc qui đổi, thế nên ta khởi tạo đối tượng <em>UnitConverter</em> trong <em>enum VND</em> như sau</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">static</span> var converted: UnitConverter <span style="color:#f92672">=</span> UnitConverterLinear(coefficient: <span style="color:#ae81ff">1</span>)</code></pre></div>
+
+<p>Các đơn vị khác nhân theo tỉ giá đối với VND.</p>
+
+<p>OK, mọi thứ đã được định nghĩa một cách ổn thỏa. Bây giờ sếp trả lương cho ta theo 2 đợt, đợt 1 lấy vnd, đợt 2 lấy dollar Úc, ta muốn qui đổi ra VND để tiêu cho dễ.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let vnd <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">20</span>)
+let aud <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>AUD<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">10</span>)
+
+let salaryValue <span style="color:#f92672">=</span> vnd.value <span style="color:#f92672">+</span> aud.converted(to: VND.self).value
+let salary <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(salaryValue)</code></pre></div>
+
+<p>Ta phải qua ngân hàng để chuyển đổi đồng dollar Úc qua VND nhưng điều đó quá bất tiện, ta yêu cầu ngân hàng tạo phương thức qui đổi tiền tệ cho mình. Tất nhiên là ngân hàng đáp ứng</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">func <span style="color:#f92672">+</span> <span style="color:#f92672">&lt;</span>Unit1,Unit2<span style="color:#f92672">&gt;</span>(lhs: MyMeasurement<span style="color:#f92672">&lt;</span>Unit1<span style="color:#f92672">&gt;</span>, rhs: MyMeasurement<span style="color:#f92672">&lt;</span>Unit2<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">-&gt;</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>
+    where
+    Unit1: MyUnit
+    , Unit2: MyUnit
+    , Unit1.Family <span style="color:#f92672">==</span> Unit2.Family
+    , Unit1.Family <span style="color:#f92672">==</span> VND.Family {
+        let lhsToVND <span style="color:#f92672">=</span> Unit1.converted.baseUnitValue(fromValue: lhs.value)
+        let rhsToVND <span style="color:#f92672">=</span> Unit2.converted.baseUnitValue(fromValue: rhs.value)
+        <span style="color:#66d9ef">return</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(lhsToVND <span style="color:#f92672">+</span> rhsToVND)
+}</code></pre></div>
+
+<p>Giờ ta chỉ cần thực hiện lệnh qua phần mềm để tự động chuyển về VND, nhẹ hơn 1 dòng :v</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let vnd <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">20</span>)
+let aud <span style="color:#f92672">=</span> MyMeasurement<span style="color:#f92672">&lt;</span>AUD<span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">10</span>)
+let newSalary <span style="color:#f92672">=</span> vnd <span style="color:#f92672">+</span> aud</code></pre></div>
+
+<p>OK giờ ta có lương, ta muốn tiết kiệm nên làm sổ tiết kiệm VND. Ta bận nên nhờ bạn đến gửi hộ (như lần trước), bạn mang theo $ nhưng lần này ngân hàng nâng cấp hệ thống kiểm tra đầu vào nên bạn không gửi tùy tiện được. Bank cảnh báo lỗi luôn</p>
+
+<p><img src="/hugosite/images/note/strong-type.png" alt="image" /></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> Bank {
+    let money: MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>
+    init(_ money: MyMeasurement<span style="color:#f92672">&lt;</span>VND<span style="color:#f92672">&gt;</span>) {
+        self.money <span style="color:#f92672">=</span> money
+    }
+}</code></pre></div>
+
+<p>Để ý rằng <em>money: Double</em> được thay thế bằng MyMeasurement là <strong>Strong type</strong></p>
+
+<p>Nhưng về sau ta không muốn ra tận ngân hàng để gửi tiền nữa, muốn gửi trực tuyến. Ngân hàng lại cải tiến đáp ứng khách hàng bằng cách sử dụng tool <em>ExpressibleByIntegerLiteral</em> và <em>ExpressibleByFloatLiteral</em> mà Apple cung cấp.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension MyMeasurement: ExpressibleByIntegerLiteral {
+    init(integerLiteral value: IntegerLiteralType) {
+        self.value <span style="color:#f92672">=</span> Double(value)
+    }
+}
+
+extension MyMeasurement: ExpressibleByFloatLiteral {
+    init(floatLiteral value: FloatLiteralType) {
+        self.value <span style="color:#f92672">=</span> Double(value)
+    }
+}</code></pre></div>
+
+<p>Bây giờ thì ta chỉ cần thao tác</p>
+
+<blockquote>
+<p>Bank(5.2) // ngân hàng vẫn check format VND</p>
+</blockquote>
+
+<p>Mọi người có thể lấy full <a href="https://gist.github.com/gg4acrossover/2e62a7f67bc86c3bca48f81f8b508f28">Source code</a> ở đây.</p>
+
+<p>Tham khảo:
+<a href="https://oleb.net/blog/2016/08/measurements-and-units-with-phantom-types/">Measurement</a> ở blog <a href="https://oleb.net/">https://oleb.net/</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-06-08</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift4/">swift4</a>
+          
+          <a href="/tags/ios/">ios</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/tong-hop-mot-so-tip/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tổng hợp một số tip Swift</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/stretchy-header/">
+            <span class="next-text nav-default">Stretchy header</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://gg4acrossover.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

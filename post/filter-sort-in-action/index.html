@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Filter, sort in action - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" />
+  <meta name="description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/post/filter-sort-in-action/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Filter, sort in action" />
+<meta property="og:description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/post/filter-sort-in-action/" />
+
+
+
+<meta property="article:published_time" content="2017-07-03T14:53:55&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-07-03T14:53:55&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Filter, sort in action">
+<meta itemprop="description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.">
+
+
+<meta itemprop="datePublished" content="2017-07-03T14:53:55&#43;07:00" />
+<meta itemprop="dateModified" content="2017-07-03T14:53:55&#43;07:00" />
+<meta itemprop="wordCount" content="470">
+
+
+
+<meta itemprop="keywords" content="ios,swift 3," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Filter, sort in action"/>
+<meta name="twitter:description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Filter, sort in action</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-07-03 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#back-to-basic">Back to basic</a></li>
+<li><a href="#filter">Filter</a></li>
+<li><a href="#sort-theo-alphabet">Sort (theo Alphabet)</a></li>
+<li><a href="#kết">Kết</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h3 id="back-to-basic">Back to basic</h3>
+
+<p>Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.</p>
+
+<p>Có thể nói, những kĩ thuật đơn giản, chúng ta hay bỏ quên, đôi khi lại đưa ra một cách giải hay, độc đáo. Hôm nay, tôi sẽ &ldquo;back to basic&rdquo; để xem lại các hướng giải quyết việc <strong>filter</strong> và <strong>sort</strong> trong Array.</p>
+
+<h3 id="filter">Filter</h3>
+
+<p>Giả sử ta có một mảng</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let listStr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;quoc anh&#34;</span>, <span style="color:#e6db74">&#34;Hoang hai&#34;</span>, <span style="color:#e6db74">&#34;hoàng giang&#34;</span>,<span style="color:#e6db74">&#34;anh ngoc&#34;</span>, <span style="color:#e6db74">&#34;quoc nguyen&#34;</span>]</code></pre></div>
+
+<p>Ta cần lọc ra những phần tử có chứa từ &ldquo;hoang&rdquo;. Ta có thể sử dụng những cách sau.</p>
+
+<ul>
+<li>Sử dụng <em>NSPredicate</em></li>
+</ul>
+
+<p>Trường hợp ta không phân biệt chữ hoa chữ thường ta có thể làm như sau</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterC <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[c] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)
+let arrFilterC <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterC) <span style="color:#f92672">//</span> [<span style="color:#e6db74">&#34;Hoang hai&#34;</span>]</code></pre></div>
+
+<p>Trường hợp ta không phân biệt dấu</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[d] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)
+let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterD) <span style="color:#f92672">//</span> [<span style="color:#e6db74">&#34;hoàng giang&#34;</span>]</code></pre></div>
+
+<p>Nếu không cần phân biệt cả viết hoa, thường, cả dấu, ta có thể kết hợp điều kiện</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[cd] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)</code></pre></div>
+
+<p>Về query format của NSPredicate, mọi người tham khảo thêm tại <a href="http://nshipster.com/nspredicate/">đây</a>.</p>
+
+<ul>
+<li>Sử dụng hàm filter của swift</li>
+</ul>
+
+<p>Cách trên là kế thừa di sản từ ObjC, bây giờ chúng ta sử dụng cách khác, gọn hơn và clear hơn.</p>
+
+<p>Không phân biệt chữ hoa, chữ thường</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrC <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74">&#34;hoang&#34;</span>, options: .caseInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
+
+<p>Ngắn hơn có thể dùng cách sau</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let arrFilter <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>localizedCaseInsensitiveContains(<span style="color:#e6db74">&#34;hoang&#34;</span>)}</code></pre></div>
+
+<p>Không phân biệt dấu</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrD <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74">&#34;hoang&#34;</span>, options: .diacriticInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
+
+<h3 id="sort-theo-alphabet">Sort (theo Alphabet)</h3>
+
+<ul>
+<li>Sử dụng <em>ComparisonResult</em></li>
+</ul>
+
+<p>Trường hợp không phân biệt chữ hoa, chữ thường (Theo mã ascii)</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let arrPre <span style="color:#f92672">=</span> (listStr as NSArray).sortedArray(comparator: { (s1 ,s2) <span style="color:#f92672">-&gt;</span> ComparisonResult <span style="color:#66d9ef">in</span>
+    <span style="color:#66d9ef">if</span> let x <span style="color:#f92672">=</span> s1 as<span style="color:#f92672">?</span> String, let y <span style="color:#f92672">=</span> s2 as<span style="color:#f92672">?</span> String {
+        <span style="color:#66d9ef">return</span> y.localizedCaseInsensitiveCompare(x)
+    }
+    
+    <span style="color:#66d9ef">return</span> ComparisonResult.orderedAscending
+})</code></pre></div>
+
+<p>Kết quả nhận được như sau</p>
+
+<blockquote>
+<p>[&ldquo;quoc nguyen&rdquo;, &ldquo;quoc anh&rdquo;, &ldquo;Hoang hai&rdquo;, &ldquo;hoàng giang&rdquo;, &ldquo;anh ngoc&rdquo;]</p>
+</blockquote>
+
+<ul>
+<li>Sử dụng <em>NSSortDescriptor</em></li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let sortDes <span style="color:#f92672">=</span> NSSortDescriptor(key: nil, ascending: false, selector: <span style="color:#75715e">#selector(NSString.localizedCaseInsensitiveCompare))
+</span><span style="color:#75715e"></span>let arrPre2 <span style="color:#f92672">=</span> (listStr as NSArray).sortedArray(using: [sortDes])</code></pre></div>
+
+<p>Kết quả cũng ra tương tự như trên</p>
+
+<ul>
+<li>Sử dụng hàm <em>sorted</em> của swift</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let sortSimple <span style="color:#f92672">=</span> listStr.sorted {
+    <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">1.</span>localizedCaseInsensitiveCompare(<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">==</span> .orderedAscending
+}</code></pre></div>
+
+<h3 id="kết">Kết</h3>
+
+<p>Tóm lại bằng một câu mà ai cũng biết :D</p>
+
+<blockquote>
+<p>Keep it simple</p>
+</blockquote>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-07-03</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ios/">ios</a>
+          
+          <a href="/tags/swift-3/">swift 3</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/cach-tao-query-don-gian/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Cách tạo query đơn giản</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/slim-tableview/">
+            <span class="next-text nav-default">Slim tableview</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://gg4acrossover.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

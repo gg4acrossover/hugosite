@@ -42,7 +42,7 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
     <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/1.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
@@ -135,11 +135,11 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
 <p>Giả sử ta có các query filter, fields, sort, hints,&hellip;ta có thể tạo enum với mỗi case là 1 query mà ta mong muốn như sau</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">enum</span> ONNodeQuery : String {
-    <span style="color:#66d9ef">case</span> filterSport <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;filter={</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">:</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">SPORTS</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">}&#34;</span>
-    <span style="color:#66d9ef">case</span> fieldsParentChild <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;fields=[</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">parent</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">, </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">children</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">descendants</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">]&#34;</span>
-    <span style="color:#66d9ef">case</span> sortTitle <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;sort=[[</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,1]]&#34;</span>
-    <span style="color:#66d9ef">case</span> hints <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hints=true&amp;hintLevel=%@&#34;</span>
-    <span style="color:#66d9ef">case</span> filterAncestors <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">ancestors</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">:{</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">$in</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">: [ </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%@</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> ]}&#34;</span>
+    <span style="color:#66d9ef">case</span> filterSport <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;filter={</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">:</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">SPORTS</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">}&#34;</span>
+    <span style="color:#66d9ef">case</span> fieldsParentChild <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fields=[</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">parent</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">, </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">children</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">descendants</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">]&#34;</span>
+    <span style="color:#66d9ef">case</span> sortTitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sort=[[</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,1]]&#34;</span>
+    <span style="color:#66d9ef">case</span> hints <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hints=true&amp;hintLevel=%@&#34;</span>
+    <span style="color:#66d9ef">case</span> filterAncestors <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">ancestors</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">:{</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">$in</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">: [ </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%@</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> ]}&#34;</span>
 }</code></pre></div>
 
 <p>Với case <em>hint</em> hoặc <em>filterAncestors</em> ta cần truyền param từ bên ngoài theo string format qua <em>%@</em></p>
@@ -153,7 +153,7 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
 }
 
 <span style="color:#66d9ef">struct</span> ONMakeQuery {
-    var toDrawQuery : String <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;</span>
+    var toDrawQuery : String <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
     
     mutating func handler(cmd : ONNodeQueryParam) {
         <span style="color:#66d9ef">switch</span> cmd {
@@ -162,7 +162,7 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
         <span style="color:#66d9ef">case</span> .addParam(let str)<span style="color:#f92672">:</span>
             self.toDrawQuery <span style="color:#f92672">=</span> String(format: self.toDrawQuery, str)
         <span style="color:#66d9ef">case</span> .addAnd:
-            self.toDrawQuery <span style="color:#f92672">+=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&amp;&#34;</span>
+            self.toDrawQuery <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&amp;&#34;</span>
         }
     }
 }</code></pre></div></p>
@@ -176,7 +176,7 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let query : [ONNodeQueryParam] <span style="color:#f92672">=</span> [.query(.filterSport), .addAnd,
                                   .query(.fieldsParentChild), .addAnd,
                                   .query(.sortTitle), .addAnd,
-                                  .query(.hints), .addParam(str: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;20&#34;</span>)]</code></pre></div>
+                                  .query(.hints), .addParam(str: <span style="color:#e6db74">&#34;20&#34;</span>)]</code></pre></div>
 
 <p>Cũng khá dễ hiểu: ta cần lấy ra các node sport với 1 số trường mong muốn (child, parent), lấy ra hints với 20 records, nối các query bằng kí tự &ldquo;&amp;&ldquo;.</p>
 
@@ -192,14 +192,14 @@ print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need
 
 <p>Tuy nhiên giờ functional programming khá là phổ biến, ta có thể dùng cách khác ngắn hơn mà không cần tạo struct, đó là sử dụng reduce</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let toDrawQuery <span style="color:#f92672">=</span> query.reduce(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;</span>) { (text, value) <span style="color:#f92672">-&gt;</span> String <span style="color:#66d9ef">in</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let toDrawQuery <span style="color:#f92672">=</span> query.reduce(<span style="color:#e6db74">&#34;&#34;</span>) { (text, value) <span style="color:#f92672">-&gt;</span> String <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">switch</span> value {
         <span style="color:#66d9ef">case</span> .query(let query)<span style="color:#f92672">:</span>
             <span style="color:#66d9ef">return</span> text <span style="color:#f92672">+</span> query.rawValue
         <span style="color:#66d9ef">case</span> .addParam(let str)<span style="color:#f92672">:</span>
             <span style="color:#66d9ef">return</span> String(format: text, str)
         <span style="color:#66d9ef">case</span> .addAnd:
-            <span style="color:#66d9ef">return</span> text <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&amp;&#34;</span>
+            <span style="color:#66d9ef">return</span> text <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&amp;&#34;</span>
     }
 }</code></pre></div>
 
@@ -267,13 +267,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/">Tạo progressHUD đơn giản</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/">Strong type và bài toán qui đổi tiền tệ</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/">Tổng hợp một số tip Swift</a></li>            
-        
           <li><a href="https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/">Enum flag c&#43;&#43;</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/stretchy-header/">Stretchy header</a></li>            
+        
+                      
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/hugo-tutorial/">Tạo static site với hugo</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

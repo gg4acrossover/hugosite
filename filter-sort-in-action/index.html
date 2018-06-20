@@ -39,7 +39,7 @@
     <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/7.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
@@ -131,7 +131,7 @@
 
 <p>Giả sử ta có một mảng</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let listStr <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;quoc anh&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hoang hai&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoàng giang&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;anh ngoc&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;quoc nguyen&#34;</span>]</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let listStr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;quoc anh&#34;</span>, <span style="color:#e6db74">&#34;Hoang hai&#34;</span>, <span style="color:#e6db74">&#34;hoàng giang&#34;</span>,<span style="color:#e6db74">&#34;anh ngoc&#34;</span>, <span style="color:#e6db74">&#34;quoc nguyen&#34;</span>]</code></pre></div>
 
 <p>Ta cần lọc ra những phần tử có chứa từ &ldquo;hoang&rdquo;. Ta có thể sử dụng những cách sau.</p>
 
@@ -141,17 +141,17 @@
 
 <p>Trường hợp ta không phân biệt chữ hoa chữ thường ta có thể làm như sau</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterC <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;self contains[c] %@&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoang&#34;</span>)
-let arrFilterC <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterC) <span style="color:#f92672">//</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hoang hai&#34;</span>]</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterC <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[c] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)
+let arrFilterC <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterC) <span style="color:#f92672">//</span> [<span style="color:#e6db74">&#34;Hoang hai&#34;</span>]</code></pre></div>
 
 <p>Trường hợp ta không phân biệt dấu</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;self contains[d] %@&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoang&#34;</span>)
-let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterD) <span style="color:#f92672">//</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoàng giang&#34;</span>]</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[d] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)
+let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterD) <span style="color:#f92672">//</span> [<span style="color:#e6db74">&#34;hoàng giang&#34;</span>]</code></pre></div>
 
 <p>Nếu không cần phân biệt cả viết hoa, thường, cả dấu, ta có thể kết hợp điều kiện</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;self contains[cd] %@&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoang&#34;</span>)</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[cd] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)</code></pre></div>
 
 <p>Về query format của NSPredicate, mọi người tham khảo thêm tại <a href="http://nshipster.com/nspredicate/">đây</a>.</p>
 
@@ -163,15 +163,15 @@ let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtere
 
 <p>Không phân biệt chữ hoa, chữ thường</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrC <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoang&#34;</span>, options: .caseInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrC <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74">&#34;hoang&#34;</span>, options: .caseInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
 
 <p>Ngắn hơn có thể dùng cách sau</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let arrFilter <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>localizedCaseInsensitiveContains(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoang&#34;</span>)}</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let arrFilter <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>localizedCaseInsensitiveContains(<span style="color:#e6db74">&#34;hoang&#34;</span>)}</code></pre></div>
 
 <p>Không phân biệt dấu</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrD <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hoang&#34;</span>, options: .diacriticInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrD <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74">&#34;hoang&#34;</span>, options: .diacriticInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
 
 <h3 id="sort-theo-alphabet">Sort (theo Alphabet)</h3>
 
@@ -278,13 +278,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/">Các thuộc tính của property trong objC</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/">C&#43;&#43;11 những cái hay dùng</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/stretchy-header/">Stretchy header</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/code-sach-code-kho-thoang/">Code sạch, code khô thoáng</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/enum-swift/">Enum result</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/progress-hud-don-gian/">Tạo progressHUD đơn giản</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/strong-type-va-bai-toan-qui-doi-tien-te/">Strong type và bài toán qui đổi tiền tệ</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/">Cách tạo query đơn giản</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

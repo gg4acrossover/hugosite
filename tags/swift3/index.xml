@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swift3 on VietHQ</title>
-    <link>https://gg4acrossover.github.io/hugosite/tags/swift3/</link>
-    <description>Recent content in Swift3 on VietHQ</description>
+    <title>Swift3 on Even - A super concise theme for Hugo</title>
+    <link>https://gg4acrossover.github.io/tags/swift3/</link>
+    <description>Recent content in Swift3 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi-EN</language>
-    <copyright>All rights reserved - 2016</copyright>
+    <language>en</language>
     <lastBuildDate>Wed, 09 Aug 2017 16:41:23 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/tags/swift3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Register user và thực hiện test</title>
-      <link>https://gg4acrossover.github.io/hugosite/register-user-test/</link>
+      <link>https://gg4acrossover.github.io/post/register-user-test/</link>
       <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/register-user-test/</guid>
+      <guid>https://gg4acrossover.github.io/post/register-user-test/</guid>
       <description>Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.</description>
     </item>
     
     <item>
       <title>Cách tạo query đơn giản</title>
-      <link>https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/</link>
+      <link>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</link>
       <pubDate>Thu, 20 Jul 2017 10:43:13 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/</guid>
+      <guid>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</guid>
       <description>Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
 Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm.</description>
     </item>
     
     <item>
       <title>Slim tableview</title>
-      <link>https://gg4acrossover.github.io/hugosite/slim-tableview/</link>
+      <link>https://gg4acrossover.github.io/post/slim-tableview/</link>
       <pubDate>Wed, 07 Jun 2017 16:14:26 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/slim-tableview/</guid>
+      <guid>https://gg4acrossover.github.io/post/slim-tableview/</guid>
       <description>1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
  e = mc2
  Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra.</description>

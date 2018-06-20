@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Codable swift 4 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crossover" />
+  <meta name="description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/post/codable-swift4/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Codable swift 4" />
+<meta property="og:description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/post/codable-swift4/" />
+
+
+
+<meta property="article:published_time" content="2017-11-18T10:10:10&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-11-18T10:10:10&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Codable swift 4">
+<meta itemprop="description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.">
+
+
+<meta itemprop="datePublished" content="2017-11-18T10:10:10&#43;07:00" />
+<meta itemprop="dateModified" content="2017-11-18T10:10:10&#43;07:00" />
+<meta itemprop="wordCount" content="636">
+
+
+
+<meta itemprop="keywords" content="swift,ios," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Codable swift 4"/>
+<meta name="twitter:description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Codable swift 4</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-18 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#codable-là-gì">Codable là gì?</a></li>
+<li><a href="#decodable-như-thế-nào">Decodable như thế nào?</a></li>
+<li><a href="#encoding-như-thế-nào">Encoding như thế nào?</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="codable-là-gì">Codable là gì?</h2>
+
+<p>Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib <em>ObjectMapper</em> để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có <em>JSONModel</em> parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</p>
+
+<p>Tuy nhiên điều đó đã thay đổi khi swift 4 xuất hiện đi kèm với <strong>Codable</strong>. Vậy <strong>Codable</strong> là gì?</p>
+
+<p>Theo như Apple quảng cáo, <strong>Codable</strong> giúp ta được 2 việc:</p>
+
+<ul>
+<li>Encodable dùng để encoding</li>
+<li>Decodable dùng để decoding</li>
+</ul>
+
+<blockquote>
+<p>/// A type that can convert itself into and out of an external representation.</p>
+
+<p>public typealias Codable = Decodable &amp; Encodable</p>
+</blockquote>
+
+<p>Về bản chất <strong>Codable</strong> là một protocol kết hợp giữa 2 protocol <em>Encodable</em> và <em>Decodable</em>, mỗi protocol lại đảm nhận chức năng như nói ở trên. Có thể coi <em>Codable</em> tương đương với một chiêu hai thức :D</p>
+
+<h2 id="decodable-như-thế-nào">Decodable như thế nào?</h2>
+
+<p>Giả sử ta có một json string như sau</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let json <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">[{</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">    &#34;</span>name<span style="color:#e6db74">&#34;:&#34;</span>cross<span style="color:#e6db74">&#34;,</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">    &#34;</span>age<span style="color:#e6db74">&#34;:10,</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">    &#34;</span>birthDay<span style="color:#e6db74">&#34;:&#34;</span><span style="color:#ae81ff">2017</span><span style="color:#f92672">-</span><span style="color:#ae81ff">06</span><span style="color:#f92672">-</span><span style="color:#ae81ff">21</span> <span style="color:#ae81ff">20</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0000</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">}]</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">&#34;&#34;&#34;</span></code></pre></div>
+
+<p>Chúng ta sẽ định nghĩa struct kế thừa <em>Codable</em></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> User : Codable {
+    var name: String<span style="color:#f92672">?</span>
+    var age: Int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    var birthDay: Date
+}</code></pre></div>
+
+<p>Giờ là lúc thức thứ nhất <em>Decodable</em> thể hiện sức mạnh</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// parse json with JSONDecoder
+</span><span style="color:#75715e"></span>let decoder <span style="color:#f92672">=</span> JSONDecoder()
+
+let dateFormater <span style="color:#f92672">=</span> DateFormatter()
+dateFormater.timeZone <span style="color:#f92672">=</span> TimeZone.current
+dateFormater.dateFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-MM-dd HH:mmZ&#34;</span>
+decoder.dateDecodingStrategy <span style="color:#f92672">=</span> .formatted(dateFormater)
+
+<span style="color:#66d9ef">if</span> let data <span style="color:#f92672">=</span> json.data(using: .utf8) {
+    <span style="color:#66d9ef">if</span> let items <span style="color:#f92672">=</span> try<span style="color:#f92672">?</span> decoder.decode([User].self, from: data),
+        let date <span style="color:#f92672">=</span> items.first<span style="color:#f92672">?</span>.birthDay {
+        print(dateFormater.string(from: date))
+        print(items.first<span style="color:#f92672">?</span>.username <span style="color:#f92672">??</span> <span style="color:#e6db74">&#34;something wrong&#34;</span>)
+    } <span style="color:#66d9ef">else</span> {
+        print(<span style="color:#e6db74">&#34;error&#34;</span>)
+    }
+}</code></pre></div>
+
+<p>Ở đây mình cố tình cho biến date vào trong json string, nên parse hơi dài (có thêm bước format data), tuy nhiên về cơ bản chỉ cần 2 dòng code tương ứng 2 bước:</p>
+
+<ul>
+<li>Convert json thành data</li>
+<li>tạo đối tượng JSONDecoder để thực hiện decode</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// step 1
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> let data <span style="color:#f92672">=</span> json.data(using: .utf8) {
+	<span style="color:#75715e">// step 2
+</span><span style="color:#75715e"></span>	let items <span style="color:#f92672">=</span> try<span style="color:#f92672">?</span> JSONDecoder().decode([User].self, from: data)
+	...
+}</code></pre></div>
+
+<p>Vì công thức chỉ có 2 bước, tương ứng với mọi đối tượng, thế nên mình có thể tạo Generic cho việc decoding như sau:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">typealias DecoderConfig <span style="color:#f92672">=</span> (JSONDecoder) <span style="color:#f92672">-&gt;</span> ()
+func parseDecodableObject<span style="color:#f92672">&lt;</span>T: Decodable<span style="color:#f92672">&gt;</span>(data: Data,config: DecoderConfig<span style="color:#f92672">?</span>) throws <span style="color:#f92672">-&gt;</span> T {
+    let decoder <span style="color:#f92672">=</span> JSONDecoder()
+    config<span style="color:#f92672">?</span>(decoder)
+    let injectObject <span style="color:#f92672">=</span> try decoder.decode(T.self, from: data)
+    <span style="color:#66d9ef">return</span> injectObject
+}</code></pre></div>
+
+<p>Tương ứng với code sẽ rút ngắn đi như thế này</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let item: [User] <span style="color:#f92672">=</span> try parseDecodableObject(data: data, config: config)</code></pre></div>
+
+<p>Đôi khi, mình muốn đặt tên thuộc tính theo ý mình, không theo key trên server trả về, có được không nhỉ? <em>Decodable</em> bất chấp hết nhưng cần thêm 1 bước:</p>
+
+<p>Giả sử ở <strong>struct User</strong> đầu ta đổi property name thành&hellip;username, ta sẽ phải thêm 1 enum <em>CodingKeys</em> kế thừa <em>CodingKey</em> vào trong struct User</p>
+
+<p><img src="/hugosite/images/note/decodable.png" alt="image1" /></p>
+
+<p>Có 2 điều bắt buộc đối với enum kế thừa <em>CodingKey</em>:</p>
+
+<ul>
+<li>Phải có type là <em>String</em>.</li>
+<li>Các case phải trùng với tên thuộc tính của đối tượng. Với những thuộc tính cần mapping thì ta gán giá trị, vd: username gán giá trị là &ldquo;name&rdquo;(trùng với json key).</li>
+</ul>
+
+<h2 id="encoding-như-thế-nào">Encoding như thế nào?</h2>
+
+<p>Thức thứ hai trong <em>Codable</em> là <em>Encodable</em>, về cơ bản nó ngược lại với <em>Decodable</em>, thế nên mình chỉ show code thôi.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">var user: User<span style="color:#f92672">?</span>
+<span style="color:#66d9ef">if</span> let date <span style="color:#f92672">=</span> dateFormater.date(from: <span style="color:#e6db74">&#34;2017-06-21 20:20+0000&#34;</span>) {
+    user <span style="color:#f92672">=</span> User(username: <span style="color:#e6db74">&#34;cross&#34;</span>, age: <span style="color:#ae81ff">10</span>, birthDay: date)
+}
+
+let encoder <span style="color:#f92672">=</span> JSONEncoder()
+encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dateFormater)
+
+<span style="color:#66d9ef">do</span> {
+    let userData <span style="color:#f92672">=</span> try encoder.encode(user)
+    let userJson <span style="color:#f92672">=</span> try JSONSerialization.jsonObject(with: userData, options: [])
+    print(userJson)
+} catch {
+    print(error)
+}</code></pre></div>
+
+<p>Về tính ứng dụng: với <em>Encodable</em> ta dễ dàng lưu struct vào <em>UserDefaults</em> hoặc tạo params để post lên server chẳng hạn.</p>
+
+<p>Source code của toàn bộ ví dụ: <a href="https://gist.github.com/gg4acrossover/f27b8b0c2336c5bb7fc7f1a311a29537">source</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">crossover</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-11-18</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/ios/">ios</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/method-dispatch/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Method dispath trong protocol</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/date-la-gi/">
+            <span class="next-text nav-default">Date là gì, có ăn được không?</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://gg4acrossover.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -39,7 +39,7 @@
     <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/9.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
@@ -159,12 +159,12 @@
 extension Worker {
     <span style="color:#75715e">// default value
 </span><span style="color:#75715e"></span>    var name: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;worker&#34;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;worker&#34;</span>
     }
     
     <span style="color:#75715e">// not in original Worker protocol
 </span><span style="color:#75715e"></span>    func sayHi() {
-        print(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hi, \(self.name)&#34;</span>)
+        print(<span style="color:#e6db74">&#34;hi, \(self.name)&#34;</span>)
     }
 }</code></pre></div>
 
@@ -174,11 +174,11 @@ extension Worker {
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> Dev: Worker {
     var name: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;dev&#34;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;dev&#34;</span>
     }
     
     func sayHi() {
-        print(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;hello, \(self.name)&#34;</span>)
+        print(<span style="color:#e6db74">&#34;hello, \(self.name)&#34;</span>)
     }
 }
 
@@ -195,7 +195,7 @@ Thử tiếp, ta đưa 2 đối tượng <em>dev</em> và <em>anotherDev</em> đ
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let listDev <span style="color:#f92672">=</span> [dev, anotherDev]
 <span style="color:#66d9ef">for</span> persion <span style="color:#66d9ef">in</span> listDev {
-    print(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;say hi in loop&#34;</span>)
+    print(<span style="color:#e6db74">&#34;say hi in loop&#34;</span>)
     persion.sayHi() <span style="color:#75715e">// hi, dev
 </span><span style="color:#75715e"></span>}</code></pre></div>
 
@@ -205,13 +205,13 @@ Thử tiếp, ta đưa 2 đối tượng <em>dev</em> và <em>anotherDev</em> đ
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">class</span> PHPDev: Worker {
     func sayHi() {
-        print(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Hiii, \(self.name)&#34;</span>)
+        print(<span style="color:#e6db74">&#34;Hiii, \(self.name)&#34;</span>)
     }
 }
 
 <span style="color:#66d9ef">class</span> WebDev: PHPDev {
     var name: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;WebDev&#34;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;WebDev&#34;</span>
     }
 }
 
@@ -226,7 +226,7 @@ webDev.sayHi() <span style="color:#f92672">//</span> Hi, worker</code></pre></di
 <p>Class PHPDev kế thừa protocol <strong>Worker</strong> và sử dụng default name trong extension protocol. Ta tạo tiếp class WebDev, khai báo lại name</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">var name: String {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;WebDev&#34;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;WebDev&#34;</span>
 }</code></pre></div>
 
 <p>Khi gọi phương thức <strong>sayHi</strong>, kết quả của đối tượng webDev không phải là <em>&ldquo;hiii, WebDev&rdquo;</em>. Đây là bug thứ hai dễ mắc phải mà mình nhắc đến đầu bài.
@@ -303,13 +303,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/">Cách tạo query đơn giản</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/">Tổng hợp một số tip Swift</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/hugo-tutorial/">Tạo static site với hugo</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/register-user-test/">Register user và thực hiện test</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/date-la-gi/">Date là gì, có ăn được không?</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/">Tạo function trong swift</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/filter-sort-in-action/">Filter, sort in action</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

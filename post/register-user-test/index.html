@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Register user và thực hiện test - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" />
+  <meta name="description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/post/register-user-test/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Register user và thực hiện test" />
+<meta property="og:description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/post/register-user-test/" />
+
+
+
+<meta property="article:published_time" content="2017-08-09T16:41:23&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-08-09T16:41:23&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Register user và thực hiện test">
+<meta itemprop="description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.">
+
+
+<meta itemprop="datePublished" content="2017-08-09T16:41:23&#43;07:00" />
+<meta itemprop="dateModified" content="2017-08-09T16:41:23&#43;07:00" />
+<meta itemprop="wordCount" content="698">
+
+
+
+<meta itemprop="keywords" content="swift3,ios," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Register user và thực hiện test"/>
+<meta name="twitter:description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Register user và thực hiện test</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-09 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#giới-thiệu">Giới thiệu</a></li>
+<li><a href="#chuẩn-bị-toy">Chuẩn bị toy</a></li>
+<li><a href="#xác-thực-và-test">Xác thực và test</a></li>
+<li><a href="#tổng-hợp">Tổng hợp</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h3 id="giới-thiệu">Giới thiệu</h3>
+
+<p>Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.</p>
+
+<p>Mình sẽ làm một ví dụ đơn giản thực hiện việc đăng ký mới user với các điều kiện: xác thực format email, xác thực password lớn hơn 8 ký tự có ít nhất 1 kí tự dạng số và ít nhất 1 ký tự dạng chữ và viết test cho việc validate.</p>
+
+<h3 id="chuẩn-bị-toy">Chuẩn bị toy</h3>
+
+<p>Mình tạo một enum Error chứa các case lỗi có thể phát sinh, ở đây để đơn giản chỉ có 2 case. Tiếp theo là một protocol hỗ trợ check thông tin và trả ra mã lỗi, tất cả các object validator sẽ implement protocol này.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">enum</span> ONRegisterUserError : Error {
+    <span style="color:#66d9ef">case</span> invalidEmail
+    <span style="color:#66d9ef">case</span> invalidPassword
+}
+
+protocol ONRegisterUserProtocol {
+    var error: ONRegisterUserError { get }
+    func isValid() <span style="color:#f92672">-&gt;</span> Bool
+}</code></pre></div>
+
+<h3 id="xác-thực-và-test">Xác thực và test</h3>
+
+<p>Mình sẽ bắt đầu với việc xác thực format email, sử dụng protocol ONRegisterUserProtocol như ở trên</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">class</span> ONEmailValidateItem: ONRegisterUserProtocol {
+    var error: ONRegisterUserError <span style="color:#f92672">=</span> .invalidEmail
+    private let email: String
+    
+    init(email: String) {
+        self.email <span style="color:#f92672">=</span> email
+    }
+   
+    func isValid() <span style="color:#f92672">-&gt;</span> Bool {
+        <span style="color:#66d9ef">return</span> true
+    }
+}</code></pre></div>
+
+<p>Ở đây mình chưa implement hàm <em>isValid</em> (chỉ để 1 giá trị default là true trước), công việc trước nhất là viết unit test.
+Mình tạo lớp <em>ONTestEmailValid</em> kế thừa <em>XCTestCase</em> trong thư mục [ProjectName]Tests ([ProjectName] là tên project của bạn).
+Chú ý: nhớ thêm dòng @testable import [Projectname]</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">@testable import ONRegisterUser
+
+<span style="color:#66d9ef">class</span> ONTestEmailValid: XCTestCase {
+    func testEmailInvalidCharacter() {
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@gmail,com&#34;</span>).isValid()
+        XCTAssertFalse(isValid)
+    }
+    
+    func testEmailInvalidProvider() {
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@.com&#34;</span>).isValid()
+        XCTAssertFalse(isValid)
+    }
+    
+    func testEmailInvalidInComplete() {
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@&#34;</span>).isValid()
+        XCTAssertFalse(isValid)
+    }
+    
+    func testEmailInvalidUserName() {
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;@a.com&#34;</span>).isValid()
+        XCTAssertFalse(isValid)
+    }
+    
+    func testEmailValid() {
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@a.com&#34;</span>).isValid()
+        XCTAssertTrue(isValid)
+    }
+}</code></pre></div>
+
+<p>Khi build test (command u) thì các test case hầu hết là fail :D</p>
+
+<p><img src="/hugosite/images/note/testcase.png" alt="testcase" /></p>
+
+<p>Bây giờ mới đến bước implement hàm <em>isValid</em> để nó pass tất cả các case mình định nghĩa</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">func <span style="color:#a6e22e">isValid</span>() <span style="color:#f92672">-&gt;</span> Bool {
+    let emailRegEx <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">.[A-Za-z]{2,}&#34;</span>
+    let emailTest <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;SELF MATCHES %@&#34;</span>, emailRegEx)
+    <span style="color:#66d9ef">return</span> emailTest.evaluate(with: self.email)
+}</code></pre></div>
+
+<p>Để nhanh chóng thì mình sử dụng NSPredicate và regEx cho việc filter (regEx thì copy qua google xài luôn thôi :D).
+check password làm tương tự như cách triển khai class <em>ONTestEmailValid</em>.</p>
+
+<p>Sau khi implement lại hàm <em>isValid</em>, chúng ta chạy lại test, Done!</p>
+
+<p><img src="/hugosite/images/note/testcase_pass.png" alt="testcase" /></p>
+
+<p>OK, chúng ta đã có 2 class thực thi chức năng validate riêng biệt. Tiếp theo, mình xây dựng đối tượng đảm nhận việc quản lý các validator. Mục đích cho việc tạo lớp này là nhận đầu vào input và đưa ra output chung cho tất cả các validator.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">class</span> ONValidateRegisterUser {
+    
+    <span style="color:#66d9ef">enum</span> ONRegisterResult {
+        <span style="color:#66d9ef">case</span> success(String)
+        <span style="color:#66d9ef">case</span> fail(String)
+    }
+    
+    let result: ONRegisterResult
+    
+    init(email: String, password: String) {
+        let validator: [ONRegisterUserProtocol] <span style="color:#f92672">=</span> [ONEmailValidateItem(email: email),
+                                                   ONPasswordValidateItem(password: password)]
+        let invalids <span style="color:#f92672">=</span> validator.filter { <span style="color:#f92672">!</span><span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>isValid() }
+        
+        <span style="color:#66d9ef">if</span> invalids.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> {
+            self.result <span style="color:#f92672">=</span> .fail(<span style="color:#e6db74">&#34;Wrong format&#34;</span>)
+        } <span style="color:#66d9ef">else</span> {
+            self.result <span style="color:#f92672">=</span> .success(<span style="color:#e6db74">&#34;Done&#34;</span>)
+        }
+    }
+}</code></pre></div>
+
+<p>Mình tạo enum <em>ONRegisterResult</em> trả về case success khi cả email và pass đều validate thành công, ngược lại ra fail.
+Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let validator <span style="color:#f92672">=</span> ONValidateRegisterUser(email: self.userNameTextField.text<span style="color:#f92672">!</span>, password: self.passwordTextField.text<span style="color:#f92672">!</span>)
+
+<span style="color:#66d9ef">switch</span> validator.result {
+<span style="color:#66d9ef">case</span> .success(let str)<span style="color:#f92672">:</span>
+    SHOW_ALERT(message: str, vc: self)
+<span style="color:#66d9ef">case</span> .fail(let str)<span style="color:#f92672">:</span>
+    SHOW_ALERT(message: str, vc: self)
+}</code></pre></div>
+
+<h3 id="tổng-hợp">Tổng hợp</h3>
+
+<p>Tóm lược bài viết: để thực hiện việc register và TDD ta chú ý 3 việc sau:</p>
+
+<ul>
+<li>Tạo các lớp validator check đầu vào như username, password,&hellip;</li>
+<li>Tạo một lớp quản lý các validator, nhận đầu vào là các dữ liệu cần validate và trả ra result.</li>
+<li>Test trước khi code :D</li>
+</ul>
+
+<p><a href="https://github.com/gg4acrossover/register-user-example">Source code</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-08-09</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift3/">swift3</a>
+          
+          <a href="/tags/ios/">ios</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/enum-swift/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Enum result</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/cach-tao-query-don-gian/">
+            <span class="next-text nav-default">Cách tạo query đơn giản</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://gg4acrossover.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

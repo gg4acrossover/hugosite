@@ -42,7 +42,7 @@
     <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/11.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
@@ -139,11 +139,11 @@
 <p>Khi sử dụng <em>tableview</em> chúng ta luôn đi theo một format chung, thậm chí gõ đến thuộc lòng, không cần <em>autocomplete</em>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">self.listTbl.<span style="color:#66d9ef">register</span>( UINib( nibName: String(describing: GGArtistryCell.self), bundle: nil), 
-	forCellReuseIdentifier: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;cell&#34;</span>)</code></pre></div>
+	forCellReuseIdentifier: <span style="color:#e6db74">&#34;cell&#34;</span>)</code></pre></div>
 
 <p>Cả những khi dequeue nữa</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let cell <span style="color:#f92672">=</span> tableView.dequeueReusableCell(withIdentifier: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;cell&#34;</span>, <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> indexPath)</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let cell <span style="color:#f92672">=</span> tableView.dequeueReusableCell(withIdentifier: <span style="color:#e6db74">&#34;cell&#34;</span>, <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> indexPath)</code></pre></div>
 
 <p>Những đoạn code này hơi dài, vậy nên chúng ta, những lười biếng coder, nên làm ngắn nó đi tí.
 Mình sẽ sử dụng <strong>protocol</strong> và <strong>generics</strong> để việc đăng kí và dequeue cell ngắn gọn hơn.</p>
@@ -192,7 +192,7 @@ extension GGBaseCellProtocol where Self : UIView {
     
     func on_dequeue<span style="color:#f92672">&lt;</span> T : GGBaseCellProtocol<span style="color:#f92672">&gt;</span>(idxPath : IndexPath) <span style="color:#f92672">-&gt;</span> T {
         guard let cell <span style="color:#f92672">=</span> self.dequeueReusableCell(withIdentifier: T.getNibName(), <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> idxPath) as<span style="color:#f92672">?</span> T <span style="color:#66d9ef">else</span> {
-            fatalError(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;couldnt dequeue cell with identifier \(T.getNibName())&#34;</span>)
+            fatalError(<span style="color:#e6db74">&#34;couldnt dequeue cell with identifier \(T.getNibName())&#34;</span>)
         }
         
         <span style="color:#66d9ef">return</span> cell
@@ -289,15 +289,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/">Các thuộc tính của property trong objC</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/t%E1%BA%A1o-function-trong-swift/">Tạo function trong swift</a></li>            
+        
           <li><a href="https://gg4acrossover.github.io/hugosite/tao-api-client-swift-3/">Tạo APIClient với swift 3</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/tong-hop-mot-so-tip/">Tổng hợp một số tip Swift</a></li>            
-        
-                      
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
-        
-          <li><a href="https://gg4acrossover.github.io/hugosite/method-dispatch/">Method dispath trong protocol</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/">C&#43;&#43;11 những cái hay dùng</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

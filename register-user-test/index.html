@@ -39,7 +39,7 @@
     <meta property="og:image" content="https://gg4acrossover.github.io/hugosite/images/cover/10.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://gg4acrossover.github.io/hugosite/built/screen.css" /> 
@@ -166,27 +166,27 @@ Chú ý: nhớ thêm dòng @testable import [Projectname]</p>
 
 <span style="color:#66d9ef">class</span> ONTestEmailValid: XCTestCase {
     func testEmailInvalidCharacter() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;example@gmail,com&#34;</span>).isValid()
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@gmail,com&#34;</span>).isValid()
         XCTAssertFalse(isValid)
     }
     
     func testEmailInvalidProvider() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;example@.com&#34;</span>).isValid()
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@.com&#34;</span>).isValid()
         XCTAssertFalse(isValid)
     }
     
     func testEmailInvalidInComplete() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;example@&#34;</span>).isValid()
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@&#34;</span>).isValid()
         XCTAssertFalse(isValid)
     }
     
     func testEmailInvalidUserName() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;@a.com&#34;</span>).isValid()
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;@a.com&#34;</span>).isValid()
         XCTAssertFalse(isValid)
     }
     
     func testEmailValid() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;example@a.com&#34;</span>).isValid()
+        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@a.com&#34;</span>).isValid()
         XCTAssertTrue(isValid)
     }
 }</code></pre></div>
@@ -198,8 +198,8 @@ Chú ý: nhớ thêm dòng @testable import [Projectname]</p>
 <p>Bây giờ mới đến bước implement hàm <em>isValid</em> để nó pass tất cả các case mình định nghĩa</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">func <span style="color:#a6e22e">isValid</span>() <span style="color:#f92672">-&gt;</span> Bool {
-    let emailRegEx <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">.[A-Za-z]{2,}&#34;</span>
-    let emailTest <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;SELF MATCHES %@&#34;</span>, emailRegEx)
+    let emailRegEx <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">.[A-Za-z]{2,}&#34;</span>
+    let emailTest <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;SELF MATCHES %@&#34;</span>, emailRegEx)
     <span style="color:#66d9ef">return</span> emailTest.evaluate(with: self.email)
 }</code></pre></div>
 
@@ -227,9 +227,9 @@ check password làm tương tự như cách triển khai class <em>ONTestEmailVa
         let invalids <span style="color:#f92672">=</span> validator.filter { <span style="color:#f92672">!</span><span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>isValid() }
         
         <span style="color:#66d9ef">if</span> invalids.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> {
-            self.result <span style="color:#f92672">=</span> .fail(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Wrong format&#34;</span>)
+            self.result <span style="color:#f92672">=</span> .fail(<span style="color:#e6db74">&#34;Wrong format&#34;</span>)
         } <span style="color:#66d9ef">else</span> {
-            self.result <span style="color:#f92672">=</span> .success(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;Done&#34;</span>)
+            self.result <span style="color:#f92672">=</span> .success(<span style="color:#e6db74">&#34;Done&#34;</span>)
         }
     }
 }</code></pre></div>
@@ -316,13 +316,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://gg4acrossover.github.io/hugosite/cach-tao-query-don-gian/">Cách tạo query đơn giản</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/codable-swift4/">Codable swift 4</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/">C&#43;&#43;11 những cái hay dùng</a></li>            
+                      
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/">Enum flag c&#43;&#43;</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/transition-animation/">Transition Animation</a></li>            
         
-          <li><a href="https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/">Ưu tiên toán tử</a></li>            
+          <li><a href="https://gg4acrossover.github.io/hugosite/c%C3%A1c-thu%E1%BB%99c-t%C3%ADnh-c%E1%BB%A7a-property-trong-objc/">Các thuộc tính của property trong objC</a></li>            
+        
+          <li><a href="https://gg4acrossover.github.io/hugosite/hugo-tutorial/">Tạo static site với hugo</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

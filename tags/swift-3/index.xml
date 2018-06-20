@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swift 3 on VietHQ</title>
-    <link>https://gg4acrossover.github.io/hugosite/tags/swift-3/</link>
-    <description>Recent content in Swift 3 on VietHQ</description>
+    <title>Swift 3 on Even - A super concise theme for Hugo</title>
+    <link>https://gg4acrossover.github.io/tags/swift-3/</link>
+    <description>Recent content in Swift 3 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi-EN</language>
-    <copyright>All rights reserved - 2016</copyright>
+    <language>en</language>
     <lastBuildDate>Mon, 03 Jul 2017 14:53:55 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift-3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/tags/swift-3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Filter, sort in action</title>
-      <link>https://gg4acrossover.github.io/hugosite/filter-sort-in-action/</link>
+      <link>https://gg4acrossover.github.io/post/filter-sort-in-action/</link>
       <pubDate>Mon, 03 Jul 2017 14:53:55 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/filter-sort-in-action/</guid>
+      <guid>https://gg4acrossover.github.io/post/filter-sort-in-action/</guid>
       <description>Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.</description>
     </item>
     

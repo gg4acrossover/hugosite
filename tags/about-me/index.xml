@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About Me on VietHQ</title>
-    <link>https://gg4acrossover.github.io/hugosite/tags/about-me/</link>
-    <description>Recent content in About Me on VietHQ</description>
+    <title>About me on Even - A super concise theme for Hugo</title>
+    <link>https://gg4acrossover.github.io/tags/about-me/</link>
+    <description>Recent content in About me on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi-EN</language>
-    <copyright>All rights reserved - 2016</copyright>
+    <language>en</language>
     <lastBuildDate>Mon, 05 Sep 2016 13:17:19 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/about-me/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/tags/about-me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About me</title>
-      <link>https://gg4acrossover.github.io/hugosite/about/</link>
+      <link>https://gg4acrossover.github.io/about/</link>
       <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/about/</guid>
+      <guid>https://gg4acrossover.github.io/about/</guid>
       <description>Tôi là developer nhân dân :D, chuyên môn của tôi là lập trình IOS, lập trình game sử dụng cocos2dx. Tôi có hứng thú tìm tòi thêm một chút về javascript nữa. Ngoài lập trình tôi chơi bóng rổ và khoái bi.a, thích đọc sách. Hãy liên lạc với tôi nếu bạn có chung sở thích :D. hoangquocviet1402@gmail.com</description>
     </item>
     

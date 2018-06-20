@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C&#43;&#43; on VietHQ</title>
-    <link>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</link>
-    <description>Recent content in C&#43;&#43; on VietHQ</description>
+    <title>C&#43;&#43; on Even - A super concise theme for Hugo</title>
+    <link>https://gg4acrossover.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi-EN</language>
-    <copyright>All rights reserved - 2016</copyright>
+    <language>en</language>
     <lastBuildDate>Mon, 05 Sep 2016 16:32:39 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ưu tiên toán tử</title>
-      <link>https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/</link>
+      <link>https://gg4acrossover.github.io/post/uu-tien-toan-tu/</link>
       <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/uu-tien-toan-tu/</guid>
+      <guid>https://gg4acrossover.github.io/post/uu-tien-toan-tu/</guid>
       <description>Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)
 mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b != 0) a &amp;lt;&amp;lt; 4 + b (a &amp;lt;&amp;lt; 4) + b a &amp;lt;&amp;lt; (4 + b)  !</description>
     </item>
     
     <item>
       <title>C&#43;&#43;11 những cái hay dùng</title>
-      <link>https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/</link>
+      <link>https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/</link>
       <pubDate>Mon, 05 Sep 2016 16:21:13 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/c-plus-11-nhung-cai-hay-dung/</guid>
+      <guid>https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/</guid>
       <description>Bài tham khảo từ link:
  http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
  Sử dụng auto Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
@@ -37,10 +36,10 @@ auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.
     
     <item>
       <title>Enum flag c&#43;&#43;</title>
-      <link>https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/</link>
+      <link>https://gg4acrossover.github.io/post/enum-flag-c-plus-plus/</link>
       <pubDate>Mon, 05 Sep 2016 15:51:57 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/enum-flag-c-plus-plus/</guid>
+      <guid>https://gg4acrossover.github.io/post/enum-flag-c-plus-plus/</guid>
       <description>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
  Daynhauhoc
  Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
