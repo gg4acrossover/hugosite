@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Objc on Even - A super concise theme for Hugo</title>
-    <link>https://gg4acrossover.github.io/tags/objc/</link>
-    <description>Recent content in Objc on Even - A super concise theme for Hugo</description>
+    <title>Objc on VietHQ - Tìm đơn giản trong phức tạp</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/objc/</link>
+    <description>Recent content in Objc on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 20 Sep 2016 16:01:11 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/tags/objc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/objc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Transition Animation</title>
-      <link>https://gg4acrossover.github.io/post/transition-animation/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/transition-animation/</link>
       <pubDate>Tue, 20 Sep 2016 16:01:11 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/transition-animation/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/transition-animation/</guid>
       <description>Giới thiệu Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:
  NavigationController TabbarController Presentations và dismiss  Mình sẽ tập trung vào custom animation push và pop với NavigationController. Với các phương thức chuyển viewcontroller khác thì làm tương tự.
 Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B.</description>
@@ -24,10 +24,10 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
     
     <item>
       <title>Code sạch, code khô thoáng</title>
-      <link>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</link>
       <pubDate>Mon, 05 Sep 2016 16:36:42 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</guid>
       <description>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄
 Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:
 NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18}; Thay vì viết:</description>
@@ -35,10 +35,10 @@ NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#
     
     <item>
       <title>Các thuộc tính của property trong objC</title>
-      <link>https://gg4acrossover.github.io/post/first-time-to-hugo/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/</link>
       <pubDate>Thu, 01 Sep 2016 17:22:59 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/first-time-to-hugo/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/</guid>
       <description>Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
 Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.</description>
     </item>

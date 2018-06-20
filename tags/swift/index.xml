@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swift on Even - A super concise theme for Hugo</title>
-    <link>https://gg4acrossover.github.io/tags/swift/</link>
-    <description>Recent content in Swift on Even - A super concise theme for Hugo</description>
+    <title>Swift on VietHQ - Tìm đơn giản trong phức tạp</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/swift/</link>
+    <description>Recent content in Swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 25 Nov 2017 11:36:01 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Method dispath trong protocol</title>
-      <link>https://gg4acrossover.github.io/post/method-dispatch/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/method-dispatch/</link>
       <pubDate>Sat, 25 Nov 2017 11:36:01 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/method-dispatch/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/method-dispatch/</guid>
       <description>Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
  Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức.</description>
     </item>
     
     <item>
       <title>Codable swift 4</title>
-      <link>https://gg4acrossover.github.io/post/codable-swift4/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/codable-swift4/</link>
       <pubDate>Sat, 18 Nov 2017 10:10:10 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/codable-swift4/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/codable-swift4/</guid>
       <description>Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</description>
     </item>
     
     <item>
       <title>Date là gì, có ăn được không?</title>
-      <link>https://gg4acrossover.github.io/post/date-la-gi/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/date-la-gi/</link>
       <pubDate>Mon, 06 Nov 2017 16:50:29 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/date-la-gi/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/date-la-gi/</guid>
       <description>Date Date là một đối tượng gần như không thể thiếu trong các app hiện nay. Nó xuất hiện trong lịch, trong thương mại điện tử, trong các app nhắc việc. Làm việc với date tưởng chừng như đơn giản nhưng lại là vấn đề hết sức đau đầu vì nó mang tính tương đối :D. Tỉ như ở Việt Nam, người dân đang vội vã đón con cuối chiều, nhưng ở nước khác, họ lại đang cafe buổi sáng.</description>
     </item>
     
     <item>
       <title>Enum result</title>
-      <link>https://gg4acrossover.github.io/post/enum-swift/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/enum-swift/</link>
       <pubDate>Sat, 14 Oct 2017 10:34:47 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/enum-swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/enum-swift/</guid>
       <description>Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
 Kiểu phổ thông Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire
 enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T? { switch self { case .</description>
@@ -52,29 +52,29 @@ enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var va
     
     <item>
       <title>Tạo APIClient với swift 3</title>
-      <link>https://gg4acrossover.github.io/post/tao-api-client-swift-3/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/</link>
       <pubDate>Mon, 29 May 2017 15:11:07 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/tao-api-client-swift-3/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/</guid>
       <description>1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó).</description>
     </item>
     
     <item>
       <title>Tạo progressHUD đơn giản</title>
-      <link>https://gg4acrossover.github.io/post/progress-hud-don-gian/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/progress-hud-don-gian/</link>
       <pubDate>Wed, 10 May 2017 11:25:40 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/progress-hud-don-gian/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/progress-hud-don-gian/</guid>
       <description>Giới thiệu ProgressHUD là thành phần không thể thiếu trong các app mobile, thường được sử dụng mỗi khi load data từ server. Mình hay dùng tool hỗ trợ, tỉ như thằng SVProgressHUD hay thằng MBProgressHUD. Tuy nhiên thi thoảng tự sướng chút cho nó yomost 😄. Ví dụ này mình sẽ viết bằng swift 3
 Ý tưởng Mình sẽ tạo 1 window với rootViewController có nhiệm vụ làm container cho thằng HUD.</description>
     </item>
     
     <item>
       <title>Tạo function trong swift</title>
-      <link>https://gg4acrossover.github.io/post/tao-func-trong-swift/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</link>
       <pubDate>Mon, 05 Sep 2016 16:27:24 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/tao-func-trong-swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</guid>
       <description>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
 Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
     </item>

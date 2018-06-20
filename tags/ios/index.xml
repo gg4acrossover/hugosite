@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ios on Even - A super concise theme for Hugo</title>
-    <link>https://gg4acrossover.github.io/tags/ios/</link>
-    <description>Recent content in Ios on Even - A super concise theme for Hugo</description>
+    <title>Ios on VietHQ - Tìm đơn giản trong phức tạp</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/ios/</link>
+    <description>Recent content in Ios on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Jun 2018 15:04:33 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Strong type và bài toán qui đổi tiền tệ</title>
-      <link>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/strong-type-va-bai-toan-qui-doi-tien-te/</link>
       <pubDate>Fri, 08 Jun 2018 15:04:33 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
       <description>Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
 Một ví dụ điển hình và đơn giản nhất:
 Ta có một struct Bank để gửi tiền</description>
@@ -24,38 +24,38 @@ Ta có một struct Bank để gửi tiền</description>
     
     <item>
       <title>Stretchy header</title>
-      <link>https://gg4acrossover.github.io/post/stretchy-header/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/stretchy-header/</link>
       <pubDate>Sat, 28 Apr 2018 01:44:57 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/stretchy-header/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/stretchy-header/</guid>
       <description>1.Tản mạn Tạo stretchy header là kỹ thuật không mới nhưng cho hiệu ứng khá đẹp mắt, hiện nay vẫn được nhiều app ưa chuộng dùng lại. Trước đây, hồi còn chưa ra swift, thấy trò này hay quá, mình cũng mày mò tự tạo một cái, tuy nhiên chưa có cơ hội áp dụng vào dự án thực tế. Ở công ty hiện tại, mình được chủ động hơn trong công việc, nên cũng tùy tiện gắn stretchy header vào cho có chút phá cách.</description>
     </item>
     
     <item>
       <title>Method dispath trong protocol</title>
-      <link>https://gg4acrossover.github.io/post/method-dispatch/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/method-dispatch/</link>
       <pubDate>Sat, 25 Nov 2017 11:36:01 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/method-dispatch/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/method-dispatch/</guid>
       <description>Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
  Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức.</description>
     </item>
     
     <item>
       <title>Codable swift 4</title>
-      <link>https://gg4acrossover.github.io/post/codable-swift4/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/codable-swift4/</link>
       <pubDate>Sat, 18 Nov 2017 10:10:10 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/codable-swift4/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/codable-swift4/</guid>
       <description>Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</description>
     </item>
     
     <item>
       <title>Enum result</title>
-      <link>https://gg4acrossover.github.io/post/enum-swift/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/enum-swift/</link>
       <pubDate>Sat, 14 Oct 2017 10:34:47 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/enum-swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/enum-swift/</guid>
       <description>Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
 Kiểu phổ thông Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire
 enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T? { switch self { case .</description>
@@ -63,38 +63,38 @@ enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var va
     
     <item>
       <title>Register user và thực hiện test</title>
-      <link>https://gg4acrossover.github.io/post/register-user-test/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/register-user-test/</link>
       <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/register-user-test/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/register-user-test/</guid>
       <description>Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.</description>
     </item>
     
     <item>
       <title>Cách tạo query đơn giản</title>
-      <link>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/</link>
       <pubDate>Thu, 20 Jul 2017 10:43:13 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/</guid>
       <description>Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
 Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm.</description>
     </item>
     
     <item>
       <title>Filter, sort in action</title>
-      <link>https://gg4acrossover.github.io/post/filter-sort-in-action/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/</link>
       <pubDate>Mon, 03 Jul 2017 14:53:55 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/filter-sort-in-action/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/</guid>
       <description>Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.</description>
     </item>
     
     <item>
       <title>Slim tableview</title>
-      <link>https://gg4acrossover.github.io/post/slim-tableview/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/slim-tableview/</link>
       <pubDate>Wed, 07 Jun 2017 16:14:26 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/slim-tableview/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/slim-tableview/</guid>
       <description>1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
  e = mc2
  Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra.</description>
@@ -102,10 +102,10 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
     
     <item>
       <title>Code sạch, code khô thoáng</title>
-      <link>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</link>
       <pubDate>Mon, 05 Sep 2016 16:36:42 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</guid>
       <description>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄
 Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:
 NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18}; Thay vì viết:</description>
@@ -113,10 +113,10 @@ NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#
     
     <item>
       <title>Tạo function trong swift</title>
-      <link>https://gg4acrossover.github.io/post/tao-func-trong-swift/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</link>
       <pubDate>Mon, 05 Sep 2016 16:27:24 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/tao-func-trong-swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</guid>
       <description>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
 Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
     </item>

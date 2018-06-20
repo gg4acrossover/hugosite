@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Even - A super concise theme for Hugo</title>
-    <link>https://gg4acrossover.github.io/</link>
-    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <title>VietHQ - Tìm đơn giản trong phức tạp</title>
+    <link>https://gg4acrossover.github.io/hugosite/</link>
+    <description>Recent content on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 15 Jun 2018 17:21:29 +0700</lastBuildDate>
     
-	<atom:link href="https://gg4acrossover.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tổng hợp một số tip Swift</title>
-      <link>https://gg4acrossover.github.io/post/tong-hop-mot-so-tip/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/tong-hop-mot-so-tip/</link>
       <pubDate>Fri, 15 Jun 2018 17:21:29 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/tong-hop-mot-so-tip/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/tong-hop-mot-so-tip/</guid>
       <description>Tổng hợp một số tip Swift mà mình hay dùng
 Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
 typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.0 s Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại.</description>
@@ -24,10 +24,10 @@ typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(va
     
     <item>
       <title>Strong type và bài toán qui đổi tiền tệ</title>
-      <link>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/strong-type-va-bai-toan-qui-doi-tien-te/</link>
       <pubDate>Fri, 08 Jun 2018 15:04:33 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/strong-type-va-bai-toan-qui-doi-tien-te/</guid>
       <description>Strong type là gì? Tại sao lại cần? Strong type là cách ta định nghĩa ra một kiểu dữ liệu mới, từ những dữ liệu có sẵn nhưng mang tính định danh cao hơn. Ở các ngôn ngữ khác, ví dụ như haskell, người ta hay gọi đấy là Phantom types (kiểu bóng ma)
 Một ví dụ điển hình và đơn giản nhất:
 Ta có một struct Bank để gửi tiền</description>
@@ -35,47 +35,47 @@ Ta có một struct Bank để gửi tiền</description>
     
     <item>
       <title>Stretchy header</title>
-      <link>https://gg4acrossover.github.io/post/stretchy-header/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/stretchy-header/</link>
       <pubDate>Sat, 28 Apr 2018 01:44:57 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/stretchy-header/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/stretchy-header/</guid>
       <description>1.Tản mạn Tạo stretchy header là kỹ thuật không mới nhưng cho hiệu ứng khá đẹp mắt, hiện nay vẫn được nhiều app ưa chuộng dùng lại. Trước đây, hồi còn chưa ra swift, thấy trò này hay quá, mình cũng mày mò tự tạo một cái, tuy nhiên chưa có cơ hội áp dụng vào dự án thực tế. Ở công ty hiện tại, mình được chủ động hơn trong công việc, nên cũng tùy tiện gắn stretchy header vào cho có chút phá cách.</description>
     </item>
     
     <item>
       <title>Method dispath trong protocol</title>
-      <link>https://gg4acrossover.github.io/post/method-dispatch/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/method-dispatch/</link>
       <pubDate>Sat, 25 Nov 2017 11:36:01 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/method-dispatch/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/method-dispatch/</guid>
       <description>Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
  Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức.</description>
     </item>
     
     <item>
       <title>Codable swift 4</title>
-      <link>https://gg4acrossover.github.io/post/codable-swift4/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/codable-swift4/</link>
       <pubDate>Sat, 18 Nov 2017 10:10:10 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/codable-swift4/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/codable-swift4/</guid>
       <description>Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</description>
     </item>
     
     <item>
       <title>Date là gì, có ăn được không?</title>
-      <link>https://gg4acrossover.github.io/post/date-la-gi/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/date-la-gi/</link>
       <pubDate>Mon, 06 Nov 2017 16:50:29 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/date-la-gi/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/date-la-gi/</guid>
       <description>Date Date là một đối tượng gần như không thể thiếu trong các app hiện nay. Nó xuất hiện trong lịch, trong thương mại điện tử, trong các app nhắc việc. Làm việc với date tưởng chừng như đơn giản nhưng lại là vấn đề hết sức đau đầu vì nó mang tính tương đối :D. Tỉ như ở Việt Nam, người dân đang vội vã đón con cuối chiều, nhưng ở nước khác, họ lại đang cafe buổi sáng.</description>
     </item>
     
     <item>
       <title>Enum result</title>
-      <link>https://gg4acrossover.github.io/post/enum-swift/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/enum-swift/</link>
       <pubDate>Sat, 14 Oct 2017 10:34:47 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/enum-swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/enum-swift/</guid>
       <description>Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
 Kiểu phổ thông Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire
 enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T? { switch self { case .</description>
@@ -83,38 +83,38 @@ enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var va
     
     <item>
       <title>Register user và thực hiện test</title>
-      <link>https://gg4acrossover.github.io/post/register-user-test/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/register-user-test/</link>
       <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/register-user-test/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/register-user-test/</guid>
       <description>Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.</description>
     </item>
     
     <item>
       <title>Cách tạo query đơn giản</title>
-      <link>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/</link>
       <pubDate>Thu, 20 Jul 2017 10:43:13 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/cach-tao-query-don-gian/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/</guid>
       <description>Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
 Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm.</description>
     </item>
     
     <item>
       <title>Filter, sort in action</title>
-      <link>https://gg4acrossover.github.io/post/filter-sort-in-action/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/</link>
       <pubDate>Mon, 03 Jul 2017 14:53:55 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/filter-sort-in-action/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/</guid>
       <description>Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.</description>
     </item>
     
     <item>
       <title>Slim tableview</title>
-      <link>https://gg4acrossover.github.io/post/slim-tableview/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/slim-tableview/</link>
       <pubDate>Wed, 07 Jun 2017 16:14:26 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/slim-tableview/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/slim-tableview/</guid>
       <description>1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
  e = mc2
  Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra.</description>
@@ -122,29 +122,29 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
     
     <item>
       <title>Tạo APIClient với swift 3</title>
-      <link>https://gg4acrossover.github.io/post/tao-api-client-swift-3/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/</link>
       <pubDate>Mon, 29 May 2017 15:11:07 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/tao-api-client-swift-3/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/</guid>
       <description>1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó).</description>
     </item>
     
     <item>
       <title>Tạo progressHUD đơn giản</title>
-      <link>https://gg4acrossover.github.io/post/progress-hud-don-gian/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/progress-hud-don-gian/</link>
       <pubDate>Wed, 10 May 2017 11:25:40 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/progress-hud-don-gian/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/progress-hud-don-gian/</guid>
       <description>Giới thiệu ProgressHUD là thành phần không thể thiếu trong các app mobile, thường được sử dụng mỗi khi load data từ server. Mình hay dùng tool hỗ trợ, tỉ như thằng SVProgressHUD hay thằng MBProgressHUD. Tuy nhiên thi thoảng tự sướng chút cho nó yomost 😄. Ví dụ này mình sẽ viết bằng swift 3
 Ý tưởng Mình sẽ tạo 1 window với rootViewController có nhiệm vụ làm container cho thằng HUD.</description>
     </item>
     
     <item>
       <title>Tạo static site với hugo</title>
-      <link>https://gg4acrossover.github.io/post/hugo-tutorial/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/hugo-tutorial/</link>
       <pubDate>Wed, 11 Jan 2017 14:27:47 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/hugo-tutorial/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/hugo-tutorial/</guid>
       <description>Blog hiện tại của mình sử dụng hugo.
  https://gohugo.io/
  Đây là một static website engine, cài đặt đơn giản, có thể deploy trực tiếp trên github. Mặc dù hugo được quảng cáo bởi hiệu năng tốt nhưng điều kéo mình đến với engine này là thư viện theme khổng lồ mà không kém phần lung linh của nó.
@@ -154,10 +154,10 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
     
     <item>
       <title>Transition Animation</title>
-      <link>https://gg4acrossover.github.io/post/transition-animation/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/transition-animation/</link>
       <pubDate>Tue, 20 Sep 2016 16:01:11 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/transition-animation/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/transition-animation/</guid>
       <description>Giới thiệu Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:
  NavigationController TabbarController Presentations và dismiss  Mình sẽ tập trung vào custom animation push và pop với NavigationController. Với các phương thức chuyển viewcontroller khác thì làm tương tự.
 Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B.</description>
@@ -165,10 +165,10 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
     
     <item>
       <title>Code sạch, code khô thoáng</title>
-      <link>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</link>
       <pubDate>Mon, 05 Sep 2016 16:36:42 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/code-sach-code-kho-thoang/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</guid>
       <description>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄
 Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:
 NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18}; Thay vì viết:</description>
@@ -176,30 +176,30 @@ NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#
     
     <item>
       <title>Ưu tiên toán tử</title>
-      <link>https://gg4acrossover.github.io/post/uu-tien-toan-tu/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/uu-tien-toan-tu/</link>
       <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/uu-tien-toan-tu/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/uu-tien-toan-tu/</guid>
       <description>Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)
 mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b != 0) a &amp;lt;&amp;lt; 4 + b (a &amp;lt;&amp;lt; 4) + b a &amp;lt;&amp;lt; (4 + b)  !</description>
     </item>
     
     <item>
       <title>Tạo function trong swift</title>
-      <link>https://gg4acrossover.github.io/post/tao-func-trong-swift/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</link>
       <pubDate>Mon, 05 Sep 2016 16:27:24 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/tao-func-trong-swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</guid>
       <description>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
 Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
     </item>
     
     <item>
       <title>C&#43;&#43;11 những cái hay dùng</title>
-      <link>https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/c-plus-11-nhung-cai-hay-dung/</link>
       <pubDate>Mon, 05 Sep 2016 16:21:13 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/c-plus-11-nhung-cai-hay-dung/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/c-plus-11-nhung-cai-hay-dung/</guid>
       <description>Bài tham khảo từ link:
  http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
  Sử dụng auto Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
@@ -209,10 +209,10 @@ auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.
     
     <item>
       <title>Enum flag c&#43;&#43;</title>
-      <link>https://gg4acrossover.github.io/post/enum-flag-c-plus-plus/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/enum-flag-c-plus-plus/</link>
       <pubDate>Mon, 05 Sep 2016 15:51:57 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/enum-flag-c-plus-plus/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/enum-flag-c-plus-plus/</guid>
       <description>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
  Daynhauhoc
  Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
@@ -221,19 +221,19 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
     
     <item>
       <title>About me</title>
-      <link>https://gg4acrossover.github.io/about/</link>
+      <link>https://gg4acrossover.github.io/hugosite/about/</link>
       <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/about/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/about/</guid>
       <description>Tôi là developer nhân dân :D, chuyên môn của tôi là lập trình IOS, lập trình game sử dụng cocos2dx. Tôi có hứng thú tìm tòi thêm một chút về javascript nữa. Ngoài lập trình tôi chơi bóng rổ và khoái bi.a, thích đọc sách. Hãy liên lạc với tôi nếu bạn có chung sở thích :D. hoangquocviet1402@gmail.com</description>
     </item>
     
     <item>
       <title>Các thuộc tính của property trong objC</title>
-      <link>https://gg4acrossover.github.io/post/first-time-to-hugo/</link>
+      <link>https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/</link>
       <pubDate>Thu, 01 Sep 2016 17:22:59 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/post/first-time-to-hugo/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/</guid>
       <description>Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
 Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.</description>
     </item>

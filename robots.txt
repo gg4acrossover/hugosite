@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://gg4acrossover.github.io/sitemap.xml
+Sitemap: https://gg4acrossover.github.io/hugosite/sitemap.xml
