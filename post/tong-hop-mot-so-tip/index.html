@@ -82,7 +82,7 @@ typealias Duration = Measurement&lt;UnitDuration&gt; let s = Duration(value: 60.
 
 <meta itemprop="datePublished" content="2018-06-15T17:21:29&#43;07:00" />
 <meta itemprop="dateModified" content="2018-06-15T17:21:29&#43;07:00" />
-<meta itemprop="wordCount" content="449">
+<meta itemprop="wordCount" content="420">
 
 
 
@@ -280,18 +280,8 @@ Viết `self` sẽ giúp bạn sử dụng <em>self</em> như một biến, thay
 
 <p>Sử dụng overload toán tử là một cách hay để tiếp cận swift theo hướng functional.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">precedencegroup ForwardApplication {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">precedencegroup ForwardComposition {
     associativity: left
-}
-infix operator <span style="color:#f92672">|&gt;</span> <span style="color:#f92672">:</span> ForwardApplication
-func <span style="color:#f92672">|&gt;</span> <span style="color:#f92672">&lt;</span>A,B<span style="color:#f92672">&gt;</span> (x: A, f: @escaping (A) <span style="color:#f92672">-&gt;</span> B) <span style="color:#f92672">-&gt;</span> B {
-    <span style="color:#66d9ef">return</span> f(x)
-}
-
-
-precedencegroup ForwardComposition {
-    associativity: left
-    higherThan: ForwardApplication
 }
 infix operator <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">:</span> ForwardComposition
 func <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">&lt;</span>A,B,C<span style="color:#f92672">&gt;</span> (f: @escaping (A) <span style="color:#f92672">-&gt;</span> B, g: @escaping (B) <span style="color:#f92672">-&gt;</span> C) <span style="color:#f92672">-&gt;</span> (A) <span style="color:#f92672">-&gt;</span> C {
