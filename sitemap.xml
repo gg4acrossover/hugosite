@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/</loc>
+    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/tong-hop-mot-so-tip/</loc>
     <lastmod>2018-06-15T17:21:29+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -177,6 +184,13 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/functional-programming/</loc>
+    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
     <lastmod>2017-01-11T14:27:47+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -199,14 +213,14 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
-    <lastmod>2017-11-25T11:36:01+07:00</lastmod>
+    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -241,7 +255,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

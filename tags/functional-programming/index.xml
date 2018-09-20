@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functional programming on VietHQ - Tìm đơn giản trong phức tạp</title>
+    <link>https://gg4acrossover.github.io/hugosite/tags/functional-programming/</link>
+    <description>Recent content in Functional programming on VietHQ - Tìm đơn giản trong phức tạp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Sep 2018 00:28:59 +0700</lastBuildDate>
+    
+	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Xử lý callback hell với functional programming</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/</link>
+      <pubDate>Wed, 19 Sep 2018 00:28:59 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/</guid>
+      <description>Giới thiệu Callback là kĩ thuật được ưa chuộng trong lập trình hiện nay. Ngặt nỗi, nếu sử dụng không khéo rất dễ xảy ra callback hell. Dưới con mắt nghệ thuật, nó lai lái kim tự tháp, nhưng dưới con mắt coder, đặc biệt với những lập trình viên ưa-cái-đẹp thì nó chẳng khác gì một thảm họa. Bí kíp tránh callback hell không phải là không có. Nếu chính đạo dùng Promise thì tà đạo chơi functional programming.</description>
+    </item>
+    
+  </channel>
+</rss>
