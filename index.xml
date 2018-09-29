@@ -6,10 +6,19 @@
     <description>Recent content on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Sep 2018 00:28:59 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 30 Sep 2018 01:27:11 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Style view</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/style-view/</link>
+      <pubDate>Sun, 30 Sep 2018 01:27:11 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/style-view/</guid>
+      <description>Một phút cho quảng cáo Trong lập trình IOS nói riêng và mobile nói chung, kỹ năng code giao diện là phần rất quan trọng. Độ phức tạp của một task và thời gian thực hiện phụ thuộc nhiều vào UI bạn làm. UI đơn giản thì làm nhanh, UI khó thì làm lâu. Kĩ năng tạo giao diện cần được các thợ code mobile trau dồi, rèn luyện thật kĩ.</description>
+    </item>
     
     <item>
       <title>Xử lý callback hell với functional programming</title>
