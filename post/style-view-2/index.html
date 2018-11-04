@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tạo Style cho UIView - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" />
+  <meta name="description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
+Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/style-view-2/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Tạo Style cho UIView" />
+<meta property="og:description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
+Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/style-view-2/" />
+
+
+
+<meta property="article:published_time" content="2018-11-02T15:05:09&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-11-02T15:05:09&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Tạo Style cho UIView">
+<meta itemprop="description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
+Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI.">
+
+
+<meta itemprop="datePublished" content="2018-11-02T15:05:09&#43;07:00" />
+<meta itemprop="dateModified" content="2018-11-02T15:05:09&#43;07:00" />
+<meta itemprop="wordCount" content="843">
+
+
+
+<meta itemprop="keywords" content="swift," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tạo Style cho UIView"/>
+<meta name="twitter:description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
+Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tạo Style cho UIView</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-02 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#giới-thiệu">Giới thiệu</a></li>
+<li><a href="#ý-tưởng">Ý tưởng</a></li>
+<li><a href="#show-me-the-code">Show me the code</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="giới-thiệu">Giới thiệu</h2>
+
+<p><em>Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình</em></p>
+
+<p>Đây là phần 2 của <a href="https://gg4acrossover.github.io/hugosite/post/style-view/">bài trước</a> tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng <em>struct</em>. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng <strong>IBInspectable</strong> để định hìnhh style cho <em>UIView</em>, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI.</p>
+
+<h2 id="ý-tưởng">Ý tưởng</h2>
+
+<p>Trước hết nói về <strong>IBInspectable</strong> cho những bạn chưa biết. Bạn tạo một thuộc tính, bạn muốn cấu hình nó trên file Xib như làm với <em>background color, font, align</em> thì <strong>IBInspectable</strong> là keyword dành cho bạn.</p>
+
+<p><img src="/hugosite/images/note/style-ui/style-2-1.png" alt="img1" /></p>
+
+<p>Tận dụng tính năng đó, mình muốn khi mình gõ tên style vào trong file Xib thì uiview sẽ khoác lên mình giao diện đã định nghĩa từ trước. Để làm được việc này ta cần tạo 1 danh sách để định danh giao diện. Ví dụ gõ &ldquo;bo tròn&rdquo; thì sẽ gọi đến <em>class BorderStyle</em> để làm việc.</p>
+
+<p>Hình dung các bước sẽ như sau:</p>
+
+<p>List danh sách style -&gt; Lớp quản lý -&gt; lấy ra style -&gt; gắn vào UIView</p>
+
+<p>B1: tạo list style (register)</p>
+
+<p>B2: gắn list vào 1 lớp manager để quản lý danh sách đã tạo</p>
+
+<p>B3: lấy ra style cần dùng từ lớp manager</p>
+
+<p>B4: gắn vào UIView</p>
+
+<h2 id="show-me-the-code">Show me the code</h2>
+
+<p>Thời đại của protocol mà, sử dụng nó thôi, bước đầu ta tạo interface để định hướng behavior cho đối tượng. Ta tạo protocol định nghĩa Style và Register để quản lý danh sách Style như bước 1.</p>
+
+<pre><code>protocol Style {
+    func getId() -&gt; String
+    func apply&lt;T: UIView&gt;(_ component: T)
+}
+
+extension Style where Self: UIView {
+    func getId() -&gt; String {
+        return String(describing: self)
+    }
+}
+
+protocol StyleMapRegister {
+	func getStyle(by id: String) -&gt; Style?
+}
+
+</code></pre>
+
+<p><em>Style</em> có 2 phương thức chính: một dùng để định danh cho Style, một để áp dụng style đó vào trong component cụ thể (uiview).
+<em>StyleMapRegister</em> có phương thức <em>getStyle</em>, giúp ta lấy được <em>Style</em> qua định danh đã define.
+Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh sách Style theo bước 2.</p>
+
+<p>Ở lớp <strong>Manager</strong> có phương thức <em>apply</em> để lấy ra style và gắn vào conponent (UIView) cụ thể, tương ứng với bước 3,4.</p>
+
+<pre><code>class StyleManager {
+    private var register: StyleMapRegister
+    required init(register: StyleMapRegister) {
+        self.register = register
+    }
+    
+    private func getStyleId(component: UIView) -&gt; String? {
+        return component.style
+    }
+    
+    func apply(component: UIView) {
+        guard let styleID = self.getStyleId(component: component) else {
+            return
+        }
+        
+        let style = self.register.getStyle(by: styleID)
+        style?.apply(component)
+    }
+}
+
+</code></pre>
+
+<p>Trong dự án, để dễ quản lý, ta sẽ tạo 1 folder riêng để chứa tất cả <em>Style</em> ta định nghĩa ra. Ta cần style nào thì tìm trong folder đó.</p>
+
+<p>Mình sẽ implement 2 protocol định nghĩa ở trên để có cái nhìn trực quan hơn với phương pháp này</p>
+
+<pre><code>class StyleMapRegisterObject: StyleMapRegister {
+    private let styleDict: [String: Style]
+    required init(styles: [Style]) {
+        var dict = [String:Style]()
+        for iter in styles {
+            dict[iter.getId()] = iter
+        }
+        
+        self.styleDict = dict
+        
+    }
+    
+    func getStyle(by id: String) -&gt; Style? {
+        return self.styleDict[id]
+    }
+}
+
+</code></pre>
+
+<p><em>Dictionary</em> là kiểu dữ liệu hợp lý nhất trong trường hợp cần định danh style, tất cả style được tạo ra sẽ đưa vào 1 danh sách key - value để quản lý. Ta đã định nghĩa xong cách thức Register, giờ đến lúc tạo <em>Style</em></p>
+
+<pre><code>class TitleLabelStyle: Style {
+    private let font: UIFont
+    private let textColor: UIColor
+    private let textAlign: NSTextAlignment
+    
+    init(font: UIFont, textColor: UIColor, textAlign: NSTextAlignment = .center) {
+        self.font = font
+        self.textColor = textColor
+        self.textAlign = textAlign
+    }
+    
+    // MARK: Style method
+    func getId() -&gt; String {
+        return String(describing: TitleLabelStyle.self)
+    }
+    
+    func apply&lt;T: UIView&gt;(_ component: T) {
+        guard let lbl = component as? UILabel else {
+            fatalError(&quot;\(component) is not a uilable&quot;)
+        }
+        
+        lbl.textColor = textColor
+        lbl.font = font
+        lbl.textAlignment = textAlign
+    }
+}
+
+</code></pre>
+
+<p>Mình không muốn thay đổi thông số của Style nên các property để dạng <em>mutable</em>.
+Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn style vào trong UIView.
+Để làm được việc này, ta tạo property trong <em>extension</em></p>
+
+<pre><code>extension UIView {
+    private struct AssociatedKeys {
+        static var style: UInt8 = 0
+    }
+    
+    // define style
+    static var styleManager: StyleManager?
+    
+    // using class name to define style
+    @IBInspectable public var style: String? {
+        get {
+            return objc_getAssociatedObject(self, &amp;AssociatedKeys.style) as? String
+        }
+        
+        set(value) {
+            objc_setAssociatedObject(self, &amp;AssociatedKeys.style, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            UIView.styleManager?.apply(component: self)
+        }
+    }
+}
+
+</code></pre>
+
+<p>Ta nên gắn <em>styleManager</em> lúc app mới khởi động, mình đưa nó vào trong</p>
+
+<pre><code>func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    let styles: [Style] = [
+        TitleLabelStyle(font: UIFont.systemFont(ofSize: 30),
+                                  textColor: .red),
+        BodyTitleLabelStyle(font: UIFont.systemFont(ofSize: 18),
+                                      textColor: .blue,
+                                      textAlign: .left)
+    ]
+    
+    let styleReg = StyleMapRegisterObject(styles: styles)
+    
+    UIView.styleManager = StyleManager(register: styleReg)
+}
+</code></pre>
+
+<p>Với mỗi lần tạo <em>style</em>, ta có thể gắn vào view như sau</p>
+
+<p><img src="/hugosite/images/note/style-ui/style-2-2.png" alt="img2" /></p>
+
+<p>Take it easy! <a href="https://github.com/gg4acrossover/MEStyleView">Source code</a> cho ai cần tìm hiểu sâu :D</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-11-02</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/hugosite/tags/swift/">swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/style-view/">
+            <span class="next-text nav-default">Style view</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

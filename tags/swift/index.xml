@@ -6,10 +6,20 @@
     <description>Recent content in Swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 30 Sep 2018 01:27:11 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 02 Nov 2018 15:05:09 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tạo Style cho UIView</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/style-view-2/</link>
+      <pubDate>Fri, 02 Nov 2018 15:05:09 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/style-view-2/</guid>
+      <description>Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
+Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI.</description>
+    </item>
     
     <item>
       <title>Style view</title>
