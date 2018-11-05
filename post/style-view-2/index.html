@@ -79,7 +79,7 @@
 
 <meta itemprop="datePublished" content="2018-11-02T15:05:09&#43;07:00" />
 <meta itemprop="dateModified" content="2018-11-02T15:05:09&#43;07:00" />
-<meta itemprop="wordCount" content="843">
+<meta itemprop="wordCount" content="860">
 
 
 
@@ -265,8 +265,6 @@ Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh s�
 
 </code></pre>
 
-<p>Trong dự án, để dễ quản lý, ta sẽ tạo 1 folder riêng để chứa tất cả <em>Style</em> ta định nghĩa ra. Ta cần style nào thì tìm trong folder đó.</p>
-
 <p>Mình sẽ implement 2 protocol định nghĩa ở trên để có cái nhìn trực quan hơn với phương pháp này</p>
 
 <pre><code>class StyleMapRegisterObject: StyleMapRegister {
@@ -288,7 +286,7 @@ Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh s�
 
 </code></pre>
 
-<p><em>Dictionary</em> là kiểu dữ liệu hợp lý nhất trong trường hợp cần định danh style, tất cả style được tạo ra sẽ đưa vào 1 danh sách key - value để quản lý. Ta đã định nghĩa xong cách thức Register, giờ đến lúc tạo <em>Style</em></p>
+<p><em>Dictionary</em> là kiểu dữ liệu hợp lý nhất trong trường hợp cần định danh style, tất cả style được tạo ra sẽ đưa vào 1 danh sách key - value để quản lý. Thuộc tính <em>styleDict</em> để private vì ta cũng không cần quan tâm nó chứa gì, cái quan trọng nhất của lớp Register vẫn là lấy được style qua id. Ta đã định nghĩa xong cách thức Register, giờ đến lúc tạo <em>Style</em></p>
 
 <pre><code>class TitleLabelStyle: Style {
     private let font: UIFont
@@ -366,6 +364,8 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
 <p>Với mỗi lần tạo <em>style</em>, ta có thể gắn vào view như sau</p>
 
 <p><img src="/hugosite/images/note/style-ui/style-2-2.png" alt="img2" /></p>
+
+<p>Để dễ quản lý <em>Style</em> khi đưa vào dự án, ta có thể nhóm chúng vào chung 1 folder.</p>
 
 <p>Take it easy! <a href="https://github.com/gg4acrossover/MEStyleView">Source code</a> cho ai cần tìm hiểu sâu :D</p>
 
