@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Toán tử 3 ngôi  hay suger syntax</title>
+      <title>Toán tử 3 ngôi  hay sugar syntax</title>
       <link>https://gg4acrossover.github.io/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/</link>
       <pubDate>Tue, 06 Nov 2018 09:36:44 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <description>Tình huống Hôm nay có chút buồn ngủ nên mình tạo động lực cho bản thân bằng cách tự làm thử toán tử ba ngôi trong swift. Đôi khi chơi theo kiểu hardcore cũng mang lại liều doping khá mạnh, giống như phê thuốc vầy :D.
+Bình thường mình không dùng autoclosure vì thấy nó cũng không có gì đặc sắc, chỉ là syntax sugar. Áp dụng đúng chỗ thì ngon, áp dụng không đúng chỗ thì càng làm code khó hiểu.</description>
     </item>
     
     <item>
