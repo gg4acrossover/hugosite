@@ -199,32 +199,6 @@
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2018-11-20T16:50:01+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2018-11-20T16:50:01+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/about-me/</loc>
     <lastmod>2016-09-05T13:17:19+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -234,6 +208,12 @@
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</loc>
     <lastmod>2016-09-05T16:32:39+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -267,6 +247,13 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
+    <lastmod>2018-11-20T16:50:01+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
     <lastmod>2018-11-20T16:50:01+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,6 +277,20 @@
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift4/</loc>
     <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
+    <lastmod>2016-09-05T13:17:19+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/</loc>
+    <lastmod>2018-11-20T16:50:01+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
