@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tạo view từ xib - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" />
+  <meta name="description" content="1. Tạo uiview từ xib Khi tạo giao diện cho 1 app, chắc hẳn ai cũng gặp trường hợp có các view con xuất hiện đi, xuất hiện lại giữa các màn hình khác nhau. Để tránh việc copy qua lại nhàm chán, ta nên tách view con đó ra thành 1 xib duy nhất và tái sử dụng khi cần thiết.
+Đầu tiên ta tạo class kế thừa từ UIView và Xib đi kèm như hình sau." />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/tao-view-tu-xib/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Tạo view từ xib" />
+<meta property="og:description" content="1. Tạo uiview từ xib Khi tạo giao diện cho 1 app, chắc hẳn ai cũng gặp trường hợp có các view con xuất hiện đi, xuất hiện lại giữa các màn hình khác nhau. Để tránh việc copy qua lại nhàm chán, ta nên tách view con đó ra thành 1 xib duy nhất và tái sử dụng khi cần thiết.
+Đầu tiên ta tạo class kế thừa từ UIView và Xib đi kèm như hình sau." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/tao-view-tu-xib/" /><meta property="article:published_time" content="2018-11-20T16:50:01&#43;07:00"/>
+<meta property="article:modified_time" content="2018-11-20T16:50:01&#43;07:00"/>
+
+<meta itemprop="name" content="Tạo view từ xib">
+<meta itemprop="description" content="1. Tạo uiview từ xib Khi tạo giao diện cho 1 app, chắc hẳn ai cũng gặp trường hợp có các view con xuất hiện đi, xuất hiện lại giữa các màn hình khác nhau. Để tránh việc copy qua lại nhàm chán, ta nên tách view con đó ra thành 1 xib duy nhất và tái sử dụng khi cần thiết.
+Đầu tiên ta tạo class kế thừa từ UIView và Xib đi kèm như hình sau.">
+
+
+<meta itemprop="datePublished" content="2018-11-20T16:50:01&#43;07:00" />
+<meta itemprop="dateModified" content="2018-11-20T16:50:01&#43;07:00" />
+<meta itemprop="wordCount" content="546">
+
+
+
+<meta itemprop="keywords" content="swift," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tạo view từ xib"/>
+<meta name="twitter:description" content="1. Tạo uiview từ xib Khi tạo giao diện cho 1 app, chắc hẳn ai cũng gặp trường hợp có các view con xuất hiện đi, xuất hiện lại giữa các màn hình khác nhau. Để tránh việc copy qua lại nhàm chán, ta nên tách view con đó ra thành 1 xib duy nhất và tái sử dụng khi cần thiết.
+Đầu tiên ta tạo class kế thừa từ UIView và Xib đi kèm như hình sau."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tạo view từ xib</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-20 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-tạo-uiview-từ-xib">1. Tạo uiview từ xib</a></li>
+<li><a href="#2-một-class-chung-nhiều-xib">2. Một class chung nhiều xib</a></li>
+<li><a href="#3-mở-rộng">3. Mở rộng:</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="1-tạo-uiview-từ-xib">1. Tạo uiview từ xib</h2>
+
+<p>Khi tạo giao diện cho 1 app, chắc hẳn ai cũng gặp trường hợp có các view con xuất hiện đi, xuất hiện lại giữa các màn hình khác nhau. Để tránh việc copy qua lại nhàm chán, ta nên tách view con đó ra thành 1 xib duy nhất và tái sử dụng khi cần thiết.</p>
+
+<p>Đầu tiên ta tạo class kế thừa từ UIView và Xib đi kèm như hình sau.</p>
+
+<p><img src="/hugosite/images/note/xib/xib-1.png" alt="img1" /></p>
+
+<p>Ta gắn class cho file&rsquo;s owner trong xib như hình dưới. Đây là bước bắt buộc nếu ta muốn kéo thả reference outlet vào trong code.</p>
+
+<p><img src="/hugosite/images/note/xib/xib-2.png" alt="img2" /></p>
+
+<p>Tạo <strong>reference outlet</strong> cho view trong Xib (kéo thả vào file tương ứng với xib, ở đây mình kéo thả vào file AvatarView.swift và đặt tên view là contentView).</p>
+
+<p><img src="/hugosite/images/note/xib/xib-3.png" alt="img3" /></p>
+
+<p>Trong file code lúc đó sẽ trông như này</p>
+
+<p><img src="/hugosite/images/note/xib/xib-4.png" alt="img4" /></p>
+
+<p>Ta nhớ để thuộc tính cho size của xib là freeform.</p>
+
+<p><img src="/hugosite/images/note/xib/xib-5.png" alt="img5" /></p>
+
+<p>Ok các bước cài đặt đã hoàn thành, giờ ta viết thêm 1 số đoạn code cần thiết trước khi bắt đầu sử dụng.</p>
+
+<pre><code>// step 2: init
+override init(frame: CGRect) {
+    super.init(frame: frame)
+    self.commonInit()
+}
+
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.commonInit()
+}
+</code></pre>
+
+<p>Ta tạo 2 hàm init tương ứng với 2 cách khởi tạo view, <strong>required init?(coder aDecoder: NSCoder)</strong> sẽ chạy khi ta tạo view từ file giao diện, hàm còn lại dùng khi tạo view từ trong code.</p>
+
+<p>Hàm <strong>commonInit</strong> được sử dụng chung trong cả 2 cách khởi tạo view trên được implement như sau</p>
+
+<pre><code>// step 3:
+private func commonInit() {
+    // load nib first
+    Bundle.main.loadNibNamed(String(describing: AvatarView.self), owner: self, options: nil)
+    
+    // add view from nib
+    self.addSubview(self.contentView)
+    
+    // add constraints
+    self.contentView.translatesAutoresizingMaskIntoConstraints = false
+    self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+    self.contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+}
+</code></pre>
+
+<p>Chắc không phải nói thêm nhiều về đoạn code này :).</p>
+
+<h2 id="2-một-class-chung-nhiều-xib">2. Một class chung nhiều xib</h2>
+
+<p>Ta tùy biến một chút để việc reuse code nâng lên 1 tầm mới.</p>
+
+<p>Trong hàm <strong>commonInit</strong> ta thấy giao diện phụ thuộc vào việc ta load xib nào, vậy nên ta có thể cho nhiều xib chung 1 class, miễn là nó có cấu trúc và cách thức xử lý tương tự nhau. Ví dụ như khung chat, ta sử dụng ô bên phải, người chat cùng ô bên trái, cả 2 ô chat giống hệt nhau, khác nhau mỗi căn lề trái hoặc phải. Lúc đó có thể sử dụng 2 xib chung 1 class.</p>
+
+<p>Mình tạo 1 thuộc tính gắn vào code để tùy biến xib nào sẽ được sử dụng kèm với view.</p>
+
+<pre><code>@IBInspectable var nibByString: String = kLeft {
+    didSet {
+        self.commonInit()
+    }
+}
+</code></pre>
+
+<p>Lúc đó ta chỉ cần sửa lại dòng code sau để tùy biến</p>
+
+<pre><code>// xib name hard code
+Bundle.main.loadNibNamed(xibName, owner: self, options: nil) 
+</code></pre>
+
+<pre><code>// xib name tùy biến, ta tự truyền vào
+Bundle.main.loadNibNamed(self.nibByString, owner: self, options: nil) 
+</code></pre>
+
+<p>Done!</p>
+
+<p><a href="https://github.com/gg4acrossover/MEReuseView">Code ví dụ</a> cho bạn nào cần.</p>
+
+<h2 id="3-mở-rộng">3. Mở rộng:</h2>
+
+<p>Ta có thể tái sử dụng <strong>UIViewController</strong> dựa vào <strong>Storyboard</strong>. Về cơ bản nó cũng tương tự như cách ta tạo view với xib, tuy nhiên ở đây ta thay <strong>UIView</strong> bằng <strong>UIViewController</strong>, sử dụng phương thức <strong>addChildViewController</strong> của <strong>UIViewController</strong> để làm việc. Đây là một hướng để mọi người tìm hiểu thêm.</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-11-20</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/hugosite/tags/swift/">swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/clickable-label/">
+            <span class="next-text nav-default">Clickable label</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

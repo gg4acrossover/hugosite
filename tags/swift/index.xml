@@ -6,10 +6,20 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Nov 2018 14:29:29 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 20 Nov 2018 16:50:01 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tạo view từ xib</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/tao-view-tu-xib/</link>
+      <pubDate>Tue, 20 Nov 2018 16:50:01 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/tao-view-tu-xib/</guid>
+      <description>1. Tạo uiview từ xib Khi tạo giao diện cho 1 app, chắc hẳn ai cũng gặp trường hợp có các view con xuất hiện đi, xuất hiện lại giữa các màn hình khác nhau. Để tránh việc copy qua lại nhàm chán, ta nên tách view con đó ra thành 1 xib duy nhất và tái sử dụng khi cần thiết.
+Đầu tiên ta tạo class kế thừa từ UIView và Xib đi kèm như hình sau.</description>
+    </item>
     
     <item>
       <title>Clickable label</title>
