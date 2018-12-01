@@ -6,10 +6,21 @@
     <description>Recent content on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Nov 2018 16:50:01 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 30 Nov 2018 14:33:34 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Config Project</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/config-project/</link>
+      <pubDate>Fri, 30 Nov 2018 14:33:34 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/config-project/</guid>
+      <description>Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
+#ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif  hoặc kiểu comment như này
+// Product // static NSString* kBaseURL .</description>
+    </item>
     
     <item>
       <title>Tạo view từ xib</title>
