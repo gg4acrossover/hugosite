@@ -6,10 +6,21 @@
     <description>Recent content in Posts on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Nov 2018 14:33:34 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 11 Dec 2018 17:39:09 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Make swift great again</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/make-swift-great-again/</link>
+      <pubDate>Tue, 11 Dec 2018 17:39:09 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/make-swift-great-again/</guid>
+      <description>Làm swift toẹt vời trở lại Dạo này thời tiết Hà Nội trở lạnh, post một bài cho nóng người :D. Lần này mình sẽ trình bày về một số tip để làm code trông swifty hơn.
+defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng của defer là nó sẽ chạy sau khi hàm return.
+ var x = 1 func doDefer(_ value: inout Int) -&amp;gt; Int { // effect after return defer { value += 1 } value += 1 return value } print(doDefer(&amp;amp;x)) // 2 print(x) // 3  Với tác dụng của hàm defer ta có thể tận dụng để giải phóng bộ nhớ, close file hay bất cứ tác vụ nào đòi hỏi 2 bước ràng buộc lúc bắt đầu và kết thúc.</description>
+    </item>
     
     <item>
       <title>Config Project</title>
