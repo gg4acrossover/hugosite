@@ -18,7 +18,8 @@
 
 <meta name="author" content="VietHQ" />
   <meta name="description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
-Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào filter có dạng tổng quát như sau:" />
+1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
+Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -52,19 +53,21 @@ Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời k�
 
 <meta property="og:title" content="Nếu thì và những cách thay thế" />
 <meta property="og:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
-Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào filter có dạng tổng quát như sau:" />
+1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
+Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/if-else-and-another/" /><meta property="article:published_time" content="2018-12-19T13:58:26&#43;07:00"/>
 <meta property="article:modified_time" content="2018-12-19T13:58:26&#43;07:00"/>
 
 <meta itemprop="name" content="Nếu thì và những cách thay thế">
 <meta itemprop="description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
-Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào filter có dạng tổng quát như sau:">
+1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
+Dictionary Đây là phương pháp mình sử dụng từ lâu.">
 
 
 <meta itemprop="datePublished" content="2018-12-19T13:58:26&#43;07:00" />
 <meta itemprop="dateModified" content="2018-12-19T13:58:26&#43;07:00" />
-<meta itemprop="wordCount" content="671">
+<meta itemprop="wordCount" content="917">
 
 
 
@@ -72,7 +75,8 @@ Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời k�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nếu thì và những cách thay thế"/>
 <meta name="twitter:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
-Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào filter có dạng tổng quát như sau:"/>
+1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
+Dictionary Đây là phương pháp mình sử dụng từ lâu."/>
 <script>
   var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
@@ -164,8 +168,17 @@ Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời k�
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
+<li><a href="#1-thủ-thuật-refactor">1. Thủ thuật refactor</a>
+<ul>
+<li><a href="#dictionary">Dictionary</a></li>
+<li><a href="#enum">Enum</a></li>
+</ul></li>
+<li><a href="#2-sử-dụng-functional-programming">2. Sử dụng functional programming</a>
+<ul>
 <li><a href="#filter">Filter</a></li>
 <li><a href="#refinement-type">Refinement type</a></li>
+</ul></li>
+<li><a href="#3-mở-rộng">3. Mở rộng</a></li>
 </ul>
 </nav>
   </div>
@@ -180,7 +193,77 @@ Filter Đây là phương thức trong bộ tam filter, map, reduce ra đời k�
 
 <p>Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.</p>
 
-<h1 id="filter">Filter</h1>
+<h1 id="1-thủ-thuật-refactor">1. Thủ thuật refactor</h1>
+
+<p>Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ <em>if</em>.</p>
+
+<h2 id="dictionary">Dictionary</h2>
+
+<p>Đây là phương pháp mình sử dụng từ lâu. Với phương pháp này thì ta có thể refactor hàm sau:</p>
+
+<pre><code>func getEpisode(_ id: String) -&gt; Episode? {
+    if id = &quot;E1&quot; {
+    	return episode_1
+    } else if id = &quot;E2&quot; {
+    	return episode_2
+    } else if {
+    	...
+    }
+
+    ...
+}
+</code></pre>
+
+<p>Thành dạng như sau</p>
+
+<pre><code>let dict = [&quot;E1&quot;: episode_1,
+            &quot;E2&quot;: episode_2,
+            &quot;E3&quot;: episode_3]
+
+func getEpisode(_ id: String) -&gt; Episode? {
+    return dict[id]
+}
+</code></pre>
+
+<h2 id="enum">Enum</h2>
+
+<p>Nên sử dụng enum với những cái nào có chung format như ở trường hợp sau</p>
+
+<p>Thay vì</p>
+
+<pre><code>func play(type: Format) {
+    switch type {
+    	case .video: self.playVideo()
+    	case .audio: self.playAudio()
+    	...
+    }
+}
+</code></pre>
+
+<p>Tên các method ở trên đều có chung format play<strong>%TYPE%</strong>. Ta có thể gọi nó thông qua <em>selector</em> để loại bỏ hẳn <em>if</em></p>
+
+<pre><code>enum Format: String {
+    case video
+    case audio
+    case image
+}
+
+class Player: NSObject {
+    func play(type: Format) {
+        let selector = Selector.init(&quot;play\(type.rawValue.capitalized)&quot;)
+        self.perform(selector)
+    }
+}
+
+// Result
+Player().play(type: .video)
+</code></pre>
+
+<p>Để sử dụng <strong>selector</strong>, các phương thức cần gắn thêm tiền tố <strong>@objc</strong> và class cần kế thừa <strong>NSObject</strong>.</p>
+
+<h1 id="2-sử-dụng-functional-programming">2. Sử dụng functional programming</h1>
+
+<h2 id="filter">Filter</h2>
 
 <p>Đây là phương thức trong bộ tam <em>filter, map, reduce</em> ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào filter có dạng tổng quát như sau:</p>
 
@@ -252,7 +335,7 @@ arr.filter(doFilterAll)
 
 <p>Để hiểu rõ hơn về hàm <strong>bind</strong> và <strong>checkAll</strong>, mình có đưa nó vào trong code ví dụ.</p>
 
-<h1 id="refinement-type">Refinement type</h1>
+<h2 id="refinement-type">Refinement type</h2>
 
 <p>Thế nào là <a href="https://en.wikipedia.org/wiki/Refinement_type">refinement type</a></p>
 
@@ -301,6 +384,18 @@ public extension Refinement {
 </code></pre>
 
 <p>Code ví dụ <a href="https://github.com/gg4acrossover/NoIf">source</a></p>
+
+<h1 id="3-mở-rộng">3. Mở rộng</h1>
+
+<p>Ngoài những cách trên thì còn rất nhiều cách để giảm thiểu if else:</p>
+
+<ul>
+<li>Sử dụng đa hình</li>
+<li>Tách hàm</li>
+<li>switch case :v</li>
+<li>Sử dụng hàm cond (như trong Lisp)</li>
+<li>Blah blah</li>
+</ul>
 
 <hr />
 
