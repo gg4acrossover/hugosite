@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="VietHQ" />
-  <meta name="description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
+  <meta name="description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if, else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
 1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
 Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 
@@ -45,14 +45,14 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 
 
 
-<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
 
 
 <meta property="og:title" content="Nếu thì và những cách thay thế" />
-<meta property="og:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
+<meta property="og:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if, else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
 1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
 Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 <meta property="og:type" content="article" />
@@ -60,30 +60,23 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 <meta property="article:modified_time" content="2018-12-19T13:58:26&#43;07:00"/>
 
 <meta itemprop="name" content="Nếu thì và những cách thay thế">
-<meta itemprop="description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
+<meta itemprop="description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if, else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
 1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
 Dictionary Đây là phương pháp mình sử dụng từ lâu.">
 
 
 <meta itemprop="datePublished" content="2018-12-19T13:58:26&#43;07:00" />
 <meta itemprop="dateModified" content="2018-12-19T13:58:26&#43;07:00" />
-<meta itemprop="wordCount" content="917">
+<meta itemprop="wordCount" content="960">
 
 
 
 <meta itemprop="keywords" content="swift," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nếu thì và những cách thay thế"/>
-<meta name="twitter:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
+<meta name="twitter:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if, else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
 1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
 Dictionary Đây là phương pháp mình sử dụng từ lâu."/>
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -191,7 +184,7 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu."/>
     <div class="post-content">
       
 
-<p>Bạn có biết rằng trên thế giới có một cộng đồng anti if,else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.</p>
+<p>Bạn có biết rằng trên thế giới có một cộng đồng anti if, else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.</p>
 
 <h1 id="1-thủ-thuật-refactor">1. Thủ thuật refactor</h1>
 
@@ -253,6 +246,8 @@ class Player: NSObject {
         let selector = Selector.init(&quot;play\(type.rawValue.capitalized)&quot;)
         self.perform(selector)
     }
+
+    ...
 }
 
 // Result
@@ -265,22 +260,22 @@ Player().play(type: .video)
 
 <h2 id="filter">Filter</h2>
 
-<p>Đây là phương thức trong bộ tam <em>filter, map, reduce</em> ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào filter có dạng tổng quát như sau:</p>
+<p>Đây là phương thức trong bộ tam <em>filter, map, reduce</em> ra đời kèm ngay ở phiên bản đầu của swift. Param truyền vào <strong>filter</strong> có dạng tổng quát như sau:</p>
 
 <blockquote>
 <p>(T) -&gt; Bool // hàm truyền vào 1 giá trị và return bool</p>
 </blockquote>
 
-<p>Như vậy ta có thể truyền vào tên hàm thay thay vì định nghĩa ra nó.</p>
+<p>Như vậy ta có thể truyền vào tên hàm thay vì định nghĩa ra nó.</p>
 
-<p>Giả sử bài toán ta đang giải quyết là tìm số nguyên dương trong mảng, thay vì viết như:</p>
+<p>Giả sử bài toán ta đang giải quyết là tìm số nguyên dương trong mảng, thay vì viết:</p>
 
 <pre><code>arr.filter { (value) -&gt; Bool in
     return value &gt; 0
 }
 </code></pre>
 
-<p>Ta có thể áp dụng công thức tổng quát như trên để hàm ngắn gọn, rõ nghĩa hơn</p>
+<p>Ta có thể áp dụng công thức tổng quát như trên để hàm ngắn gọn, rõ nghĩa hơn.</p>
 
 <pre><code>// (Int) -&gt; Bool
 func positive(x: Int) -&gt; Bool {
@@ -291,14 +286,14 @@ arr.filter(positive)
 
 </code></pre>
 
-<p>Nếu có nhiều hơn một điều kiện, ta có thể tổng hợp lại các hàm làm một. Giả sử ta muốn tìm số vừa lớn hơn 0 vừa nhỏ hơn 100, ta viết thêm điều kiện</p>
+<p>Nếu có nhiều hơn một điều kiện, ta có thể tổng hợp lại các hàm làm một. Giả sử ta muốn tìm số vừa lớn hơn 0 vừa nhỏ hơn 100, ta viết thêm điều kiện:</p>
 
 <pre><code>func lessThan100(x: Int) -&gt; Bool {
     return x &lt; 100
 }
 </code></pre>
 
-<p>Sử dụng phương pháp composite, ta sẽ có 1 hàm dạng như: <strong>condition = lessThan100 &amp; positive</strong></p>
+<p>Sử dụng phương pháp <strong>composite</strong>, ta sẽ có 1 hàm dạng như: <strong>condition = lessThan100 &amp; positive</strong></p>
 
 <pre><code>public class func allPass&lt;A&gt;(_ array: [(A) -&gt; Bool], value: A) -&gt; Bool {
     let predicate = array.map({ V.bind(value: value, to: $0) }) // [() -&gt; Bool]
@@ -313,7 +308,7 @@ public class func allPass&lt;A&gt;(_ array: [(A) -&gt; Bool]) -&gt; (A) -&gt; Bo
 }
 </code></pre>
 
-<p>Mình tạo 2 phương thức đều có tên <strong>allPass</strong>, phương thức đầu trả về <em>Bool</em>, còn phương thức thứ hai có dạng <em>curry function</em> (hàm nhận vào 1 param và trả ra 1 hàm khác). Cả 2 hàm chỉ khác nhau về cách thức tạo nhưng cùng chung 1 mục đích sử dụng.</p>
+<p>Mình tạo 2 phương thức đều có tên <strong>allPass</strong>, phương thức đầu trả về <em>Bool</em>, còn phương thức thứ hai có dạng <em>curry function</em> (hàm nhận vào 1 param và trả ra 1 hàm khác). Cả 2 hàm khác nhau về cách thức tạo nhưng cùng chung 1 mục đích sử dụng (tạm thời không bàn đến <em>bind</em> và <em>checkAll</em>)</p>
 
 <p>Với 2 phương thức nêu trên ta có thể composite 2 điều kiện <strong>positive</strong> và <strong>lessThan100</strong> theo cách như sau</p>
 
@@ -324,16 +319,22 @@ public class func allPass&lt;A&gt;(_ array: [(A) -&gt; Bool]) -&gt; (A) -&gt; Bo
 <p>Và hàm filter sẽ được viết ngắn gọn như sau:</p>
 
 <pre><code>func doFilterAll(_ value: Int) -&gt; Bool {
+    // open comments below to use curry function
+    // let and = V.allPass([positive,lessThan100]) // (Int) -&gt; Bool
+    // return and(value)
+    
+    // using function return bool
     return V.allPass([positive,lessThan100], value: value)
 }
+
 arr.filter(doFilterAll)
 </code></pre>
 
-<p>Ta có thể làm tương tự để có phương thức <strong>Or</strong> để tìm ra giá trị thỏa mãn 1 điều khiện trong tất cả các điều kiện cung cấp.</p>
+<p>Làm tương tự, ta có thể tạo hàm <strong>Or</strong> để tìm giá trị thỏa mãn 1 điều kiện trong tất cả các điều kiện được cung cấp.</p>
 
 <p>Bạn thấy đó, với <em>functional</em> ta dễ dàng tách các đoạn kiểm tra điều kiện ra thành hàm riêng, dễ dàng tổng hợp chúng, đồng thời dễ test và tái sử dụng.</p>
 
-<p>Để hiểu rõ hơn về hàm <strong>bind</strong> và <strong>checkAll</strong>, mình có đưa nó vào trong code ví dụ.</p>
+<p>Để hiểu rõ hơn về hàm <strong>bind</strong> và <strong>checkAll</strong>, mình có đưa nó vào trong code ví dụ ở cuối bài viết.</p>
 
 <h2 id="refinement-type">Refinement type</h2>
 
@@ -357,7 +358,7 @@ Both&lt;Positive&lt;Float&gt;,LessThan100&lt;Float&gt;&gt;.of(99)?.value // 99
 Both&lt;Positive&lt;Float&gt;,LessThan100&lt;Float&gt;&gt;.of(101)?.value // nil
 </code></pre>
 
-<p>Như bạn thấy đã thấy, 100 thỏa mãn điều kiện lớn hơn 0, 99 thỏa mãn điều kiện nhỏ hơn 100 nên ta có thể sử dụng, trong trường hợp không thỏa mãn (-1,101) giá trị nil được trả về.</p>
+<p>Như bạn thấy đã thấy, 100 thỏa mãn điều kiện lớn hơn 0; 99 thỏa mãn điều kiện nhỏ hơn 100 nên ta có thể sử dụng. Trong trường hợp không thỏa mãn (-1,101), giá trị nil được trả về.</p>
 
 <p>Thậm chí ta chưa dùng tí <strong>if</strong> nào :D</p>
 
@@ -383,6 +384,10 @@ public extension Refinement {
 }
 </code></pre>
 
+<p>Sử dụng sơ đồ khối để dễ hình dung</p>
+
+<p><img src="/hugosite/images/note/if-else/Refinement-type.png" alt="img" /></p>
+
 <p>Code ví dụ <a href="https://github.com/gg4acrossover/NoIf">source</a></p>
 
 <h1 id="3-mở-rộng">3. Mở rộng</h1>
@@ -393,7 +398,7 @@ public extension Refinement {
 <li>Sử dụng đa hình</li>
 <li>Tách hàm</li>
 <li>switch case :v</li>
-<li>Sử dụng hàm cond (như trong Lisp)</li>
+<li>Sử dụng hàm cond (như trong <a href="https://vi.wikipedia.org/wiki/Lisp">Lisp</a>)</li>
 <li>Blah blah</li>
 </ul>
 
@@ -511,7 +516,7 @@ public extension Refinement {
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
 
 
 
@@ -520,5 +525,13 @@ public extension Refinement {
 
 
 
+
+
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 </body>
 </html>
