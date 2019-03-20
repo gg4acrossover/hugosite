@@ -10,5 +10,14 @@
 	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>swift</title>
+      <link>https://gg4acrossover.github.io/hugosite/categories/swift/</link>
+      <pubDate>Wed, 20 Mar 2019 16:33:59 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/categories/swift/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

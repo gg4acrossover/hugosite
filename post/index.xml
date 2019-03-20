@@ -6,10 +6,21 @@
     <description>Recent content in Posts on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Dec 2018 13:58:26 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 16:33:59 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Làm việc với response</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/lam-viec-voi-response/</link>
+      <pubDate>Wed, 20 Mar 2019 16:33:59 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/lam-viec-voi-response/</guid>
+      <description>Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
+struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
+Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.</description>
+    </item>
     
     <item>
       <title>Nếu thì và những cách thay thế</title>

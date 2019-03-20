@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Làm việc với response - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" />
+  <meta name="description" content="Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
+struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
+Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng." />
+<meta name="keywords" content="enum, clean code" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/lam-viec-voi-response/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Làm việc với response" />
+<meta property="og:description" content="Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
+struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
+Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/lam-viec-voi-response/" /><meta property="article:published_time" content="2019-03-20T16:33:59&#43;07:00"/>
+<meta property="article:modified_time" content="2019-03-20T16:33:59&#43;07:00"/>
+
+<meta itemprop="name" content="Làm việc với response">
+<meta itemprop="description" content="Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
+struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
+Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.">
+
+
+<meta itemprop="datePublished" content="2019-03-20T16:33:59&#43;07:00" />
+<meta itemprop="dateModified" content="2019-03-20T16:33:59&#43;07:00" />
+<meta itemprop="wordCount" content="566">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Làm việc với response"/>
+<meta name="twitter:description" content="Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
+struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
+Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Làm việc với response</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-03-20 </span>
+        <div class="post-category">
+            
+              <a href="/hugosite/categories/swift/"> swift </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#bài-toán">Bài toán</a>
+<ul>
+<li><a href="#sử-dụng-generic-và-protocol">Sử dụng Generic và protocol</a></li>
+<li><a href="#gán-thêm-phương-thức-vào-response">Gán thêm phương thức vào Response</a></li>
+<li><a href="#sử-dụng-enum">Sử dụng Enum</a></li>
+</ul></li>
+<li><a href="#tổng-kết">Tổng kết</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="bài-toán">Bài toán</h1>
+
+<p>Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau</p>
+
+<pre><code class="language-swift">struct Response {
+    let timestamp: String
+    let id: Int
+    let payload: Any
+}
+</code></pre>
+
+<p><em>timestamp</em> và <em>id</em> là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của <em>payload</em> lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng <em>Any</em>.</p>
+
+<p>Tuy nhiên sử dụng type <em>Any</em> có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.</p>
+
+<p>Vì vậy chúng ta cần nghĩ ra các phương án khác thay thế <em>Any</em>.</p>
+
+<h2 id="sử-dụng-generic-và-protocol">Sử dụng Generic và protocol</h2>
+
+<p>Trước hết tách những trường mặc định ra 1 struct riêng</p>
+
+<pre><code class="language-swift">struct ResponseInfo {
+    let timestamp: String
+    let error: Error?
+}
+</code></pre>
+
+<p>Định nghĩa thêm protocol <strong>ResponseType</strong> để tiện mở rộng cho <em>payload</em> về sau.
+Tùy chỉnh lại code cũ một chút, ta có được hình hài mới cho <em>Response</em>:</p>
+
+<pre><code class="language-swift">protocol ResponseType {}
+
+struct Response&lt;T: ResponseType&gt; {
+    let info: ResponseInfo
+    let payload: T
+}
+</code></pre>
+
+<p>Như vậy ứng với dữ liệu trả về khác nhau, ta có thể viết như sau</p>
+
+<pre><code class="language-swift">let bookResponse = Response(info: info, payload: book)
+let userResponse = Response(info: info, payload: user)
+//...
+</code></pre>
+
+<p>Dùng <em>generic</em> khi gọi đến property payload ta không phải ép kiểu nữa.</p>
+
+<pre><code class="language-swift">bookResponse.payload // Book
+userResponse.payload // User
+</code></pre>
+
+<h2 id="gán-thêm-phương-thức-vào-response">Gán thêm phương thức vào Response</h2>
+
+<p>Bây giờ mình muốn thêm phương thức vào trong response để tiện debug, ứng với mỗi response ta có thêm description.</p>
+
+<p>VD:</p>
+
+<p>Với payload là <em>User</em> tương ứng với description &ldquo;response&rdquo; + User.description
+với payload là <em>Book</em> tương ứng với description &ldquo;response&rdquo; + Book.description</p>
+
+<p>Muốn như vậy ta phải implement như sau</p>
+
+<pre><code class="language-swift">protocol ResponseType: CustomDebugStringConvertible {}
+
+struct User: ResponseType {
+    var debugDescription: String {
+        return &quot;{username: \(username), age: \(age)}&quot;
+    }
+    
+    // ...
+}
+
+extension Response: CustomDebugStringConvertible {
+    var debugDescription: String {
+        return &quot;response: \(self.payload.debugDescription)&quot;
+    }
+}
+
+// ...
+</code></pre>
+
+<p>Đoạn code trên cũng khá đơn giản, mình tận dụng lại <strong>CustomDebugStringConvertible</strong> có sẵn để thêm description cho <em>Response</em> và cả <em>payload</em>.</p>
+
+<p>Việc gán protocol <strong>ResponseType</strong> cho <em>payload</em> đảm bảo tất cả đối tượng implement lại protocol này đều phải thêm thuộc tính <em>debugDescription</em>.</p>
+
+<p>Nếu ta muốn thêm phương thức khác vào trong <em>payload</em>, đơn giản chỉ cần tạo protocol mới và cho <strong>ResponseType</strong> kế thừa</p>
+
+<pre><code class="language-swift">protocol ResponseType: CustomDebugStringConvertible, Jsonable,... {}
+</code></pre>
+
+<p>Tuy nhiên giờ mình muốn quản lý tất cả <em>payload</em> ở một chỗ. Lúc này <em>Enum</em> phát huy tác dụng.</p>
+
+<h2 id="sử-dụng-enum">Sử dụng Enum</h2>
+
+<p>Ta tạo enum chứa tất cả các type của <em>payload</em>. Lúc này Response cũng sẽ chỉnh sửa lại chút, gán <strong>enum type</strong> cho <em>payload</em> thay vì <em>generic</em></p>
+
+<pre><code class="language-swift">enum ResponsePayload {
+    case userDetail(User)
+    case bookDetail(Book)
+    // ...
+}
+
+struct Response {
+    let info: ResponseInfo
+    let payload : ResponsePayload
+}
+
+let newUser = Response(info: info, payload: .userDetail(user))
+</code></pre>
+
+<p>Lúc này muốn sử dụng payload, ta cần thêm một công đoạn nữa, chứ không gọi trực tiếp như sử dụng <em>generic</em>.</p>
+
+<pre><code class="language-swift">if case .userDetail(_) = newUser.payload {
+    // use payload
+} else {
+    fatalError()
+}
+</code></pre>
+
+<p>Muốn gán thêm phương thức mới cho <em>payload</em> cũng làm tương tự như đối với sử dụng <em>generic</em></p>
+
+<h1 id="tổng-kết">Tổng kết</h1>
+
+<ul>
+<li><p>Sử dụng <strong>generic</strong> code gọn hơn sử dụng <strong>enum</strong>, tuy nhiên nhược điểm là phân tán, khó tập trung vào 1 chỗ để quản lý.</p></li>
+
+<li><p>Sử dụng <strong>enum</strong> code dài hơn chút, nhưng ta gom được tất cả vào 1 chỗ, dễ quản lý hơn.</p></li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-03-20</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/if-else-and-another/">
+            <span class="next-text nav-default">Nếu thì và những cách thay thế</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>
