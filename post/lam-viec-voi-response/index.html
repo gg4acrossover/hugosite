@@ -45,7 +45,7 @@ Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết
 
 
 
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -77,6 +77,13 @@ Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết
 <meta name="twitter:description" content="Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
 struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
 Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng."/>
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -338,6 +345,11 @@ let newUser = Response(info: info, payload: .userDetail(user))
       
       <nav class="post-nav">
         
+          <a class="prev" href="/hugosite/post/codable-remake-part-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Codable remake part 1</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="/hugosite/post/if-else-and-another/">
             <span class="next-text nav-default">Nếu thì và những cách thay thế</span>
@@ -413,7 +425,7 @@ let newUser = Response(info: info, payload: .userDetail(user))
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
 
 
 
@@ -422,13 +434,5 @@ let newUser = Response(info: info, payload: .userDetail(user))
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Codable remake part 1 - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crossover" /><meta name="description" content="codable" />
+<meta name="keywords" content="codable" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Codable remake part 1" />
+<meta property="og:description" content="codable" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/" /><meta property="article:published_time" content="2019-04-26T10:46:46&#43;07:00"/>
+<meta property="article:modified_time" content="2019-04-26T10:46:46&#43;07:00"/>
+
+<meta itemprop="name" content="Codable remake part 1">
+<meta itemprop="description" content="codable">
+
+
+<meta itemprop="datePublished" content="2019-04-26T10:46:46&#43;07:00" />
+<meta itemprop="dateModified" content="2019-04-26T10:46:46&#43;07:00" />
+<meta itemprop="wordCount" content="1358">
+
+
+
+<meta itemprop="keywords" content="swift," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Codable remake part 1"/>
+<meta name="twitter:description" content="codable"/>
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Codable remake part 1</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-26 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#codable">Codable</a></li>
+<li><a href="#decodable">Decodable</a>
+<ul>
+<li><a href="#decodable-ngắn-gọn">Decodable ngắn gọn</a></li>
+</ul></li>
+<li><a href="#encodable">Encodable</a></li>
+<li><a href="#nested-json">Nested json</a>
+<ul>
+<li><a href="#decode">Decode</a></li>
+<li><a href="#encode">Encode</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>Dạo này mình hơi bận nên bỏ bê blog quá. Hôm nay quyết định chăm chút trở lại bằng một series về Codable, coi như làm nóng bản thân :D. Đã có một bài mình đề cập đến vấn đề này. Tuy nhiên bài viết đó chỉ ở mức giới thiệu, lần này mình sẽ tăng độ khó cho game thêm chút nữa.</p>
+
+<h1 id="codable">Codable</h1>
+
+<pre><code class="language-swift">let json = &quot;&quot;&quot;
+{
+    &quot;userName&quot;: &quot;crossover&quot;,
+    &quot;position&quot;: &quot;SG&quot;,
+    &quot;id&quot;: 234
+}
+&quot;&quot;&quot;.data(using: .utf8)!
+
+struct Baller {
+    let userName: String
+    let position: String
+    let id: Int
+}
+</code></pre>
+
+<p>Giả sử ta có 1 json đơn giản và struct tương ứng như trên. Để <strong>deserialization</strong> json nói trên, trước đây, ta phải parse một cách thủ công. Đối với những dự án lớn, dữ liệu trả về phức tạp, thực hiện việc parse json bằng tay vừa tiêu tốn của ta kha khá thời gian, vừa khiến ta thấy nhàm chán. Tuy nhiên từ khi swift 4 xuất hiện, chúng ta đã có giải pháp mang tên <strong>Codable</strong>.</p>
+
+<p>Codable là tính năng mới được đưa thêm vào trong Swift 4 nhằm hỗ trợ <strong>serialization</strong> và <strong>deserialization</strong>, giúp ta tự động hóa công việc nhàm chán này. Bản thân <strong>Codable</strong> là sự kết hợp của 2 protocol <em>Encode</em> và <em>Decode</em> mà mình sẽ trình bày ngay sau đây.</p>
+
+<h1 id="decodable">Decodable</h1>
+
+<p>Decodable là protocol được định nghĩa như sau</p>
+
+<pre><code class="language-swift">public protocol Decodable {
+    // ...
+    init(from decoder: Decoder) throws
+}
+</code></pre>
+
+<p>Theo định nghĩa này ta sẽ implement hàm init trong protocol để thực hiện <strong>deserialization</strong> cho đối tượng.</p>
+
+<p>Trở lại ví dụ ngay đầu bài viết, ta sẽ gán protocol <em>Decodable</em> cho <em>Baller</em> để tự động việc parse json sang model.</p>
+
+<pre><code class="language-swift">extension Baller: Decodable {
+    // 1
+    enum CodingKeys: String, CodingKey {
+        case userName
+        case position
+        case id
+    }
+    
+    // 2
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        userName = try container.decode(String.self, forKey: .userName)
+        position = try container.decode(String.self, forKey: .position)
+        id = try container.decode(Int.self, forKey: .id)
+    }
+}
+
+// 3
+let decoder = JSONDecoder()
+let instance = try decoder.decode(Baller.self, from: json)
+instance.userName // &quot;crossover&quot;
+</code></pre>
+
+<p>Có 3 bước cơ bản để làm công việc trên:</p>
+
+<ul>
+<li><p>B1: tạo enum kế thừa lại <em>CodingKey</em>. Để ý một chút, các case của enum <em>CodingKeys</em> mapping với key của json. Đây là điều kiện bắt buộc nếu ta muốn parse json thành công. Tên properties của <em>struct Baller</em> không nhất thiết phải trùng với tên key của json, nhưng để tránh nhầm lẫn và khó hiểu, ta đặt tên properties trùng với các key trong json. Chúng ta sẽ thống nhất cách thức này xuyên suốt bài viết.</p></li>
+
+<li><p>B2: implement hàm <em>init(from decoder: Decoder) throws</em>. Ở bước này ta phải tạo <em>container</em> trước khi decodable. Container có thể chia làm 3 loại, tuy nhiên ở bước này mình sẽ không đi sâu chi tiết cả 3 loại mà chỉ đề cập đến trọng tâm trong ví dụ ở trên. Container đang dùng có kiểu <em>KeyedDecodingContainer</em>, áp dụng trong trường hợp properties trong đối tượng cần parse đều có các key tương ứng. Công thức tổng quát sẽ như sau:</p></li>
+</ul>
+
+<pre><code class="language-swift">let container = try decoder.container(keyedBy: CodingKeys.self)
+// decode to initialize properties ...
+</code></pre>
+
+<ul>
+<li>B3: Bước này cũng là bước quan trọng nhất, cho ta kết quả của cả quá trình. Ở bước này ta sử dụng <em>JSONDecoder</em> như đoạn code ở trên.</li>
+</ul>
+
+<h2 id="decodable-ngắn-gọn">Decodable ngắn gọn</h2>
+
+<p>Trên đây là các bước cần thiết khi ta sử dụng <em>Decodable</em> để parse dữ liệu. Tuy nhiên ta có thể để compiler trợ giúp ta một số công đoạn viết code.</p>
+
+<pre><code class="language-swift">extension Baller: Codable {}
+let decoder = JSONDecoder()
+let instance = try decoder.decode(Baller.self, from: json)
+instance.userName // &quot;crossover&quot;
+</code></pre>
+
+<p>Một số trường hợp đặc biệt, convention ở backend sử dụng snake_case (key &ldquo;userName&rdquo; ở trên thay đổi thành &ldquo;user_name&rdquo;)</p>
+
+<pre><code class="language-json">// ...
+&quot;user_name&quot;: &quot;crossover&quot;,
+// ...
+</code></pre>
+
+<p>Trong khi đó mobile sử dụng camelCase, ta cũng có thể xử lý ngắn gọn dựa vào thuộc tính <em>keyDecodingStrategy</em> của <em>JSONDecoder</em> mà không phải đặt tên property theo convention của backend.</p>
+
+<pre><code class="language-swift">let decoder = JSONDecoder()
+decoder.keyDecodingStrategy = .convertFromSnakeCase
+</code></pre>
+
+<h1 id="encodable">Encodable</h1>
+
+<p>Giờ đến lúc ta bàn về chức năng <strong>serialization</strong> bằng cách sử dụng <em>Encodable</em>. Cũng như <em>Decodable</em>, <em>Encodable</em> là protocol được định nghĩa như sau:</p>
+
+<pre><code class="language-swift">public protocol Encodable {
+    func encode(to encoder: Encoder) throws
+}
+</code></pre>
+
+<p>Ta sẽ implement lại phương thức này đối với <em>Baller</em></p>
+
+<pre><code class="language-swift">extension Baller: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(userName, forKey: .userName)
+        try container.encode(position, forKey: .position)
+        // ...
+    }
+}
+</code></pre>
+
+<p>Chúng ta cũng sẽ tạo <em>container</em>, tuy nhiên thay vì sử dụng <em>let</em> thì ở đây ta phải sử dụng <em>var</em>. Các bước encode thực hiện như ở trên.</p>
+
+<p>Cuối cùng ta sử dụng JSONEncoder để đưa ra dữ liệu mong muốn</p>
+
+<pre><code class="language-swift">let encoder = JSONEncoder()
+let data = try encoder.encode(instance)
+print(String(data: data, encoding: .utf8)!)
+</code></pre>
+
+<p>Kết quả của đoạn code trên sẽ in ra dòng</p>
+
+<pre><code>{&quot;position&quot;:&quot;SG&quot;,&quot;userName&quot;:&quot;crossover&quot;}
+</code></pre>
+
+<p>Để kết quả trông đẹp hơn ta có thể sử dụng thuộc tính tronng JSONEncoder như sau:</p>
+
+<pre><code class="language-swift">encoder.outputFormatting = .prettyPrinted
+</code></pre>
+
+<p>Khi đó kết quả sẽ ra</p>
+
+<pre><code>{
+    &quot;position&quot; : &quot;SG&quot;,
+    &quot;userName&quot; : &quot;crossover&quot;
+}
+</code></pre>
+
+<h1 id="nested-json">Nested json</h1>
+
+<h2 id="decode">Decode</h2>
+
+<p>Mình đã hoàn thành trường hợp đơn giản nhất, giờ mình sẽ đi vào trường hợp phức tạp hơn.
+Như ta đã biết, trong các dự án thực tế, dữ liệu trả về không đơn giản như ở ví dụ đầu tiên, cấu trức của nó thường phức tạp hơn.
+Chúng ta sửa lại json đầu tiên một chút:</p>
+
+<pre><code class="language-swift">let json = &quot;&quot;&quot;
+{
+    &quot;payload&quot;: {
+        &quot;userName&quot;: &quot;crossover&quot;,
+        &quot;position&quot;: &quot;SG&quot;,
+        &quot;id&quot;: 234
+    }
+}
+&quot;&quot;&quot;.data(using: .utf8)!
+</code></pre>
+
+<p>Json ban đầu được lồng vào trong 1 json khác, có key là &ldquo;payload&rdquo;. Giờ không thể <strong>deserialization</strong> trực tiếp nữa. Ta phải sửa lại code như sau</p>
+
+<pre><code class="language-swift">// let instance = try decoder.decode(Baller.self, from: json)
+let instance = try decoder.decode([String:Baller].self, from: json)
+</code></pre>
+
+<p>Đây là cách đơn giản nhất, tuy nhiên lúc này dữ liệu trả về không phải là chính đối tượng mà nó đã được lồng vào trong 1 dictionary. Để lấy dữ liệu ra ta phải làm như sau</p>
+
+<pre><code class="language-swift">instance[&quot;baller&quot;] // Baller
+instance[&quot;baller&quot;]?.userName // &quot;crossover&quot;
+</code></pre>
+
+<p>Có một cách khác mà mình thích hơn, viết ra một cách tường minh hơn và dữ liệu được lấy ra trực tiếp chứ không bị lồng vào trong 1 đối tượng khác.</p>
+
+<p>Ta phải làm thêm một bước nữa so với trường hợp cơ bản ban đầu. Ngoài việc định nghĩa các key mapping với properties của đối tượng, ta định nghĩa cả key mapping bao bên ngoài đối tượng. Có bao nhiêu tầng lớp bên ngoài thì có bấy nhiêu <strong>CodingKey</strong> được định nghĩa thêm.</p>
+
+<pre><code class="language-swift">extension Baller: Decodable {
+    enum OuterKeys: CodingKey {
+        case payload
+    }
+
+    enum InnerKeys: CodingKey {
+        case userName
+        case position
+        case id
+    }
+
+    //...
+}
+</code></pre>
+
+<p>Trường hợp cụ thể trong bài viết, ta có duy nhất một key bao bên ngoài, nên mình định nghĩa <strong>OuterKeys</strong> cho key bao ngoài (payload), và <strong>InnerKeys</strong> cho đối tượng cần xử lý.</p>
+
+<pre><code class="language-swift">init(from decoder: Decoder) throws {
+    // 1.
+    let outer = try decoder.container(keyedBy: OuterKeys.self)
+    // 2.
+    let inner = try outer.nestedContainer(keyedBy: InnerKeys.self, forKey: .payload)
+    
+    userName = try inner.decode(String.self, forKey: .userName)
+    position = try inner.decode(String.self, forKey: .position)
+    id = try inner.decode(Int.self, forKey: .id)
+}
+</code></pre>
+
+<p>Ta chú ý 2 bước ban đầu:</p>
+
+<blockquote>
+<p>let outer = try decoder.container(keyedBy: OuterKeys.self)</p>
+</blockquote>
+
+<p>Bước đầu tiên này ta cũng lấy ra container nhưng cho <strong>OuterKeys</strong>. Lúc này ta lấy được nested json bên trong <em>payload</em></p>
+
+<pre><code class="language-json">{
+    &quot;payload&quot;: ...
+}
+</code></pre>
+
+<p>Bước đầu này đưa ta trở về trường hợp cơ bản nêu đầu bài viết, lúc này ta cần phải lấy container cho đối tượng cần xử lý. Nó nằm trong <strong>outer</strong> nên mình sử dụng phương thức <strong>nestedContainer</strong></p>
+
+<blockquote>
+<p>let inner = try outer.nestedContainer(keyedBy: InnerKeys.self, forKey: .payload)</p>
+</blockquote>
+
+<h2 id="encode">Encode</h2>
+
+<p>Encode chúng ta làm tương tự, cần tạo outer container và inner container như lúc decode.</p>
+
+<pre><code class="language-swift">extension Baller: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var outter = encoder.container(keyedBy: OuterKeys.self)
+        var inner = outter.nestedContainer(keyedBy: InnerKeys.self, forKey: .payload)
+        try inner.encode(userName, forKey: .userName)
+        try inner.encode(position, forKey: .position)
+        // ...
+    }
+}
+</code></pre>
+
+<p>Chúng ta tạm kết thúc bài viết ở đây, khi nào có hứng mình lại viết tiếp :D.</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">crossover</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-04-26</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/hugosite/tags/swift/">swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/lam-viec-voi-response/">
+            <span class="next-text nav-default">Làm việc với response</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

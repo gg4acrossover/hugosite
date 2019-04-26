@@ -6,10 +6,20 @@
     <description>Recent content in Posts on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Mar 2019 16:33:59 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 10:46:46 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Codable remake part 1</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/</link>
+      <pubDate>Fri, 26 Apr 2019 10:46:46 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/</guid>
+      <description>Dạo này mình hơi bận nên bỏ bê blog quá. Hôm nay quyết định chăm chút trở lại bằng một series về Codable, coi như làm nóng bản thân :D. Đã có một bài mình đề cập đến vấn đề này. Tuy nhiên bài viết đó chỉ ở mức giới thiệu, lần này mình sẽ tăng độ khó cho game thêm chút nữa.
+Codable let json = &amp;quot;&amp;quot;&amp;quot; { &amp;quot;userName&amp;quot;: &amp;quot;crossover&amp;quot;, &amp;quot;position&amp;quot;: &amp;quot;SG&amp;quot;, &amp;quot;id&amp;quot;: 234 } &amp;quot;&amp;quot;&amp;quot;.</description>
+    </item>
     
     <item>
       <title>Làm việc với response</title>
