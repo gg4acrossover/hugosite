@@ -60,7 +60,7 @@
 
 <meta itemprop="datePublished" content="2019-04-26T10:46:46&#43;07:00" />
 <meta itemprop="dateModified" content="2019-04-26T10:46:46&#43;07:00" />
-<meta itemprop="wordCount" content="1358">
+<meta itemprop="wordCount" content="1483">
 
 
 
@@ -163,6 +163,8 @@
 <li><a href="#decodable">Decodable</a>
 <ul>
 <li><a href="#decodable-ngắn-gọn">Decodable ngắn gọn</a></li>
+<li><a href="#keydecodingstrategy">keyDecodingStrategy</a></li>
+<li><a href="#datedecodingstrategy">dateDecodingStrategy</a></li>
 </ul></li>
 <li><a href="#encodable">Encodable</a></li>
 <li><a href="#nested-json">Nested json</a>
@@ -262,11 +264,15 @@ instance.userName // &quot;crossover&quot;
 
 <p>Trên đây là các bước cần thiết khi ta sử dụng <em>Decodable</em> để parse dữ liệu. Tuy nhiên ta có thể để compiler trợ giúp ta một số công đoạn viết code.</p>
 
-<pre><code class="language-swift">extension Baller: Codable {}
+<pre><code class="language-swift">extension Baller: Decodable {}
 let decoder = JSONDecoder()
 let instance = try decoder.decode(Baller.self, from: json)
 instance.userName // &quot;crossover&quot;
 </code></pre>
+
+<p>Như đoạn code trên ta không phải tạo <em>CodingKey</em>, không phải implement hàm <em>init(from decoder: Decoder) throws</em>, chỉ phải làm mỗi bước thứ 3.</p>
+
+<h2 id="keydecodingstrategy">keyDecodingStrategy</h2>
 
 <p>Một số trường hợp đặc biệt, convention ở backend sử dụng snake_case (key &ldquo;userName&rdquo; ở trên thay đổi thành &ldquo;user_name&rdquo;)</p>
 
@@ -280,6 +286,26 @@ instance.userName // &quot;crossover&quot;
 <pre><code class="language-swift">let decoder = JSONDecoder()
 decoder.keyDecodingStrategy = .convertFromSnakeCase
 </code></pre>
+
+<h2 id="datedecodingstrategy">dateDecodingStrategy</h2>
+
+<p>Một tình huống cũng hay gặp phải là ta phải parse dữ liệu dạng <strong>Date</strong> mà json thì không có format date, time rồi. Chưa kể trường hợp phải convert từ string sang date nữa. <strong>JSONDecoder</strong> có thuộc tính hỗ trợ ta trong việc convert string sang dạng date là <strong>dateDecodingStrategy</strong></p>
+
+<p>Giả sử ta cần parse dữ liệu như sau:</p>
+
+<pre><code class="language-json">{
+  &quot;checkin&quot;: &quot;2019-04-26T07:51:30+0000&quot;,
+  ...
+}
+</code></pre>
+
+<p>Ta có thể dùng đoạn code sau để convert string về type <strong>Date</strong></p>
+
+<blockquote>
+<p>decoder.dateDecodingStrategy = .iso8601</p>
+</blockquote>
+
+<p>Mình đang sử dụng chuẩn .iso8601, nếu bạn muốn tùy biến format thì có thể dùng type <strong>.formatted(&lt;#DateFormatter#&gt;)</strong></p>
 
 <h1 id="encodable">Encodable</h1>
 
