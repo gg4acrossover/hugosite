@@ -6,19 +6,19 @@
     <description>Recent content on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Apr 2019 10:46:46 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 02:21:43 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Codable remake part 1</title>
-      <link>https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/</link>
-      <pubDate>Fri, 26 Apr 2019 10:46:46 +0700</pubDate>
+      <title>Ôn tập iOS</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/on-tap-ios/</link>
+      <pubDate>Mon, 20 May 2019 02:21:43 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/</guid>
-      <description>Dạo này mình hơi bận nên bỏ bê blog quá. Hôm nay quyết định chăm chút trở lại bằng một series về Codable, coi như làm nóng bản thân :D. Đã có một bài mình đề cập đến vấn đề này. Tuy nhiên bài viết đó chỉ ở mức giới thiệu, lần này mình sẽ tăng độ khó cho game thêm chút nữa.
-Codable let json = &amp;quot;&amp;quot;&amp;quot; { &amp;quot;userName&amp;quot;: &amp;quot;crossover&amp;quot;, &amp;quot;position&amp;quot;: &amp;quot;SG&amp;quot;, &amp;quot;id&amp;quot;: 234 } &amp;quot;&amp;quot;&amp;quot;.</description>
+      <guid>https://gg4acrossover.github.io/hugosite/post/on-tap-ios/</guid>
+      <description>Một số câu hỏi ôn tập iOS Begin Câu 1 struct Question { var level: Int = 1 } var question1 = Question() var question2 = question1 question2.level = 2  Giá trị của question1.level sẽ như nào? Nếu Question là class thì có gì khác không? Tại sao?
+Câu 2 var view1 = UIView() view1.alpha = 0.5 let view2 = UIView() view2.alpha = 0.5 // compile error?  Dòng code view2.</description>
     </item>
     
     <item>
