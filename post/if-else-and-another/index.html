@@ -45,7 +45,7 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu." />
 
 
 
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -67,7 +67,7 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu.">
 
 <meta itemprop="datePublished" content="2018-12-19T13:58:26&#43;07:00" />
 <meta itemprop="dateModified" content="2018-12-19T13:58:26&#43;07:00" />
-<meta itemprop="wordCount" content="960">
+<meta itemprop="wordCount" content="998">
 
 
 
@@ -77,6 +77,13 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu.">
 <meta name="twitter:description" content="Bạn có biết rằng trên thế giới có một cộng đồng anti if, else. Trên đường đi tìm đường cách mệnh, coi như cũng tạo chút thử thách cho bản thân, mình đã tìm ra một số phương pháp tương đối hữu ích.
 1. Thủ thuật refactor Các phương pháp này có thể coi như là trick để code trông gọn hơn, đồng thời loại bỏ if.
 Dictionary Đây là phương pháp mình sử dụng từ lâu."/>
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -194,7 +201,7 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu."/>
 
 <p>Đây là phương pháp mình sử dụng từ lâu. Với phương pháp này thì ta có thể refactor hàm sau:</p>
 
-<pre><code>func getEpisode(_ id: String) -&gt; Episode? {
+<pre><code class="language-swift">func getEpisode(_ id: String) -&gt; Episode? {
     if id = &quot;E1&quot; {
     	return episode_1
     } else if id = &quot;E2&quot; {
@@ -209,7 +216,7 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu."/>
 
 <p>Thành dạng như sau</p>
 
-<pre><code>let dict = [&quot;E1&quot;: episode_1,
+<pre><code class="language-swift">let dict = [&quot;E1&quot;: episode_1,
             &quot;E2&quot;: episode_2,
             &quot;E3&quot;: episode_3]
 
@@ -224,7 +231,7 @@ func getEpisode(_ id: String) -&gt; Episode? {
 
 <p>Thay vì</p>
 
-<pre><code>func play(type: Format) {
+<pre><code class="language-swift">func play(type: Format) {
     switch type {
     	case .video: self.playVideo()
     	case .audio: self.playAudio()
@@ -235,7 +242,7 @@ func getEpisode(_ id: String) -&gt; Episode? {
 
 <p>Tên các method ở trên đều có chung format play<strong>%TYPE%</strong>. Ta có thể gọi nó thông qua <em>selector</em> để loại bỏ hẳn <em>if</em></p>
 
-<pre><code>enum Format: String {
+<pre><code class="language-swift">enum Format: String {
     case video
     case audio
     case image
@@ -270,14 +277,14 @@ Player().play(type: .video)
 
 <p>Giả sử bài toán ta đang giải quyết là tìm số nguyên dương trong mảng, thay vì viết:</p>
 
-<pre><code>arr.filter { (value) -&gt; Bool in
+<pre><code class="language-swift">arr.filter { (value) -&gt; Bool in
     return value &gt; 0
 }
 </code></pre>
 
-<p>Ta có thể áp dụng công thức tổng quát như trên để hàm ngắn gọn, rõ nghĩa hơn.</p>
+<p>Ta có thể truyền tên hàm vào trong <strong>filter</strong> để code ngắn gọn, rõ nghĩa hơn.</p>
 
-<pre><code>// (Int) -&gt; Bool
+<pre><code class="language-swift">// (Int) -&gt; Bool
 func positive(x: Int) -&gt; Bool {
 	return x &gt; 0
 }
@@ -288,14 +295,20 @@ arr.filter(positive)
 
 <p>Nếu có nhiều hơn một điều kiện, ta có thể tổng hợp lại các hàm làm một. Giả sử ta muốn tìm số vừa lớn hơn 0 vừa nhỏ hơn 100, ta viết thêm điều kiện:</p>
 
-<pre><code>func lessThan100(x: Int) -&gt; Bool {
+<pre><code class="language-swift">func lessThan100(x: Int) -&gt; Bool {
     return x &lt; 100
 }
 </code></pre>
 
-<p>Sử dụng phương pháp <strong>composite</strong>, ta sẽ có 1 hàm dạng như: <strong>condition = lessThan100 &amp; positive</strong></p>
+<p>Tiếp theo, ta sử dụng phương pháp <strong>composite</strong> để có 1 hàm dạng như: <strong>lessThan100AndPositive = lessThan100 &amp; positive</strong>. Lúc đó code sẽ gọn gàng ngăn nắp như này:</p>
 
-<pre><code>public class func allPass&lt;A&gt;(_ array: [(A) -&gt; Bool], value: A) -&gt; Bool {
+<blockquote>
+<p>arr.filter(lessThan100AndPositive)</p>
+</blockquote>
+
+<p>Nhưng trước hết, ta sẽ định nghĩa hai phương thức helper để tổng hợp điều kiện thuận tiện hơn và dễ dàng tái sử dụng lại code</p>
+
+<pre><code class="language-swift">public class func allPass&lt;A&gt;(_ array: [(A) -&gt; Bool], value: A) -&gt; Bool {
     let predicate = array.map({ V.bind(value: value, to: $0) }) // [() -&gt; Bool]
     return checkAll(predicate)
 }
@@ -318,7 +331,7 @@ public class func allPass&lt;A&gt;(_ array: [(A) -&gt; Bool]) -&gt; (A) -&gt; Bo
 
 <p>Và hàm filter sẽ được viết ngắn gọn như sau:</p>
 
-<pre><code>func doFilterAll(_ value: Int) -&gt; Bool {
+<pre><code class="language-swift">func doFilterAll(_ value: Int) -&gt; Bool {
     // open comments below to use curry function
     // let and = V.allPass([positive,lessThan100]) // (Int) -&gt; Bool
     // return and(value)
@@ -352,7 +365,7 @@ arr.filter(doFilterAll)
 
 <p>Hai thành phần này có mối liên hệ chặt chẽ, còn liên kết thế nào thì có thể xem đoạn code ngay sau đây.</p>
 
-<pre><code>Positive&lt;Double&gt;.of(100.0)?.value // 100
+<pre><code class="language-swift">Positive&lt;Double&gt;.of(100.0)?.value // 100
 Positive&lt;Int&gt;.of(-1)?.value // nil
 Both&lt;Positive&lt;Float&gt;,LessThan100&lt;Float&gt;&gt;.of(99)?.value // 99
 Both&lt;Positive&lt;Float&gt;,LessThan100&lt;Float&gt;&gt;.of(101)?.value // nil
@@ -364,7 +377,7 @@ Both&lt;Positive&lt;Float&gt;,LessThan100&lt;Float&gt;&gt;.of(101)?.value // nil
 
 <p>Đoạn code định nghĩa <em>refinement type</em> như sau</p>
 
-<pre><code>public protocol Refinement {
+<pre><code class="language-swift">public protocol Refinement {
     associatedtype RefinedType
     static func pass(_ value: RefinedType) -&gt; Bool
 }
@@ -521,7 +534,7 @@ public extension Refinement {
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
 
 
 
@@ -530,13 +543,5 @@ public extension Refinement {
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>
