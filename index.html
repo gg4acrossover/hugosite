@@ -54,7 +54,7 @@
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2019-05-20T02:21:43&#43;07:00"/>
+<meta property="og:updated_time" content="2019-05-23T10:09:24&#43;07:00"/>
 
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
@@ -136,6 +136,33 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/mot-vai-tip-thang-5-2019/">Tip iOS cho tháng năm</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-05-23 </span>
+      <div class="post-category">
+          
+            <a href="/hugosite/categories/swift/"> swift </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
+Bước đầu implement phương thức gắn css style vào string
+extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&gt; String in return &quot;\(key): \(value)&quot; }.joined(separator: &quot;;&quot;) try! self.init( data: Data(&quot;&lt;p style=\&quot;\(style)\&quot;&gt;\(text)&lt;/p&gt;&quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, .
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/mot-vai-tip-thang-5-2019/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -226,29 +253,6 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu.
     </div>
     <div class="read-more">
       <a href="/hugosite/post/if-else-and-another/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/make-swift-great-again/">Make swift great again</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-12-11 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Làm swift toẹt vời trở lại Dạo này thời tiết Hà Nội trở lạnh, post một bài cho nóng người :D. Lần này mình sẽ trình bày về một số tip để làm code trông swifty hơn.
-defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng của defer là nó sẽ chạy sau khi hàm return.
- var x = 1 func doDefer(_ value: inout Int) -&gt; Int { // effect after return defer { value += 1 } value += 1 return value } print(doDefer(&amp;x)) // 2 print(x) // 3  Với tác dụng của hàm defer ta có thể tận dụng để giải phóng bộ nhớ, close file hay bất cứ tác vụ nào đòi hỏi 2 bước ràng buộc lúc bắt đầu và kết thúc.
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/make-swift-great-again/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>

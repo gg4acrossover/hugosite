@@ -6,10 +6,21 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 May 2019 02:21:43 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 23 May 2019 10:09:24 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tip iOS cho tháng năm</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/mot-vai-tip-thang-5-2019/</link>
+      <pubDate>Thu, 23 May 2019 10:09:24 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/mot-vai-tip-thang-5-2019/</guid>
+      <description>CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
+Bước đầu implement phương thức gắn css style vào string
+extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&amp;gt; String in return &amp;quot;\(key): \(value)&amp;quot; }.joined(separator: &amp;quot;;&amp;quot;) try! self.init( data: Data(&amp;quot;&amp;lt;p style=\&amp;quot;\(style)\&amp;quot;&amp;gt;\(text)&amp;lt;/p&amp;gt;&amp;quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, .</description>
+    </item>
     
     <item>
       <title>Ôn tập iOS</title>

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/mot-vai-tip-thang-5-2019/</loc>
+    <lastmod>2019-05-23T10:09:24+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/on-tap-ios/</loc>
     <lastmod>2019-05-20T02:21:43+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -248,7 +255,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2019-05-20T02:21:43+07:00</lastmod>
+    <lastmod>2019-05-23T10:09:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -261,7 +268,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2019-05-20T02:21:43+07:00</lastmod>
+    <lastmod>2019-05-23T10:09:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -310,14 +317,14 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
-    <lastmod>2019-05-20T02:21:43+07:00</lastmod>
+    <lastmod>2019-05-23T10:09:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
-    <lastmod>2019-03-20T16:33:59+07:00</lastmod>
+    <lastmod>2019-05-23T10:09:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
