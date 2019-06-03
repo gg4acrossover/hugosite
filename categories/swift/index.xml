@@ -6,10 +6,20 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 May 2019 10:09:24 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 14:10:45 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vài tip 03.06.19</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/new-tip-03-06-19/</link>
+      <pubDate>Mon, 03 Jun 2019 14:10:45 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/new-tip-03-06-19/</guid>
+      <description>Một số phương thức hỗ trợ lập trình, note lại cho bản thân.
+Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }  Storyboard protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&amp;gt; Self { let controller = storyboard().instantiateInitialViewController() return controller! as! Self } static func storyboard(fileName: String? = nil) -&amp;gt; UIStoryboard { let storyboard = UIStoryboard(name: fileName ?</description>
+    </item>
     
     <item>
       <title>Tip iOS cho tháng năm</title>
