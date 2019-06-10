@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Collection view layout - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" /><meta name="description" content="swift" />
+<meta name="keywords" content="swift, collectionview, frame, bounds, basic" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/collectionview_layout/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Collection view layout" />
+<meta property="og:description" content="swift" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/collectionview_layout/" /><meta property="article:published_time" content="2019-06-10T10:40:29&#43;07:00"/>
+<meta property="article:modified_time" content="2019-06-10T10:40:29&#43;07:00"/>
+
+<meta itemprop="name" content="Collection view layout">
+<meta itemprop="description" content="swift">
+
+
+<meta itemprop="datePublished" content="2019-06-10T10:40:29&#43;07:00" />
+<meta itemprop="dateModified" content="2019-06-10T10:40:29&#43;07:00" />
+<meta itemprop="wordCount" content="767">
+
+
+
+<meta itemprop="keywords" content="swift," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Collection view layout"/>
+<meta name="twitter:description" content="swift"/>
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Collection view layout</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-10 </span>
+        <div class="post-category">
+            
+              <a href="/hugosite/categories/swift/"> swift </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#collectionview-hoạt-động-như-nào">CollectionView hoạt động như nào</a></li>
+<li><a href="#tính-toán-layout">Tính toán layout</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="collectionview-hoạt-động-như-nào">CollectionView hoạt động như nào</h1>
+
+<p><em>UICollectionView</em> là subclass của UIScrollView. Nói một cách khác, nó là <em>UIView</em> nhưng có thêm chức năng thay đổi <em>bounds</em>. Khi chúng ta di chuyển cell, chúng ta thay đổi giá trị contentOffset, đồng thời thay đổi không gian hiển thị của <em>UICollectionView</em>.</p>
+
+<p>Trăm nghe không bằng một thấy, tốt nhất là trình diễn bằng hình ảnh cho dễ hiểu.</p>
+
+<p><img src="/hugosite/images/note/collectionview/scroll_1.gif" alt="img1" /></p>
+
+<p>Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection view (ô chữ nhật xanh lá cây tượng trưng cho màn hình điện thoại). Tuy nhiên cuộc sống không đơn giản như cách chúng ta tưởng tượng.</p>
+
+<p><img src="/hugosite/images/note/collectionview/scroll2.gif" alt="img" /></p>
+
+<p>Trên thực tế, các cell không di chuyển, phần di chuyển là ô chữ nhật xanh lá. Ô xanh lá cây lúc này chính là <em>bounds</em> của collection view. Đối với các view bình thường, <em>bounds</em> và <em>frame</em> không khác nhau, tuy nhiên ở collectionview, hay các class kế thừa <em>UIScrollView</em> nói chung, khi ta thực hiện thao tác vuốt, ta thay đổi giá trị <em>origin</em> của <em>bounds</em> (<em>frame</em> không thay đổi). Thông số origin này chính là <em>contentOffset</em> mà chúng ta hay sử dụng.</p>
+
+<p><em>UICollectionView</em> là ví dụ sinh động nhất cho sự khác nhau giữa <em>frame</em> và <em>bounds</em>. Giải thích kĩ hơn chút, <em>frame</em> định nghĩa khung hình của đối tượng trên hệ trục tọa độ xác định dựa trên superview của chính đối tượng đó. Còn <em>bounds</em> cũng tương tự nhưng hệ trục tọa độ lại xác định trên chính đối tượng đang xét.</p>
+
+<p>Như vậy để tạo collection view layout, chúng ta cần chú ý đến 2 điều:</p>
+
+<ul>
+<li>Tính toán vị trí các cell.</li>
+<li>Tính toán vị trí của bounds.</li>
+</ul>
+
+<h1 id="tính-toán-layout">Tính toán layout</h1>
+
+<p>Tính toán layout các cell của collection view không đơn giản như cách chúng ta gắn frame cho từng view. Thay vào đó, chúng ta sử dụng một mảng <em>UICollectionViewLayoutAttributes</em> (xem ra quá nhiều tham số :D).</p>
+
+<p><img src="/hugosite/images/note/collectionview/attributes.png" alt="img" /></p>
+
+<p>Bi ơi đừng sợ, để làm quen, chúng ta sẽ tiếp cận với trường hợp đơn giản nhất&hellip;tạo cell như <em>UITableView</em> sử dụng <em>UICollectionViewLayout</em>.</p>
+
+<p>Có 4 bước quan trọng:</p>
+
+<ul>
+<li>Tính toán frame của tất cả các cell qua hàm <em>prepare</em>.</li>
+<li>Tính toán visible cells bằng phương thức <em>layoutAttributesForElements(in:)</em></li>
+<li>Trả về thông số của các cells qua phương thức <em>layoutAttributesForItem(at:)</em></li>
+<li>Trả về size của collection view qua <em>collectionViewContentSize</em></li>
+</ul>
+
+<p>Tựu chung 4 hàm trên cũng chỉ phục vụ 2 công việc: tính toán frame cells và bounds.
+Trước hết tạo class hỗ trợ tính toán các bước trên</p>
+
+<pre><code class="language-swift">class TableLayoutCache {
+
+    // MARK: - Calculation
+    func recalculateDefaultFrames(numberOfItems: Int) {
+        defaultFrames = (0..&lt;numberOfItems).map {
+            defaultCellFrame(atRow: $0)
+        }
+    }
+
+    func defaultCellFrame(atRow row: Int) -&gt; CGRect {
+        let y = itemSize.height * CGFloat(row)
+        let defaultFrame = CGRect(x: 0, y: y,
+                                  width: collectionWidth,
+                                  height: itemSize.height)
+        return defaultFrame
+    }
+
+    // MARK: - Access
+    func visibleRows(in frame: CGRect) -&gt; [Int] {
+        return defaultFrames
+            .enumerated() // Index to frame relation
+            .filter { $0.element.intersects(frame)} // Filter by frame
+            .map { $0.offset } // Return indexes
+    }
+
+    var contentSize: CGSize {
+        return CGSize(width: collectionWidth,
+                      height: defaultFrames.last?.maxY ?? 0)
+    }
+
+    static var zero: TableLayoutCache {
+        return TableLayoutCache(itemSize: .zero, collectionWidth: 0)
+    }
+
+    init(itemSize: CGSize, collectionWidth: CGFloat) {
+        self.itemSize = itemSize
+        self.collectionWidth = collectionWidth
+    }
+
+    private let itemSize: CGSize
+    private let collectionWidth: CGFloat
+    private var defaultFrames = [CGRect]()
+}
+</code></pre>
+
+<p>Công việc trở nên đơn giản hơn đối với <em>custom layout</em> mà ta tạo ra ngay sau đây</p>
+
+<pre><code class="language-swift">class TableLayout: UICollectionViewLayout {
+    var itemSize: CGSize = .zero  {
+        didSet {
+            invalidateLayout()
+        }
+    }
+    
+    private let section = 0
+    var cache = TableLayoutCache.zero
+    
+    // required
+    override var collectionViewContentSize: CGSize {
+        return cache.contentSize
+    }
+    
+    // required
+    override func prepare() {
+        super.prepare()
+        
+        let numberOfItems = collectionView!.numberOfItems(inSection: section)
+            
+        cache = TableLayoutCache(itemSize: itemSize,
+                                 collectionWidth: collectionView!.bounds.width)
+        cache.recalculateDefaultFrames(numberOfItems: numberOfItems)
+    }
+    
+    // required
+    override func layoutAttributesForElements(in rect: CGRect) -&gt; [UICollectionViewLayoutAttributes]? {
+        let indexes = cache.visibleRows(in: rect)
+        
+        let cells = indexes.map { (row) -&gt; UICollectionViewLayoutAttributes? in
+            let path = IndexPath(row: row, section: section)
+            let attributes = layoutAttributesForItem(at: path)
+            return attributes
+        }.compactMap { $0 }
+        
+        return cells
+    }
+    
+    // required
+    override func layoutAttributesForItem(at indexPath: IndexPath) -&gt; UICollectionViewLayoutAttributes? {
+        
+        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+            attributes.frame = cache.defaultCellFrame(atRow: indexPath.row)
+        
+        return attributes
+    }
+}
+</code></pre>
+
+<p>Sau các bước này mọi người sẽ có 1 uitableview không có header, footer :D. Nói chung cũng tạm đủ dùng. Dù sao mục đích bài này chủ yếu để chỉ ra các bước cần thiết cho một <em>custom layout</em>. Sau bài này mọi người có thể rút ra những thứ sau:</p>
+
+<ul>
+<li>Cách thức hoạt động của UICollectionView (UIScrollView nói chung)</li>
+<li>Sự khác nhau giữa <em>frame</em> và <em>bounds</em></li>
+<li>Các bước cần thiết để tạo ra custom layout.</li>
+</ul>
+
+<hr />
+
+<p>Tham khảo:</p>
+
+<p><a href="https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax">https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax</a>
+<a href="https://developer.apple.com/documentation/uikit/uicollectionviewlayout">https://developer.apple.com/documentation/uikit/uicollectionviewlayout</a>
+<a href="https://stackoverflow.com/questions/1210047/cocoa-whats-the-difference-between-the-frame-and-the-bounds">https://developer.apple.com/documentation/uikit/uicollectionviewlayout</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-06-10</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/hugosite/tags/swift/">swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/new-tip-03-06-19/">
+            <span class="next-text nav-default">Vài tip 03.06.19</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

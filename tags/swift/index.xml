@@ -6,10 +6,21 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Jun 2019 14:10:45 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 10:40:29 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Collection view layout</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/collectionview_layout/</link>
+      <pubDate>Mon, 10 Jun 2019 10:40:29 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/collectionview_layout/</guid>
+      <description>CollectionView hoạt động như nào UICollectionView là subclass của UIScrollView. Nói một cách khác, nó là UIView nhưng có thêm chức năng thay đổi bounds. Khi chúng ta di chuyển cell, chúng ta thay đổi giá trị contentOffset, đồng thời thay đổi không gian hiển thị của UICollectionView.
+Trăm nghe không bằng một thấy, tốt nhất là trình diễn bằng hình ảnh cho dễ hiểu.
+Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection view (ô chữ nhật xanh lá cây tượng trưng cho màn hình điện thoại).</description>
+    </item>
     
     <item>
       <title>Vài tip 03.06.19</title>

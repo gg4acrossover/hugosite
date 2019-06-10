@@ -54,7 +54,7 @@
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2018-12-19T13:58:26&#43;07:00"/>
+<meta property="og:updated_time" content="2019-03-20T16:33:59&#43;07:00"/>
 
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
@@ -136,6 +136,33 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/lam-viec-voi-response/">Làm việc với response</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-03-20 </span>
+      <div class="post-category">
+          
+            <a href="/hugosite/categories/swift/"> swift </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
+struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
+Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/lam-viec-voi-response/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -223,29 +250,6 @@ defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng 
     </div>
     <div class="read-more">
       <a href="/hugosite/post/tao-view-tu-xib/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/clickable-label/">Clickable label</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-11-09 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Để tạo clickable cho text, ta có thể sử dụng UITextView, đó là cách đơn giản nhất. Ngoài ra ta cũng có thể tận dụng sức mạnh của Textkit :D để áp dụng trực tiếp lên UILabel mặc dù chỉ sử dụng một phần rất nhỏ của nó thôi.
-Hôm nay lười nên mình show code luôn :), extension của UILabel nhé :).
-Cách sử dụng đơn giản như sau
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/clickable-label/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
