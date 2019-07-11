@@ -6,10 +6,20 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Jun 2019 13:59:48 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2019 11:08:05 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lấy url từ string</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/</link>
+      <pubDate>Thu, 11 Jul 2019 11:08:05 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/</guid>
+      <description>Từ một lời thắc mắc Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko? Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm URL.init
+var str = &amp;quot;goto https://www.google.com/&amp;quot; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]  Kết quả ra cả &amp;ldquo;goto&amp;rdquo;, có gì đó sai sai? Hóa ra thằng URL.init vốn dễ dãi. Nó nhận cả đường dẫn, tên thư mục nó lấy, url nó lấy, tên folder nó lấy, blah blah.</description>
+    </item>
     
     <item>
       <title>Ẩn Keyboard</title>

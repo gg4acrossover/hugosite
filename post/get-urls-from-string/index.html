@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Lấy url từ string - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="viethq" /><meta name="description" content="lấy url từ string" />
+<meta name="keywords" content="swift" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Lấy url từ string" />
+<meta property="og:description" content="lấy url từ string" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/" /><meta property="article:published_time" content="2019-07-11T11:08:05&#43;07:00"/>
+<meta property="article:modified_time" content="2019-07-11T11:08:05&#43;07:00"/>
+
+<meta itemprop="name" content="Lấy url từ string">
+<meta itemprop="description" content="lấy url từ string">
+
+
+<meta itemprop="datePublished" content="2019-07-11T11:08:05&#43;07:00" />
+<meta itemprop="dateModified" content="2019-07-11T11:08:05&#43;07:00" />
+<meta itemprop="wordCount" content="394">
+
+
+
+<meta itemprop="keywords" content="swift," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lấy url từ string"/>
+<meta name="twitter:description" content="lấy url từ string"/>
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Lấy url từ string</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-11 </span>
+        <div class="post-category">
+            
+              <a href="/hugosite/categories/swift/"> swift </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#từ-một-lời-thắc-mắc">Từ một lời thắc mắc</a></li>
+<li><a href="#sử-dụng-nsregularexpression">Sử dụng NSRegularExpression</a></li>
+<li><a href="#sử-dụng-nsdatadetector">Sử dụng NSDataDetector</a></li>
+<li><a href="#bài-học-rút-ra-là-gì">Bài học rút ra là gì?</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="từ-một-lời-thắc-mắc">Từ một lời thắc mắc</h1>
+
+<p>Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko?
+Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm <em>URL.init</em></p>
+
+<pre><code class="language-swift">var str = &quot;goto https://www.google.com/&quot;
+let urls = str.components(separatedBy: .whitespaces)
+              .compactMap(URL.init)
+
+// [goto, https://www.google.com/]
+</code></pre>
+
+<p>Kết quả ra cả &ldquo;goto&rdquo;, có gì đó sai sai?
+Hóa ra thằng <em>URL.init</em> vốn dễ dãi. Nó nhận cả đường dẫn, tên thư mục nó lấy, url nó lấy, tên folder nó lấy, blah blah.
+Vậy là ta nên tìm một cách khác chặt chẽ hơn.</p>
+
+<h1 id="sử-dụng-nsregularexpression">Sử dụng NSRegularExpression</h1>
+
+<p>Để áp dụng cách này, bạn nên biết chút về expression hoặc là sử dụng có sẵn như <a href="https://emailregex.com/">ở đây</a>.
+Code triển khai cũng không dài không ngắn</p>
+
+<pre><code class="language-swift">let pt = &quot;https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&amp;//=]*)&quot;
+let regex = try! NSRegularExpression(pattern: pt, options: [])
+regex.matches(in: str, options: [], range: NSMakeRange(0, str.count)).map { (range) -&gt; String? in
+    // your code
+}
+</code></pre>
+
+<p>Closure trả về range của đoạn text thỏa mãn điều kiện bạn đưa ra ban đầu từ chuỗi pattern regex. Từ đó bạn có thể lấy url theo như mình muốn.</p>
+
+<h1 id="sử-dụng-nsdatadetector">Sử dụng NSDataDetector</h1>
+
+<p><em>NSDataDetector</em> có anh em họ hành với <em>NSRegularExpression</em>. Thằng này tương đối dễ dùng, chỉ có một nhược điểm duy nhất: nó là hàng ăn sẵn nên không phải services nào bạn muốn nó cũng đáp ứng được như cô chị của nó. Mỗi người một sở thích, dùng hay không là tùy ở mình.</p>
+
+<pre><code class="language-swift">let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+            detector.enumerateMatches(in: str, options: [], range: NSMakeRange(0, self.count), using: { (result, _, _) in
+                // your code
+            })
+</code></pre>
+
+<p>Điểm hay của <em>NSDataDetector</em> là nó định nghĩa ra các type để mình sử dụng. Danh sách phong phú, đa dạng để bạn lựa chọn, thế nên cũng không cần biết <em>expression</em> làm gì.</p>
+
+<pre><code class="language-swift">extension NSTextCheckingResult {
+
+    
+    public struct CheckingType : OptionSet {
+
+        public init(rawValue: UInt64)
+
+        
+        public static var orthography: NSTextCheckingResult.CheckingType { get }
+
+        public static var spelling: NSTextCheckingResult.CheckingType { get }
+
+        public static var grammar: NSTextCheckingResult.CheckingType { get }
+
+        public static var date: NSTextCheckingResult.CheckingType { get }
+
+        public static var address: NSTextCheckingResult.CheckingType { get }
+
+        public static var link: NSTextCheckingResult.CheckingType { get }
+
+        // ...
+    }
+</code></pre>
+
+<h1 id="bài-học-rút-ra-là-gì">Bài học rút ra là gì?</h1>
+
+<ol>
+<li><p>Không có cách nào tối ưu nhất, chỉ có cách nào hợp với mình nhất thôi.</p></li>
+
+<li><p>Như cái title của bài viết.</p></li>
+</ol>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">viethq</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-07-11</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/hugosite/tags/swift/">swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/dismiss-keyboard/">
+            <span class="next-text nav-default">Ẩn Keyboard</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

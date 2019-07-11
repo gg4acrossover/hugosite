@@ -54,7 +54,7 @@
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2019-06-18T13:59:48&#43;07:00"/>
+<meta property="og:updated_time" content="2019-07-11T11:08:05&#43;07:00"/>
 
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
@@ -136,6 +136,32 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/get-urls-from-string/">Lấy url từ string</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-07-11 </span>
+      <div class="post-category">
+          
+            <a href="/hugosite/categories/swift/"> swift </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Từ một lời thắc mắc Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko? Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm URL.init
+var str = &quot;goto https://www.google.com/&quot; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]  Kết quả ra cả &ldquo;goto&rdquo;, có gì đó sai sai? Hóa ra thằng URL.init vốn dễ dãi. Nó nhận cả đường dẫn, tên thư mục nó lấy, url nó lấy, tên folder nó lấy, blah blah.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/get-urls-from-string/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -234,33 +260,6 @@ Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translates
     </div>
     <div class="read-more">
       <a href="/hugosite/post/new-tip-03-06-19/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/mot-vai-tip-thang-5-2019/">Tip iOS cho tháng năm</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-05-23 </span>
-      <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
-Bước đầu implement phương thức gắn css style vào string
-extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&gt; String in return &quot;\(key): \(value)&quot; }.joined(separator: &quot;;&quot;) try! self.init( data: Data(&quot;&lt;p style=\&quot;\(style)\&quot;&gt;\(text)&lt;/p&gt;&quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, .
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/mot-vai-tip-thang-5-2019/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>

@@ -54,7 +54,7 @@
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2018-11-30T14:33:34&#43;07:00"/>
+<meta property="og:updated_time" content="2018-12-11T17:39:09&#43;07:00"/>
 
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
@@ -136,6 +136,29 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/make-swift-great-again/">Make swift great again</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-12-11 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Làm swift toẹt vời trở lại Dạo này thời tiết Hà Nội trở lạnh, post một bài cho nóng người :D. Lần này mình sẽ trình bày về một số tip để làm code trông swifty hơn.
+defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng của defer là nó sẽ chạy sau khi hàm return.
+ var x = 1 func doDefer(_ value: inout Int) -&gt; Int { // effect after return defer { value += 1 } value += 1 return value } print(doDefer(&amp;x)) // 2 print(x) // 3  Với tác dụng của hàm defer ta có thể tận dụng để giải phóng bộ nhớ, close file hay bất cứ tác vụ nào đòi hỏi 2 bước ràng buộc lúc bắt đầu và kết thúc.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/make-swift-great-again/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -222,28 +245,6 @@ Bình thường mình không dùng autoclosure vì thấy nó cũng không có g
     </div>
     <div class="read-more">
       <a href="/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/style-view-2/">Tạo Style cho UIView</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-11-02 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
-Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI.
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/style-view-2/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
