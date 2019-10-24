@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/decorator-va-thuc-tien-ap-dung/</loc>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/</loc>
     <lastmod>2019-07-11T11:08:05+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,7 +297,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2019-07-11T11:08:05+07:00</lastmod>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -303,7 +310,7 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2019-07-11T11:08:05+07:00</lastmod>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -318,6 +325,13 @@
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</loc>
     <lastmod>2016-09-05T16:32:39+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/design-pattern/</loc>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -351,15 +365,15 @@
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
-    <lastmod>2019-07-11T11:08:05+07:00</lastmod>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
-    <lastmod>2019-07-11T11:08:05+07:00</lastmod>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

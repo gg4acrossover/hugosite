@@ -6,10 +6,19 @@
     <description>Recent content in Posts on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jul 2019 11:08:05 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 02:13:23 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Decorator và thực tiễn áp dụng</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/decorator-va-thuc-tien-ap-dung/</link>
+      <pubDate>Mon, 21 Oct 2019 02:13:23 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/decorator-va-thuc-tien-ap-dung/</guid>
+      <description>Chào mọi người, hôm nay mình sẽ giới thiệu về một pattern khá phổ biến - decorator . Nói một cách vắn tắt, đây là pattern thuộc nhóm cấu trúc và sử dụng composition để tạo ra đối tượng ta mong muốn một cách linh hoạt. Nghe có vẻ hơi&amp;hellip;lý thuyết, nhưng mình sẽ đi ngay vào phần tình huống và cách thức giải quyết dựa vào decorator để các bạn dễ dàng hình dung hơn.</description>
+    </item>
     
     <item>
       <title>Lấy url từ string</title>

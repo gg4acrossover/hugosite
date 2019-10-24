@@ -44,7 +44,7 @@
 
 
 
-<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -54,7 +54,7 @@
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2019-07-11T11:08:05&#43;07:00"/>
+<meta property="og:updated_time" content="2019-10-21T02:13:23&#43;07:00"/>
 
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
@@ -62,13 +62,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VietHQ - Tìm đơn giản trong phức tạp"/>
 <meta name="twitter:description" content="Tìm đơn giản trong phức tạp."/>
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,6 +129,31 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/decorator-va-thuc-tien-ap-dung/">Decorator và thực tiễn áp dụng</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-10-21 </span>
+      <div class="post-category">
+          
+            <a href="/hugosite/categories/swift/"> swift </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Chào mọi người, hôm nay mình sẽ giới thiệu về một pattern khá phổ biến - decorator . Nói một cách vắn tắt, đây là pattern thuộc nhóm cấu trúc và sử dụng composition để tạo ra đối tượng ta mong muốn một cách linh hoạt. Nghe có vẻ hơi&hellip;lý thuyết, nhưng mình sẽ đi ngay vào phần tình huống và cách thức giải quyết dựa vào decorator để các bạn dễ dàng hình dung hơn.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/decorator-va-thuc-tien-ap-dung/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -239,32 +257,6 @@ Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection vi
 </article>
 
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/new-tip-03-06-19/">Vài tip 03.06.19</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-06-03 </span>
-      <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Một số phương thức hỗ trợ lập trình, note lại cho bản thân.
-Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }  Storyboard protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&gt; Self { let controller = storyboard().instantiateInitialViewController() return controller! as! Self } static func storyboard(fileName: String? = nil) -&gt; UIStoryboard { let storyboard = UIStoryboard(name: fileName ?
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/new-tip-03-06-19/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
   </section>
   
   <nav class="pagination">
@@ -326,7 +318,7 @@ Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translates
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
 
 
 
@@ -335,5 +327,13 @@ Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translates
 
 
 
+
+
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 </body>
 </html>
