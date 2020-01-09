@@ -237,7 +237,7 @@ Nói chung là tất cả những cái có thể dùng chung ở các tầng ti�
 
 <p>Tầng này sẽ chứa các đối tượng implement <em>EntityGateway</em> như đã nói ở phía trên. Đúng như mô hình clean architecture, tầng dưới sẽ chìa ra interface cho tầng trên implement để giao tiếp với bên dưới.</p>
 
-<p>Trong tầng này chứa <em>Usercase</em> interface, có chỗ sẽ gọi là <em>Interator</em>. <em>Usercase</em> sẽ định nghĩa logic nghiệp vụ để tầng tiếp theo bên ngoài thực thi, bản thân nó sẽ chứa một <em>EntityGateway implement</em> để lấy ra entity cần thiết, đưa qua cách kênh phân phối để hiển thị lên app.</p>
+<p>Trong tầng này chứa <em>Usercase</em> interface, có chỗ sẽ gọi là <em>Interaction</em>. <em>Usercase</em> sẽ định nghĩa logic nghiệp vụ để tầng tiếp theo bên ngoài thực thi, bản thân nó sẽ chứa một <em>EntityGateway implement</em> để lấy ra entity cần thiết, đưa qua cách kênh phân phối để hiển thị lên app.</p>
 
 <p>Để chìa output ra bên ngoài thì <em>Usercase</em> sử dụng interface <em>Output</em>, tạm gọi là <em>UsercaseOuput</em>. Mục đích để cho usercase có thể giao tiếp với bên ngoài. <em>Presenter</em> của chúng ta sẽ implement cái <em>UsercaseOuput</em> và sử dụng ở tầng bên ngoài cùng, mình gọi là <em>App</em></p>
 
