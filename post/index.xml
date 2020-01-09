@@ -6,10 +6,19 @@
     <description>Recent content in Posts on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Oct 2019 02:13:23 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2020 11:41:03 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Áp dụng clean architecture</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/</link>
+      <pubDate>Thu, 09 Jan 2020 11:41:03 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/</guid>
+      <description>Áp dụng Clean Architecture trong lập trình mobile Ngoại truyện - Tại sao bạn làm theo mô hình này - Vì uncle Bob nói zậy  Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&amp;hellip;gói xôi :D.</description>
+    </item>
     
     <item>
       <title>Decorator và thực tiễn áp dụng</title>

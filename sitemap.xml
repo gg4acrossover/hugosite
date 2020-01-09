@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/decorator-va-thuc-tien-ap-dung/</loc>
     <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,27 +297,43 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/architecture/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/architecture/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -365,14 +388,14 @@
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
     <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
     <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>

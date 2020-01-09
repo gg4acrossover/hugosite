@@ -44,7 +44,7 @@
 
 
 
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -54,7 +54,7 @@
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2019-06-03T14:10:45&#43;07:00"/>
+<meta property="og:updated_time" content="2019-06-10T10:40:29&#43;07:00"/>
 
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
@@ -62,6 +62,13 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VietHQ - Tìm đơn giản trong phức tạp"/>
 <meta name="twitter:description" content="Tìm đơn giản trong phức tạp."/>
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,6 +136,33 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/collectionview_layout/">Collection view layout</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-06-10 </span>
+      <div class="post-category">
+          
+            <a href="/hugosite/categories/swift/"> swift </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      CollectionView hoạt động như nào UICollectionView là subclass của UIScrollView. Nói một cách khác, nó là UIView nhưng có thêm chức năng thay đổi bounds. Khi chúng ta di chuyển cell, chúng ta thay đổi giá trị contentOffset, đồng thời thay đổi không gian hiển thị của UICollectionView.
+Trăm nghe không bằng một thấy, tốt nhất là trình diễn bằng hình ảnh cho dễ hiểu.
+Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection view (ô chữ nhật xanh lá cây tượng trưng cho màn hình điện thoại).
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/collectionview_layout/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -227,33 +261,6 @@ Codable let json = &quot;&quot;&quot; { &quot;userName&quot;: &quot;crossover&qu
 </article>
 
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/lam-viec-voi-response/">Làm việc với response</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-03-20 </span>
-      <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
-struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
-Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/lam-viec-voi-response/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
   </section>
   
   <nav class="pagination">
@@ -300,7 +307,7 @@ Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết
     &copy; 
     
       2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -319,7 +326,7 @@ Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
 
 
 
@@ -328,13 +335,5 @@ Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>
