@@ -45,7 +45,7 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
 
 
 
-<link href="/hugosite/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -77,13 +77,6 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
 <meta name="twitter:description" content="CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
 Bước đầu implement phương thức gắn css style vào string
 extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&gt; String in return &quot;\(key): \(value)&quot; }.joined(separator: &quot;;&quot;) try! self.init( data: Data(&quot;&lt;p style=\&quot;\(style)\&quot;&gt;\(text)&lt;/p&gt;&quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, ."/>
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -367,7 +360,7 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.2.0"></script>
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
 
 
 
@@ -376,5 +369,13 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
 
 
 
+
+
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 </body>
 </html>
