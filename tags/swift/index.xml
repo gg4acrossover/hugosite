@@ -6,10 +6,21 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Oct 2019 02:13:23 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 02:09:09 +0700</lastBuildDate>
     
 	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tiếng Việt có dấu</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/tieng-viet-co-dau/</link>
+      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/tieng-viet-co-dau/</guid>
+      <description>Dear all,
+Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do thì cực kì đơn giản, mình hứng thú với bàn toán xử lý String khi mở thẻ ngân hàng trên app.
+Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: â thành aa, ơ thành ow</description>
+    </item>
     
     <item>
       <title>Decorator và thực tiễn áp dụng</title>

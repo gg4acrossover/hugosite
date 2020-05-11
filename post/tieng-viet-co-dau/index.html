@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tiếng Việt có dấu - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" />
+  <meta name="description" content="Dear all,
+Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do thì cực kì đơn giản, mình hứng thú với bàn toán xử lý String khi mở thẻ ngân hàng trên app.
+Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: â thành aa, ơ thành ow" />
+<meta name="keywords" content="swift, ascii, unicode" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/tieng-viet-co-dau/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Tiếng Việt có dấu" />
+<meta property="og:description" content="Dear all,
+Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do thì cực kì đơn giản, mình hứng thú với bàn toán xử lý String khi mở thẻ ngân hàng trên app.
+Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: â thành aa, ơ thành ow" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/tieng-viet-co-dau/" /><meta property="article:published_time" content="2020-05-11T02:09:09&#43;07:00"/>
+<meta property="article:modified_time" content="2020-05-11T02:09:09&#43;07:00"/>
+
+<meta itemprop="name" content="Tiếng Việt có dấu">
+<meta itemprop="description" content="Dear all,
+Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do thì cực kì đơn giản, mình hứng thú với bàn toán xử lý String khi mở thẻ ngân hàng trên app.
+Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: â thành aa, ơ thành ow">
+
+
+<meta itemprop="datePublished" content="2020-05-11T02:09:09&#43;07:00" />
+<meta itemprop="dateModified" content="2020-05-11T02:09:09&#43;07:00" />
+<meta itemprop="wordCount" content="813">
+
+
+
+<meta itemprop="keywords" content="swift,unicode," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tiếng Việt có dấu"/>
+<meta name="twitter:description" content="Dear all,
+Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do thì cực kì đơn giản, mình hứng thú với bàn toán xử lý String khi mở thẻ ngân hàng trên app.
+Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: â thành aa, ơ thành ow"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tiếng Việt có dấu</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-11 </span>
+        <div class="post-category">
+            
+              <a href="/hugosite/categories/swift/"> swift </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#hướng-đi">Hướng đi</a></li>
+<li><a href="#viết-code">Viết code</a></li>
+<li><a href="#lưu-ý">Lưu ý</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>Dear all,</p>
+
+<p>Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do thì cực kì đơn giản, mình hứng thú với bàn toán xử lý <strong>String</strong> khi mở thẻ ngân hàng trên app.</p>
+
+<p>Trong lúc thao tác mở thẻ, phần nhập <em>tên ghi trên thẻ</em> khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: <strong>â</strong> thành <strong>aa</strong>, <strong>ơ</strong> thành <strong>ow</strong></p>
+
+<p>Đây cũng là một bài toán hay về <strong>String</strong> nên mình cũng xắn tay áo làm thử một cái xem sao.</p>
+
+<h2 id="hướng-đi">Hướng đi</h2>
+
+<p>Máy tính vốn được tạo thành từ những bảng mạch, nó chỉ hiểu 2 số 0 và 1 nhưng lại có thể biểu diễn rất nhiều thứ, nó còn có thể trình diễn hình ảnh, chơi nhạc, bật video. Quá là vi diệu đối với những gì xuất phát từ 2 con số 0 và 1, và càng hay hơn nữa khi những con số này tạo ý tưởng cho mình giải quyết vấn đề.</p>
+
+<p>Việc đầu tiên mình nghĩ đến là qui các kí tự ra mã như mã ascii như hồi mới bỡ ngỡ lập trình. Hồi đó chắc hẳn ai cũng làm bài tập biến hoa thành chữ thường bằng cách qui đổi thành những con số (mã ascii) rồi cộng nó lên với 32. Nếu bạn nào quên thì mình gợi nhớ lại A-Z tương ứng với 65-90 và a-z tương ứng với 97-122.</p>
+
+<p>Tuy nhiên bảng mã ascii giới hạn từ 0 - 127, thế nên chúng ta sẽ sử dụng thằng khác to hơn mang tên <strong>unicode</strong></p>
+
+<p>Với bảng mã này ta có đầy đủ tất cả các kí tự ta cần, từ chữ không dấu đến chữ có dấu, không thiếu cái gì cả. Tuy nhiên làm thế nào để tách <strong>â</strong> thành <strong>aa</strong> mới là vấn đề vì mã của 2 thằng này khác nhau, không lẽ liệt kê từng trường hợp một. Mình không khoái cách này lắm vì nó quá dài và phức tạp, chẳng may lọt mất một trường hợp thì sao nhỉ?</p>
+
+<p>Thật may vì bảng mã unicode được xây dựng trên một qui chuẩn nhất định. Có 2 kiểu form cơ bản trên qui chuẩn này là <strong>Canonical</strong> và <strong>Compatible</strong>. Cả 2 form này đều có thể biểu diễn dưới 2 dạng <strong>composed</strong> và <strong>decomposed</strong>. Các bạn có thể Google để tự tìm hiểu thêm :D.</p>
+
+<p>Đến đây thì bạn hiểu rồi chứ, <strong>â</strong> là <strong>composed</strong> còn <strong>aa</strong> là <strong>decomposed</strong>. Khi hiểu nguyên lý này thì tách text không còn phức tạp nữa, khi ta tách được chữ và dấu thì việc còn lại khá đơn giản. Ta chuyển dấu sang các kí tự liên quan tương ứng, vd: dấu sắc -&gt; s, nặng -&gt; j, ngã -&gt; x, &hellip;</p>
+
+<p>Riêng với các dấu như <strong>^</strong> ta cần xử lý phực tạp hơn vì cần biết kí tự đằng trước nó là gì để chuyển đổi cho phù hợp.</p>
+
+<h2 id="viết-code">Viết code</h2>
+
+<p>Đầu tiên là convert từ chữ sang số</p>
+
+<pre><code class="language-swift">let testStr = &quot;em về tóc xanh&quot;
+
+let test = testStr.decomposedStringWithCanonicalMapping.unicodeScalars
+</code></pre>
+
+<p>Khi bạn chạy đoạn code trên thì nó ra một mảng số như này:</p>
+
+<blockquote>
+<p>[101, 109, 32, 118, 101, 101, 102, 32, 116, 111, 115, 99, 32, 120, 97, 110, 104]</p>
+</blockquote>
+
+<p>Mảng số này có độ dài lớn hơn chữ nhập vào ban đầu. Lý do bạn có thể dễ dàng đoán ra, các kí tự đại diện cho dấu đã bị tách ra, được biểu diễn dưới dạng mã unicode.</p>
+
+<p>Mình có liệt kê các dấu trong 1 enum sau đây:</p>
+
+<pre><code class="language-swift">enum DiacriticsVietnamese: UInt32 {
+    case dot = 803 // nang
+    case acute = 769 // sac
+    case graveAccent = 768 // huyen
+    case question = 777 // hoi
+    case tilde = 771 // nga
+    case composeAW = 774
+    case composeAA = 770
+    case composeOW = 795
+
+    func toString(with decomposeValue: UInt32) -&gt; String {
+        switch self {
+        case .dot:
+            return &quot;j&quot;
+        case .acute:
+            return &quot;s&quot;
+        case .graveAccent:
+            return &quot;f&quot;
+        case .question:
+            return &quot;r&quot;
+        case .tilde:
+            return &quot;x&quot;
+        case .composeAA:
+            if let v = UnicodeScalar(decomposeValue) {
+                return String(v)
+            }
+            
+            return &quot; &quot;
+        case .composeAW, .composeOW:
+            return &quot;w&quot;
+        }
+    }
+}
+</code></pre>
+
+<p>Công việc tiếp đến cực kì đơn giản, chỉ cần thay thế các kí tự dấu bằng chữ cái tương ứng.</p>
+
+<pre><code class="language-swift">let cab: [Unicode.Scalar] = test.enumerated().compactMap{ idx, unicodeScalar in
+    if let currentValue = DiacriticsVietnamese(rawValue: unicodeScalar.value) {
+        let preIdx = test.index(test.startIndex, offsetBy: idx-1)
+        return currentValue.toString(with: test[preIdx].value).unicodeScalars.first!
+    } else {
+        return unicodeScalar
+    }
+}
+
+let toString = String(String.UnicodeScalarView(cab))
+
+</code></pre>
+
+<h2 id="lưu-ý">Lưu ý</h2>
+
+<p>Đoạn code trên chưa xử lý chữ Đ tách thành dd, tuy nhiên việc xử lý cái này cũng đơn giản, các bạn tự xử lý thêm.</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2020-05-11</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/hugosite/tags/swift/">swift</a>
+          
+          <a href="/hugosite/tags/unicode/">unicode</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/">
+            <span class="next-text nav-default">Một số tip cho ngày cuối năm</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">VietHQ</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>
