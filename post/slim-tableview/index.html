@@ -16,23 +16,19 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
+<meta name="author" content="VietHQ" /><meta name="description" content="1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
  e = mc2
- Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+ Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/slim-tableview/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -41,14 +37,8 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Slim tableview" />
@@ -56,18 +46,16 @@
  e = mc2
  Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/slim-tableview/" /><meta property="article:published_time" content="2017-06-07T16:14:26&#43;07:00"/>
-<meta property="article:modified_time" content="2017-06-07T16:14:26&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/slim-tableview/" />
+<meta property="article:published_time" content="2017-06-07T16:14:26+07:00" />
+<meta property="article:modified_time" content="2017-06-07T16:14:26+07:00" />
 <meta itemprop="name" content="Slim tableview">
 <meta itemprop="description" content="1.Tản mạn Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.
  e = mc2
  Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra.">
-
-
-<meta itemprop="datePublished" content="2017-06-07T16:14:26&#43;07:00" />
-<meta itemprop="dateModified" content="2017-06-07T16:14:26&#43;07:00" />
-<meta itemprop="wordCount" content="568">
+<meta itemprop="datePublished" content="2017-06-07T16:14:26+07:00" />
+<meta itemprop="dateModified" content="2017-06-07T16:14:26+07:00" />
+<meta itemprop="wordCount" content="614">
 
 
 
@@ -113,12 +101,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -135,6 +132,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -149,149 +147,198 @@
         <span class="post-time"> 2017-06-07 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-tản-mạn">1.Tản mạn</a></li>
-<li><a href="#2-make-up">2. Make up</a></li>
-<li><a href="#3-kết">3. Kết</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1tản-mạn">1.Tản mạn</a></li>
+        <li><a href="#2-make-up">2. Make up</a></li>
+        <li><a href="#3-kết">3. Kết</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h3 id="1-tản-mạn">1.Tản mạn</h3>
-
+      <h3 id="1tản-mạn">1.Tản mạn</h3>
 <p>Cách đơn giản nhất để giảm bớt bug là viết code ít đi. Chân lý đó đã được đưa vào một định luật nổi tiếng, hồi phổ thông ai cũng từng kinh qua.</p>
-
 <blockquote>
 <p>e = mc2</p>
 </blockquote>
-
-<p><img src="/hugosite/images/note/emc_1x.png" alt="image2" /></p>
-
+<p><img src="/hugosite/images/note/emc_1x.png" alt="image2"></p>
 <p>Dịch một cách chân phương là error = more code (càng nhiều code càng gây lỗi). Khoảng cách giữa coder và tester phụ thuộc vào việc có bao nhiêu bug sinh ra. Einstein khi đưa ra định luật đó, chắc không ngờ rằng nó có thể dịu dàng đúng (theo một cách mới) với cả ngành IT này. Thế nên viết ngắn đi mà vẫn dễ hiểu luôn luôn được những lười biếng coder coi là tôn chỉ.</p>
-
 <p>Khi sử dụng <em>tableview</em> chúng ta luôn đi theo một format chung, thậm chí gõ đến thuộc lòng, không cần <em>autocomplete</em>.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">self.listTbl.<span style="color:#66d9ef">register</span>( UINib( nibName: String(describing: GGArtistryCell.self), bundle: nil), 
-	forCellReuseIdentifier: <span style="color:#e6db74">&#34;cell&#34;</span>)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="nb">self</span><span class="p">.</span><span class="n">listTbl</span><span class="p">.</span><span class="k">register</span><span class="p">(</span> <span class="n">UINib</span><span class="p">(</span> <span class="nl">nibName</span><span class="p">:</span> <span class="n">String</span><span class="p">(</span><span class="nl">describing</span><span class="p">:</span> <span class="n">GGArtistryCell</span><span class="p">.</span><span class="nb">self</span><span class="p">),</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">),</span> 
+	<span class="nl">forCellReuseIdentifier</span><span class="p">:</span> <span class="s">&#34;cell&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Cả những khi dequeue nữa</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let cell <span style="color:#f92672">=</span> tableView.dequeueReusableCell(withIdentifier: <span style="color:#e6db74">&#34;cell&#34;</span>, <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> indexPath)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="nl">withIdentifier</span><span class="p">:</span> <span class="s">&#34;cell&#34;</span><span class="p">,</span> <span class="k">for</span><span class="o">:</span> <span class="n">indexPath</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Những đoạn code này hơi dài, vậy nên chúng ta, những lười biếng coder, nên làm ngắn nó đi tí.
 Mình sẽ sử dụng <strong>protocol</strong> và <strong>generics</strong> để việc đăng kí và dequeue cell ngắn gọn hơn.</p>
-
 <h3 id="2-make-up">2. Make up</h3>
-
 <p>Làm việc với objc, mình hay tạo baseCell có 2 hàm <em>getNib</em> và <em>getNibName</em> (cho identifier) để việc đăng kí cell trở nên ngắn gọn hơn. Tuy nhiên ở swift, mình sẽ sử dụng <strong>protocol</strong>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="cm">/**
+</span><span class="cm">    cell protocol for uicollectionview, uitableview
+</span><span class="cm"> */</span>
+<span class="n">protocol</span> <span class="n">GGBaseCellProtocol</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">func</span> <span class="n">getNibName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="c1">// return nibname of cell
+</span><span class="c1"></span>    <span class="k">static</span> <span class="n">func</span> <span class="n">getNib</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">UINib</span> <span class="c1">// return nib of cell
+</span><span class="c1"></span><span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">/**
-</span><span style="color:#75715e">    cell protocol for uicollectionview, uitableview
-</span><span style="color:#75715e"> */</span>
-protocol GGBaseCellProtocol {
-    <span style="color:#66d9ef">static</span> func getNibName() <span style="color:#f92672">-&gt;</span> String <span style="color:#75715e">// return nibname of cell
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">static</span> func getNib() <span style="color:#f92672">-&gt;</span> UINib <span style="color:#75715e">// return nib of cell
-</span><span style="color:#75715e"></span>}
 
-
-<span style="color:#75715e">/**
-</span><span style="color:#75715e">    default implement for cell
-</span><span style="color:#75715e"> */</span>
-extension GGBaseCellProtocol where Self : UIView {
-    <span style="color:#75715e">/// collectionView get nibname
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">static</span> func getNibName() <span style="color:#f92672">-&gt;</span> String {
-        <span style="color:#66d9ef">return</span> String(describing: self)
-    }
+<span class="cm">/**
+</span><span class="cm">    default implement for cell
+</span><span class="cm"> */</span>
+<span class="n">extension</span> <span class="n">GGBaseCellProtocol</span> <span class="n">where</span> <span class="nl">Self</span> <span class="p">:</span> <span class="n">UIView</span> <span class="p">{</span>
+    <span class="c1">/// collectionView get nibname
+</span><span class="c1"></span>    <span class="k">static</span> <span class="n">func</span> <span class="n">getNibName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">String</span><span class="p">(</span><span class="nl">describing</span><span class="p">:</span> <span class="nb">self</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    <span style="color:#75715e">/// collectionView get nib
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">static</span> func getNib() <span style="color:#f92672">-&gt;</span> UINib {
-        <span style="color:#66d9ef">return</span> UINib.init(nibName: self.getNibName(), bundle: nil)
-    }
-}</code></pre></div>
-
+    <span class="c1">/// collectionView get nib
+</span><span class="c1"></span>    <span class="k">static</span> <span class="n">func</span> <span class="n">getNib</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">UINib</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">UINib</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="nl">nibName</span><span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="n">getNibName</span><span class="p">(),</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Tạo extension cho protocol để ta không phải khai báo đi, khai báo lại 2 hàm <em>getNib</em> và <em>getNibName</em> ở mỗi class implement lại protocol này. Khi đó ta chỉ cần cho custom cell của mình kế thừa lại protocol. Khá là linh động. Code lúc đó sẽ ngắn đi chút ít nhưng nhìn clear hơn.</p>
-
 <p>Ví dụ như thế này</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">self.listTbl.<span style="color:#66d9ef">register</span>(GGArtistryCell.getNib(), 
-	forCellReuseIdentifier: GGArtistryCell.getNibName())</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="nb">self</span><span class="p">.</span><span class="n">listTbl</span><span class="p">.</span><span class="k">register</span><span class="p">(</span><span class="n">GGArtistryCell</span><span class="p">.</span><span class="n">getNib</span><span class="p">(),</span> 
+	<span class="nl">forCellReuseIdentifier</span><span class="p">:</span> <span class="n">GGArtistryCell</span><span class="p">.</span><span class="n">getNibName</span><span class="p">())</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Khá là đẹp rồi phải không? tuy nhiên ta có thể code ngắn hơn nữa bằng cách sử dụng <strong>generics</strong>.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">extension UITableView {
-    func on_register<span style="color:#f92672">&lt;</span> T : GGBaseCellProtocol<span style="color:#f92672">&gt;</span>(type: T.Type)  {
-        self.<span style="color:#66d9ef">register</span>(T.getNib(), forCellReuseIdentifier: T.getNibName())
-    }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">extension</span> <span class="n">UITableView</span> <span class="p">{</span>
+    <span class="n">func</span> <span class="n">on_register</span><span class="o">&lt;</span> <span class="nl">T</span> <span class="p">:</span> <span class="n">GGBaseCellProtocol</span><span class="o">&gt;</span><span class="p">(</span><span class="nl">type</span><span class="p">:</span> <span class="n">T</span><span class="p">.</span><span class="n">Type</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="k">register</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">getNib</span><span class="p">(),</span> <span class="nl">forCellReuseIdentifier</span><span class="p">:</span> <span class="n">T</span><span class="p">.</span><span class="n">getNibName</span><span class="p">())</span>
+    <span class="p">}</span>
     
-    func on_dequeue<span style="color:#f92672">&lt;</span> T : GGBaseCellProtocol<span style="color:#f92672">&gt;</span>(idxPath : IndexPath) <span style="color:#f92672">-&gt;</span> T {
-        guard let cell <span style="color:#f92672">=</span> self.dequeueReusableCell(withIdentifier: T.getNibName(), <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> idxPath) as<span style="color:#f92672">?</span> T <span style="color:#66d9ef">else</span> {
-            fatalError(<span style="color:#e6db74">&#34;couldnt dequeue cell with identifier \(T.getNibName())&#34;</span>)
-        }
+    <span class="n">func</span> <span class="n">on_dequeue</span><span class="o">&lt;</span> <span class="nl">T</span> <span class="p">:</span> <span class="n">GGBaseCellProtocol</span><span class="o">&gt;</span><span class="p">(</span><span class="nl">idxPath</span> <span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="p">{</span>
+        <span class="n">guard</span> <span class="n">let</span> <span class="n">cell</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="nl">withIdentifier</span><span class="p">:</span> <span class="n">T</span><span class="p">.</span><span class="n">getNibName</span><span class="p">(),</span> <span class="k">for</span><span class="o">:</span> <span class="n">idxPath</span><span class="p">)</span> <span class="n">as</span><span class="o">?</span> <span class="n">T</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">fatalError</span><span class="p">(</span><span class="s">&#34;couldnt dequeue cell with identifier \(T.getNibName())&#34;</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        <span style="color:#66d9ef">return</span> cell
-    }
-}</code></pre></div>
-
+        <span class="k">return</span> <span class="n">cell</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Để cho gọn, mình tạo extension cho UITableView, với 2 hàm <em>on_register</em> và <em>on_dequeue</em> làm 2 việc mà ai cũng biết là việc gì rồi.</p>
-
 <p>Khi đó bước đăng kí cell sẽ ngắn đi như sau:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">self.listTbl.on_register(type: GGArtistryCell.self)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="nb">self</span><span class="p">.</span><span class="n">listTbl</span><span class="p">.</span><span class="n">on_register</span><span class="p">(</span><span class="nl">type</span><span class="p">:</span> <span class="n">GGArtistryCell</span><span class="p">.</span><span class="nb">self</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>So với trước thì ngắn gọn đi khá nhiều, coder không phải viết dài dòng nữa.</p>
-
 <p>Tiếp đến là dequeue cũng ngắn không kém phần</p>
-
 <p>Thay vì:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">if</span> let cell <span style="color:#f92672">=</span> self.listTbl.dequeueReusableCell(withIdentifier: GGArtistryCell.getNibName(), <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span> indexPath) as<span style="color:#f92672">?</span> GGArtistryCell {
-	<span style="color:#75715e">// your code
-</span><span style="color:#75715e"></span>}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">if</span> <span class="n">let</span> <span class="n">cell</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="n">listTbl</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="nl">withIdentifier</span><span class="p">:</span> <span class="n">GGArtistryCell</span><span class="p">.</span><span class="n">getNibName</span><span class="p">(),</span> <span class="k">for</span><span class="o">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="n">as</span><span class="o">?</span> <span class="n">GGArtistryCell</span> <span class="p">{</span>
+	<span class="c1">// your code
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ta chỉ cần</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let cell : GGArtistryCell <span style="color:#f92672">=</span> self.listTbl.on_dequeue(idxPath: indexPath)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="nl">cell</span> <span class="p">:</span> <span class="n">GGArtistryCell</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="n">listTbl</span><span class="p">.</span><span class="n">on_dequeue</span><span class="p">(</span><span class="nl">idxPath</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Bây giờ mình đã có thể lười đi tí 😄</p>
-
 <p>Ta có thể áp dụng phương pháp này cho cả collectionView</p>
-
 <h3 id="3-kết">3. Kết</h3>
-
 <p>Lời cuối sẽ là một <a href="https://twitter.com/realbadiostips/status/867791220323500032">siêu tip</a> để code ngắn gọn</p>
-
 <blockquote>
 <p>MVC = Most Viable Cocoapod.</p>
 </blockquote>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -299,34 +346,26 @@ extension GGBaseCellProtocol where Self : UIView {
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-06-07</span>
+    <span class="item-content">
+        2017-06-07
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
           <a href="/hugosite/tags/swift3/">swift3</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/filter-sort-in-action/">
+        <a class="prev" href="/hugosite/post/filter-sort-in-action/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Filter, sort in action</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/tao-api-client-swift-3/">
+        <a class="next" href="/hugosite/post/tao-api-client-swift-3/">
             <span class="next-text nav-default">Tạo APIClient với swift 3</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -335,8 +374,7 @@ extension GGBaseCellProtocol where Self : UIView {
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -350,6 +388,8 @@ extension GGBaseCellProtocol where Self : UIView {
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -379,28 +419,24 @@ extension GGBaseCellProtocol where Self : UIView {
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -409,13 +445,5 @@ extension GGBaseCellProtocol where Self : UIView {
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

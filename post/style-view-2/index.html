@@ -16,22 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
-Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
+Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/style-view-2/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,31 +36,23 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Tạo Style cho UIView" />
 <meta property="og:description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
 Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/style-view-2/" /><meta property="article:published_time" content="2018-11-02T15:05:09&#43;07:00"/>
-<meta property="article:modified_time" content="2018-11-02T15:05:09&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/style-view-2/" />
+<meta property="article:published_time" content="2018-11-02T15:05:09+07:00" />
+<meta property="article:modified_time" content="2018-11-02T15:05:09+07:00" />
 <meta itemprop="name" content="Tạo Style cho UIView">
 <meta itemprop="description" content="Giới thiệu Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình
 Đây là phần 2 của bài trước tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng struct. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng IBInspectable để định hìnhh style cho UIView, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI.">
-
-
-<meta itemprop="datePublished" content="2018-11-02T15:05:09&#43;07:00" />
-<meta itemprop="dateModified" content="2018-11-02T15:05:09&#43;07:00" />
-<meta itemprop="wordCount" content="860">
+<meta itemprop="datePublished" content="2018-11-02T15:05:09+07:00" />
+<meta itemprop="dateModified" content="2018-11-02T15:05:09+07:00" />
+<meta itemprop="wordCount" content="973">
 
 
 
@@ -109,12 +97,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -131,6 +128,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -145,67 +143,57 @@
         <span class="post-time"> 2018-11-02 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#giới-thiệu">Giới thiệu</a></li>
-<li><a href="#ý-tưởng">Ý tưởng</a></li>
-<li><a href="#show-me-the-code">Show me the code</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#giới-thiệu">Giới thiệu</a></li>
+    <li><a href="#ý-tưởng">Ý tưởng</a></li>
+    <li><a href="#show-me-the-code">Show me the code</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h2 id="giới-thiệu">Giới thiệu</h2>
-
+      <h2 id="giới-thiệu">Giới thiệu</h2>
 <p><em>Có nhiều cách để làm đẹp hơn là làm bánh hay làm tình</em></p>
-
 <p>Đây là phần 2 của <a href="https://gg4acrossover.github.io/hugosite/post/style-view/">bài trước</a> tuy nhiên nó chẳng liên quan gì đến phần đầu cả :D. Ở phần đầu tiên mình đã giới thiệu một cách đơn giản để ta reuse lại code sử dụng <em>struct</em>. Phần này phức tạp hơn, ý tưởng dựa trên việc sử dụng <strong>IBInspectable</strong> để định hìnhh style cho <em>UIView</em>, bạn vừa có thể tự tạo style trong code, đồng thời cũng có thể tùy biến thông qua UI.</p>
-
 <h2 id="ý-tưởng">Ý tưởng</h2>
-
 <p>Trước hết nói về <strong>IBInspectable</strong> cho những bạn chưa biết. Bạn tạo một thuộc tính, bạn muốn cấu hình nó trên file Xib như làm với <em>background color, font, align</em> thì <strong>IBInspectable</strong> là keyword dành cho bạn.</p>
-
-<p><img src="/hugosite/images/note/style-ui/style-2-1.png" alt="img1" /></p>
-
+<p><img src="/hugosite/images/note/style-ui/style-2-1.png" alt="img1"></p>
 <p>Tận dụng tính năng đó, mình muốn khi mình gõ tên style vào trong file Xib thì uiview sẽ khoác lên mình giao diện đã định nghĩa từ trước. Để làm được việc này ta cần tạo 1 danh sách để định danh giao diện. Ví dụ gõ &ldquo;bo tròn&rdquo; thì sẽ gọi đến <em>class BorderStyle</em> để làm việc.</p>
-
 <p>Hình dung các bước sẽ như sau:</p>
-
 <p>List danh sách style -&gt; Lớp quản lý -&gt; lấy ra style -&gt; gắn vào UIView</p>
-
 <p>B1: tạo list style (register)</p>
-
 <p>B2: gắn list vào 1 lớp manager để quản lý danh sách đã tạo</p>
-
 <p>B3: lấy ra style cần dùng từ lớp manager</p>
-
 <p>B4: gắn vào UIView</p>
-
 <h2 id="show-me-the-code">Show me the code</h2>
-
 <p>Thời đại của protocol mà, sử dụng nó thôi, bước đầu ta tạo interface để định hướng behavior cho đối tượng. Ta tạo protocol định nghĩa Style và Register để quản lý danh sách Style như bước 1.</p>
-
-<pre><code>protocol Style {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">protocol Style {
     func getId() -&gt; String
     func apply&lt;T: UIView&gt;(_ component: T)
 }
@@ -220,15 +208,37 @@ protocol StyleMapRegister {
 	func getStyle(by id: String) -&gt; Style?
 }
 
-</code></pre>
-
-<p><em>Style</em> có 2 phương thức chính: một dùng để định danh cho Style, một để áp dụng style đó vào trong component cụ thể (uiview).
+</code></pre></td></tr></table>
+</div>
+</div><p><em>Style</em> có 2 phương thức chính: một dùng để định danh cho Style, một để áp dụng style đó vào trong component cụ thể (uiview).
 <em>StyleMapRegister</em> có phương thức <em>getStyle</em>, giúp ta lấy được <em>Style</em> qua định danh đã define.
 Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh sách Style theo bước 2.</p>
-
 <p>Ở lớp <strong>Manager</strong> có phương thức <em>apply</em> để lấy ra style và gắn vào conponent (UIView) cụ thể, tương ứng với bước 3,4.</p>
-
-<pre><code>class StyleManager {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">class StyleManager {
     private var register: StyleMapRegister
     required init(register: StyleMapRegister) {
         self.register = register
@@ -248,11 +258,31 @@ Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh s�
     }
 }
 
-</code></pre>
-
-<p>Mình sẽ implement 2 protocol định nghĩa ở trên để có cái nhìn trực quan hơn với phương pháp này</p>
-
-<pre><code>class StyleMapRegisterObject: StyleMapRegister {
+</code></pre></td></tr></table>
+</div>
+</div><p>Mình sẽ implement 2 protocol định nghĩa ở trên để có cái nhìn trực quan hơn với phương pháp này</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">class StyleMapRegisterObject: StyleMapRegister {
     private let styleDict: [String: Style]
     required init(styles: [Style]) {
         var dict = [String:Style]()
@@ -269,11 +299,41 @@ Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh s�
     }
 }
 
-</code></pre>
-
-<p><em>Dictionary</em> là kiểu dữ liệu hợp lý nhất trong trường hợp cần định danh style, tất cả style được tạo ra sẽ đưa vào 1 danh sách key - value để quản lý. Thuộc tính <em>styleDict</em> để private vì ta cũng không cần quan tâm nó chứa gì, cái quan trọng nhất của lớp Register vẫn là lấy được style qua id. Ta đã định nghĩa xong cách thức Register, giờ đến lúc tạo <em>Style</em></p>
-
-<pre><code>class TitleLabelStyle: Style {
+</code></pre></td></tr></table>
+</div>
+</div><p><em>Dictionary</em> là kiểu dữ liệu hợp lý nhất trong trường hợp cần định danh style, tất cả style được tạo ra sẽ đưa vào 1 danh sách key - value để quản lý. Thuộc tính <em>styleDict</em> để private vì ta cũng không cần quan tâm nó chứa gì, cái quan trọng nhất của lớp Register vẫn là lấy được style qua id. Ta đã định nghĩa xong cách thức Register, giờ đến lúc tạo <em>Style</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">class TitleLabelStyle: Style {
     private let font: UIFont
     private let textColor: UIColor
     private let textAlign: NSTextAlignment
@@ -291,7 +351,7 @@ Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh s�
     
     func apply&lt;T: UIView&gt;(_ component: T) {
         guard let lbl = component as? UILabel else {
-            fatalError(&quot;\(component) is not a uilable&quot;)
+            fatalError(&#34;\(component) is not a uilable&#34;)
         }
         
         lbl.textColor = textColor
@@ -300,13 +360,37 @@ Tiếp theo ta tạo đối tượng <strong>Manager</strong> quản lý danh s�
     }
 }
 
-</code></pre>
-
-<p>Mình không muốn thay đổi thông số của Style nên các property để dạng <em>mutable</em>.
+</code></pre></td></tr></table>
+</div>
+</div><p>Mình không muốn thay đổi thông số của Style nên các property để dạng <em>mutable</em>.
 Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn style vào trong UIView.
 Để làm được việc này, ta tạo property trong <em>extension</em></p>
-
-<pre><code>extension UIView {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">extension UIView {
     private struct AssociatedKeys {
         static var style: UInt8 = 0
     }
@@ -327,11 +411,27 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
     }
 }
 
-</code></pre>
-
-<p>Ta nên gắn <em>styleManager</em> lúc app mới khởi động, mình đưa nó vào trong</p>
-
-<pre><code>func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+</code></pre></td></tr></table>
+</div>
+</div><p>Ta nên gắn <em>styleManager</em> lúc app mới khởi động, mình đưa nó vào trong</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
     let styles: [Style] = [
         TitleLabelStyle(font: UIFont.systemFont(ofSize: 30),
                                   textColor: .red),
@@ -344,19 +444,15 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
     
     UIView.styleManager = StyleManager(register: styleReg)
 }
-</code></pre>
-
-<p>Với mỗi lần tạo <em>style</em>, ta có thể gắn vào view như sau</p>
-
-<p><img src="/hugosite/images/note/style-ui/style-2-2.png" alt="img2" /></p>
-
+</code></pre></td></tr></table>
+</div>
+</div><p>Với mỗi lần tạo <em>style</em>, ta có thể gắn vào view như sau</p>
+<p><img src="/hugosite/images/note/style-ui/style-2-2.png" alt="img2"></p>
 <p>Để dễ quản lý <em>Style</em> khi đưa vào dự án, ta có thể nhóm chúng vào chung 1 folder.</p>
-
 <p>Take it easy! <a href="https://github.com/gg4acrossover/MEStyleView">Source code</a> cho ai cần tìm hiểu sâu :D</p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -364,32 +460,25 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-11-02</span>
+    <span class="item-content">
+        2018-11-02
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/">
+        <a class="prev" href="/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Toán tử 3 ngôi  hay sugar syntax</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/style-view/">
+        <a class="next" href="/hugosite/post/style-view/">
             <span class="next-text nav-default">Style view</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -398,8 +487,7 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -413,6 +501,8 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -442,28 +532,24 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -472,13 +558,5 @@ Ta đã có đầy đủ tool để làm việc. Bước cuối cùng là gắn 
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

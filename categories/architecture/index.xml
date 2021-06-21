@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Architecture on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Architecture on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jan 2020 11:41:03 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 09 Jan 2020 11:41:03 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Áp dụng clean architecture</title>
       <link>https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/</link>

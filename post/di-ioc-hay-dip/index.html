@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Di, IoC hay DIP - VietHQ - Tìm đơn giản trong phức tạp</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VietHQ" /><meta name="description" content="Lý thuyết Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là SOLID. Trong đấy D là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của Dependency Injection (DI). Tên gọi chính xác của nó là Dependency inversion principle (DIP).
+Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế." /><meta name="keywords" content="oop" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/di-ioc-hay-dip/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
+<link rel="manifest" href="/hugosite/manifest.json">
+<link rel="mask-icon" href="/hugosite/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="Di, IoC hay DIP" />
+<meta property="og:description" content="Lý thuyết Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là SOLID. Trong đấy D là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của Dependency Injection (DI). Tên gọi chính xác của nó là Dependency inversion principle (DIP).
+Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/di-ioc-hay-dip/" />
+<meta property="article:published_time" content="2021-06-22T02:06:08+07:00" />
+<meta property="article:modified_time" content="2021-06-22T02:06:08+07:00" />
+<meta itemprop="name" content="Di, IoC hay DIP">
+<meta itemprop="description" content="Lý thuyết Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là SOLID. Trong đấy D là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của Dependency Injection (DI). Tên gọi chính xác của nó là Dependency inversion principle (DIP).
+Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế.">
+<meta itemprop="datePublished" content="2021-06-22T02:06:08+07:00" />
+<meta itemprop="dateModified" content="2021-06-22T02:06:08+07:00" />
+<meta itemprop="wordCount" content="1792">
+
+
+
+<meta itemprop="keywords" content="oop," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Di, IoC hay DIP"/>
+<meta name="twitter:description" content="Lý thuyết Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là SOLID. Trong đấy D là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của Dependency Injection (DI). Tên gọi chính xác của nó là Dependency inversion principle (DIP).
+Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/hugosite/" class="logo">Vie</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/hugosite/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/hugosite/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/hugosite/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://gg4acrossover.github.io/">
+        <li class="mobile-menu-item">Hire me</li>
+      </a><a href="/hugosite/about/">
+        <li class="mobile-menu-item">About me</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/hugosite/" class="logo">Vie</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://gg4acrossover.github.io/">Hire me</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/hugosite/about/">About me</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Di, IoC hay DIP</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-06-22 </span>
+        <div class="post-category">
+            <a href="/hugosite/categories/oop/"> oop </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lý-thuyết">Lý thuyết</a></li>
+    <li><a href="#thực-hành">Thực hành</a>
+      <ul>
+        <li><a href="#service-location">Service location</a></li>
+        <li><a href="#dependency-injection">Dependency injection</a></li>
+        <li><a href="#dip">DIP</a></li>
+        <li><a href="#mặt-hạn-chế">Mặt hạn chế</a></li>
+      </ul>
+    </li>
+    <li><a href="#tổng-kết">Tổng kết</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="lý-thuyết">Lý thuyết</h2>
+<p>Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là <strong>SOLID</strong>. Trong đấy <strong>D</strong> là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của <em>Dependency Injection (DI)</em>. Tên gọi chính xác của nó là <em>Dependency inversion principle (DIP)</em>.</p>
+<p>Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế. Một nguyên tắc bất di bất dịch của DIP là các class liên kết với nhau thông qua <em>interface</em>. Tức là ta không quan tâm đến implement cụ thể, mà chỉ tập trung vào behavior.</p>
+<p>Ngoài nguyên tắc DIP, chúng ta còn được nghe đến từ khóa khác cũng có chữ <em>inversion</em>, đó là <em>Inversion of Control (IoC)</em>. Mục đích của IoC cũng như DIP, tuy nhiên nó không giới hạn việc chỉ sử dụng <em>interface</em>.</p>
+<p>Như vậy, có thể coi IoC là nguyên tắc có tính bao quát hơn DIP. Còn DI chỉ là một pattern, một dạng triển khai cụ thể cho IoC.</p>
+<p>Nghe lý thuyết có vẻ hơi mông lung, loạn đầu nhỉ :D? OK đoạn trên chỉ phục vụ cho interview. Còn bây giờ mình sẽ tập trung vào thứ quan trọng hơn là <em>thực hành</em>. Cứ làm nhiều là quen là hiểu lý thuyết ngay, nhể?</p>
+<h2 id="thực-hành">Thực hành</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="n">UIViewController</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">loading</span><span class="p">:</span> <span class="n">URLSession</span><span class="p">!</span>
+  	<span class="kd">var</span> <span class="nv">errorHandler</span><span class="p">:</span> <span class="n">ErrorHandler</span><span class="p">!</span>
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// loading</span>
+        <span class="kd">let</span> <span class="nv">loading</span> <span class="p">=</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span>
+        <span class="n">loading</span><span class="p">.</span><span class="n">configuration</span><span class="p">.</span><span class="n">timeoutIntervalForRequest</span> <span class="p">=</span> <span class="mf">30.0</span>
+        <span class="n">loading</span><span class="p">.</span><span class="n">configuration</span><span class="p">.</span><span class="n">timeoutIntervalForResource</span> <span class="p">=</span> <span class="mf">30.0</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">loading</span> <span class="p">=</span> <span class="n">loading</span>
+        
+      	<span class="c1">// error handler</span>
+      	<span class="kc">self</span><span class="p">.</span><span class="n">errorHandler</span> <span class="p">=</span> <span class="n">ErrorHandler</span><span class="p">()</span>
+      
+      	<span class="c1">// model parser</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">parser</span> <span class="p">=</span> <span class="n">ModelParser</span><span class="p">()</span>
+      
+      	<span class="c1">// views</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Class <em>ViewController</em> cần truyền vào một đối tượng <em>network</em> để call API, một đối tượng để xử lý <em>error</em> và <em>parse model</em> nữa. Giờ hàm viewDidLoad đang quá tải vì xử lý nhiều. Ngoài việc khởi tạo đối tượng, nó còn phải xử lý layout, gắn style cho UI. Ví dụ này có lẽ chúng ta đã gặp đâu đó trong thực tế, thậm chí là gặp tương đối nhiều 😢</p>
+<p>Chúng ta sẽ refactor nó dần dần để đáp ứng IoC. Đầu tiên hãy tách nhỏ viewDidLoad hơn nữa bằng cách sử dụng <em>factory method</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="nc">ViewController</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">makeNetwork</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">URLSession</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">loading</span> <span class="p">=</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span>
+        <span class="n">loading</span><span class="p">.</span><span class="n">configuration</span><span class="p">.</span><span class="n">timeoutIntervalForRequest</span> <span class="p">=</span> <span class="mf">30.0</span>
+        <span class="n">loading</span><span class="p">.</span><span class="n">configuration</span><span class="p">.</span><span class="n">timeoutIntervalForResource</span> <span class="p">=</span> <span class="mf">30.0</span>
+        <span class="k">return</span> <span class="n">loading</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">makeErrorHandler</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">ErrorHandler</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ErrorHandler</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">makeParser</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">ModelParser</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ModelParser</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Khi đó code ở viewDidLoad trông gọn gàng hơn, dù cách giải quyết chưa tối ưu, tuy nhiên đã khá hơn chút.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift">    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+        
+        <span class="kc">self</span><span class="p">.</span><span class="n">loading</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">makeNetwork</span><span class="p">()</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">errorHandler</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">makeErrorHandler</span><span class="p">()</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">parser</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">makeParser</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Các câu lệnh khởi tạo được phân chia thành từng hàm riêng, chúng ta dễ dàng tìm, sửa chữa mà không gây ảnh hưởng đến các khối lệnh khác. Bằng cách tạo subClass của <em>ViewController</em> ta cũng có thể override để tùy biến <em>network, errorHandler và modelParser</em> theo ý chúng ta.</p>
+<p>Tuy nhiên vẫn có gì đó hơi sai sai. Chẳng lẽ mỗi lần cần config khác cho <em>network, error handler hay model parser</em> ta lại phải tạo&hellip;sub class. <em>ViewController</em> cũng không nên biết quá nhiều về cách khởi tạo, config các đối tượng kể trên. Thêm nữa, trường hợp ta cần <em>network</em>, không lẽ lại phải tạo <em>ViewController</em> trước. Muốn nói 🖕 quá.</p>
+<h3 id="service-location">Service location</h3>
+<p>Để tiếp tục <em>refactor</em>, ta cần đưa việc khởi tạo ra bên ngoài, <em>ViewController</em> sẽ chỉ nhận các đối tượng mà nó phụ thuộc từ bên ngoài</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="nc">ViewController</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">make</span><span class="p">(</span>
+      <span class="n">loading</span><span class="p">:</span> <span class="n">URLSession</span><span class="p">,</span> 
+      <span class="n">errorHandler</span><span class="p">:</span> <span class="n">ErrorHandler</span><span class="p">,</span> 
+      <span class="n">parser</span><span class="p">:</span> <span class="n">ModelParser</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">loading</span> <span class="p">=</span> <span class="n">loading</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">errorHandler</span> <span class="p">=</span> <span class="n">errorHandler</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">parser</span> <span class="p">=</span> <span class="n">parser</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Các đối tượng <em>network, error handler và parser</em> sẽ được đưa vào trong <em>Factory</em> như sau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">ConfigFactory</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">makeNetwork</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">URLSession</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">loading</span> <span class="p">=</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span>
+        <span class="n">loading</span><span class="p">.</span><span class="n">configuration</span><span class="p">.</span><span class="n">timeoutIntervalForRequest</span> <span class="p">=</span> <span class="mf">30.0</span>
+        <span class="n">loading</span><span class="p">.</span><span class="n">configuration</span><span class="p">.</span><span class="n">timeoutIntervalForResource</span> <span class="p">=</span> <span class="mf">30.0</span>
+        <span class="k">return</span> <span class="n">loading</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">makeErrorHandler</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">ErrorHandler</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ErrorHandler</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">makeParser</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">ModelParser</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ModelParser</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Khi đó khởi tạo <em>ViewController</em> cũng phải sửa lại chút</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift">    <span class="c1">// viewcontroller</span>
+    <span class="kd">var</span> <span class="nv">factory</span><span class="p">:</span> <span class="n">ConfigFactory</span>
+    
+    <span class="kd">init</span><span class="p">(</span><span class="n">factory</span><span class="p">:</span> <span class="n">ConfigFactory</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">factory</span> <span class="p">=</span> <span class="n">factory</span>
+        <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">nibName</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">make</span><span class="p">(</span>
+            <span class="n">loading</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">factory</span><span class="p">.</span><span class="n">makeNetwork</span><span class="p">(),</span>
+            <span class="n">errorHandler</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">factory</span><span class="p">.</span><span class="n">makeErrorHandler</span><span class="p">(),</span>
+            <span class="n">parser</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">factory</span><span class="p">.</span><span class="n">makeParser</span><span class="p">()</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Như vậy ta sẽ tạo <em>ViewController</em> như sau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">factory</span> <span class="p">=</span> <span class="n">ConfigFactory</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nv">vc</span> <span class="p">=</span> <span class="n">ViewController</span><span class="p">(</span><span class="n">factory</span><span class="p">:</span> <span class="n">factory</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Cách trên gọi là <em>service location</em> (SL). Tất cả những thứ <em>ViewController</em> cần, chúng ta có thể gom nó vào 1 class khác, gọi chung là <em>Config</em> đi. Để ý kỹ thì <em>plist</em> cũng là một file config trong iOS. Chúng ta điền các thông số cần thiết vào <em>plist</em>. App đọc file đó và nhận cấu hình ta cài đặt.</p>
+<p>Với cách trên ta đã tách được việc khởi tạo các đối tượng mà <em>ViewController</em> phụ thuộc ra ngoài. Tuy nhiên cách làm này cũng có một số vấn đề dễ gặp phải mà ta cần lưu ý. Giả sử file <em>config</em> dày lên (cụ thể ở trường hợp này là <em>ConfigFactory</em>) thì file này sẽ dần trở nên rác. <em>ViewController</em> sẽ nhìn thấy cả những thứ nó không cần và việc chọn lựa cái <em>ViewController</em> thực sự cần cũng trở nên khó hơn.</p>
+<p>Ví dụ một trường hợp cụ thể hơn, giả sử một thư viện vừa đảm nhận tính toán tọa độ 3 điểm của tam giác theo sin, cos, tan, vừa vẽ UI của tam giác. Nếu ta gắn thư viện đó cho 1 chương trình trên <em>terminal</em> thì phần vẽ UI thừa thãi. Ngược lại, nếu gắn thư viện cho 1 chương trình đảm nhận vẽ UI thì tính toán tọa độ lại thừa ra. Một rắc rối nữa đi kèm là ta sẽ khó tìm thấy cái mình thực sự cần vì có quá nhiều thứ hiển hiện trước mắt.</p>
+<p>Trong một app, hoàn toàn có thể có <em>App Factory</em> và việc gắn quá nhiều thứ vào <em>factory</em> cũng sẽ gây vấn đề cho việc maintain sau này. Cái này chúng ta nên tránh.</p>
+<p>Chúng ta đang đi khá từ tốn, giải quyết từng vấn đề nhỏ một. Bài còn dài&hellip;vậy nên hãy kiên nhẫn nhé 😄</p>
+<h3 id="dependency-injection">Dependency injection</h3>
+<p>Mình biết đến từ khóa này khi đi phỏng vấn từ rất lâu lâu lắm rồi. Khi <em>google</em> thì thấy nhan nhản các ví dụ, các bài tutorial từ&hellip;java là nhiều, tập trung nhiều vào backend.</p>
+<p>Đấy cũng là thiệt thòi dành cho những người code iOS. Tuy nhiên, không phải ta không thể học và gắn nó vào thế giới của iOS.</p>
+<p>Chúng ta sẽ refactor tiếp ví dụ ở trên, đầu tiên xóa hàm init của <em>ViewController</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="n">UIViewController</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">loading</span><span class="p">:</span> <span class="n">URLSession</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">errorHandler</span><span class="p">:</span> <span class="n">ErrorHandler</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">parser</span><span class="p">:</span> <span class="n">ModelParser</span><span class="p">?</span>
+
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Tiếp đến tạo <em>class Builder</em> cho <em>ViewController</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">ViewControllerBuilder</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">config</span><span class="p">:</span> <span class="n">ConfigFactory</span> <span class="p">=</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ConfigFactory</span><span class="p">()</span>
+    <span class="p">}()</span>
+    
+    <span class="kd">func</span> <span class="nf">makeViewController</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">ViewController</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">vc</span> <span class="p">=</span> <span class="n">ViewController</span><span class="p">()</span>
+        <span class="n">vc</span><span class="p">.</span><span class="n">make</span><span class="p">(</span>
+            <span class="n">loading</span><span class="p">:</span> <span class="n">config</span><span class="p">.</span><span class="n">makeNetwork</span><span class="p">(),</span>
+            <span class="n">errorHandler</span><span class="p">:</span> <span class="n">config</span><span class="p">.</span><span class="n">makeErrorHandler</span><span class="p">(),</span>
+            <span class="n">parser</span><span class="p">:</span> <span class="n">config</span><span class="p">.</span><span class="n">makeParser</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">vc</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Lúc này việc khởi tạo <em>ViewController</em> chỉ đơn giản như sau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">builder</span> <span class="p">=</span> <span class="n">ViewControllerBuilder</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nv">vc</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">makeViewController</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Giờ <em>ViewController</em> không phụ thuộc vào một lớp config và chúng ta còn có thể giấu việc khởi tạo vào trong  <em>builder</em>. Mọi thứ trở nên cực kỳ đơn giản và cũng dễ tận dụng lại.</p>
+<p>Khi áp dụng DI, chúng ta có thể làm theo các hướng sau:</p>
+<ul>
+<li>Init injection (khi việc phụ thuộc là bắt buộc)</li>
+<li>Property injection (khi việc phụ thuộc không bắt buộc)</li>
+<li>method injection (giống property injection nhưng ta có thể thêm action)</li>
+</ul>
+<p>Mình sẽ không đi sâu chi tiết vào phần implement theo 3 hướng trên. Thay vào đó các bạn có thể tự tìm hiểu thông qua <em>google</em></p>
+<h3 id="dip">DIP</h3>
+<p>Như đã nói từ đầu, để theo rule <em>DIP</em> ta cần phải truyền các thành phần phụ thuộc vào class dưới dạng <em>interface</em>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="n">UIViewController</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">loading</span><span class="p">:</span> <span class="n">LoadingProtocol</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">errorHandler</span><span class="p">:</span> <span class="n">ErrorHandlerProtocol</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">parser</span><span class="p">:</span> <span class="n">ModelParserProtocol</span><span class="p">?</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Khi các đối tượng truyền vào từ bên ngoài là <em>interface</em> thì class sẽ không phụ thuộc vào một đối tượng hay template. Chúng ta chỉ quan tâm đến behavior mà <em>interface</em> định nghĩa. Như vậy ta có thể truyền một nhóm đối tượng theo <em>interface</em> đó. Việc thay thế và tùy biến càng trở nên dễ dàng hơn.</p>
+<h3 id="mặt-hạn-chế">Mặt hạn chế</h3>
+<p>Trong lập trình không có viên đạn bạc, cái gì cũng có mặt hạn chế của nó. Ở trên, đơn thuần ta nói về mặt lợi. Giờ là lúc nói đến mặt hại 😄</p>
+<p>Để thỏa mãn các điều kiện khi tuân thủ <em>DIP</em> là chúng ta phải tạo nhiều <em>interface</em>. Ở một project lớn, độ phức tạp cao, đòi hỏi càng có nhiều <em>interface</em>. Khi đó việc build app sẽ trở nên chậm chạp hơn.</p>
+<p>Tiếp theo, việc tuân thủ <em>DIP</em> cũng khiến ta phải tách khá nhiều lớp, factory lồng factory. Để tạo ra được một phương thức khởi tạo đơn giản đòi hỏi một quá trình phức tạp với nhiều class được tạo ra. Như ví dụ trên ta có factory cho các đối tượng con của <em>ViewController</em>, factory cho riêng <em>ViewController</em>.</p>
+<h2 id="tổng-kết">Tổng kết</h2>
+<p>Chữ <strong>D</strong> trong <strong>SOLID</strong> là một nguyên tắc khá quan trọng. Để đảm bảo được nguyên tắc <em>single-responsibility</em> hay <em>ope- close</em> ta cũng cần thuần thục <em>Dependency injection</em>.</p>
+<p><strong>IoC</strong> cũng là nguyên tắc trong lập trình hướng đối tượng, dù không được đề cập trong <strong>SOLID</strong>. Tuy nhiên nó mang tính bao quát hơn <strong>DIP</strong> (DIP phải sử dụng interface). Trong bài đã đề cập đến 2 cách triển khai tuân thủ <strong>IoC</strong> là <em>Service Location, DI</em>, tuy nhiên còn một cách nữa là <em>Event</em>. Từ cách này cũng nảy sinh ra 1 trường phái lập trình là <em>Event-driven programming</em>. Event là chủ đề khá dài, mình sẽ đề cập đến nó chi tiết hơn khi có dịp (không biết bao giờ 😄)</p>
+<p>Lâu lắm mới viết một bài dài như này LoL.</p>
+<hr>
+<p>Tham khảo:</p>
+<p>[1] <a href="https://shareprogramming.net/gioi-thieu-inversion-of-control-va-dependency-injection-trong-spring/">https://shareprogramming.net/gioi-thieu-inversion-of-control-va-dependency-injection-trong-spring/</a></p>
+<p>[2] <a href="https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection">https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection</a></p>
+<p>[3] <a href="https://en.wikipedia.org/wiki/Inversion_of_control">https://en.wikipedia.org/wiki/Inversion_of_control</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">VietHQ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-06-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/hugosite/tags/oop/">oop</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/hugosite/post/tieng-viet-co-dau/">
+            <span class="next-text nav-default">Tiếng Việt có dấu</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'gg4acrossover';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hoangquocviet1402@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/viet142" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/viethoangquoc1402/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/gg4acrossover" class="iconfont icon-github" title="github"></a>
+  <a href="https://gg4acrossover.github.io/hugosite/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

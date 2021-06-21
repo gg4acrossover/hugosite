@@ -16,22 +16,19 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Tìm đơn giản trong phức tạp." />
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Tìm đơn giản trong phức tạp." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/" />
-<link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
+  <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
   <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="feed" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,25 +37,17 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="VietHQ - Tìm đơn giản trong phức tạp" />
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2016-09-05T16:21:13&#43;07:00"/>
-
+<meta property="og:updated_time" content="2021-06-22T02:06:08+07:00" />
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VietHQ - Tìm đơn giản trong phức tạp"/>
 <meta name="twitter:description" content="Tìm đơn giản trong phức tạp."/>
@@ -98,12 +87,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -120,22 +118,38 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-  <section id="posts" class="posts">
-    
-    
-    
-      <article class="post">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/tao-func-trong-swift/">Tạo function trong swift</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-05 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param 1 2 3 4 5 6  func sayHello(name: String) -&gt; String { return &#34;Hello &#34; + name + &#34;!&#34; } print( sayHello(&#34;Peter&#34;)) // Hello Perter!   Func có nhiều hơn 1 param 1 2 3 4 5 6  func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &#34;Hello &#34; + name + &#34;, &#34; + anotherName } print( sayHelloAgain(&#34;Peter&#34;, anotherName: &#34;Tom&#34;)) // Hello Peter, Tom   ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/tao-func-trong-swift/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/">C&#43;&#43;11 những cái hay dùng</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-09-05 </span>
-      
       
     </div>
   </header>
@@ -146,21 +160,19 @@
  http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
  Sử dụng auto Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
 VD:
-auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.
+1 2 3  auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();   Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/enum-flag-c-plus-plus/">Enum flag c&#43;&#43;</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-09-05 </span>
-      
       
     </div>
   </header>
@@ -173,18 +185,16 @@ auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.
 Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/enum-flag-c-plus-plus/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/enum-flag-c-plus-plus/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/first-time-to-hugo/">Các thuộc tính của property trong objC</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-09-01 </span>
-      
       
     </div>
   </header>
@@ -195,23 +205,20 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
 Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/first-time-to-hugo/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/first-time-to-hugo/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-  </section>
+    </section>
   
   <nav class="pagination">
-    
-      <a class="prev" href="/hugosite/page/8/">
+    <a class="prev" href="/hugosite/page/8/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">Prev</span>
       </a>
     
   </nav>
-
         </div>
         
 
@@ -241,28 +248,24 @@ Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ 
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -271,13 +274,5 @@ Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ 
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

@@ -1,9 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="https://gg4acrossover.github.io/hugosite/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/di-ioc-hay-dip/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/oop/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/oop/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/</loc>
+    <lastmod>2021-06-22T02:06:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
+    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
+    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/tieng-viet-co-dau/</loc>
+    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/unicode/</loc>
     <lastmod>2020-05-11T02:09:09+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -17,6 +86,34 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/share/</loc>
+    <lastmod>2020-01-16T00:33:52+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/share/</loc>
+    <lastmod>2020-01-16T00:33:52+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/architecture/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/categories/architecture/</loc>
+    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/</loc>
     <lastmod>2020-01-09T11:41:03+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -25,6 +122,13 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/decorator-va-thuc-tien-ap-dung/</loc>
+    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/design-pattern/</loc>
     <lastmod>2019-10-21T02:13:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -150,6 +254,13 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/functional-programming/</loc>
+    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/</loc>
     <lastmod>2018-09-19T00:28:59+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,8 +268,22 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift4/</loc>
+    <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/tong-hop-mot-so-tip/</loc>
     <lastmod>2018-06-15T17:21:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
+    <lastmod>2018-06-08T15:04:33+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -213,6 +338,13 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift3/</loc>
+    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/</loc>
     <lastmod>2017-07-20T10:43:13+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -221,6 +353,13 @@
   
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/</loc>
+    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/swift-3/</loc>
     <lastmod>2017-07-03T14:53:55+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -248,8 +387,22 @@
   </url>
   
   <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
+    <lastmod>2017-01-11T14:27:47+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/hugo-tutorial/</loc>
     <lastmod>2017-01-11T14:27:47+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/objc/</loc>
+    <lastmod>2016-09-20T16:01:11+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -264,6 +417,13 @@
   <url>
     <loc>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</loc>
     <lastmod>2016-09-05T16:36:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</loc>
+    <lastmod>2016-09-05T16:32:39+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -304,157 +464,17 @@
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/</loc>
-    <lastmod>2016-09-01T17:22:59+07:00</lastmod>
+    <loc>https://gg4acrossover.github.io/hugosite/tags/about-me/</loc>
+    <lastmod>2016-09-05T13:17:19+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/architecture/</loc>
-    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
+    <loc>https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/</loc>
+    <lastmod>2016-09-01T17:22:59+07:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/architecture/</loc>
-    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/</loc>
-    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/post/</loc>
-    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/share/</loc>
-    <lastmod>2020-01-16T00:33:52+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/share/</loc>
-    <lastmod>2020-01-16T00:33:52+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/</loc>
-    <lastmod>2020-01-09T11:41:03+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/</loc>
-    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/about-me/</loc>
-    <lastmod>2016-09-05T13:17:19+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</loc>
-    <lastmod>2016-09-05T16:32:39+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/design-pattern/</loc>
-    <lastmod>2019-10-21T02:13:23+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/functional-programming/</loc>
-    <lastmod>2018-09-19T00:28:59+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/hugo/</loc>
-    <lastmod>2017-01-11T14:27:47+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/ios/</loc>
-    <lastmod>2018-06-08T15:04:33+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/objc/</loc>
-    <lastmod>2016-09-20T16:01:11+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/categories/swift/</loc>
-    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift/</loc>
-    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift-3/</loc>
-    <lastmod>2017-07-03T14:53:55+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift3/</loc>
-    <lastmod>2017-08-09T16:41:23+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/swift4/</loc>
-    <lastmod>2018-06-15T17:21:29+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gg4acrossover.github.io/hugosite/tags/unicode/</loc>
-    <lastmod>2020-05-11T02:09:09+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

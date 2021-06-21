@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Giới thiệu Callback là kĩ thuật được ưa chuộng trong lập trình hiện nay. Ngặt nỗi, nếu sử dụng không khéo rất dễ xảy ra callback hell. Dưới con mắt nghệ thuật, nó lai lái kim tự tháp, nhưng dưới con mắt coder, đặc biệt với những lập trình viên ưa-cái-đẹp thì nó chẳng khác gì một thảm họa. Bí kíp tránh callback hell không phải là không có. Nếu chính đạo dùng Promise thì tà đạo chơi functional programming." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Giới thiệu Callback là kĩ thuật được ưa chuộng trong lập trình hiện nay. Ngặt nỗi, nếu sử dụng không khéo rất dễ xảy ra callback hell. Dưới con mắt nghệ thuật, nó lai lái kim tự tháp, nhưng dưới con mắt coder, đặc biệt với những lập trình viên ưa-cái-đẹp thì nó chẳng khác gì một thảm họa. Bí kíp tránh callback hell không phải là không có. Nếu chính đạo dùng Promise thì tà đạo chơi functional programming." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -39,29 +35,21 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Xử lý callback hell với functional programming" />
 <meta property="og:description" content="Giới thiệu Callback là kĩ thuật được ưa chuộng trong lập trình hiện nay. Ngặt nỗi, nếu sử dụng không khéo rất dễ xảy ra callback hell. Dưới con mắt nghệ thuật, nó lai lái kim tự tháp, nhưng dưới con mắt coder, đặc biệt với những lập trình viên ưa-cái-đẹp thì nó chẳng khác gì một thảm họa. Bí kíp tránh callback hell không phải là không có. Nếu chính đạo dùng Promise thì tà đạo chơi functional programming." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/" /><meta property="article:published_time" content="2018-09-19T00:28:59&#43;07:00"/>
-<meta property="article:modified_time" content="2018-09-19T00:28:59&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/xu-ly-callback-hell/" />
+<meta property="article:published_time" content="2018-09-19T00:28:59+07:00" />
+<meta property="article:modified_time" content="2018-09-19T00:28:59+07:00" />
 <meta itemprop="name" content="Xử lý callback hell với functional programming">
 <meta itemprop="description" content="Giới thiệu Callback là kĩ thuật được ưa chuộng trong lập trình hiện nay. Ngặt nỗi, nếu sử dụng không khéo rất dễ xảy ra callback hell. Dưới con mắt nghệ thuật, nó lai lái kim tự tháp, nhưng dưới con mắt coder, đặc biệt với những lập trình viên ưa-cái-đẹp thì nó chẳng khác gì một thảm họa. Bí kíp tránh callback hell không phải là không có. Nếu chính đạo dùng Promise thì tà đạo chơi functional programming.">
-
-
-<meta itemprop="datePublished" content="2018-09-19T00:28:59&#43;07:00" />
-<meta itemprop="dateModified" content="2018-09-19T00:28:59&#43;07:00" />
-<meta itemprop="wordCount" content="770">
+<meta itemprop="datePublished" content="2018-09-19T00:28:59+07:00" />
+<meta itemprop="dateModified" content="2018-09-19T00:28:59+07:00" />
+<meta itemprop="wordCount" content="768">
 
 
 
@@ -105,12 +93,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -127,6 +124,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -141,135 +139,80 @@
         <span class="post-time"> 2018-09-19 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#giới-thiệu">Giới thiệu</a></li>
-<li><a href="#ví-dụ">Ví dụ</a></li>
-<li><a href="#tiền-xử-lý">Tiền xử lý</a></li>
-<li><a href="#cách-truyền-thống">Cách truyền thống</a></li>
-<li><a href="#functional-programming">Functional programming</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#giới-thiệu">Giới thiệu</a></li>
+    <li><a href="#ví-dụ">Ví dụ</a></li>
+    <li><a href="#tiền-xử-lý">Tiền xử lý</a></li>
+    <li><a href="#cách-truyền-thống">Cách truyền thống</a></li>
+    <li><a href="#functional-programming">Functional programming</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h2 id="giới-thiệu">Giới thiệu</h2>
-
+      <h2 id="giới-thiệu">Giới thiệu</h2>
 <p><em>Callback</em> là kĩ thuật được ưa chuộng trong lập trình hiện nay. Ngặt nỗi, nếu sử dụng không khéo rất dễ xảy ra <em>callback hell</em>. Dưới con mắt nghệ thuật, nó lai lái kim tự tháp, nhưng dưới con mắt coder, đặc biệt với những lập trình viên ưa-cái-đẹp thì nó chẳng khác gì một thảm họa. Bí kíp tránh <em>callback hell</em> không phải là không có. Nếu chính đạo dùng <em>Promise</em> thì tà đạo chơi <em>functional programming</em>.</p>
-
 <p>Dạo này mình được khai sáng một chút tà đạo nên mình sẽ dùng nó để giải quyết bài toán <em>callback hell</em></p>
-
 <h2 id="ví-dụ">Ví dụ</h2>
-
 <p>Để thấy được kĩ thuật này hữu dụng chỗ nào, mình đưa ra bài toán nho nhỏ và từng bước giải quyết vấn đề theo cả cách truyền thống lẫn cách hiện dại.
 Giả sử ta có <em>String</em> như sau</p>
-
-<p><img src="/hugosite/images/note/callback-hell/json-string.png" alt="image1" /></p>
-
+<p><img src="/hugosite/images/note/callback-hell/json-string.png" alt="image1"></p>
 <p>Ta cần lấy ra mảng <em>name</em> để hiển thị ra màn hình. Bài toán này cũng tương tự việc bạn lấy dữ liệu từ server, parse dữ liệu và hiển thị lên màn hình.</p>
-
 <h2 id="tiền-xử-lý">Tiền xử lý</h2>
-
 <p>Ta tạo ra các phương thức và model sử dụng chung cho cả 2 cách</p>
-
-<p><img src="/hugosite/images/note/callback-hell/define-func.png" alt="image2" /></p>
-
+<p><img src="/hugosite/images/note/callback-hell/define-func.png" alt="image2"></p>
 <p><em>CompletionHandle</em> được mình dùng để thực hiện việc callback xuyên suốt bài viết. Đây là <em>function</em> với tham số đầu vào dạng enum Result (tương tự như <em>Result</em> trong <em>Alamofire</em>).</p>
-
 <p>Ba phương thức được tạo ra lần lượt thực hiện các thao tác:</p>
-
 <ul>
 <li><em>convertUserDataFromString</em> -&gt; convert <em>String</em> thành <em>Data</em></li>
 <li><em>getUsers</em> -&gt; parse <em>Data</em> sang mảng User model</li>
 <li><em>getAllName</em> -&gt; lấy ra name từ mảng User</li>
 </ul>
-
 <h2 id="cách-truyền-thống">Cách truyền thống</h2>
-
 <p>Ứng với ba phương thức kể trên, ta call lần lượt các function, tạo thành ba callback lồng nhau.</p>
-
-<p><img src="/hugosite/images/note/callback-hell/callback-hell.png" alt="image3" /></p>
-
+<p><img src="/hugosite/images/note/callback-hell/callback-hell.png" alt="image3"></p>
 <p>Cách làm này quá quen thuộc nên mình không giải thích gì thêm.</p>
-
 <h2 id="functional-programming">Functional programming</h2>
-
 <p>Với cách này, ta phải tư duy theo hướng hoàn toàn mới: đi từ trừu tượng đến cụ thể, chứ không phải từ cụ thể đến trừu tượng (nghe giống công nghệ giáo dục đang áp dụng :D).</p>
-
 <p>Đầu tiên ta định nghĩa toán tử mới để kết hợp hai <em>function</em> thành một function duy nhất thực hiện cả hai nhiệm vụ. Điều này không những làm code gọn hơn, mà còn trông nguy hiểm hơn, nói cách khác <em>functional style</em> hơn.</p>
-
-<p><img src="/hugosite/images/note/callback-hell/define-operator.png" alt="image4" /></p>
-
-<p>Sức mạnh của <strong>&ldquo;~&gt;&rdquo;</strong> thể hiện rõ qua dòng code sau:</p>
-
-<p><img src="/hugosite/images/note/callback-hell/combinator.png" alt="image4" /></p>
-
+<p><img src="/hugosite/images/note/callback-hell/define-operator.png" alt="image4"></p>
+<p>Sức mạnh của <strong>&quot;~&gt;&quot;</strong> thể hiện rõ qua dòng code sau:</p>
+<p><img src="/hugosite/images/note/callback-hell/combinator.png" alt="image4"></p>
 <p>Trong đó</p>
-
 <ul>
-<li><strong>convertUserDataFromString</strong> là function dạng <span style="color:green"><strong>(Result&lt;Data&gt; -&gt; Void) -&gt; Void</strong></span>. có thể đưa về trường hợp tổng quát <strong>(A) -&gt; Void</strong></li>
-<li><strong>getUsers</strong> là function dạng <span style="color:green"><strong>(Data, Result&lt;[User]&gt; -&gt; Void) -&gt; Void</strong></span> có thể đưa về trường hợp tổng quát <strong>(A, B) -&gt; Void</strong></li>
-<li><strong>getAllName</strong> là function dạng <span style="color:green"><strong>([User], Result&lt;[String]&gt; -&gt; Void) -&gt; Void</strong></span> có thể đưa về trường hợp tổng quát <strong>(B, C) -&gt; Void</strong></li>
+<li><strong>convertUserDataFromString</strong> là function dạng <!-- raw HTML omitted --><strong>(Result&lt;Data&gt; -&gt; Void) -&gt; Void</strong><!-- raw HTML omitted -->. có thể đưa về trường hợp tổng quát <strong>(A) -&gt; Void</strong></li>
+<li><strong>getUsers</strong> là function dạng <!-- raw HTML omitted --><strong>(Data, Result&lt;[User]&gt; -&gt; Void) -&gt; Void</strong><!-- raw HTML omitted --> có thể đưa về trường hợp tổng quát <strong>(A, B) -&gt; Void</strong></li>
+<li><strong>getAllName</strong> là function dạng <!-- raw HTML omitted --><strong>([User], Result&lt;[String]&gt; -&gt; Void) -&gt; Void</strong><!-- raw HTML omitted --> có thể đưa về trường hợp tổng quát <strong>(B, C) -&gt; Void</strong></li>
 </ul>
-
 <p>Function <strong>getNames</strong> là tổng hợp của ba function trên, có thể biểu diễn dưới cách sau:</p>
-
-<p><img src="/hugosite/images/note/callback-hell/combinator-function.png" alt="image4" /></p>
-
-<p>Từ trường hợp cụ thể trên, ta qui ra trường hợp tổng quát cho function <strong>&ldquo;~&gt;&rdquo;</strong>.</p>
-
+<p><img src="/hugosite/images/note/callback-hell/combinator-function.png" alt="image4"></p>
+<p>Từ trường hợp cụ thể trên, ta qui ra trường hợp tổng quát cho function <strong>&quot;~&gt;&quot;</strong>.</p>
 <p><strong>&ldquo;First&rdquo;</strong> đưa về trường hợp tổng quát là (A) -&gt; Void, nhiệm vụ của function này là nhận dữ liệu input, chuyển nó thành A rồi đưa vào trong callback (giống function <em>convertUserDataFromString</em> định nghĩa ở trên)</p>
-
 <p><strong>&ldquo;Second&rdquo;</strong> đưa về trường hợp tổng quát là (A, B) -&gt; Void, có nhiệm vụ transform dữ liệu A nhận từ <strong>First</strong> thành B và đưa vào trong callback (giống function <em>getUser</em> hoặc <em>getAllName</em> định nghĩa ở trên)</p>
-
-<p><strong>&ldquo;~&gt;&rdquo;</strong> thì return (B) -&gt; Void, đây là callback đưa ra output B sau khi đã đi qua bước chuyển đổi A thành B.</p>
-
+<p><strong>&quot;~&gt;&quot;</strong> thì return (B) -&gt; Void, đây là callback đưa ra output B sau khi đã đi qua bước chuyển đổi A thành B.</p>
 <p>Kết hợp ((A) -&gt; Void) -&gt; ((A, B) -&gt; Void) thành ((B) -&gt; Void) có thể viết rút gọn thành <strong>(A) -&gt; (A,B) -&gt; (B)</strong>.
 Ta có thể hiểu theo kiểu: dữ liệu (A) đi qua một bước biến đổi (A,B) thì có (B) để xài.</p>
-
-<p>Cái hay của function <strong>&ldquo;~&gt;&rdquo;</strong> là đầu ra của nó có thể sử dụng làm đầu vào của chính <strong>&ldquo;~&gt;&rdquo;</strong> dưới dạng <strong>First</strong> param, ta chỉ cần ghép nó với một <strong>Second</strong> hợp lệ là có thể tạo thành một chuỗi các function lồng nhau.</p>
-
+<p>Cái hay của function <strong>&quot;~&gt;&quot;</strong> là đầu ra của nó có thể sử dụng làm đầu vào của chính <strong>&quot;~&gt;&quot;</strong> dưới dạng <strong>First</strong> param, ta chỉ cần ghép nó với một <strong>Second</strong> hợp lệ là có thể tạo thành một chuỗi các function lồng nhau.</p>
 <p>Bước 1: <strong>(A) -&gt; (A,B) -&gt; (B)</strong></p>
-
 <p>Bước 2: <strong>(B) -&gt; (B,C) -&gt; (C)</strong></p>
-
 <p>Qui nạp thành bước N: <strong>(N1) -&gt; (N1,N2) -&gt; N2</strong></p>
-
 <p>Dùng function <strong>~&gt;</strong> giúp ta trải phẳng callback hell và đưa nó về dạng gần với ngôn ngữ tự nhiên:</p>
-
 <blockquote>
 <p>Công việc D = công việc A + công việc B + công việc C.</p>
 </blockquote>
-
 <p>Chúng ta có thể giải quyết bài toán theo hướng khác cũng sử dụng <em>functional programming</em>. Mình sẽ trình bày ở bài tiếp theo :). See ya!</p>
-
-<hr />
-
+<hr>
 <p>Tham khảo <a href="https://github.com/vincent-pradeilles/slides/blob/master/nsspain-2018-solving-callback-hell-with-good-old-function-composition.pdf">slide của Vincent-pradeilles</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -277,34 +220,26 @@ Ta có thể hiểu theo kiểu: dữ liệu (A) đi qua một bước biến đ
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-09-19</span>
+    <span class="item-content">
+        2018-09-19
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
           <a href="/hugosite/tags/functional-programming/">functional programming</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/style-view/">
+        <a class="prev" href="/hugosite/post/style-view/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Style view</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/tong-hop-mot-so-tip/">
+        <a class="next" href="/hugosite/post/tong-hop-mot-so-tip/">
             <span class="next-text nav-default">Tổng hợp một số tip Swift</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -313,8 +248,7 @@ Ta có thể hiểu theo kiểu: dữ liệu (A) đi qua một bước biến đ
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -328,6 +262,8 @@ Ta có thể hiểu theo kiểu: dữ liệu (A) đi qua một bước biến đ
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -357,28 +293,24 @@ Ta có thể hiểu theo kiểu: dữ liệu (A) đi qua một bước biến đ
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -387,13 +319,5 @@ Ta có thể hiểu theo kiểu: dữ liệu (A) đi qua một bước biến đ
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

@@ -16,22 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
- Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
+ Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/method-dispatch/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,31 +36,23 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Method dispath trong protocol" />
 <meta property="og:description" content="Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
  Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/method-dispatch/" /><meta property="article:published_time" content="2017-11-25T11:36:01&#43;07:00"/>
-<meta property="article:modified_time" content="2017-11-25T11:36:01&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/method-dispatch/" />
+<meta property="article:published_time" content="2017-11-25T11:36:01+07:00" />
+<meta property="article:modified_time" content="2017-11-25T11:36:01+07:00" />
 <meta itemprop="name" content="Method dispath trong protocol">
 <meta itemprop="description" content="Method dispatch là gì? Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:
  Static dispatch: xác định hàm được chạy trong quá trình biên dịch. Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.  Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức.">
-
-
-<meta itemprop="datePublished" content="2017-11-25T11:36:01&#43;07:00" />
-<meta itemprop="dateModified" content="2017-11-25T11:36:01&#43;07:00" />
-<meta itemprop="wordCount" content="751">
+<meta itemprop="datePublished" content="2017-11-25T11:36:01+07:00" />
+<meta itemprop="dateModified" content="2017-11-25T11:36:01+07:00" />
+<meta itemprop="wordCount" content="805">
 
 
 
@@ -109,12 +97,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -131,6 +128,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -145,164 +143,208 @@
         <span class="post-time"> 2017-11-25 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#method-dispatch-là-gì">Method dispatch là gì?</a></li>
-<li><a href="#tại-sao-lại-nói-đến-method-dispatch">Tại sao lại nói đến method dispatch?</a></li>
-<li><a href="#kể-chuyện-bằng-code">Kể chuyện bằng code</a></li>
-<li><a href="#kết-luận">Kết luận</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#method-dispatch-là-gì">Method dispatch là gì?</a></li>
+    <li><a href="#tại-sao-lại-nói-đến-method-dispatch">Tại sao lại nói đến method dispatch?</a></li>
+    <li><a href="#kể-chuyện-bằng-code">Kể chuyện bằng code</a></li>
+    <li><a href="#kết-luận">Kết luận</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h2 id="method-dispatch-là-gì">Method dispatch là gì?</h2>
-
+      <h2 id="method-dispatch-là-gì">Method dispatch là gì?</h2>
 <p>Method dispatch là thuật toán xác định cách thức vận hành method thông qua compiler. Nhắc đến method dispatch, thường người ta sẽ nói đến 2 kiểu điển hình:</p>
-
 <ul>
 <li>Static dispatch: xác định hàm được chạy trong quá trình biên dịch.</li>
 <li>Dynamic dispatch: xác định hàm được chạy trong quá trình runtime, cái này thể hiện rõ nhất qua tính đa hình trong OOP.</li>
 </ul>
-
 <p>Với mỗi ngôn ngữ, tùy thuộc vào thiết kế mà có sự khác nhau về cách thức vận hành phương thức. Tỉ như, C sử dụng mô hình biên dịch tĩnh, javascript sử dụng mô hình biên dịch động, c++ phức tạp hơn, vừa có biên dịch tĩnh như C, vừa có biên dịch động (vitual function), còn Swift thì sao?</p>
-
 <p>Nó cũng là sự kết hợp, nhưng khác với C++</p>
-
 <blockquote>
-<p>Swift is another case of a hybrid model: its semantics provide predictability between obviously static (structs, enums, and global funcs) and obviously dynamic (classes, protocols, and closures) constructs</p>
 </blockquote>
-
+<p>Swift is another case of a hybrid model: its semantics provide predictability between obviously static (structs, enums, and global funcs) and obviously dynamic (classes, protocols, and closures) constructs</p>
 <h2 id="tại-sao-lại-nói-đến-method-dispatch">Tại sao lại nói đến method dispatch?</h2>
-
 <p>Theo như thông tin ở trên, protocol sử dụng <em>dynamic dispatch</em>, tuy nhiên kể từ khi <em>protocol extension</em> ra đời, thế giới không còn đơn giản như ta tưởng nữa.
 Đối với 1 hàm không được khai báo ở protocol mà được khai báo ở extension thì nó là <em>static dispatch</em>. Nói theo một cách khác, <em>protocol extension</em> khiến protocol trở nên&hellip;lưỡng tính. Đó là khởi nguồn của 2 kiểu bug khi sử dụng protocol</p>
-
 <ul>
 <li>Bug khi khai báo func không được định nghĩa trong original protocol</li>
 <li>Bug khi tạo class kế thừa từ 1 class sử dụng default func trong protocol</li>
 </ul>
-
 <h2 id="kể-chuyện-bằng-code">Kể chuyện bằng code</h2>
-
 <p>Trăm nghe không bằng một thấy, ta tạo một protocol đơn giản như sau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">protocol</span> <span class="n">Worker</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+<span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">protocol Worker {
-    var name: String { get }
-}
-
-extension Worker {
-    <span style="color:#75715e">// default value
-</span><span style="color:#75715e"></span>    var name: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;worker&#34;</span>
-    }
+<span class="n">extension</span> <span class="n">Worker</span> <span class="p">{</span>
+    <span class="c1">// default value
+</span><span class="c1"></span>    <span class="n">var</span> <span class="nl">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&#34;worker&#34;</span>
+    <span class="p">}</span>
     
-    <span style="color:#75715e">// not in original Worker protocol
-</span><span style="color:#75715e"></span>    func sayHi() {
-        print(<span style="color:#e6db74">&#34;hi, \(self.name)&#34;</span>)
-    }
-}</code></pre></div>
-
+    <span class="c1">// not in original Worker protocol
+</span><span class="c1"></span>    <span class="n">func</span> <span class="n">sayHi</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">&#34;hi, \(self.name)&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Hãy chú ý đến hàm <strong>sayHi</strong> không được khai báo ở <em>protocol</em> <strong>Worker</strong> mà chỉ được khai báo trong <em>extension</em>.</p>
-
 <p>Giờ ta tạo một struct kế thừa <em>protocol</em> <strong>Worker</strong></p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> Dev: Worker {
-    var name: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;dev&#34;</span>
-    }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">struct</span> <span class="nl">Dev</span><span class="p">:</span> <span class="n">Worker</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&#34;dev&#34;</span>
+    <span class="p">}</span>
     
-    func sayHi() {
-        print(<span style="color:#e6db74">&#34;hello, \(self.name)&#34;</span>)
-    }
-}
+    <span class="n">func</span> <span class="n">sayHi</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">&#34;hello, \(self.name)&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-let dev <span style="color:#f92672">=</span> Dev()
-dev.sayHi() <span style="color:#f92672">//</span> hello, dev</code></pre></div>
-
+<span class="n">let</span> <span class="n">dev</span> <span class="o">=</span> <span class="n">Dev</span><span class="p">()</span>
+<span class="n">dev</span><span class="p">.</span><span class="n">sayHi</span><span class="p">()</span> <span class="o">//</span> <span class="n">hello</span><span class="p">,</span> <span class="n">dev</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Kết quả ra là <em>&ldquo;hello, dev&rdquo;</em>. Mọi thứ vẫn OK, giờ ta sửa một chút.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let anotherDev: Worker <span style="color:#f92672">=</span> dev
-anotherDev.sayHi() <span style="color:#f92672">//</span> hi, dev</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="nl">anotherDev</span><span class="p">:</span> <span class="n">Worker</span> <span class="o">=</span> <span class="n">dev</span>
+<span class="n">anotherDev</span><span class="p">.</span><span class="n">sayHi</span><span class="p">()</span> <span class="o">//</span> <span class="n">hi</span><span class="p">,</span> <span class="n">dev</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Tư duy thông thường, ta dự đoán kết quả là <em>&ldquo;hello, dev&rdquo;</em>, tuy nhiên ma thuật xảy ra, kết quả bất ngờ ra <em>&ldquo;hi, dev&rdquo;</em>. Dù ta gán <em>anotherDev</em> chính bằng <em>dev</em>, hàm <strong>sayHi</strong> không được gọi trong struct <em>Dev</em>, mà lại được gọi ở extension.
 Thử tiếp, ta đưa 2 đối tượng <em>dev</em> và <em>anotherDev</em> đã tạo ở trên vào 1 mảng</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let listDev <span style="color:#f92672">=</span> [dev, anotherDev]
-<span style="color:#66d9ef">for</span> persion <span style="color:#66d9ef">in</span> listDev {
-    print(<span style="color:#e6db74">&#34;say hi in loop&#34;</span>)
-    persion.sayHi() <span style="color:#75715e">// hi, dev
-</span><span style="color:#75715e"></span>}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">listDev</span> <span class="o">=</span> <span class="p">[</span><span class="n">dev</span><span class="p">,</span> <span class="n">anotherDev</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">persion</span> <span class="k">in</span> <span class="n">listDev</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">&#34;say hi in loop&#34;</span><span class="p">)</span>
+    <span class="n">persion</span><span class="p">.</span><span class="n">sayHi</span><span class="p">()</span> <span class="c1">// hi, dev
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Kết quả in ra vẫn là&hellip;<em>&ldquo;hi, dev&rdquo;</em>. Do protocol extension có chứa hàm <strong>sayHi</strong> không được khai báo ở protocol khởi tạo, thế nên nó là <em>static dispatch</em>. Do <em>static dispatch</em> thực thi trong lúc biên dịch nên độ ưu tiên sẽ cao hơn <em>dynamic dispatch</em>. Điều đó giải thích vì sao khi đưa 2 đối tượng cùng type là <em>Dev</em> vào trong <em>array</em> nó lại cho ra kết quả như trên.</p>
-
 <p>Ngoài ra việc sử dụng protocol extension còn phát sinh ra thêm 1 bug nữa</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">class</span> <span class="nl">PHPDev</span><span class="p">:</span> <span class="n">Worker</span> <span class="p">{</span>
+    <span class="n">func</span> <span class="n">sayHi</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">&#34;Hiii, \(self.name)&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">class</span> PHPDev: Worker {
-    func sayHi() {
-        print(<span style="color:#e6db74">&#34;Hiii, \(self.name)&#34;</span>)
-    }
-}
+<span class="k">class</span> <span class="nl">WebDev</span><span class="p">:</span> <span class="n">PHPDev</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&#34;WebDev&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#66d9ef">class</span> WebDev: PHPDev {
-    var name: String {
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;WebDev&#34;</span>
-    }
-}
-
-let phpDev <span style="color:#f92672">=</span> PHPDev()
-phpDev.sayHi() <span style="color:#75715e">// Hi, worker
-</span><span style="color:#75715e"></span>
-let webDev <span style="color:#f92672">=</span> WebDev()
-webDev.sayHi() <span style="color:#f92672">//</span> Hi, worker</code></pre></div>
-
-<p>Mình sẽ để đây và không nói gì thêm :&ldquo;), đùa thôi.</p>
-
+<span class="n">let</span> <span class="n">phpDev</span> <span class="o">=</span> <span class="n">PHPDev</span><span class="p">()</span>
+<span class="n">phpDev</span><span class="p">.</span><span class="n">sayHi</span><span class="p">()</span> <span class="c1">// Hi, worker
+</span><span class="c1"></span>
+<span class="n">let</span> <span class="n">webDev</span> <span class="o">=</span> <span class="n">WebDev</span><span class="p">()</span>
+<span class="n">webDev</span><span class="p">.</span><span class="n">sayHi</span><span class="p">()</span> <span class="o">//</span> <span class="n">Hi</span><span class="p">,</span> <span class="n">worker</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Mình sẽ để đây và không nói gì thêm :&quot;), đùa thôi.</p>
 <p>Class PHPDev kế thừa protocol <strong>Worker</strong> và sử dụng default name trong extension protocol. Ta tạo tiếp class WebDev, khai báo lại name</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">var name: String {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;WebDev&#34;</span>
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">var</span> <span class="nl">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&#34;WebDev&#34;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Khi gọi phương thức <strong>sayHi</strong>, kết quả của đối tượng webDev không phải là <em>&ldquo;hiii, WebDev&rdquo;</em>. Đây là bug thứ hai dễ mắc phải mà mình nhắc đến đầu bài.
 Cách đơn giản nhất để khắc phục là&hellip;không sử dụng protocol extension, cách tiếp theo là vẫn implement lại phương thức default của protocol (định nghĩa trong extension).</p>
-
 <p>Toàn bộ ví dụ trong bài <a href="https://gist.github.com/836c3a99ad12d5d46713542d5afa32f6.git">source</a></p>
-
 <h2 id="kết-luận">Kết luận</h2>
-
 <p>Protocol extension quả thực rất tiện lợi nhưng nó là con dao 2 lưỡi, cần chú ý khi sử dụng.</p>
-
 <p>&ndash;</p>
-
 <p>Tham khảo</p>
-
 <p><a href="https://medium.com/@leandromperez/protocol-extensions-gotcha-9ef1a42c83b6">https://medium.com/@leandromperez/protocol-extensions-gotcha-9ef1a42c83b6</a>
 <a href="https://www.raizlabs.com/dev/2016/12/swift-method-dispatch/">https://www.raizlabs.com/dev/2016/12/swift-method-dispatch/</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -310,34 +352,26 @@ Cách đơn giản nhất để khắc phục là&hellip;không sử dụng prot
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-11-25</span>
+    <span class="item-content">
+        2017-11-25
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/stretchy-header/">
+        <a class="prev" href="/hugosite/post/stretchy-header/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Stretchy header</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/codable-swift4/">
+        <a class="next" href="/hugosite/post/codable-swift4/">
             <span class="next-text nav-default">Codable swift 4</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -346,8 +380,7 @@ Cách đơn giản nhất để khắc phục là&hellip;không sử dụng prot
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -361,6 +394,8 @@ Cách đơn giản nhất để khắc phục là&hellip;không sử dụng prot
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -390,28 +425,24 @@ Cách đơn giản nhất để khắc phục là&hellip;không sử dụng prot
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -420,13 +451,5 @@ Cách đơn giản nhất để khắc phục là&hellip;không sử dụng prot
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

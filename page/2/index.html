@@ -16,22 +16,19 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Tìm đơn giản trong phức tạp." />
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Tìm đơn giản trong phức tạp." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/" />
-<link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
+  <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
   <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="feed" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,25 +37,17 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="VietHQ - Tìm đơn giản trong phức tạp" />
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2019-06-18T13:59:48&#43;07:00"/>
-
+<meta property="og:updated_time" content="2021-06-22T02:06:08+07:00" />
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VietHQ - Tìm đơn giản trong phức tạp"/>
 <meta name="twitter:description" content="Tìm đơn giản trong phức tạp."/>
@@ -98,12 +87,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -120,27 +118,43 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-  <section id="posts" class="posts">
-    
-    
-    
-      <article class="post">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/get-urls-from-string/">Lấy url từ string</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-07-11 </span>
+      <div class="post-category">
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Từ một lời thắc mắc Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko? Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm URL.init
+1 2 3 4 5  var str = &#34;goto https://www.google.com/&#34; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]   Kết quả ra cả &ldquo;goto&rdquo;, có gì đó sai sai? Hóa ra thằng URL.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/get-urls-from-string/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/dismiss-keyboard/">Ẩn Keyboard</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-06-18 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
     </div>
   </header>
   
@@ -148,21 +162,19 @@
     <div class="post-summary">
       Xin chào mọi người, hôm nay mình sẽ trở lại với một vấn đề quen thuộc. Đó là ẩn keyboard, xử lý tuy rằng đơn giản, nhưng để làm &ldquo;mượt&rdquo; thì cũng không dễ tẹo nào. Mình sẽ đi từng bước một, từ cách bình dân nhất, rồi đến những xử lý refactor.
 Cách bình dân Cách chúng ta thường thấy nhất là:
-class ViewController: UIViewController { @IBOutlet weak var txtField: UITextField!
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  class ViewController: UIViewController { @IBOutlet weak var txtField: UITextField!
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/dismiss-keyboard/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/dismiss-keyboard/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/sugar-syntax/">Sugar Syntax</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-06-12 </span>
-      
       
     </div>
   </header>
@@ -173,23 +185,19 @@ class ViewController: UIViewController { @IBOutlet weak var txtField: UITextFiel
 dynamicallyCallable Áp dụng cấu trúc này cho class, struct, enum hoặc protocol. Sử dụng code ví dụ để dễ hình dung
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/sugar-syntax/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/sugar-syntax/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/collectionview_layout/">Collection view layout</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-06-10 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
     </div>
   </header>
   
@@ -200,80 +208,45 @@ Trăm nghe không bằng một thấy, tốt nhất là trình diễn bằng hì
 Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection view (ô chữ nhật xanh lá cây tượng trưng cho màn hình điện thoại).
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/collectionview_layout/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/collectionview_layout/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/new-tip-03-06-19/">Vài tip 03.06.19</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-06-03 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
       Một số phương thức hỗ trợ lập trình, note lại cho bản thân.
-Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }  Storyboard protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&gt; Self { let controller = storyboard().instantiateInitialViewController() return controller! as! Self } static func storyboard(fileName: String? = nil) -&gt; UIStoryboard { let storyboard = UIStoryboard(name: fileName ?
+Autolayout 1 2 3 4 5 6 7 8 9 10 11 12  extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }   Storyboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&gt; Self { let controller = storyboard().
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/new-tip-03-06-19/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/new-tip-03-06-19/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/mot-vai-tip-thang-5-2019/">Tip iOS cho tháng năm</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-05-23 </span>
-      <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
-Bước đầu implement phương thức gắn css style vào string
-extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&gt; String in return &quot;\(key): \(value)&quot; }.joined(separator: &quot;;&quot;) try! self.init( data: Data(&quot;&lt;p style=\&quot;\(style)\&quot;&gt;\(text)&lt;/p&gt;&quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, .
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/mot-vai-tip-thang-5-2019/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-  </section>
+    </section>
   
   <nav class="pagination">
-    
-      <a class="prev" href="/hugosite/">
+    <a class="prev" href="/hugosite/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">Prev</span>
       </a>
-    
-      <a class="next" href="/hugosite/page/3/">
+    <a class="next" href="/hugosite/page/3/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
   </nav>
-
         </div>
         
 
@@ -303,28 +276,24 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -333,13 +302,5 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

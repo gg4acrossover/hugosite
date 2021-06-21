@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,10 +6,16 @@
     <description>Recent content on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2020 02:09:09 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 22 Jun 2021 02:06:08 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Di, IoC hay DIP</title>
+      <link>https://gg4acrossover.github.io/hugosite/post/di-ioc-hay-dip/</link>
+      <pubDate>Tue, 22 Jun 2021 02:06:08 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/post/di-ioc-hay-dip/</guid>
+      <description>Lý thuyết Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là SOLID. Trong đấy D là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của Dependency Injection (DI). Tên gọi chính xác của nó là Dependency inversion principle (DIP).
+Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế.</description>
+    </item>
     
     <item>
       <title>Tiếng Việt có dấu</title>
@@ -31,8 +37,7 @@ Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mìn
       <description>Lâu rồi không viết các tip nho nhỏ, hôm nay tranh thủ lúc tâm tư thư thái, viết một bài.
 Git Chẳng mấy khi viết về các lệnh git.
  Check remote đến responsitory nào   git remote -v
-  Add thì đơn giản hơn   git remote add origin 
-  Xóa thì sao, trước hết cần check xem đang remote đến đâu mới biết mà xóa   git remote rm origin</description>
+  Add thì đơn giản hơn   git remote add origin   Xóa thì sao, trước hết cần check xem đang remote đến đâu mới biết mà xóa   git remote rm origin</description>
     </item>
     
     <item>
@@ -60,7 +65,7 @@ Git Chẳng mấy khi viết về các lệnh git.
       
       <guid>https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/</guid>
       <description>Từ một lời thắc mắc Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko? Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm URL.init
-var str = &amp;quot;goto https://www.google.com/&amp;quot; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]  Kết quả ra cả &amp;ldquo;goto&amp;rdquo;, có gì đó sai sai? Hóa ra thằng URL.init vốn dễ dãi. Nó nhận cả đường dẫn, tên thư mục nó lấy, url nó lấy, tên folder nó lấy, blah blah.</description>
+1 2 3 4 5  var str = &amp;#34;goto https://www.google.com/&amp;#34; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]   Kết quả ra cả &amp;ldquo;goto&amp;rdquo;, có gì đó sai sai? Hóa ra thằng URL.</description>
     </item>
     
     <item>
@@ -71,7 +76,7 @@ var str = &amp;quot;goto https://www.google.com/&amp;quot; let urls = str.compon
       <guid>https://gg4acrossover.github.io/hugosite/post/dismiss-keyboard/</guid>
       <description>Xin chào mọi người, hôm nay mình sẽ trở lại với một vấn đề quen thuộc. Đó là ẩn keyboard, xử lý tuy rằng đơn giản, nhưng để làm &amp;ldquo;mượt&amp;rdquo; thì cũng không dễ tẹo nào. Mình sẽ đi từng bước một, từ cách bình dân nhất, rồi đến những xử lý refactor.
 Cách bình dân Cách chúng ta thường thấy nhất là:
-class ViewController: UIViewController { @IBOutlet weak var txtField: UITextField!</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  class ViewController: UIViewController { @IBOutlet weak var txtField: UITextField!</description>
     </item>
     
     <item>
@@ -102,7 +107,7 @@ Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection vi
       
       <guid>https://gg4acrossover.github.io/hugosite/post/new-tip-03-06-19/</guid>
       <description>Một số phương thức hỗ trợ lập trình, note lại cho bản thân.
-Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }  Storyboard protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&amp;gt; Self { let controller = storyboard().instantiateInitialViewController() return controller! as! Self } static func storyboard(fileName: String? = nil) -&amp;gt; UIStoryboard { let storyboard = UIStoryboard(name: fileName ?</description>
+Autolayout 1 2 3 4 5 6 7 8 9 10 11 12  extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }   Storyboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&amp;gt; Self { let controller = storyboard().</description>
     </item>
     
     <item>
@@ -113,7 +118,7 @@ Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translates
       <guid>https://gg4acrossover.github.io/hugosite/post/mot-vai-tip-thang-5-2019/</guid>
       <description>CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
 Bước đầu implement phương thức gắn css style vào string
-extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&amp;gt; String in return &amp;quot;\(key): \(value)&amp;quot; }.joined(separator: &amp;quot;;&amp;quot;) try! self.init( data: Data(&amp;quot;&amp;lt;p style=\&amp;quot;\(style)\&amp;quot;&amp;gt;\(text)&amp;lt;/p&amp;gt;&amp;quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, .</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&amp;gt; String in return &amp;#34;\(key): \(value)&amp;#34; }.</description>
     </item>
     
     <item>
@@ -122,8 +127,8 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
       <pubDate>Mon, 20 May 2019 02:21:43 +0700</pubDate>
       
       <guid>https://gg4acrossover.github.io/hugosite/post/on-tap-ios/</guid>
-      <description>Một số câu hỏi ôn tập iOS Begin Câu 1 struct Question { var level: Int = 1 } var question1 = Question() var question2 = question1 question2.level = 2  Giá trị của question1.level sẽ như nào? Nếu Question là class thì có gì khác không? Tại sao?
-Câu 2 var view1 = UIView() view1.alpha = 0.5 let view2 = UIView() view2.alpha = 0.5 // compile error?  Dòng code view2.</description>
+      <description>Một số câu hỏi ôn tập iOS Begin Câu 1 1 2 3 4 5 6 7  struct Question { var level: Int = 1 } var question1 = Question() var question2 = question1 question2.level = 2   Giá trị của question1.level sẽ như nào? Nếu Question là class thì có gì khác không? Tại sao?
+Câu 2 1 2 3 4 5  var view1 = UIView() view1.</description>
     </item>
     
     <item>
@@ -133,7 +138,7 @@ Câu 2 var view1 = UIView() view1.alpha = 0.5 let view2 = UIView() view2.alpha =
       
       <guid>https://gg4acrossover.github.io/hugosite/post/codable-remake-part-1/</guid>
       <description>Dạo này mình hơi bận nên bỏ bê blog quá. Hôm nay quyết định chăm chút trở lại bằng một series về Codable, coi như làm nóng bản thân :D. Đã có một bài mình đề cập đến vấn đề này. Tuy nhiên bài viết đó chỉ ở mức giới thiệu, lần này mình sẽ tăng độ khó cho game thêm chút nữa.
-Codable let json = &amp;quot;&amp;quot;&amp;quot; { &amp;quot;userName&amp;quot;: &amp;quot;crossover&amp;quot;, &amp;quot;position&amp;quot;: &amp;quot;SG&amp;quot;, &amp;quot;id&amp;quot;: 234 } &amp;quot;&amp;quot;&amp;quot;.</description>
+Codable 1 2 3 4 5 6 7 8 9 10 11 12 13  let json = &amp;#34;&amp;#34;&amp;#34; { &amp;#34;userName&amp;#34;: &amp;#34;crossover&amp;#34;, &amp;#34;position&amp;#34;: &amp;#34;SG&amp;#34;, &amp;#34;id&amp;#34;: 234 } &amp;#34;&amp;#34;&amp;#34;.</description>
     </item>
     
     <item>
@@ -143,8 +148,7 @@ Codable let json = &amp;quot;&amp;quot;&amp;quot; { &amp;quot;userName&amp;quot;
       
       <guid>https://gg4acrossover.github.io/hugosite/post/lam-viec-voi-response/</guid>
       <description>Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
-struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
-Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.</description>
+1 2 3 4 5  struct Response { let timestamp: String let id: Int let payload: Any }   timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.</description>
     </item>
     
     <item>
@@ -166,7 +170,7 @@ Dictionary Đây là phương pháp mình sử dụng từ lâu.</description>
       <guid>https://gg4acrossover.github.io/hugosite/post/make-swift-great-again/</guid>
       <description>Làm swift toẹt vời trở lại Dạo này thời tiết Hà Nội trở lạnh, post một bài cho nóng người :D. Lần này mình sẽ trình bày về một số tip để làm code trông swifty hơn.
 defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng của defer là nó sẽ chạy sau khi hàm return.
- var x = 1 func doDefer(_ value: inout Int) -&amp;gt; Int { // effect after return defer { value += 1 } value += 1 return value } print(doDefer(&amp;amp;x)) // 2 print(x) // 3  Với tác dụng của hàm defer ta có thể tận dụng để giải phóng bộ nhớ, close file hay bất cứ tác vụ nào đòi hỏi 2 bước ràng buộc lúc bắt đầu và kết thúc.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  var x = 1 func doDefer(_ value: inout Int) -&amp;gt; Int { // effect after return defer { value += 1 } value += 1 return value } print(doDefer(&amp;amp;x)) // 2 print(x) // 3   Với tác dụng của hàm defer ta có thể tận dụng để giải phóng bộ nhớ, close file hay bất cứ tác vụ nào đòi hỏi 2 bước ràng buộc lúc bắt đầu và kết thúc.</description>
     </item>
     
     <item>
@@ -176,8 +180,7 @@ defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng 
       
       <guid>https://gg4acrossover.github.io/hugosite/post/config-project/</guid>
       <description>Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
-#ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif  hoặc kiểu comment như này
-// Product // static NSString* kBaseURL .</description>
+1 2 3 4 5  #ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif   hoặc kiểu comment như này</description>
     </item>
     
     <item>
@@ -247,7 +250,7 @@ Bình thường mình không dùng autoclosure vì thấy nó cũng không có g
       <guid>https://gg4acrossover.github.io/hugosite/post/tong-hop-mot-so-tip/</guid>
       <description>Tổng hợp một số tip Swift mà mình hay dùng
 Measurement Nếu bạn muốn qui đổi đơn vị một cách nhanh chóng mà không phải tự xây dựng hệ thống chuyển đổi riêng thì measurement là lựa chọn hợp lý.
-typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.value // 120.0 s Đặc biệt nhất, bạn có thể tự cộng, trừ 2 measurement cùng chung một loại.</description>
+1 2 3 4 5 6  typealias Duration = Measurement&amp;lt;UnitDuration&amp;gt; let s = Duration(value: 60.0, unit: .seconds) let m = Duration(value: 1.0, unit: .minutes) let twoMinutes = s + m twoMinutes.</description>
     </item>
     
     <item>
@@ -306,7 +309,7 @@ Ta có một struct Bank để gửi tiền</description>
       <guid>https://gg4acrossover.github.io/hugosite/post/enum-swift/</guid>
       <description>Giới thiệu Có nhiều cách để viết Enum hơn là làm bánh hay làm tình. Ở bài viết này mình sẽ trình bày một hướng đi, hi vọng mọi người sẽ like :D
 Kiểu phổ thông Chắc hẳn chúng ta thấy kiểu viết enum này rất quen thuộc, đặc biệt là đối với những ai dùng alamofire
-enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T? { switch self { case .</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  enum Result&amp;lt;T&amp;gt; { case success(T) case failure(Error) public var value: T?</description>
     </item>
     
     <item>
@@ -399,7 +402,7 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
       <guid>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</guid>
       <description>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄
 Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:
-NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18}; Thay vì viết:</description>
+1 2  NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18};   Thay vì viết:</description>
     </item>
     
     <item>
@@ -409,7 +412,7 @@ NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#
       
       <guid>https://gg4acrossover.github.io/hugosite/post/uu-tien-toan-tu/</guid>
       <description>Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)
-mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b != 0) a &amp;lt;&amp;lt; 4 + b (a &amp;lt;&amp;lt; 4) + b a &amp;lt;&amp;lt; (4 + b)  !</description>
+1 2 3 4 5  mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b !</description>
     </item>
     
     <item>
@@ -419,7 +422,7 @@ mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) in
       
       <guid>https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/</guid>
       <description>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
-Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; + name + &amp;quot;, &amp;quot; + anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
+Tạo function 1 param 1 2 3 4 5 6  func sayHello(name: String) -&amp;gt; String { return &amp;#34;Hello &amp;#34; + name + &amp;#34;!&amp;#34; } print( sayHello(&amp;#34;Peter&amp;#34;)) // Hello Perter!   Func có nhiều hơn 1 param 1 2 3 4 5 6  func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;#34;Hello &amp;#34; + name + &amp;#34;, &amp;#34; + anotherName } print( sayHelloAgain(&amp;#34;Peter&amp;#34;, anotherName: &amp;#34;Tom&amp;#34;)) // Hello Peter, Tom   ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.</description>
     </item>
     
     <item>
@@ -432,7 +435,7 @@ Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &am
  http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
  Sử dụng auto Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
 VD:
-auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.</description>
+1 2 3  auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();   Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.</description>
     </item>
     
     <item>

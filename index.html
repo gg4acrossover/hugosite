@@ -16,22 +16,19 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Tìm đơn giản trong phức tạp." />
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Tìm đơn giản trong phức tạp." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/" />
-<link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
+  <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
   <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="feed" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,25 +37,17 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="VietHQ - Tìm đơn giản trong phức tạp" />
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2020-05-11T02:09:09&#43;07:00"/>
-
+<meta property="og:updated_time" content="2021-06-22T02:06:08+07:00" />
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VietHQ - Tìm đơn giản trong phức tạp"/>
 <meta name="twitter:description" content="Tìm đơn giản trong phức tạp."/>
@@ -98,12 +87,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -120,27 +118,43 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-  <section id="posts" class="posts">
-    
-    
-    
-      <article class="post">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/di-ioc-hay-dip/">Di, IoC hay DIP</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-06-22 </span>
+      <div class="post-category">
+          <a href="/hugosite/categories/oop/"> oop </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Lý thuyết Hướng đối tượng có 5 nguyên tắc cơ bản, viết tắt là SOLID. Trong đấy D là keyword quan trọng nhất, hay được hỏi khi interview. Tuy nhiên khá nhiều bạn nhầm đây là từ viết tắt của Dependency Injection (DI). Tên gọi chính xác của nó là Dependency inversion principle (DIP).
+Mục đích của DIP là giảm thiểu sự phụ thuộc lẫn nhau giữa các đối tượng (tight coupling), đảm bảo tính linh động, dễ dàng thay thế.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/di-ioc-hay-dip/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/tieng-viet-co-dau/">Tiếng Việt có dấu</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-05-11 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
     </div>
   </header>
   
@@ -151,23 +165,19 @@ Lâu lắm mình mới có hứng thò mặt ra ngoài giang hồ :D. Lý do th�
 Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mình đặc biệt chú ý vì yêu cầu nghiệp vụ của nó khá là thú vị. Ô text field không cho nhập tiếng Việt có dấu, ngay cả khi mình cố tình copy paste vào nó cũng tách các kí tự có dấu ra, vd: â thành aa, ơ thành ow
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/tieng-viet-co-dau/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/tieng-viet-co-dau/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/">Một số tip cho ngày cuối năm</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-01-16 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/share/"> Share </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/share/"> Share </a>
+          </div>
     </div>
   </header>
   
@@ -176,27 +186,22 @@ Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mìn
       Lâu rồi không viết các tip nho nhỏ, hôm nay tranh thủ lúc tâm tư thư thái, viết một bài.
 Git Chẳng mấy khi viết về các lệnh git.
  Check remote đến responsitory nào   git remote -v
-  Add thì đơn giản hơn   git remote add origin 
-  Xóa thì sao, trước hết cần check xem đang remote đến đâu mới biết mà xóa   git remote rm origin
+  Add thì đơn giản hơn   git remote add origin   Xóa thì sao, trước hết cần check xem đang remote đến đâu mới biết mà xóa   git remote rm origin
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/ap-dung-clean-architecture/">Áp dụng clean architecture</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-01-09 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/architecture/"> Architecture </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/architecture/"> Architecture </a>
+          </div>
     </div>
   </header>
   
@@ -205,23 +210,19 @@ Git Chẳng mấy khi viết về các lệnh git.
       Áp dụng Clean Architecture trong lập trình mobile Ngoại truyện - Tại sao bạn làm theo mô hình này - Vì uncle Bob nói zậy  Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&hellip;gói xôi :D.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/ap-dung-clean-architecture/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/ap-dung-clean-architecture/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/decorator-va-thuc-tien-ap-dung/">Decorator và thực tiễn áp dụng</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-10-21 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
     </div>
   </header>
   
@@ -230,49 +231,20 @@ Git Chẳng mấy khi viết về các lệnh git.
       Chào mọi người, hôm nay mình sẽ giới thiệu về một pattern khá phổ biến - decorator . Nói một cách vắn tắt, đây là pattern thuộc nhóm cấu trúc và sử dụng composition để tạo ra đối tượng ta mong muốn một cách linh hoạt. Nghe có vẻ hơi&hellip;lý thuyết, nhưng mình sẽ đi ngay vào phần tình huống và cách thức giải quyết dựa vào decorator để các bạn dễ dàng hình dung hơn.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/decorator-va-thuc-tien-ap-dung/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/decorator-va-thuc-tien-ap-dung/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/get-urls-from-string/">Lấy url từ string</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-07-11 </span>
-      <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Từ một lời thắc mắc Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko? Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm URL.init
-var str = &quot;goto https://www.google.com/&quot; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]  Kết quả ra cả &ldquo;goto&rdquo;, có gì đó sai sai? Hóa ra thằng URL.init vốn dễ dãi. Nó nhận cả đường dẫn, tên thư mục nó lấy, url nó lấy, tên folder nó lấy, blah blah.
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/get-urls-from-string/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-  </section>
+    </section>
   
   <nav class="pagination">
     
-    
-      <a class="next" href="/hugosite/page/2/">
+    <a class="next" href="/hugosite/page/2/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
   </nav>
-
         </div>
         
 
@@ -302,28 +274,24 @@ var str = &quot;goto https://www.google.com/&quot; let urls = str.components(sep
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -332,13 +300,5 @@ var str = &quot;goto https://www.google.com/&quot; let urls = str.components(sep
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

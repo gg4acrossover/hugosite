@@ -16,23 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
-#ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif  hoặc kiểu comment như này
-// Product // static NSString* kBaseURL ." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
+1 2 3 4 5  #ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif   hoặc kiểu comment như này" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/config-project/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -41,33 +36,23 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Config Project" />
 <meta property="og:description" content="Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
-#ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif  hoặc kiểu comment như này
-// Product // static NSString* kBaseURL ." />
+1 2 3 4 5  #ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif   hoặc kiểu comment như này" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/config-project/" /><meta property="article:published_time" content="2018-11-30T14:33:34&#43;07:00"/>
-<meta property="article:modified_time" content="2018-11-30T14:33:34&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/config-project/" />
+<meta property="article:published_time" content="2018-11-30T14:33:34+07:00" />
+<meta property="article:modified_time" content="2018-11-30T14:33:34+07:00" />
 <meta itemprop="name" content="Config Project">
 <meta itemprop="description" content="Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
-#ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif  hoặc kiểu comment như này
-// Product // static NSString* kBaseURL .">
-
-
-<meta itemprop="datePublished" content="2018-11-30T14:33:34&#43;07:00" />
-<meta itemprop="dateModified" content="2018-11-30T14:33:34&#43;07:00" />
-<meta itemprop="wordCount" content="567">
+1 2 3 4 5  #ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif   hoặc kiểu comment như này">
+<meta itemprop="datePublished" content="2018-11-30T14:33:34+07:00" />
+<meta itemprop="dateModified" content="2018-11-30T14:33:34+07:00" />
+<meta itemprop="wordCount" content="577">
 
 
 
@@ -75,8 +60,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Config Project"/>
 <meta name="twitter:description" content="Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách #define như này
-#ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif  hoặc kiểu comment như này
-// Product // static NSString* kBaseURL ."/>
+1 2 3 4 5  #ifdef DEBUG #define BASE_URL ... #else #define BASE_URL ... #endif   hoặc kiểu comment như này"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -113,12 +97,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -135,6 +128,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -149,146 +143,120 @@
         <span class="post-time"> 2018-11-30 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#sử-dụng-nhiều-schemes">Sử dụng nhiều Schemes</a>
-<ul>
-<li><a href="#b1">B1:</a></li>
-<li><a href="#b2">B2:</a></li>
-<li><a href="#b3">B3:</a></li>
-<li><a href="#b4">B4:</a></li>
-<li><a href="#b5">B5:</a></li>
-</ul></li>
-<li><a href="#sử-dụng-xcconfig">Sử dụng xcconfig:</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#sử-dụng-nhiều-schemes">Sử dụng nhiều Schemes</a>
+      <ul>
+        <li><a href="#b1">B1:</a></li>
+        <li><a href="#b2">B2:</a></li>
+        <li><a href="#b3">B3:</a></li>
+        <li><a href="#b4">B4:</a></li>
+        <li><a href="#b5">B5:</a></li>
+      </ul>
+    </li>
+    <li><a href="#sử-dụng-xcconfig">Sử dụng xcconfig:</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<p>Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách <strong>#define</strong> như này</p>
-
-<pre><code>#ifdef DEBUG
+      <p>Hồi mới tiếp xúc với lập trình IOS, mỗi khi build sản phẩm để công ty test, mình lại phải điều chỉnh một số configuration ngay chính trong code. Lúc config thế này, lúc config thế kia, tùy chỉnh cho nó hợp với môi trường theo cách <strong>#define</strong> như này</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#ifdef DEBUG
 #define BASE_URL ...
 #else
 #define BASE_URL ...
 #endif
-</code></pre>
-
-<p>hoặc kiểu comment như này</p>
-
-<pre><code>// Product
+</code></pre></td></tr></table>
+</div>
+</div><p>hoặc kiểu comment như này</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Product
 // static NSString* kBaseURL ...
 
 // Test
 static NSString* kBaseURL ...
-</code></pre>
-
-<p>Tuy nhiên những cách đó có rất nhiều hạn chế:</p>
-
+</code></pre></td></tr></table>
+</div>
+</div><p>Tuy nhiên những cách đó có rất nhiều hạn chế:</p>
 <ul>
-<li><p>Mỗi lần build mình phải đổi flag hay xóa comment</p></li>
-
-<li><p>Bản production bị ghi đè bởi bản test</p></li>
+<li>
+<p>Mỗi lần build mình phải đổi flag hay xóa comment</p>
+</li>
+<li>
+<p>Bản production bị ghi đè bởi bản test</p>
+</li>
 </ul>
-
 <p>Những tùy chỉnh như vậy dễ tạo ra sai sót. Về sau, mình tìm ra một cách để cải thiện, vừa không ghi đè bản test lên production, app cho test và app cho production có tên và icon khác nhau, thuận tiện cho việc phân biệt :d.</p>
-
 <h2 id="sử-dụng-nhiều-schemes">Sử dụng nhiều Schemes</h2>
-
 <h3 id="b1">B1:</h3>
-
 <p>Ta chọn manage scheme như hình sau</p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-1.jpg" alt="img-1" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-1.jpg" alt="img-1"></p>
 <p>Duplicate scheme có sẵn và đổi tên như trong hình, bạn có thể tùy biến thêm scheme phụ thuộc vào bao nhiêu môi trường bạn muốn tạo. Ở đây mình chỉ có <em>Development</em> và <em>Production</em></p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-2.jpg" alt="img-2" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-2.jpg" alt="img-2"></p>
 <p>Lưu ý: điều chỉnh lại build configuration cho hợp với scheme đang sử dụng.</p>
-
 <p>VD: <em>Development scheme</em> đi với <em>Debug build configuration</em>, hoặc <em>Production scheme</em> đi với <em>Release build configuration</em></p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-3.jpg" alt="img-3" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-3.jpg" alt="img-3"></p>
 <h3 id="b2">B2:</h3>
-
 <p>Vào <strong>Build Settings</strong> của <strong>Targets</strong>, điều chỉnh tên phần mềm theo phiên bản build.</p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-4.jpg" alt="img-4" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-4.jpg" alt="img-4"></p>
 <h3 id="b3">B3:</h3>
-
 <p>Vẫn ở <strong>Build Settings</strong>, thay đổi <strong>product bundle identifier</strong> theo ý bạn muốn.</p>
-
 <p>Lưu ý: khi 1 phần mềm có nhiều <em>bundle identifier</em> cũng đồng nghĩa với việc bạn phải tạo từng ấy provisioning. Vậy nên nếu mục đích của bạn không cần tạo nhiều môi trường khác nhau thì có thể bỏ qua bước này.</p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-5.jpg" alt="img-5" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-5.jpg" alt="img-5"></p>
 <h3 id="b4">B4:</h3>
-
 <p>Bước này khá thú vị, ta thay đổi ảnh AppIcon cho từng phiên bản để dễ phân biệt.</p>
-
 <p>Chọn <strong>Asset Category App Icon Set Name</strong> thay đổi như hình sau.</p>
-
 <p>Bản Beta và dev sử dụng chung <em>AppIcon-Test</em>, đây là tên icon do mình tự custom, hãy nhớ tên của nó để mình dùng ngay sau đây.</p>
-
 <p>Bản Release sử dụng AppIcon, đây là giá trị default của icon trong <strong>Asset.xcassets</strong></p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-6.jpg" alt="img-6" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-6.jpg" alt="img-6"></p>
 <h3 id="b5">B5:</h3>
-
 <p>Ta vào <strong>Asset.xcassets</strong> để thêm icon cho app, đồng thời add thêm 1 loại icon khác dành riêng cho bản dev.
 Ta lựa chọn <strong>New IOS App Icon</strong>, lúc này một AppIcon mới được tạo ra, ta đặt lại tên theo như bước 4 (<em>AppIcon</em> cho <em>production</em> và <em>AppIcon-Test cho bản dev</em>)</p>
-
-<p><img src="/hugosite/images/note/xcconfig/xcconfig-7.jpg" alt="img-7" /></p>
-
+<p><img src="/hugosite/images/note/xcconfig/xcconfig-7.jpg" alt="img-7"></p>
 <p>Qua 5 bước kể trên ta đã có thể tạo ra các phiên bản khác nhau cho cùng 1 app: 1 bản cho dev, 1 bản cho production, mỗi phiên bản 1 tên và icon riêng biệt.</p>
-
 <h2 id="sử-dụng-xcconfig">Sử dụng xcconfig:</h2>
-
 <p>Cách thứ 2 ta có thể sử dụng xcconfig. Ưu điểm của phương pháp này là config được ghi vào 1 file, có thể comment để ghi chú, ngoài ra cũng có thể tận dụng lại :).</p>
-
 <p>Bài viết <a href="https://www.appcoda.com/xcconfig-guide/">ở đây</a> khá chi tiết , mọi người có thể tham khảo.</p>
-
 <p>Tuy nhiên có một lưu ý, khi áp dụng <strong>xcconfig</strong> vào dự án đang sử dụng cocoapod, ta phải làm thêm 1 bước: xóa các file và thư mục sau</p>
-
 <ul>
-<li><p>.xcworkspace</p></li>
-
-<li><p>Pods/</p></li>
-
-<li><p>Podlock</p></li>
+<li>
+<p>.xcworkspace</p>
+</li>
+<li>
+<p>Pods/</p>
+</li>
+<li>
+<p>Podlock</p>
+</li>
 </ul>
-
 <p>Chỉ giữ lại <em>podile</em>, xong thao tác trên, ta chạy lại <em>pod install</em></p>
-
 <p>Have fun!</p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -296,32 +264,25 @@ Ta lựa chọn <strong>New IOS App Icon</strong>, lúc này một AppIcon mới
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-11-30</span>
+    <span class="item-content">
+        2018-11-30
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/make-swift-great-again/">
+        <a class="prev" href="/hugosite/post/make-swift-great-again/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Make swift great again</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/tao-view-tu-xib/">
+        <a class="next" href="/hugosite/post/tao-view-tu-xib/">
             <span class="next-text nav-default">Tạo view từ xib</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -330,8 +291,7 @@ Ta lựa chọn <strong>New IOS App Icon</strong>, lúc này một AppIcon mới
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -345,6 +305,8 @@ Ta lựa chọn <strong>New IOS App Icon</strong>, lúc này một AppIcon mới
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -374,28 +336,24 @@ Ta lựa chọn <strong>New IOS App Icon</strong>, lúc này một AppIcon mới
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -404,13 +362,5 @@ Ta lựa chọn <strong>New IOS App Icon</strong>, lúc này một AppIcon mới
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

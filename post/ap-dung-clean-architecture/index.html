@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Áp dụng Clean Architecture trong lập trình mobile Ngoại truyện - Tại sao bạn làm theo mô hình này - Vì uncle Bob nói zậy  Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&amp;hellip;gói xôi :D." />
-<meta name="keywords" content="Architecture" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Áp dụng Clean Architecture trong lập trình mobile Ngoại truyện - Tại sao bạn làm theo mô hình này - Vì uncle Bob nói zậy  Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&amp;hellip;gói xôi :D." /><meta name="keywords" content="Architecture" />
 
 
 
 
 
 
-
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -39,28 +35,20 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Áp dụng clean architecture" />
 <meta property="og:description" content="Áp dụng Clean Architecture trong lập trình mobile Ngoại truyện - Tại sao bạn làm theo mô hình này - Vì uncle Bob nói zậy  Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&hellip;gói xôi :D." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/" /><meta property="article:published_time" content="2020-01-09T11:41:03&#43;07:00"/>
-<meta property="article:modified_time" content="2020-01-09T11:41:03&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/ap-dung-clean-architecture/" />
+<meta property="article:published_time" content="2020-01-09T11:41:03+07:00" />
+<meta property="article:modified_time" content="2020-01-09T11:41:03+07:00" />
 <meta itemprop="name" content="Áp dụng clean architecture">
 <meta itemprop="description" content="Áp dụng Clean Architecture trong lập trình mobile Ngoại truyện - Tại sao bạn làm theo mô hình này - Vì uncle Bob nói zậy  Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&hellip;gói xôi :D.">
-
-
-<meta itemprop="datePublished" content="2020-01-09T11:41:03&#43;07:00" />
-<meta itemprop="dateModified" content="2020-01-09T11:41:03&#43;07:00" />
+<meta itemprop="datePublished" content="2020-01-09T11:41:03+07:00" />
+<meta itemprop="dateModified" content="2020-01-09T11:41:03+07:00" />
 <meta itemprop="wordCount" content="1093">
 
 
@@ -105,12 +93,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -127,6 +124,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -140,152 +138,98 @@
       <div class="post-meta">
         <span class="post-time"> 2020-01-09 </span>
         <div class="post-category">
-            
-              <a href="/hugosite/categories/architecture/"> Architecture </a>
-            
-          </div>
-        
+            <a href="/hugosite/categories/architecture/"> Architecture </a>
+            </div>
         
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#áp-dụng-clean-architecture-trong-lập-trình-mobile">Áp dụng Clean Architecture trong lập trình mobile</a>
-<ul>
-<li><a href="#ngoại-truyện">Ngoại truyện</a></li>
-<li><a href="#mô-tả-ban-đầu">Mô tả ban đầu</a></li>
-<li><a href="#common">Common:</a></li>
-<li><a href="#domain">Domain:</a></li>
-<li><a href="#platform">Platform:</a></li>
-<li><a href="#app">App:</a></li>
-<li><a href="#tổng-kết">Tổng kết:</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ngoại-truyện">Ngoại truyện</a></li>
+    <li><a href="#mô-tả-ban-đầu">Mô tả ban đầu</a></li>
+    <li><a href="#common">Common:</a></li>
+    <li><a href="#domain">Domain:</a></li>
+    <li><a href="#platform">Platform:</a></li>
+    <li><a href="#app">App:</a></li>
+    <li><a href="#tổng-kết">Tổng kết:</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h1 id="áp-dụng-clean-architecture-trong-lập-trình-mobile">Áp dụng Clean Architecture trong lập trình mobile</h1>
-
+      <h1 id="áp-dụng-clean-architecture-trong-lập-trình-mobile">Áp dụng Clean Architecture trong lập trình mobile</h1>
 <h2 id="ngoại-truyện">Ngoại truyện</h2>
-
 <pre><code>- Tại sao bạn làm theo mô hình này
 - Vì uncle Bob nói zậy
 </code></pre>
-
 <p>Đã từ rất lâu rồi, giới lập trình phân chia làm 2 thái cực. Một bên theo tư tưởng của bác Bob, một bên theo Martin Fowler. Tôi đã tìm thấy khá nhiều thứ hay ho trong các giáo án của hai bác ấy thông qua những tờ giấy&hellip;gói xôi :D. Bác Bob là tác giả của một series, bác ưa sạch sẽ nên cuốn nào cũng mở đầu bằng chữ &ldquo;sạch&rdquo; (VD: Clean coder), đồng thời bác cũng là fan cuồng theo trường phái TDD. Martin Fowler không kém cạnh, tác giả cuốn refactor kinh điển, sách của bác ấy bán rất chạy và bác theo trường phái tất cả bắt nguồn từ architecture.</p>
-
 <p>Hai ông này có thể ví như hai tượng đài, lời nào thốt ra thì developer note lại câu đấy. Tuy nhiên, hai ông cũng rất thích cà khịa lẫn nhau. Một ông bảo TDD là vớ vẩn, phá vỡ architecture, tất cả đều phải bắt nguồn từ cái tổng quan rồi mới đến cái tiểu tiết bên trong. Một ông khăng khăng di từ cái nhỏ mới xây dựng được cái to. Thậm chí agile cũng được hai ông lôi ra đá đểu nhau.</p>
-
 <p>Về TDD <a href="https://twitter.com/martinfowler/status/460182896817733632">https://twitter.com/martinfowler/status/460182896817733632</a></p>
-
 <p>Về Agile <a href="https://twitter.com/unclebobmartin/status/1034532580798787584?lang=en">https://twitter.com/unclebobmartin/status/1034532580798787584?lang=en</a></p>
-
 <p>Hai ông cà khịa nhau là một câu chuyện vui để hóng, cũng có thể hai ông chỉ tung hứng cho nhau thôi. Còn với chúng ta những lập trình viên, học lóm được cái hay cái đẹp từ những ông ấy là ok rồi.</p>
-
 <h2 id="mô-tả-ban-đầu">Mô tả ban đầu</h2>
-
 <p>Bác Bob nói về mô hình <em>Clean architecture</em> ở mức khá trừu tượng, thế nên mỗi người tư duy theo một cách khác nhau. Ngay cả đối với mô hình VIPER lấy cảm hứng từ clean <em>architecture</em> áp dụng vào trong lập trình mobile, cũng có nhiều cách diễn tả về nó. Thôi thì giờ mình cũng nói theo cách của mình vậy :D.</p>
-
 <p>Đầu tiên hãy nói về cách phân tầng, chính là cái vòng tròn nhiều lớp này</p>
-
 <p><a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html</a></p>
-
 <p>Nguyên tắc quan trọng nhất là tầng bên ngoài biết về tầng bên trong, nhưng ngược lại thì không được, để đảm bảo giảm thiểu sự phụ thuộc lẫn nhau.</p>
-
 <p>Như đã nói ở trên, VIPER là mô hình lấy cảm hứng từ <em>Clean architecture</em> và nó cũng là mô hình đầu tiên có gắn <em>Router</em> vào trong. Bạn cũng có thể tạo <em>Router</em> trong mô hình khác như MVC, MVP, tuy nhiên từ <em>Router</em> không được nhắc đến ngay ở bản thân mô hình đó.</p>
-
 <p>Để áp dụng <em>Clean architecture</em> vào trong lập trình mobile, mình sẽ phân chia tách biệt phần mềm thành những module con bên trong, theo từng lớp từ trong ra ngoài như sau:</p>
-
 <h2 id="common">Common:</h2>
-
 <p>Để gắn log, validator impl, operation overload,&hellip;
 Nói chung là tất cả những cái có thể dùng chung ở các tầng tiếp theo và không liên quan đến UI.</p>
-
 <h2 id="domain">Domain:</h2>
-
 <p>Tầng domain chứa <em>Entity</em>, cái này có thể hiểu đơn giản là 1 model chứa một số logic nhỏ bên trong. Giả sử bạn call 1 api và sử dụng response để hiển thị dữ liệu lên app. Khổ một nỗi api này public cho nhiều tình huống sử dụng khác nhau nên đối với app của bạn, dữ liệu response trả về có rất nhiều thông tin thừa, không cần thiết. Bạn phải lựa những cái mình dùng rồi gói gém nó vào 1 model trong app của bạn. Model đó chính là <em>Entity</em>.</p>
-
 <p><em>Entity</em> có thể chứa một số logic con, tỉ như format date, gộp firstname, lastname thành username,&hellip;blah blah. Diễn đạt theo một cách ngắn gọn nhất, màn hình bạn cần thông tin gì để hiện thị lên thì đấy chính là <em>Entity</em>.</p>
-
 <p>Để lấy được <em>Entity</em>, ta cần một <em>Entity Gateway</em>, có người sẽ gọi là <em>Provider</em>. Áp vào trong phần mềm, <em>Entity Gateway</em> có thể là Network interface phục vụ lấy dữ liệu. Interface này sẽ được implement ở tầng tiếp theo</p>
-
 <p>Domain sẽ có: <em>Entity</em> và <em>Entity Gateway(interface)</em></p>
-
 <h2 id="platform">Platform:</h2>
-
 <p>Tầng này sẽ chứa các đối tượng implement <em>EntityGateway</em> như đã nói ở phía trên. Đúng như mô hình clean architecture, tầng dưới sẽ chìa ra interface cho tầng trên implement để giao tiếp với bên dưới.</p>
-
 <p>Trong tầng này chứa <em>Usercase</em> interface, có chỗ sẽ gọi là <em>Interaction</em>. <em>Usercase</em> sẽ định nghĩa logic nghiệp vụ để tầng tiếp theo bên ngoài thực thi, bản thân nó sẽ chứa một <em>EntityGateway implement</em> để lấy ra entity cần thiết, đưa qua cách kênh phân phối để hiển thị lên app.</p>
-
 <p>Để chìa output ra bên ngoài thì <em>Usercase</em> sử dụng interface <em>Output</em>, tạm gọi là <em>UsercaseOuput</em>. Mục đích để cho usercase có thể giao tiếp với bên ngoài. <em>Presenter</em> của chúng ta sẽ implement cái <em>UsercaseOuput</em> và sử dụng ở tầng bên ngoài cùng, mình gọi là <em>App</em></p>
-
 <p>Như vậy tầng Platform sẽ có: Usercase interface, Gateway/Provider/Network/Responsitory implement</p>
-
 <h2 id="app">App:</h2>
-
 <p>Tầng này chứa các thứ liên quan đến UI như View, các common của view, layout cho view, presenter và các wrapper cho thư viện bên thứ 3. Ngoài ra quan trọng không kém nó sẽ implement <em>UsercaseOuput</em> bằng cách tạo ra đối tượng <em>Presenter</em>.</p>
-
 <p><em>Presenter</em> sẽ là cầu nối giữa phần còn lại của thế giới với những logic nghiệp vụ ở tầng dưới. Đồng thời nó sẽ chứa cả router/coordinator để điều hướng view.</p>
-
 <p>Tầng App: &hellip;phần còn lại của thế giới.</p>
-
 <p>Đây là cách phân tầng mà mình đang sử dụng. Một app sẽ được chia module theo các tầng như trên để dễ dàng tái sử dụng các thành phần của app.</p>
-
 <h2 id="tổng-kết">Tổng kết:</h2>
-
 <p>Túm váy lại, gói gọn nó vào trong 1 vài từ:</p>
-
 <ul>
 <li>Tầng Application:
-
 <ul>
 <li>Presenter implement</li>
 <li>Router interface, Router implement</li>
 <li>ViewOutPut interface</li>
 <li>ViewOutPut implement / UI</li>
-</ul></li>
+</ul>
+</li>
 <li>Tầng Platform:
-
 <ul>
 <li>Gateway / Network/Provider implement</li>
 <li>Usercase interface</li>
 <li>Output / Presenter interface</li>
-</ul></li>
+</ul>
+</li>
 <li>Tầng Domain:
-
 <ul>
 <li>Entity</li>
 <li>Provider / Gateway interface</li>
-</ul></li>
+</ul>
+</li>
 <li>Tầng Common: Chứa những cái dùng chung không liên quan đến UI</li>
 </ul>
-
 <p>Áp dụng nhiều tầng nhiều lớp thì việc triển khai ban đầu sẽ phức tạp nhưng dễ dàng cho việc maintain và tái sử dụng code, cả cho test nữa. Thế nên nó nên được sử dụng cho môi trường doanh nghiệp, nơi có business logic phức tạp hoặc bạn tự làm pet project để học :D. Ngoài ra thì cứ áp dụng phương châm</p>
-
 <blockquote>
 <p>Make MVC great again</p>
 </blockquote>
-
 <p>Hoặc dùng cái này <a href="https://iosarchitecture.top/">https://iosarchitecture.top/</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -293,32 +237,25 @@ Nói chung là tất cả những cái có thể dùng chung ở các tầng ti�
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2020-01-09</span>
+    <span class="item-content">
+        2020-01-09
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/architecture/">Architecture</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/">
+        <a class="prev" href="/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Một số tip cho ngày cuối năm</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/decorator-va-thuc-tien-ap-dung/">
+        <a class="next" href="/hugosite/post/decorator-va-thuc-tien-ap-dung/">
             <span class="next-text nav-default">Decorator và thực tiễn áp dụng</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -327,8 +264,7 @@ Nói chung là tất cả những cái có thể dùng chung ở các tầng ti�
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -342,6 +278,8 @@ Nói chung là tất cả những cái có thể dùng chung ở các tầng ti�
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -371,28 +309,24 @@ Nói chung là tất cả những cái có thể dùng chung ở các tầng ti�
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -401,13 +335,5 @@ Nói chung là tất cả những cái có thể dùng chung ở các tầng ti�
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

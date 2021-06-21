@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó)." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó)." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -39,29 +35,21 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Tạo APIClient với swift 3" />
 <meta property="og:description" content="1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/" /><meta property="article:published_time" content="2017-05-29T15:11:07&#43;07:00"/>
-<meta property="article:modified_time" content="2017-05-29T15:11:07&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/tao-api-client-swift-3/" />
+<meta property="article:published_time" content="2017-05-29T15:11:07+07:00" />
+<meta property="article:modified_time" content="2017-05-29T15:11:07+07:00" />
 <meta itemprop="name" content="Tạo APIClient với swift 3">
 <meta itemprop="description" content="1. Giới thiệu Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó).">
-
-
-<meta itemprop="datePublished" content="2017-05-29T15:11:07&#43;07:00" />
-<meta itemprop="dateModified" content="2017-05-29T15:11:07&#43;07:00" />
-<meta itemprop="wordCount" content="920">
+<meta itemprop="datePublished" content="2017-05-29T15:11:07+07:00" />
+<meta itemprop="dateModified" content="2017-05-29T15:11:07+07:00" />
+<meta itemprop="wordCount" content="1041">
 
 
 
@@ -105,12 +93,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -127,6 +124,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -141,219 +139,346 @@
         <span class="post-time"> 2017-05-29 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-giới-thiệu">1. Giới thiệu</a></li>
-<li><a href="#2-hướng-đi">2. Hướng đi</a></li>
-<li><a href="#3-triển-khai">3. Triển khai</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-giới-thiệu">1. Giới thiệu</a></li>
+        <li><a href="#2-hướng-đi">2. Hướng đi</a></li>
+        <li><a href="#3-triển-khai">3. Triển khai</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h3 id="1-giới-thiệu">1. Giới thiệu</h3>
-
+      <h3 id="1-giới-thiệu">1. Giới thiệu</h3>
 <p>Từ hồi mới bắt đầu làm IOS, thằng nào cũng hỏi mình có biết sử dụng AFNetworking không? Khổ nỗi lúc đó, mình mới chuyển từ làm game sang, rất ít dùng đến lib, đa số tự viết nên lơ tơ mơ không biết chúng nó nói đến cái gì. Dùng anh google tìm hiểu thì mình mới ngộ ra AFNetworking là một tool wrap lại urlsession, hỗ trợ developer thao tác nhanh gọn, đỡ mất công viết đi viết lại những đoạn code thủ tục (lib đã hỗ trợ bạn làm việc đó). Từ đó project nào mình cũng gắn AFNetworking vào.</p>
-
 <p>Tuy nhiên AFNetworking được viết bằng obj-c và không có phiên bản swift. May mắn thay, ta có một lib thay thế, phổ biến không kém trên nền swift.
 Thậm chí chúng nó còn quảng cáo qua lại cho nhau 😄</p>
-
 <blockquote>
 <p>Programming in Swift? Try Alamofire for a more conventional set of APIs.</p>
 </blockquote>
-
 <p>Tận dụng sức trẻ của ngôn ngữ mới nên Alamofire có cách viết bóng bẩy, hiện đại hơn so với đàn anh AFNetworking. Vậy nên mình cũng tạo nên 1 lớp wrap mới cho Alamofire để sử dụng chung giữa các project của mình.</p>
-
 <h3 id="2-hướng-đi">2. Hướng đi</h3>
-
 <p>Có lẽ hầu hết ai cũng wrap lại AFNetworking bằng cách viết 1 lớp <em>APIClient</em> sử dụng singleton với hàm init</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (<span style="color:#66d9ef">instancetype</span>)<span style="color:#a6e22e">initWithBaseURL:</span>(NSURL <span style="color:#f92672">*</span>)url</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="kt">instancetype</span><span class="p">)</span><span class="nf">initWithBaseURL:</span><span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ngay từ hàm init ta có thể tạo baseURL cho toàn bộ những API của mình. Cách này khá tiện dụng khi project chỉ sử dụng duy nhất một base url. Tuy nhiên project mới đây của mình có tận 3 base url. Thế nên việc sử dụng singleton với base url có vẻ không hợp lý lắm. Có lẽ chính vì thế ở Alamofire ta không thấy có hàm tương tự nữa.</p>
-
 <p>Trên đường tìm kiếm hướng đi mới, mình thấy một cách khá là hot trend: sử dụng router. Alamofire cung cấp cho ta protocol <em>URLRequestConvertible</em> phục vụ mục đích đấy</p>
-
 <p>Lấy luôn một ví dụ triển khai <em>URLRequestConvertible</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">enum</span> <span class="nl">Router</span><span class="p">:</span> <span class="n">URLRequestConvertible</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">search</span><span class="p">(</span><span class="nl">query</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="nl">page</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">enum</span> Router: URLRequestConvertible {
-    <span style="color:#66d9ef">case</span> search(query: String, page: Int)
+    <span class="k">static</span> <span class="n">let</span> <span class="n">baseURLString</span> <span class="o">=</span> <span class="s">&#34;https://example.com&#34;</span>
+    <span class="k">static</span> <span class="n">let</span> <span class="n">perPage</span> <span class="o">=</span> <span class="mi">50</span>
 
-    <span style="color:#66d9ef">static</span> let baseURLString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://example.com&#34;</span>
-    <span style="color:#66d9ef">static</span> let perPage <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+    <span class="c1">// MARK: URLRequestConvertible
+</span><span class="c1"></span>
+    <span class="n">func</span> <span class="n">asURLRequest</span><span class="p">()</span> <span class="n">throws</span> <span class="o">-&gt;</span> <span class="n">URLRequest</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="nl">result</span><span class="p">:</span> <span class="p">(</span><span class="nl">path</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="nl">parameters</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="k">switch</span> <span class="nb">self</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="n">let</span> <span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">page</span><span class="p">)</span> <span class="n">where</span> <span class="n">page</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="s">&#34;/search&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;q&#34;</span><span class="o">:</span> <span class="n">query</span><span class="p">,</span> <span class="s">&#34;offset&#34;</span><span class="o">:</span> <span class="n">Router</span><span class="p">.</span><span class="n">perPage</span> <span class="o">*</span> <span class="n">page</span><span class="p">])</span>
+            <span class="k">case</span> <span class="n">let</span> <span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span><span class="o">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="s">&#34;/search&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;q&#34;</span><span class="o">:</span> <span class="n">query</span><span class="p">])</span>
+            <span class="p">}</span>
+        <span class="p">}()</span>
 
-    <span style="color:#75715e">// MARK: URLRequestConvertible
-</span><span style="color:#75715e"></span>
-    func asURLRequest() throws <span style="color:#f92672">-&gt;</span> URLRequest {
-        let result: (path: String, parameters: Parameters) <span style="color:#f92672">=</span> {
-            <span style="color:#66d9ef">switch</span> self {
-            <span style="color:#66d9ef">case</span> let .search(query, page) where page <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
-                <span style="color:#66d9ef">return</span> (<span style="color:#e6db74">&#34;/search&#34;</span>, [<span style="color:#e6db74">&#34;q&#34;</span><span style="color:#f92672">:</span> query, <span style="color:#e6db74">&#34;offset&#34;</span><span style="color:#f92672">:</span> Router.perPage <span style="color:#f92672">*</span> page])
-            <span style="color:#66d9ef">case</span> let .search(query, _)<span style="color:#f92672">:</span>
-                <span style="color:#66d9ef">return</span> (<span style="color:#e6db74">&#34;/search&#34;</span>, [<span style="color:#e6db74">&#34;q&#34;</span><span style="color:#f92672">:</span> query])
-            }
-        }()
+        <span class="n">let</span> <span class="n">url</span> <span class="o">=</span> <span class="n">try</span> <span class="n">Router</span><span class="p">.</span><span class="n">baseURLString</span><span class="p">.</span><span class="n">asURL</span><span class="p">()</span>
+        <span class="n">let</span> <span class="n">urlRequest</span> <span class="o">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="nl">url</span><span class="p">:</span> <span class="n">url</span><span class="p">.</span><span class="n">appendingPathComponent</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">path</span><span class="p">))</span>
 
-        let url <span style="color:#f92672">=</span> try Router.baseURLString.asURL()
-        let urlRequest <span style="color:#f92672">=</span> URLRequest(url: url.appendingPathComponent(result.path))
-
-        <span style="color:#66d9ef">return</span> try URLEncoding.<span style="color:#66d9ef">default</span>.encode(urlRequest, with: result.parameters)
-    }
-}</code></pre></div>
-
+        <span class="k">return</span> <span class="n">try</span> <span class="n">URLEncoding</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">urlRequest</span><span class="p">,</span> <span class="nl">with</span><span class="p">:</span> <span class="n">result</span><span class="p">.</span><span class="n">parameters</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ở đây ta cần phải đưa ra các thông tin để tạo ra request: base url, path, param. Đây là các trường cơ bản nhất, tuy nhiên ở một popular API ta còn cần biết những thông tin khác như method (get, set, put, delete), token,&hellip;Nếu ta triển khai hết trong 1 class implement <em>URLRequestConvertible</em> thì viết khá là dài dòng so với cách tạo một BASE_URL duy nhất. Đây là điều mà mình không muốn 😂.</p>
-
 <h3 id="3-triển-khai">3. Triển khai</h3>
-
 <p>Lấy ý tưởng từ <a href="http://chris.eidhof.nl/post/typesafe-url-routes-in-swift/">chris.eidhof</a>, mình viết theo hướng tạo ra 1 router bao gồm các thông tin thiết yếu của 1 API: url, method, token (không đưa thông tin params vào trong router)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">public</span> <span class="n">protocol</span> <span class="n">ONPath</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">path</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+<span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">public protocol ONPath {
-    var path : String { get }
-}
-
-public protocol ONToken {
+<span class="n">public</span> <span class="n">protocol</span> <span class="n">ONToken</span> <span class="p">{</span>
     
-    <span style="color:#75715e">/// example: &#34;Bearer&#34;, &#34;Basic&#34;, etc
-</span><span style="color:#75715e"></span>    var tokenKind : String { get }
-    var tokenStr : String { get }
-    var isAuthorization : Bool { get }
-}
+    <span class="c1">/// example: &#34;Bearer&#34;, &#34;Basic&#34;, etc
+</span><span class="c1"></span>    <span class="n">var</span> <span class="nl">tokenKind</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+    <span class="n">var</span> <span class="nl">tokenStr</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+    <span class="n">var</span> <span class="nl">isAuthorization</span> <span class="p">:</span> <span class="n">Bool</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+<span class="p">}</span>
 
-public protocol ONMethod {
-    var method : Alamofire.HTTPMethod { get }
-}
+<span class="n">public</span> <span class="n">protocol</span> <span class="n">ONMethod</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">method</span> <span class="p">:</span> <span class="n">Alamofire</span><span class="p">.</span><span class="n">HTTPMethod</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// protocol container
-</span><span style="color:#75715e"></span>public protocol ONUrl : ONPath, ONToken, ONMethod {
-    var baseURL : String { get }
-    var url : String { get }
-}</code></pre></div>
-
+<span class="c1">// protocol container
+</span><span class="c1"></span><span class="n">public</span> <span class="n">protocol</span> <span class="nl">ONUrl</span> <span class="p">:</span> <span class="n">ONPath</span><span class="p">,</span> <span class="n">ONToken</span><span class="p">,</span> <span class="n">ONMethod</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">baseURL</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+    <span class="n">var</span> <span class="nl">url</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Khá là đơn giản. Bây giờ ta sẽ định nghĩa 1 router dựa trên protocol trên</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="c1">// MARK: - router for github
+</span><span class="c1"></span><span class="k">enum</span> <span class="nl">ONGithubURL</span> <span class="p">:</span> <span class="n">ONUrl</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">baseURL</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">BASE_URL</span>
+    <span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// MARK: - router for github
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> ONGithubURL : ONUrl {
-    var baseURL: String {
-        <span style="color:#66d9ef">return</span> BASE_URL
-    }
-
-    <span style="color:#66d9ef">case</span> getGitHubUser(account : String)
+    <span class="k">case</span> <span class="n">getGitHubUser</span><span class="p">(</span><span class="nl">account</span> <span class="p">:</span> <span class="n">String</span><span class="p">)</span>
     
-    var path: String {
-        <span style="color:#66d9ef">switch</span> self {
-        <span style="color:#66d9ef">case</span> .getGitHubUser(let acc)<span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;users/\(acc)&#34;</span>
-        }
-    }
-}
+    <span class="n">var</span> <span class="nl">path</span><span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="nb">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">getGitHubUser</span><span class="p">(</span><span class="n">let</span> <span class="n">acc</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">return</span> <span class="s">&#34;users/\(acc)&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// MARK: - method for github urls
-</span><span style="color:#75715e"></span>extension ONGithubURL : ONMethod {
-    var method: HTTPMethod {
-        <span style="color:#66d9ef">switch</span> self {
-        <span style="color:#66d9ef">case</span> .getGitHubUser(_)<span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> .get
-        }
-    }
-}
+<span class="c1">// MARK: - method for github urls
+</span><span class="c1"></span><span class="n">extension</span> <span class="nl">ONGithubURL</span> <span class="p">:</span> <span class="n">ONMethod</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">method</span><span class="p">:</span> <span class="n">HTTPMethod</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="nb">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">getGitHubUser</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">return</span> <span class="p">.</span><span class="n">get</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// MARK: - generate token for github url
-</span><span style="color:#75715e"></span>extension ONGithubURL : ONToken {
-    var isAuthorization: Bool {
-        <span style="color:#66d9ef">switch</span> self {
-        <span style="color:#66d9ef">case</span> .getGitHubUser(_)<span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> false
-        }
-    }
+<span class="c1">// MARK: - generate token for github url
+</span><span class="c1"></span><span class="n">extension</span> <span class="nl">ONGithubURL</span> <span class="p">:</span> <span class="n">ONToken</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">isAuthorization</span><span class="p">:</span> <span class="n">Bool</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="nb">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">getGitHubUser</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    var tokenStr : String {
-        <span style="color:#66d9ef">switch</span> self {
-        <span style="color:#66d9ef">case</span> .getGitHubUser(_)<span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
-        }
-    }
-}</code></pre></div>
-
+    <span class="n">var</span> <span class="nl">tokenStr</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="nb">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">getGitHubUser</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">return</span> <span class="s">&#34;&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Từ enum ONGithubURL, ta có thể tạo ra router như sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let router <span style="color:#f92672">=</span> ONGithubURL.getGitHubUser(account: <span style="color:#e6db74">&#34;gg4acrossover&#34;</span>)
-router.url <span style="color:#75715e">// https://api.github.com/users/gg4acrossover
-</span><span style="color:#75715e"></span>router.method <span style="color:#f92672">//</span> GET</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">router</span> <span class="o">=</span> <span class="n">ONGithubURL</span><span class="p">.</span><span class="n">getGitHubUser</span><span class="p">(</span><span class="nl">account</span><span class="p">:</span> <span class="s">&#34;gg4acrossover&#34;</span><span class="p">)</span>
+<span class="n">router</span><span class="p">.</span><span class="n">url</span> <span class="c1">// https://api.github.com/users/gg4acrossover
+</span><span class="c1"></span><span class="n">router</span><span class="p">.</span><span class="n">method</span> <span class="o">//</span> <span class="n">GET</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Với cách sử dụng router như trên ta có thể tạo ra url theo ý muốn. Từ đó ta có thể tạo hàm call API sử dụng Alamofire theo cách sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">public func <span style="color:#a6e22e">call</span>(router: ONUrl, params: [String: Any]<span style="color:#f92672">?</span> <span style="color:#f92672">=</span> nil, success: @escaping responseJSON, fail: @escaping responseError) <span style="color:#f92672">-&gt;</span> DataRequest {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">public</span> <span class="n">func</span> <span class="nf">call</span><span class="p">(</span><span class="nl">router</span><span class="p">:</span> <span class="n">ONUrl</span><span class="p">,</span> <span class="nl">params</span><span class="p">:</span> <span class="p">[</span><span class="nl">String</span><span class="p">:</span> <span class="n">Any</span><span class="p">]</span><span class="o">?</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">success</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="n">responseJSON</span><span class="p">,</span> <span class="nl">fail</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="n">responseError</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataRequest</span> <span class="p">{</span>
     
-    <span style="color:#75715e">// add accept header
-</span><span style="color:#75715e"></span>    var headers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Accept&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json,charset=utf-8,text/html&#34;</span>]
+    <span class="c1">// add accept header
+</span><span class="c1"></span>    <span class="n">var</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#34;Accept&#34;</span> <span class="o">:</span> <span class="s">&#34;application/json,charset=utf-8,text/html&#34;</span><span class="p">]</span>
     
-    <span style="color:#75715e">// add authorization if need
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> router.isAuthorization {
-        headers[<span style="color:#e6db74">&#34;Authorization&#34;</span>] <span style="color:#f92672">=</span> router.tokenKind <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> router.tokenStr
-    }
+    <span class="c1">// add authorization if need
+</span><span class="c1"></span>    <span class="k">if</span> <span class="n">router</span><span class="p">.</span><span class="n">isAuthorization</span> <span class="p">{</span>
+        <span class="n">headers</span><span class="p">[</span><span class="s">&#34;Authorization&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">router</span><span class="p">.</span><span class="n">tokenKind</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">router</span><span class="p">.</span><span class="n">tokenStr</span>
+    <span class="p">}</span>
     
-    debugPrint(router.method.rawValue <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> router.url)
-    debugPrint(<span style="color:#e6db74">&#34;Headers: \(headers)&#34;</span>)
+    <span class="n">debugPrint</span><span class="p">(</span><span class="n">router</span><span class="p">.</span><span class="n">method</span><span class="p">.</span><span class="n">rawValue</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">router</span><span class="p">.</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">debugPrint</span><span class="p">(</span><span class="s">&#34;Headers: \(headers)&#34;</span><span class="p">)</span>
     
-    <span style="color:#66d9ef">return</span> sessionMng.request(router.url, method: router.method, parameters: params, headers: headers)
-                     .validate()
-                     .responseJSON { response <span style="color:#66d9ef">in</span>
-            <span style="color:#66d9ef">switch</span> response.result {
-            <span style="color:#66d9ef">case</span> .success(let value)<span style="color:#f92672">:</span>
-                let json <span style="color:#f92672">=</span> JSON(value)
-                success(json)
-            <span style="color:#66d9ef">case</span> .failure(let error)<span style="color:#f92672">:</span>
-                <span style="color:#66d9ef">if</span> error._code <span style="color:#f92672">==</span> NSURLErrorTimedOut {
-                debugPrint(<span style="color:#e6db74">&#34;Request Timeout...&#34;</span>)
-                }
-                fail(error)
-        }
-    }
-}</code></pre></div>
-
+    <span class="k">return</span> <span class="n">sessionMng</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">router</span><span class="p">.</span><span class="n">url</span><span class="p">,</span> <span class="nl">method</span><span class="p">:</span> <span class="n">router</span><span class="p">.</span><span class="n">method</span><span class="p">,</span> <span class="nl">parameters</span><span class="p">:</span> <span class="n">params</span><span class="p">,</span> <span class="nl">headers</span><span class="p">:</span> <span class="n">headers</span><span class="p">)</span>
+                     <span class="p">.</span><span class="n">validate</span><span class="p">()</span>
+                     <span class="p">.</span><span class="n">responseJSON</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+            <span class="k">switch</span> <span class="n">response</span><span class="p">.</span><span class="n">result</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="p">.</span><span class="n">success</span><span class="p">(</span><span class="n">let</span> <span class="n">value</span><span class="p">)</span><span class="o">:</span>
+                <span class="n">let</span> <span class="n">json</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">success</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+            <span class="k">case</span> <span class="p">.</span><span class="n">failure</span><span class="p">(</span><span class="n">let</span> <span class="n">error</span><span class="p">)</span><span class="o">:</span>
+                <span class="k">if</span> <span class="n">error</span><span class="p">.</span><span class="n">_code</span> <span class="o">==</span> <span class="n">NSURLErrorTimedOut</span> <span class="p">{</span>
+                <span class="n">debugPrint</span><span class="p">(</span><span class="s">&#34;Request Timeout...&#34;</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="n">fail</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ví dụ sử dụng ONGithubURL enum</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let router <span style="color:#f92672">=</span> ONGithubURL.getGitHubUser(account: <span style="color:#e6db74">&#34;gg4acrossover&#34;</span>)
-ONAPIClient.<span style="color:#66d9ef">default</span>.call(router: router, success: success, fail: fail)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">router</span> <span class="o">=</span> <span class="n">ONGithubURL</span><span class="p">.</span><span class="n">getGitHubUser</span><span class="p">(</span><span class="nl">account</span><span class="p">:</span> <span class="s">&#34;gg4acrossover&#34;</span><span class="p">)</span>
+<span class="n">ONAPIClient</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="nl">router</span><span class="p">:</span> <span class="n">router</span><span class="p">,</span> <span class="nl">success</span><span class="p">:</span> <span class="n">success</span><span class="p">,</span> <span class="nl">fail</span><span class="p">:</span> <span class="n">fail</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Code tham khảo: <a href="https://github.com/gg4acrossover/swiftForFun/tree/master/Project%2003%20-OnAPIClient">source</a></p>
-
 <p>Các bài viết có thể tham khảo thêm:</p>
-
 <ul>
-<li><p><a href="http://chris.eidhof.nl/post/typesafe-url-routes-in-swift/">typesafe url routes in swift</a></p></li>
-
-<li><p><a href="https://chaione.com/blog/rethinking-routers-swift-protocol-oriented-programming-part-1/">rethinking routers</a></p></li>
-
-<li><p><a href="https://github.com/Moya/Moya">Moya</a></p></li>
+<li>
+<p><a href="http://chris.eidhof.nl/post/typesafe-url-routes-in-swift/">typesafe url routes in swift</a></p>
+</li>
+<li>
+<p><a href="https://chaione.com/blog/rethinking-routers-swift-protocol-oriented-programming-part-1/">rethinking routers</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Moya/Moya">Moya</a></p>
+</li>
 </ul>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -361,32 +486,25 @@ ONAPIClient.<span style="color:#66d9ef">default</span>.call(router: router, succ
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-05-29</span>
+    <span class="item-content">
+        2017-05-29
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/slim-tableview/">
+        <a class="prev" href="/hugosite/post/slim-tableview/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Slim tableview</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/progress-hud-don-gian/">
+        <a class="next" href="/hugosite/post/progress-hud-don-gian/">
             <span class="next-text nav-default">Tạo progressHUD đơn giản</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -395,8 +513,7 @@ ONAPIClient.<span style="color:#66d9ef">default</span>.call(router: router, succ
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -410,6 +527,8 @@ ONAPIClient.<span style="color:#66d9ef">default</span>.call(router: router, succ
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -439,28 +558,24 @@ ONAPIClient.<span style="color:#66d9ef">default</span>.call(router: router, succ
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -469,13 +584,5 @@ ONAPIClient.<span style="color:#66d9ef">default</span>.call(router: router, succ
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

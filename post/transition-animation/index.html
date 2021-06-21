@@ -16,23 +16,19 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Giới thiệu Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:
+<meta name="author" content="VietHQ" /><meta name="description" content="Giới thiệu Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:
  NavigationController TabbarController Presentations và dismiss  Mình sẽ tập trung vào custom animation push và pop với NavigationController. Với các phương thức chuyển viewcontroller khác thì làm tương tự.
-Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/transition-animation/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -41,14 +37,8 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Transition Animation" />
@@ -56,18 +46,16 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
  NavigationController TabbarController Presentations và dismiss  Mình sẽ tập trung vào custom animation push và pop với NavigationController. Với các phương thức chuyển viewcontroller khác thì làm tương tự.
 Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/transition-animation/" /><meta property="article:published_time" content="2016-09-20T16:01:11&#43;07:00"/>
-<meta property="article:modified_time" content="2016-09-20T16:01:11&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/transition-animation/" />
+<meta property="article:published_time" content="2016-09-20T16:01:11+07:00" />
+<meta property="article:modified_time" content="2016-09-20T16:01:11+07:00" />
 <meta itemprop="name" content="Transition Animation">
 <meta itemprop="description" content="Giới thiệu Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:
  NavigationController TabbarController Presentations và dismiss  Mình sẽ tập trung vào custom animation push và pop với NavigationController. Với các phương thức chuyển viewcontroller khác thì làm tương tự.
 Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B.">
-
-
-<meta itemprop="datePublished" content="2016-09-20T16:01:11&#43;07:00" />
-<meta itemprop="dateModified" content="2016-09-20T16:01:11&#43;07:00" />
-<meta itemprop="wordCount" content="594">
+<meta itemprop="datePublished" content="2016-09-20T16:01:11+07:00" />
+<meta itemprop="dateModified" content="2016-09-20T16:01:11+07:00" />
+<meta itemprop="wordCount" content="651">
 
 
 
@@ -113,12 +101,21 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -135,6 +132,7 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -149,188 +147,233 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
         <span class="post-time"> 2016-09-20 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#giới-thiệu">Giới thiệu</a></li>
-<li><a href="#mô-hình-hóa">Mô hình hóa</a></li>
-<li><a href="#implement">Implement</a>
-<ul>
-<li><a href="#uinavigationcontrollerdelegate">UINavigationControllerDelegate</a></li>
-<li><a href="#uiviewcontrolleranimatedtransitioning">UIViewControllerAnimatedTransitioning</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#giới-thiệu">Giới thiệu</a></li>
+        <li><a href="#mô-hình-hóa">Mô hình hóa</a></li>
+        <li><a href="#implement">Implement</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h3 id="giới-thiệu">Giới thiệu</h3>
-
+      <h3 id="giới-thiệu">Giới thiệu</h3>
 <p>Bắt đầu từ IOS7, apple hỗ trợ tạo animation lúc chuyển viewcontroller. Quá trình chuyển đổi được hỗ trợ bao gồm:</p>
-
 <ul>
 <li>NavigationController</li>
 <li>TabbarController</li>
 <li>Presentations và dismiss</li>
 </ul>
-
 <p>Mình sẽ tập trung vào custom animation <em>push</em> và <em>pop</em> với <em>NavigationController</em>. Với các phương thức chuyển viewcontroller khác thì làm tương tự.</p>
-
 <h3 id="mô-hình-hóa">Mô hình hóa</h3>
-
 <p>Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn muốn push từ A sang B.</p>
-
-<p><img src="/hugosite/images/note/1.jpg" alt="image1" /></p>
-
+<p><img src="/hugosite/images/note/1.jpg" alt="image1"></p>
 <p>Đầu tiên, ta cần khởi tạo <em>transtion</em> và xác định được 2 viewcontroller cần di chuyển, lúc này A đang được chứa bởi <em>container</em>(là view chứa để control việc di chuyển)</p>
-
-<p><img src="/hugosite/images/note/2.jpg" alt="image2" /></p>
-
+<p><img src="/hugosite/images/note/2.jpg" alt="image2"></p>
 <p>Tiếp theo add viewcontroller B vào container đang chứa A.</p>
-
-<p><img src="/hugosite/images/note/3.jpg" alt="image2" /></p>
-
+<p><img src="/hugosite/images/note/3.jpg" alt="image2"></p>
 <p>Cuối cùng là thực hiện animation chuyển đổi giữa 2 màn hình, quá trình kết thúc khi A được remove khỏi container</p>
-
-<p><img src="/hugosite/images/note/4.jpg" alt="image2" /></p>
-
+<p><img src="/hugosite/images/note/4.jpg" alt="image2"></p>
 <h3 id="implement">Implement</h3>
-
 <p>Để thực hiện được mô hình trên, ta sử dụng những protocol sau</p>
-
 <h4 id="uinavigationcontrollerdelegate">UINavigationControllerDelegate</h4>
-
 <p>Protocol có 2 method giúp ta xác định được cách thức transition</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">id</span> <span class="o">&lt;</span><span class="n">UIViewControllerInteractiveTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nf">navigationController:</span><span class="p">(</span><span class="n">UINavigationController</span> <span class="o">*</span><span class="p">)</span><span class="nv">navigationController</span>
+                          <span class="nf">interactionControllerForAnimationController:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">UIViewControllerAnimatedTransitioning</span><span class="o">&gt;</span><span class="p">)</span> <span class="nv">animationController</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">);</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (nullable <span style="color:#66d9ef">id</span> <span style="color:#f92672">&lt;</span>UIViewControllerInteractiveTransitioning<span style="color:#f92672">&gt;</span>)<span style="color:#a6e22e">navigationController:</span>(UINavigationController <span style="color:#f92672">*</span>)navigationController
-                          <span style="color:#a6e22e">interactionControllerForAnimationController:</span>(<span style="color:#66d9ef">id</span> <span style="color:#f92672">&lt;</span>UIViewControllerAnimatedTransitioning<span style="color:#f92672">&gt;</span>) animationController NS_AVAILABLE_IOS(<span style="color:#ae81ff">7</span>_0);
-
-- (nullable <span style="color:#66d9ef">id</span> <span style="color:#f92672">&lt;</span>UIViewControllerAnimatedTransitioning<span style="color:#f92672">&gt;</span>)<span style="color:#a6e22e">navigationController:</span>(UINavigationController <span style="color:#f92672">*</span>)navigationController
-                                   <span style="color:#a6e22e">animationControllerForOperation:</span>(UINavigationControllerOperation)operation
-                                                <span style="color:#a6e22e">fromViewController:</span>(UIViewController <span style="color:#f92672">*</span>)fromVC
-                                                  <span style="color:#a6e22e">toViewController:</span>(UIViewController <span style="color:#f92672">*</span>)toVC  NS_AVAILABLE_IOS(<span style="color:#ae81ff">7</span>_0);</code></pre></div>
-
+<span class="p">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">id</span> <span class="o">&lt;</span><span class="n">UIViewControllerAnimatedTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nf">navigationController:</span><span class="p">(</span><span class="n">UINavigationController</span> <span class="o">*</span><span class="p">)</span><span class="nv">navigationController</span>
+                                   <span class="nf">animationControllerForOperation:</span><span class="p">(</span><span class="n">UINavigationControllerOperation</span><span class="p">)</span><span class="nv">operation</span>
+                                                <span class="nf">fromViewController:</span><span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromVC</span>
+                                                  <span class="nf">toViewController:</span><span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">toVC</span>  <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Hàm đầu tiên dùng để bắt các sự kiện touch vào màn hình, trả về object implement <em>UIViewControllerInteractiveTransitioning</em>.</p>
-
 <p>Hàm thứ hai xác định cách thức push/pop khi ta click action (next/back) trên thanh navigation bar, trả về object implement <em>UIViewControllerAnimatedTransitioning</em>. Các params giúp ta xác định được <em>fromVC</em> là viewcontroller nào, <em>toVC</em> là viewcontroller nào. Ở trường hợp di chuyển từ A sang B thì A là <em>fromVC</em> và B là <em>toVC</em>.
 Cuối cùng là param <em>operation</em>, đây là enum gồm có 3 value để xác định trạng thái push hay pop</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"> UINavigationControllerOperationNone,
- UINavigationControllerOperationPush,
- UINavigationControllerOperationPop,</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"> <span class="n">UINavigationControllerOperationNone</span><span class="p">,</span>
+ <span class="n">UINavigationControllerOperationPush</span><span class="p">,</span>
+ <span class="n">UINavigationControllerOperationPop</span><span class="p">,</span></code></pre></td></tr></table>
+</div>
+</div>
 <h4 id="uiviewcontrolleranimatedtransitioning">UIViewControllerAnimatedTransitioning</h4>
-
 <p>có 2 phương thức</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nf">transitionDuration:</span><span class="p">(</span><span class="n">nullable</span> <span class="kt">id</span> <span class="o">&lt;</span><span class="n">UIViewControllerContextTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">transitionContext</span><span class="p">;</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (NSTimeInterval)<span style="color:#a6e22e">transitionDuration:</span>(nullable <span style="color:#66d9ef">id</span> <span style="color:#f92672">&lt;</span>UIViewControllerContextTransitioning<span style="color:#f92672">&gt;</span>)transitionContext;
-
-- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">animateTransition:</span>(<span style="color:#66d9ef">id</span> <span style="color:#f92672">&lt;</span>UIViewControllerContextTransitioning<span style="color:#f92672">&gt;</span>)transitionContext;</code></pre></div>
-
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">animateTransition:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">UIViewControllerContextTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">transitionContext</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Để thực hiện animation ta cần 2 thông số, thông số đầu tiên là duration, hàm đầu tiên giúp ta xác định được điều đó. Phương thức thứ hai dùng để implement animation chuyển đổi. Trong hàm này ta cần đưa ra thông báo để biết được quá trình push/pop được hoàn thành</p>
-
-<pre><code>[transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-</code></pre>
-
-<h4 id="example">Example</h4>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="example">Example</h4>
 <p><strong>Bước 1:</strong> Tạo ra object implement protocol <em>UIViewControllerAnimatedTransitioning</em>, trước hết xác định duration</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (NSTimeInterval)<span style="color:#a6e22e">transitionDuration:</span>(<span style="color:#66d9ef">id</span> <span style="color:#f92672">&lt;</span>UIViewControllerContextTransitioning<span style="color:#f92672">&gt;</span>)transitionContext
-{
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.25</span>;
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nf">transitionDuration:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">UIViewControllerContextTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">transitionContext</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="mf">0.25</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Định nghĩa một animation đơn giản</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="cm">/**
+</span><span class="cm"> * using example in 
+</span><span class="cm"> * https://www.objc.io/issues/5-ios7/view-controller-transitions/ 
+</span><span class="cm"> */</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * using example in 
-</span><span style="color:#75715e"> * https://www.objc.io/issues/5-ios7/view-controller-transitions/ 
-</span><span style="color:#75715e"> */</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">animateTransition:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">UIViewControllerContextTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">transitionContext</span>
+<span class="p">{</span>
+    <span class="c1">//1.
+</span><span class="c1"></span>    <span class="n">UIViewController</span><span class="o">*</span> <span class="n">toViewController</span> <span class="o">=</span> <span class="p">[</span><span class="n">transitionContext</span> <span class="nl">viewControllerForKey</span><span class="p">:</span><span class="n">UITransitionContextToViewControllerKey</span><span class="p">];</span>
+    <span class="n">UIViewController</span><span class="o">*</span> <span class="n">fromViewController</span> <span class="o">=</span> <span class="p">[</span><span class="n">transitionContext</span> <span class="nl">viewControllerForKey</span><span class="p">:</span><span class="n">UITransitionContextFromViewControllerKey</span><span class="p">];</span>
 
-- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">animateTransition:</span>(<span style="color:#66d9ef">id</span><span style="color:#f92672">&lt;</span>UIViewControllerContextTransitioning<span style="color:#f92672">&gt;</span>)transitionContext
-{
-    <span style="color:#75715e">//1.
-</span><span style="color:#75715e"></span>    UIViewController<span style="color:#f92672">*</span> toViewController <span style="color:#f92672">=</span> [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIViewController<span style="color:#f92672">*</span> fromViewController <span style="color:#f92672">=</span> [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    <span class="c1">//2.
+</span><span class="c1"></span>    <span class="p">[[</span><span class="n">transitionContext</span> <span class="n">containerView</span><span class="p">]</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">toViewController</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
+    <span class="n">toViewController</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span style="color:#75715e">//2.
-</span><span style="color:#75715e"></span>    [[transitionContext containerView] addSubview:toViewController.view];
-    toViewController.view.alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span class="c1">//3.
+</span><span class="c1"></span>    <span class="p">[</span><span class="n">UIView</span> <span class="nl">animateWithDuration</span><span class="p">:[</span><span class="nb">self</span> <span class="nl">transitionDuration</span><span class="p">:</span><span class="n">transitionContext</span><span class="p">]</span> <span class="nl">animations</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+        <span class="n">fromViewController</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">CGAffineTransformMakeScale</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+        <span class="n">toViewController</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="nl">completion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">finished</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fromViewController</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">CGAffineTransformIdentity</span><span class="p">;</span>
 
-    <span style="color:#75715e">//3.
-</span><span style="color:#75715e"></span>    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:<span style="color:#f92672">^</span>{
-        fromViewController.view.transform <span style="color:#f92672">=</span> CGAffineTransformMakeScale(<span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">0.1</span>);
-        toViewController.view.alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-    } completion:<span style="color:#f92672">^</span>(<span style="color:#66d9ef">BOOL</span> finished) {
-        fromViewController.view.transform <span style="color:#f92672">=</span> CGAffineTransformIdentity;
+        <span class="c1">//4.
+</span><span class="c1"></span>        <span class="p">[</span><span class="n">transitionContext</span> <span class="nl">completeTransition</span><span class="p">:</span><span class="o">!</span><span class="p">[</span><span class="n">transitionContext</span> <span class="n">transitionWasCancelled</span><span class="p">]];</span>
 
-        <span style="color:#75715e">//4.
-</span><span style="color:#75715e"></span>        [transitionContext completeTransition:<span style="color:#f92672">!</span>[transitionContext transitionWasCancelled]];
+    <span class="p">}];</span>
 
-    }];
-
-}</code></pre></div>
-
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Phân tích chút nào:</p>
-
 <ul>
 <li>Bước 1: xác định toViewController và fromViewController</li>
 <li>Bước 2: add toViewController.view vào trong container</li>
 <li>Bước 3: thực hiện animation.</li>
 <li>Bước 4: thông báo animation kết thúc qua câu lệnh <em>completeTransition</em></li>
 </ul>
-
 <p><strong>Bước 2:</strong>
 Tạo object implement protocol <em>UINavigationControllerDelegate</em>, trong object này ta cần truyền vào object đã implement <em>UIViewControllerAnimatedTransitioning</em> trước đó.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">-(<span style="color:#66d9ef">id</span><span style="color:#f92672">&lt;</span>UIViewControllerAnimatedTransitioning<span style="color:#f92672">&gt;</span>)<span style="color:#a6e22e">navigationController:</span>(UINavigationController <span style="color:#f92672">*</span>)navigationController
-                                 <span style="color:#a6e22e">animationControllerForOperation:</span>(UINavigationControllerOperation)operation
-                                              <span style="color:#a6e22e">fromViewController:</span>(UIViewController <span style="color:#f92672">*</span>)fromVC
-                                                <span style="color:#a6e22e">toViewController:</span>(UIViewController <span style="color:#f92672">*</span>)toVC
-{
-    <span style="color:#75715e">// return your custom animation transition
-</span><span style="color:#75715e"></span>}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">-(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">UIViewControllerAnimatedTransitioning</span><span class="o">&gt;</span><span class="p">)</span><span class="nf">navigationController:</span><span class="p">(</span><span class="n">UINavigationController</span> <span class="o">*</span><span class="p">)</span><span class="nv">navigationController</span>
+                                 <span class="nf">animationControllerForOperation:</span><span class="p">(</span><span class="n">UINavigationControllerOperation</span><span class="p">)</span><span class="nv">operation</span>
+                                              <span class="nf">fromViewController:</span><span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromVC</span>
+                                                <span class="nf">toViewController:</span><span class="p">(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">toVC</span>
+<span class="p">{</span>
+    <span class="c1">// return your custom animation transition
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p><strong>Bước 3</strong>
 Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở A ta cần làm như sau trước khi push.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">//1.
-</span><span style="color:#75715e"></span>self.navigationController.delegate <span style="color:#f92672">=</span> <span style="color:#75715e">/* your custom UINavigationControllerDelegate */</span>;
-<span style="color:#75715e">//2.
-</span><span style="color:#75715e"></span>[self.navigationController pushViewController:B animated:YES];</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="c1">//1.
+</span><span class="c1"></span><span class="nb">self</span><span class="p">.</span><span class="n">navigationController</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="cm">/* your custom UINavigationControllerDelegate */</span><span class="p">;</span>
+<span class="c1">//2.
+</span><span class="c1"></span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nl">pushViewController</span><span class="p">:</span><span class="n">B</span> <span class="nl">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ở bước này ta đã có thể push/pop với animation, nhưng để <em>full service</em> ta sẽ gắn thêm <em>interactive animations</em>. Tuy nhiên ở giới hạn bài viết này mình sẽ chỉ nói về animation cho push và pop. Bạn có thể tìm hiểu chi tiết hơn ở <a href="https://github.com/objcio/issue5-view-controller-transitions">ví dụ</a> của trang <a href="https://www.objc.io/">objc.io</a></p>
-
 <p>Một animation mình làm</p>
-
-<p><img src="https://media.giphy.com/media/l2Sq1x6bWR3i9S8sU/giphy.gif" alt="gif" /></p>
-
+<p><img src="https://media.giphy.com/media/l2Sq1x6bWR3i9S8sU/giphy.gif" alt="gif"></p>
 <p>Bài viết có tham khảo</p>
-
 <ul>
 <li><a href="https://www.objc.io/issues/5-ios7/view-controller-transitions/">https://www.objc.io/issues/5-ios7/view-controller-transitions/</a></li>
 <li><a href="http://whoisryannystrom.com/2013/10/01/View-Controller-Transition-Orientation/">http://whoisryannystrom.com/2013/10/01/View-Controller-Transition-Orientation/</a></li>
@@ -338,7 +381,6 @@ Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở 
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -346,32 +388,25 @@ Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở 
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2016-09-20</span>
+    <span class="item-content">
+        2016-09-20
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/objc/">objc</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/hugo-tutorial/">
+        <a class="prev" href="/hugosite/post/hugo-tutorial/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Tạo static site với hugo</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/code-sach-code-kho-thoang/">
+        <a class="next" href="/hugosite/post/code-sach-code-kho-thoang/">
             <span class="next-text nav-default">Code sạch, code khô thoáng</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -380,8 +415,7 @@ Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở 
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -395,6 +429,8 @@ Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở 
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -424,28 +460,24 @@ Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở 
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -454,13 +486,5 @@ Setting ở viewcontroller, như ở trên ta có viewcontroller A -&gt; B. Ở 
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

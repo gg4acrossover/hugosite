@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="crossover" />
-  <meta name="description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="crossover" /><meta name="description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/codable-swift4/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -39,29 +35,21 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Codable swift 4" />
 <meta property="og:description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/codable-swift4/" /><meta property="article:published_time" content="2017-11-18T10:10:10&#43;07:00"/>
-<meta property="article:modified_time" content="2017-11-18T10:10:10&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/codable-swift4/" />
+<meta property="article:published_time" content="2017-11-18T10:10:10+07:00" />
+<meta property="article:modified_time" content="2017-11-18T10:10:10+07:00" />
 <meta itemprop="name" content="Codable swift 4">
 <meta itemprop="description" content="Codable là gì? Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib ObjectMapper để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có JSONModel parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.">
-
-
-<meta itemprop="datePublished" content="2017-11-18T10:10:10&#43;07:00" />
-<meta itemprop="dateModified" content="2017-11-18T10:10:10&#43;07:00" />
-<meta itemprop="wordCount" content="636">
+<meta itemprop="datePublished" content="2017-11-18T10:10:10+07:00" />
+<meta itemprop="dateModified" content="2017-11-18T10:10:10+07:00" />
+<meta itemprop="wordCount" content="700">
 
 
 
@@ -105,12 +93,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -127,6 +124,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -141,165 +139,221 @@
         <span class="post-time"> 2017-11-18 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#codable-là-gì">Codable là gì?</a></li>
-<li><a href="#decodable-như-thế-nào">Decodable như thế nào?</a></li>
-<li><a href="#encoding-như-thế-nào">Encoding như thế nào?</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#codable-là-gì">Codable là gì?</a></li>
+    <li><a href="#decodable-như-thế-nào">Decodable như thế nào?</a></li>
+    <li><a href="#encoding-như-thế-nào">Encoding như thế nào?</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h2 id="codable-là-gì">Codable là gì?</h2>
-
+      <h2 id="codable-là-gì">Codable là gì?</h2>
 <p>Chắc hẳn ở swift 3 đa số chúng ta sử dụng lib <em>ObjectMapper</em> để parse json thành model. Thư viện này khá tiện dụng, tuy nhiên có một nhược điểm là chúng ta vẫn phải viết hàm map key. Điều này mình không thích lắm, trước đây objc có <em>JSONModel</em> parse thông minh hơn hẳn, ai dùng qua chắc đều biết. Đáng tiếc là ở swift không có thằng nào như vầy cả.</p>
-
 <p>Tuy nhiên điều đó đã thay đổi khi swift 4 xuất hiện đi kèm với <strong>Codable</strong>. Vậy <strong>Codable</strong> là gì?</p>
-
 <p>Theo như Apple quảng cáo, <strong>Codable</strong> giúp ta được 2 việc:</p>
-
 <ul>
 <li>Encodable dùng để encoding</li>
 <li>Decodable dùng để decoding</li>
 </ul>
-
 <blockquote>
 <p>/// A type that can convert itself into and out of an external representation.</p>
-
+</blockquote>
+<blockquote>
 <p>public typealias Codable = Decodable &amp; Encodable</p>
 </blockquote>
-
 <p>Về bản chất <strong>Codable</strong> là một protocol kết hợp giữa 2 protocol <em>Encodable</em> và <em>Decodable</em>, mỗi protocol lại đảm nhận chức năng như nói ở trên. Có thể coi <em>Codable</em> tương đương với một chiêu hai thức :D</p>
-
 <h2 id="decodable-như-thế-nào">Decodable như thế nào?</h2>
-
 <p>Giả sử ta có một json string như sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let json <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">[{</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">    &#34;</span>name<span style="color:#e6db74">&#34;:&#34;</span>cross<span style="color:#e6db74">&#34;,</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">    &#34;</span>age<span style="color:#e6db74">&#34;:10,</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">    &#34;</span>birthDay<span style="color:#e6db74">&#34;:&#34;</span><span style="color:#ae81ff">2017</span><span style="color:#f92672">-</span><span style="color:#ae81ff">06</span><span style="color:#f92672">-</span><span style="color:#ae81ff">21</span> <span style="color:#ae81ff">20</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0000</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">}]</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">&#34;&#34;&#34;</span></code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">json</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;</span>
+<span class="p">[{</span>
+    <span class="s">&#34;name&#34;</span><span class="o">:</span><span class="s">&#34;cross&#34;</span><span class="p">,</span>
+    <span class="s">&#34;age&#34;</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span>
+    <span class="s">&#34;birthDay&#34;</span><span class="o">:</span><span class="s">&#34;2017-06-21 20:20+0000&#34;</span>
+<span class="p">}]</span>
+<span class="s">&#34;&#34;&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Chúng ta sẽ định nghĩa struct kế thừa <em>Codable</em></p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">struct</span> User : Codable {
-    var name: String<span style="color:#f92672">?</span>
-    var age: Int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    var birthDay: Date
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">struct</span> <span class="nl">User</span> <span class="p">:</span> <span class="n">Codable</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">name</span><span class="p">:</span> <span class="n">String</span><span class="o">?</span>
+    <span class="n">var</span> <span class="nl">age</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">var</span> <span class="nl">birthDay</span><span class="p">:</span> <span class="n">Date</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Giờ là lúc thức thứ nhất <em>Decodable</em> thể hiện sức mạnh</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="c1">// parse json with JSONDecoder
+</span><span class="c1"></span><span class="n">let</span> <span class="n">decoder</span> <span class="o">=</span> <span class="n">JSONDecoder</span><span class="p">()</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// parse json with JSONDecoder
-</span><span style="color:#75715e"></span>let decoder <span style="color:#f92672">=</span> JSONDecoder()
+<span class="n">let</span> <span class="n">dateFormater</span> <span class="o">=</span> <span class="n">DateFormatter</span><span class="p">()</span>
+<span class="n">dateFormater</span><span class="p">.</span><span class="n">timeZone</span> <span class="o">=</span> <span class="n">TimeZone</span><span class="p">.</span><span class="n">current</span>
+<span class="n">dateFormater</span><span class="p">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">&#34;yyyy-MM-dd HH:mmZ&#34;</span>
+<span class="n">decoder</span><span class="p">.</span><span class="n">dateDecodingStrategy</span> <span class="o">=</span> <span class="p">.</span><span class="n">formatted</span><span class="p">(</span><span class="n">dateFormater</span><span class="p">)</span>
 
-let dateFormater <span style="color:#f92672">=</span> DateFormatter()
-dateFormater.timeZone <span style="color:#f92672">=</span> TimeZone.current
-dateFormater.dateFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-MM-dd HH:mmZ&#34;</span>
-decoder.dateDecodingStrategy <span style="color:#f92672">=</span> .formatted(dateFormater)
-
-<span style="color:#66d9ef">if</span> let data <span style="color:#f92672">=</span> json.data(using: .utf8) {
-    <span style="color:#66d9ef">if</span> let items <span style="color:#f92672">=</span> try<span style="color:#f92672">?</span> decoder.decode([User].self, from: data),
-        let date <span style="color:#f92672">=</span> items.first<span style="color:#f92672">?</span>.birthDay {
-        print(dateFormater.string(from: date))
-        print(items.first<span style="color:#f92672">?</span>.username <span style="color:#f92672">??</span> <span style="color:#e6db74">&#34;something wrong&#34;</span>)
-    } <span style="color:#66d9ef">else</span> {
-        print(<span style="color:#e6db74">&#34;error&#34;</span>)
-    }
-}</code></pre></div>
-
+<span class="k">if</span> <span class="n">let</span> <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="nl">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">let</span> <span class="n">items</span> <span class="o">=</span> <span class="n">try</span><span class="o">?</span> <span class="n">decoder</span><span class="p">.</span><span class="n">decode</span><span class="p">([</span><span class="n">User</span><span class="p">].</span><span class="nb">self</span><span class="p">,</span> <span class="nl">from</span><span class="p">:</span> <span class="n">data</span><span class="p">),</span>
+        <span class="n">let</span> <span class="n">date</span> <span class="o">=</span> <span class="n">items</span><span class="p">.</span><span class="n">first</span><span class="o">?</span><span class="p">.</span><span class="n">birthDay</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">dateFormater</span><span class="p">.</span><span class="n">string</span><span class="p">(</span><span class="nl">from</span><span class="p">:</span> <span class="n">date</span><span class="p">))</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">items</span><span class="p">.</span><span class="n">first</span><span class="o">?</span><span class="p">.</span><span class="n">username</span> <span class="o">??</span> <span class="s">&#34;something wrong&#34;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">&#34;error&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ở đây mình cố tình cho biến date vào trong json string, nên parse hơi dài (có thêm bước format data), tuy nhiên về cơ bản chỉ cần 2 dòng code tương ứng 2 bước:</p>
-
 <ul>
 <li>Convert json thành data</li>
 <li>tạo đối tượng JSONDecoder để thực hiện decode</li>
 </ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// step 1
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> let data <span style="color:#f92672">=</span> json.data(using: .utf8) {
-	<span style="color:#75715e">// step 2
-</span><span style="color:#75715e"></span>	let items <span style="color:#f92672">=</span> try<span style="color:#f92672">?</span> JSONDecoder().decode([User].self, from: data)
-	...
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="c1">// step 1
+</span><span class="c1"></span><span class="k">if</span> <span class="n">let</span> <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="nl">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// step 2
+</span><span class="c1"></span>	<span class="n">let</span> <span class="n">items</span> <span class="o">=</span> <span class="n">try</span><span class="o">?</span> <span class="n">JSONDecoder</span><span class="p">().</span><span class="n">decode</span><span class="p">([</span><span class="n">User</span><span class="p">].</span><span class="nb">self</span><span class="p">,</span> <span class="nl">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+	<span class="p">...</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Vì công thức chỉ có 2 bước, tương ứng với mọi đối tượng, thế nên mình có thể tạo Generic cho việc decoding như sau:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">typealias DecoderConfig <span style="color:#f92672">=</span> (JSONDecoder) <span style="color:#f92672">-&gt;</span> ()
-func parseDecodableObject<span style="color:#f92672">&lt;</span>T: Decodable<span style="color:#f92672">&gt;</span>(data: Data,config: DecoderConfig<span style="color:#f92672">?</span>) throws <span style="color:#f92672">-&gt;</span> T {
-    let decoder <span style="color:#f92672">=</span> JSONDecoder()
-    config<span style="color:#f92672">?</span>(decoder)
-    let injectObject <span style="color:#f92672">=</span> try decoder.decode(T.self, from: data)
-    <span style="color:#66d9ef">return</span> injectObject
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">typealias</span> <span class="n">DecoderConfig</span> <span class="o">=</span> <span class="p">(</span><span class="n">JSONDecoder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span>
+<span class="n">func</span> <span class="n">parseDecodableObject</span><span class="o">&lt;</span><span class="nl">T</span><span class="p">:</span> <span class="n">Decodable</span><span class="o">&gt;</span><span class="p">(</span><span class="nl">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">,</span><span class="nl">config</span><span class="p">:</span> <span class="n">DecoderConfig</span><span class="o">?</span><span class="p">)</span> <span class="n">throws</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">decoder</span> <span class="o">=</span> <span class="n">JSONDecoder</span><span class="p">()</span>
+    <span class="n">config</span><span class="o">?</span><span class="p">(</span><span class="n">decoder</span><span class="p">)</span>
+    <span class="n">let</span> <span class="n">injectObject</span> <span class="o">=</span> <span class="n">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span> <span class="nl">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">injectObject</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Tương ứng với code sẽ rút ngắn đi như thế này</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let item: [User] <span style="color:#f92672">=</span> try parseDecodableObject(data: data, config: config)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="nl">item</span><span class="p">:</span> <span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="n">try</span> <span class="n">parseDecodableObject</span><span class="p">(</span><span class="nl">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nl">config</span><span class="p">:</span> <span class="n">config</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Đôi khi, mình muốn đặt tên thuộc tính theo ý mình, không theo key trên server trả về, có được không nhỉ? <em>Decodable</em> bất chấp hết nhưng cần thêm 1 bước:</p>
-
 <p>Giả sử ở <strong>struct User</strong> đầu ta đổi property name thành&hellip;username, ta sẽ phải thêm 1 enum <em>CodingKeys</em> kế thừa <em>CodingKey</em> vào trong struct User</p>
-
-<p><img src="/hugosite/images/note/decodable.png" alt="image1" /></p>
-
+<p><img src="/hugosite/images/note/decodable.png" alt="image1"></p>
 <p>Có 2 điều bắt buộc đối với enum kế thừa <em>CodingKey</em>:</p>
-
 <ul>
 <li>Phải có type là <em>String</em>.</li>
 <li>Các case phải trùng với tên thuộc tính của đối tượng. Với những thuộc tính cần mapping thì ta gán giá trị, vd: username gán giá trị là &ldquo;name&rdquo;(trùng với json key).</li>
 </ul>
-
 <h2 id="encoding-như-thế-nào">Encoding như thế nào?</h2>
-
 <p>Thức thứ hai trong <em>Codable</em> là <em>Encodable</em>, về cơ bản nó ngược lại với <em>Decodable</em>, thế nên mình chỉ show code thôi.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">var</span> <span class="nl">user</span><span class="p">:</span> <span class="n">User</span><span class="o">?</span>
+<span class="k">if</span> <span class="n">let</span> <span class="n">date</span> <span class="o">=</span> <span class="n">dateFormater</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="nl">from</span><span class="p">:</span> <span class="s">&#34;2017-06-21 20:20+0000&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="nl">username</span><span class="p">:</span> <span class="s">&#34;cross&#34;</span><span class="p">,</span> <span class="nl">age</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nl">birthDay</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span>
+<span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">var user: User<span style="color:#f92672">?</span>
-<span style="color:#66d9ef">if</span> let date <span style="color:#f92672">=</span> dateFormater.date(from: <span style="color:#e6db74">&#34;2017-06-21 20:20+0000&#34;</span>) {
-    user <span style="color:#f92672">=</span> User(username: <span style="color:#e6db74">&#34;cross&#34;</span>, age: <span style="color:#ae81ff">10</span>, birthDay: date)
-}
+<span class="n">let</span> <span class="n">encoder</span> <span class="o">=</span> <span class="n">JSONEncoder</span><span class="p">()</span>
+<span class="n">encoder</span><span class="p">.</span><span class="n">dateEncodingStrategy</span> <span class="o">=</span> <span class="p">.</span><span class="n">formatted</span><span class="p">(</span><span class="n">dateFormater</span><span class="p">)</span>
 
-let encoder <span style="color:#f92672">=</span> JSONEncoder()
-encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dateFormater)
-
-<span style="color:#66d9ef">do</span> {
-    let userData <span style="color:#f92672">=</span> try encoder.encode(user)
-    let userJson <span style="color:#f92672">=</span> try JSONSerialization.jsonObject(with: userData, options: [])
-    print(userJson)
-} catch {
-    print(error)
-}</code></pre></div>
-
+<span class="k">do</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">userData</span> <span class="o">=</span> <span class="n">try</span> <span class="n">encoder</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+    <span class="n">let</span> <span class="n">userJson</span> <span class="o">=</span> <span class="n">try</span> <span class="n">JSONSerialization</span><span class="p">.</span><span class="n">jsonObject</span><span class="p">(</span><span class="nl">with</span><span class="p">:</span> <span class="n">userData</span><span class="p">,</span> <span class="nl">options</span><span class="p">:</span> <span class="p">[])</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">userJson</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">catch</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Về tính ứng dụng: với <em>Encodable</em> ta dễ dàng lưu struct vào <em>UserDefaults</em> hoặc tạo params để post lên server chẳng hạn.</p>
-
 <p>Source code của toàn bộ ví dụ: <a href="https://gist.github.com/gg4acrossover/f27b8b0c2336c5bb7fc7f1a311a29537">source</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -307,34 +361,26 @@ encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dat
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-11-18</span>
+    <span class="item-content">
+        2017-11-18
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/method-dispatch/">
+        <a class="prev" href="/hugosite/post/method-dispatch/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Method dispath trong protocol</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/date-la-gi/">
+        <a class="next" href="/hugosite/post/date-la-gi/">
             <span class="next-text nav-default">Date là gì, có ăn được không?</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -343,8 +389,7 @@ encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dat
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -358,6 +403,8 @@ encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dat
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -387,28 +434,24 @@ encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dat
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -417,13 +460,5 @@ encoder.dateEncodingStrategy <span style="color:#f92672">=</span> .formatted(dat
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

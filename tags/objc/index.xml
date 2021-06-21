@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>objc on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,11 +6,7 @@
     <description>Recent content in objc on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Sep 2016 16:01:11 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/objc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Sep 2016 16:01:11 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/tags/objc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Transition Animation</title>
       <link>https://gg4acrossover.github.io/hugosite/post/transition-animation/</link>
@@ -30,7 +26,7 @@ Mô hình hóa Giả sử bạn có 2 viewcontroller A và B, bây giờ bạn m
       <guid>https://gg4acrossover.github.io/hugosite/post/code-sach-code-kho-thoang/</guid>
       <description>Đây là một số phương pháp khi tớ làm việc với obj c. Với mỗi người, tổ chức có thể khác, thế nên cái này chỉ mang tính tham khảo. 😄
 Sử dụng immutable Đối với array hay dictionary nếu không cần sử dụng mutable thì ta nên viết như sau:
-NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18}; Thay vì viết:</description>
+1 2  NSArray *pFruit = @[@&amp;#34;orange&amp;#34;, @&amp;#34;apple&amp;#34;, @&amp;#34;lemon&amp;#34;, @&amp;#34;strawberry&amp;#34;]; NSDictionary *pDict = @{ @&amp;#34;name&amp;#34; : @&amp;#34;Tom&amp;#34;, @&amp;#34;age&amp;#34; : @18};   Thay vì viết:</description>
     </item>
     
     <item>

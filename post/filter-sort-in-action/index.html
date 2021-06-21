@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -39,29 +35,21 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Filter, sort in action" />
 <meta property="og:description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/" /><meta property="article:published_time" content="2017-07-03T14:53:55&#43;07:00"/>
-<meta property="article:modified_time" content="2017-07-03T14:53:55&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/filter-sort-in-action/" />
+<meta property="article:published_time" content="2017-07-03T14:53:55+07:00" />
+<meta property="article:modified_time" content="2017-07-03T14:53:55+07:00" />
 <meta itemprop="name" content="Filter, sort in action">
 <meta itemprop="description" content="Back to basic Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.">
-
-
-<meta itemprop="datePublished" content="2017-07-03T14:53:55&#43;07:00" />
-<meta itemprop="dateModified" content="2017-07-03T14:53:55&#43;07:00" />
-<meta itemprop="wordCount" content="470">
+<meta itemprop="datePublished" content="2017-07-03T14:53:55+07:00" />
+<meta itemprop="dateModified" content="2017-07-03T14:53:55+07:00" />
+<meta itemprop="wordCount" content="491">
 
 
 
@@ -105,12 +93,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -127,6 +124,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -141,142 +139,173 @@
         <span class="post-time"> 2017-07-03 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#back-to-basic">Back to basic</a></li>
-<li><a href="#filter">Filter</a></li>
-<li><a href="#sort-theo-alphabet">Sort (theo Alphabet)</a></li>
-<li><a href="#kết">Kết</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#back-to-basic">Back to basic</a></li>
+        <li><a href="#filter">Filter</a></li>
+        <li><a href="#sort-theo-alphabet">Sort (theo Alphabet)</a></li>
+        <li><a href="#kết">Kết</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h3 id="back-to-basic">Back to basic</h3>
-
+      <h3 id="back-to-basic">Back to basic</h3>
 <p>Hồi học phổ thông, tôi rất ấn tượng với một thằng giải toán bằng định nghĩa. Hắn học chuyên toán tự nhiên, ngồi trên tôi một bàn, quả thực không khó để tôi liếc được bài :D. Một cách giải thật đặc biệt, xuất phát từ định nghĩa cơ bản, trong khi cách giải thông thường là dùng công thức. Về sau, khi làm lập trình, tôi càng thấm thía hơn những cách làm đơn giản kiểu như vậy.</p>
-
 <p>Có thể nói, những kĩ thuật đơn giản, chúng ta hay bỏ quên, đôi khi lại đưa ra một cách giải hay, độc đáo. Hôm nay, tôi sẽ &ldquo;back to basic&rdquo; để xem lại các hướng giải quyết việc <strong>filter</strong> và <strong>sort</strong> trong Array.</p>
-
 <h3 id="filter">Filter</h3>
-
 <p>Giả sử ta có một mảng</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let listStr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;quoc anh&#34;</span>, <span style="color:#e6db74">&#34;Hoang hai&#34;</span>, <span style="color:#e6db74">&#34;hoàng giang&#34;</span>,<span style="color:#e6db74">&#34;anh ngoc&#34;</span>, <span style="color:#e6db74">&#34;quoc nguyen&#34;</span>]</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">listStr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#34;quoc anh&#34;</span><span class="p">,</span> <span class="s">&#34;Hoang hai&#34;</span><span class="p">,</span> <span class="s">&#34;hoàng giang&#34;</span><span class="p">,</span><span class="s">&#34;anh ngoc&#34;</span><span class="p">,</span> <span class="s">&#34;quoc nguyen&#34;</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ta cần lọc ra những phần tử có chứa từ &ldquo;hoang&rdquo;. Ta có thể sử dụng những cách sau.</p>
-
 <ul>
 <li>Sử dụng <em>NSPredicate</em></li>
 </ul>
-
 <p>Trường hợp ta không phân biệt chữ hoa chữ thường ta có thể làm như sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterC <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[c] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)
-let arrFilterC <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterC) <span style="color:#f92672">//</span> [<span style="color:#e6db74">&#34;Hoang hai&#34;</span>]</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">filterC</span> <span class="o">=</span> <span class="n">NSPredicate</span><span class="p">(</span><span class="nl">format</span><span class="p">:</span> <span class="s">&#34;self contains[c] %@&#34;</span><span class="p">,</span> <span class="s">&#34;hoang&#34;</span><span class="p">)</span>
+<span class="n">let</span> <span class="n">arrFilterC</span> <span class="o">=</span> <span class="p">(</span><span class="n">listStr</span> <span class="n">as</span> <span class="n">NSArray</span><span class="p">).</span><span class="n">filtered</span><span class="p">(</span><span class="nl">using</span><span class="p">:</span> <span class="n">filterC</span><span class="p">)</span> <span class="o">//</span> <span class="p">[</span><span class="s">&#34;Hoang hai&#34;</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Trường hợp ta không phân biệt dấu</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[d] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)
-let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtered(using: filterD) <span style="color:#f92672">//</span> [<span style="color:#e6db74">&#34;hoàng giang&#34;</span>]</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">filterD</span> <span class="o">=</span> <span class="n">NSPredicate</span><span class="p">(</span><span class="nl">format</span><span class="p">:</span> <span class="s">&#34;self contains[d] %@&#34;</span><span class="p">,</span> <span class="s">&#34;hoang&#34;</span><span class="p">)</span>
+<span class="n">let</span> <span class="n">arrFilterD</span> <span class="o">=</span> <span class="p">(</span><span class="n">listStr</span> <span class="n">as</span> <span class="n">NSArray</span><span class="p">).</span><span class="n">filtered</span><span class="p">(</span><span class="nl">using</span><span class="p">:</span> <span class="n">filterD</span><span class="p">)</span> <span class="o">//</span> <span class="p">[</span><span class="s">&#34;hoàng giang&#34;</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Nếu không cần phân biệt cả viết hoa, thường, cả dấu, ta có thể kết hợp điều kiện</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterD <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;self contains[cd] %@&#34;</span>, <span style="color:#e6db74">&#34;hoang&#34;</span>)</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">filterD</span> <span class="o">=</span> <span class="n">NSPredicate</span><span class="p">(</span><span class="nl">format</span><span class="p">:</span> <span class="s">&#34;self contains[cd] %@&#34;</span><span class="p">,</span> <span class="s">&#34;hoang&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Về query format của NSPredicate, mọi người tham khảo thêm tại <a href="http://nshipster.com/nspredicate/">đây</a>.</p>
-
 <ul>
 <li>Sử dụng hàm filter của swift</li>
 </ul>
-
 <p>Cách trên là kế thừa di sản từ ObjC, bây giờ chúng ta sử dụng cách khác, gọn hơn và clear hơn.</p>
-
 <p>Không phân biệt chữ hoa, chữ thường</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrC <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74">&#34;hoang&#34;</span>, options: .caseInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">filterStrC</span> <span class="o">=</span> <span class="n">listStr</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="err">$</span><span class="mf">0.</span><span class="n">range</span><span class="p">(</span><span class="nl">of</span><span class="p">:</span> <span class="s">&#34;hoang&#34;</span><span class="p">,</span> <span class="nl">options</span><span class="p">:</span> <span class="p">.</span><span class="n">caseInsensitive</span><span class="p">,</span> <span class="nl">range</span><span class="p">:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">locale</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">nil</span> <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ngắn hơn có thể dùng cách sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let arrFilter <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>localizedCaseInsensitiveContains(<span style="color:#e6db74">&#34;hoang&#34;</span>)}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">arrFilter</span> <span class="o">=</span> <span class="n">listStr</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="err">$</span><span class="mf">0.</span><span class="n">localizedCaseInsensitiveContains</span><span class="p">(</span><span class="s">&#34;hoang&#34;</span><span class="p">)}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Không phân biệt dấu</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let filterStrD <span style="color:#f92672">=</span> listStr.filter { <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>range(of: <span style="color:#e6db74">&#34;hoang&#34;</span>, options: .diacriticInsensitive, range: nil, locale: nil) <span style="color:#f92672">!=</span> nil }</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">filterStrD</span> <span class="o">=</span> <span class="n">listStr</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="err">$</span><span class="mf">0.</span><span class="n">range</span><span class="p">(</span><span class="nl">of</span><span class="p">:</span> <span class="s">&#34;hoang&#34;</span><span class="p">,</span> <span class="nl">options</span><span class="p">:</span> <span class="p">.</span><span class="n">diacriticInsensitive</span><span class="p">,</span> <span class="nl">range</span><span class="p">:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">locale</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">nil</span> <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="sort-theo-alphabet">Sort (theo Alphabet)</h3>
-
 <ul>
 <li>Sử dụng <em>ComparisonResult</em></li>
 </ul>
-
 <p>Trường hợp không phân biệt chữ hoa, chữ thường (Theo mã ascii)</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let arrPre <span style="color:#f92672">=</span> (listStr as NSArray).sortedArray(comparator: { (s1 ,s2) <span style="color:#f92672">-&gt;</span> ComparisonResult <span style="color:#66d9ef">in</span>
-    <span style="color:#66d9ef">if</span> let x <span style="color:#f92672">=</span> s1 as<span style="color:#f92672">?</span> String, let y <span style="color:#f92672">=</span> s2 as<span style="color:#f92672">?</span> String {
-        <span style="color:#66d9ef">return</span> y.localizedCaseInsensitiveCompare(x)
-    }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">arrPre</span> <span class="o">=</span> <span class="p">(</span><span class="n">listStr</span> <span class="n">as</span> <span class="n">NSArray</span><span class="p">).</span><span class="n">sortedArray</span><span class="p">(</span><span class="nl">comparator</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">s1</span> <span class="p">,</span><span class="n">s2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ComparisonResult</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">let</span> <span class="n">x</span> <span class="o">=</span> <span class="n">s1</span> <span class="n">as</span><span class="o">?</span> <span class="n">String</span><span class="p">,</span> <span class="n">let</span> <span class="n">y</span> <span class="o">=</span> <span class="n">s2</span> <span class="n">as</span><span class="o">?</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">.</span><span class="n">localizedCaseInsensitiveCompare</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    <span style="color:#66d9ef">return</span> ComparisonResult.orderedAscending
-})</code></pre></div>
-
+    <span class="k">return</span> <span class="n">ComparisonResult</span><span class="p">.</span><span class="n">orderedAscending</span>
+<span class="p">})</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Kết quả nhận được như sau</p>
-
 <blockquote>
 <p>[&ldquo;quoc nguyen&rdquo;, &ldquo;quoc anh&rdquo;, &ldquo;Hoang hai&rdquo;, &ldquo;hoàng giang&rdquo;, &ldquo;anh ngoc&rdquo;]</p>
 </blockquote>
-
 <ul>
 <li>Sử dụng <em>NSSortDescriptor</em></li>
 </ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let sortDes <span style="color:#f92672">=</span> NSSortDescriptor(key: nil, ascending: false, selector: <span style="color:#75715e">#selector(NSString.localizedCaseInsensitiveCompare))
-</span><span style="color:#75715e"></span>let arrPre2 <span style="color:#f92672">=</span> (listStr as NSArray).sortedArray(using: [sortDes])</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">sortDes</span> <span class="o">=</span> <span class="n">NSSortDescriptor</span><span class="p">(</span><span class="nl">key</span><span class="p">:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">ascending</span><span class="p">:</span> <span class="nb">false</span><span class="p">,</span> <span class="nl">selector</span><span class="p">:</span> <span class="err">#</span><span class="n">selector</span><span class="p">(</span><span class="n">NSString</span><span class="p">.</span><span class="n">localizedCaseInsensitiveCompare</span><span class="p">))</span>
+<span class="n">let</span> <span class="n">arrPre2</span> <span class="o">=</span> <span class="p">(</span><span class="n">listStr</span> <span class="n">as</span> <span class="n">NSArray</span><span class="p">).</span><span class="n">sortedArray</span><span class="p">(</span><span class="nl">using</span><span class="p">:</span> <span class="p">[</span><span class="n">sortDes</span><span class="p">])</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Kết quả cũng ra tương tự như trên</p>
-
 <ul>
 <li>Sử dụng hàm <em>sorted</em> của swift</li>
 </ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let sortSimple <span style="color:#f92672">=</span> listStr.sorted {
-    <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">1.</span>localizedCaseInsensitiveCompare(<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">==</span> .orderedAscending
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">sortSimple</span> <span class="o">=</span> <span class="n">listStr</span><span class="p">.</span><span class="n">sorted</span> <span class="p">{</span>
+    <span class="err">$</span><span class="mf">1.</span><span class="n">localizedCaseInsensitiveCompare</span><span class="p">(</span><span class="err">$</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="p">.</span><span class="n">orderedAscending</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="kết">Kết</h3>
-
 <p>Tóm lại bằng một câu mà ai cũng biết :D</p>
-
 <blockquote>
 <p>Keep it simple</p>
 </blockquote>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -284,34 +313,26 @@ let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtere
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-07-03</span>
+    <span class="item-content">
+        2017-07-03
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
           <a href="/hugosite/tags/swift-3/">swift 3</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/cach-tao-query-don-gian/">
+        <a class="prev" href="/hugosite/post/cach-tao-query-don-gian/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Cách tạo query đơn giản</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/slim-tableview/">
+        <a class="next" href="/hugosite/post/slim-tableview/">
             <span class="next-text nav-default">Slim tableview</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -320,8 +341,7 @@ let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtere
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -335,6 +355,8 @@ let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtere
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -364,28 +386,24 @@ let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtere
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -394,13 +412,5 @@ let arrFilterD <span style="color:#f92672">=</span> (listStr as NSArray).filtere
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

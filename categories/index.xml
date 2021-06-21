@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,17 +6,22 @@
     <description>Recent content in Categories on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jan 2020 11:41:03 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 22 Jun 2021 02:06:08 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>oop</title>
+      <link>https://gg4acrossover.github.io/hugosite/categories/oop/</link>
+      <pubDate>Tue, 22 Jun 2021 02:06:08 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/categories/oop/</guid>
+      <description></description>
+    </item>
     
     <item>
-      <title>Architecture</title>
-      <link>https://gg4acrossover.github.io/hugosite/categories/architecture/</link>
-      <pubDate>Thu, 09 Jan 2020 11:41:03 +0700</pubDate>
+      <title>swift</title>
+      <link>https://gg4acrossover.github.io/hugosite/categories/swift/</link>
+      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/categories/architecture/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/categories/swift/</guid>
       <description></description>
     </item>
     
@@ -30,11 +35,11 @@
     </item>
     
     <item>
-      <title>swift</title>
-      <link>https://gg4acrossover.github.io/hugosite/categories/swift/</link>
-      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
+      <title>Architecture</title>
+      <link>https://gg4acrossover.github.io/hugosite/categories/architecture/</link>
+      <pubDate>Thu, 09 Jan 2020 11:41:03 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/categories/swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/categories/architecture/</guid>
       <description></description>
     </item>
     

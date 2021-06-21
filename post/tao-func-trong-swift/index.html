@@ -16,22 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
-Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; &#43; name &#43; &amp;quot;!&amp;quot; } print( sayHello(&amp;quot;Peter&amp;quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;quot;Hello &amp;quot; &#43; name &#43; &amp;quot;, &amp;quot; &#43; anotherName } print( sayHelloAgain(&amp;quot;Peter&amp;quot;, anotherName: &amp;quot;Tom&amp;quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+Tạo function 1 param 1 2 3 4 5 6  func sayHello(name: String) -&amp;gt; String { return &amp;#34;Hello &amp;#34; &#43; name &#43; &amp;#34;!&amp;#34; } print( sayHello(&amp;#34;Peter&amp;#34;)) // Hello Perter!   Func có nhiều hơn 1 param 1 2 3 4 5 6  func sayHelloAgain(name : String, anotherName: String) -&amp;gt; String { return &amp;#34;Hello &amp;#34; &#43; name &#43; &amp;#34;, &amp;#34; &#43; anotherName } print( sayHelloAgain(&amp;#34;Peter&amp;#34;, anotherName: &amp;#34;Tom&amp;#34;)) // Hello Peter, Tom   ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,31 +36,23 @@ Tạo function 1 param func sayHello(name: String) -&amp;gt; String { return &am
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Tạo function trong swift" />
 <meta property="og:description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
-Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;!&quot; } print( sayHello(&quot;Peter&quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;, &quot; &#43; anotherName } print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước." />
+Tạo function 1 param 1 2 3 4 5 6  func sayHello(name: String) -&gt; String { return &#34;Hello &#34; &#43; name &#43; &#34;!&#34; } print( sayHello(&#34;Peter&#34;)) // Hello Perter!   Func có nhiều hơn 1 param 1 2 3 4 5 6  func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &#34;Hello &#34; &#43; name &#43; &#34;, &#34; &#43; anotherName } print( sayHelloAgain(&#34;Peter&#34;, anotherName: &#34;Tom&#34;)) // Hello Peter, Tom   ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/" /><meta property="article:published_time" content="2016-09-05T16:27:24&#43;07:00"/>
-<meta property="article:modified_time" content="2016-09-05T16:27:24&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/tao-func-trong-swift/" />
+<meta property="article:published_time" content="2016-09-05T16:27:24+07:00" />
+<meta property="article:modified_time" content="2016-09-05T16:27:24+07:00" />
 <meta itemprop="name" content="Tạo function trong swift">
 <meta itemprop="description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
-Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;!&quot; } print( sayHello(&quot;Peter&quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;, &quot; &#43; anotherName } print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.">
-
-
-<meta itemprop="datePublished" content="2016-09-05T16:27:24&#43;07:00" />
-<meta itemprop="dateModified" content="2016-09-05T16:27:24&#43;07:00" />
-<meta itemprop="wordCount" content="648">
+Tạo function 1 param 1 2 3 4 5 6  func sayHello(name: String) -&gt; String { return &#34;Hello &#34; &#43; name &#43; &#34;!&#34; } print( sayHello(&#34;Peter&#34;)) // Hello Perter!   Func có nhiều hơn 1 param 1 2 3 4 5 6  func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &#34;Hello &#34; &#43; name &#43; &#34;, &#34; &#43; anotherName } print( sayHelloAgain(&#34;Peter&#34;, anotherName: &#34;Tom&#34;)) // Hello Peter, Tom   ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước.">
+<meta itemprop="datePublished" content="2016-09-05T16:27:24+07:00" />
+<meta itemprop="dateModified" content="2016-09-05T16:27:24+07:00" />
+<meta itemprop="wordCount" content="709">
 
 
 
@@ -72,7 +60,7 @@ Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;H
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tạo function trong swift"/>
 <meta name="twitter:description" content="Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
-Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;!&quot; } print( sayHello(&quot;Peter&quot;)) // Hello Perter!  Func có nhiều hơn 1 param func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &quot;Hello &quot; &#43; name &#43; &quot;, &quot; &#43; anotherName } print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom  ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước."/>
+Tạo function 1 param 1 2 3 4 5 6  func sayHello(name: String) -&gt; String { return &#34;Hello &#34; &#43; name &#43; &#34;!&#34; } print( sayHello(&#34;Peter&#34;)) // Hello Perter!   Func có nhiều hơn 1 param 1 2 3 4 5 6  func sayHelloAgain(name : String, anotherName: String) -&gt; String { return &#34;Hello &#34; &#43; name &#43; &#34;, &#34; &#43; anotherName } print( sayHelloAgain(&#34;Peter&#34;, anotherName: &#34;Tom&#34;)) // Hello Peter, Tom   ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -109,12 +97,21 @@ Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;H
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -131,6 +128,7 @@ Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;H
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -145,91 +143,125 @@ Tạo function 1 param func sayHello(name: String) -&gt; String { return &quot;H
         <span class="post-time"> 2016-09-05 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#tạo-function-1-param">Tạo function 1 param</a></li>
-<li><a href="#func-có-nhiều-hơn-1-param">Func có nhiều hơn 1 param</a></li>
-<li><a href="#func-với-param-dạng">Func với param dạng &hellip;</a></li>
-<li><a href="#thay-đổi-giá-trị-param-trong-func">Thay đổi giá trị param trong func</a></li>
-<li><a href="#in-out-param">In-Out param</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tạo-function-1-param">Tạo function 1 param</a></li>
+        <li><a href="#func-có-nhiều-hơn-1-param">Func có nhiều hơn 1 param</a></li>
+        <li><a href="#func-với-param-dạng-">Func với param dạng &hellip;</a></li>
+        <li><a href="#thay-đổi-giá-trị-param-trong-func">Thay đổi giá trị param trong func</a></li>
+        <li><a href="#in-out-param">In-Out param</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<p>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).</p>
-
+      <p>Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).</p>
 <h3 id="tạo-function-1-param">Tạo function 1 param</h3>
-
-<pre><code>func sayHello(name: String) -&gt; String 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func sayHello(name: String) -&gt; String 
 {
-    return &quot;Hello &quot; + name + &quot;!&quot;    
+    return &#34;Hello &#34; + name + &#34;!&#34;    
 }
 
-print( sayHello(&quot;Peter&quot;)) // Hello Perter!
-</code></pre>
-
-<h3 id="func-có-nhiều-hơn-1-param">Func có nhiều hơn 1 param</h3>
-
-<pre><code>func sayHelloAgain(name : String, anotherName: String) -&gt; String
+print( sayHello(&#34;Peter&#34;)) // Hello Perter!
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="func-có-nhiều-hơn-1-param">Func có nhiều hơn 1 param</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func sayHelloAgain(name : String, anotherName: String) -&gt; String
 {
-    return &quot;Hello &quot; + name + &quot;, &quot; + anotherName
+    return &#34;Hello &#34; + name + &#34;, &#34; + anotherName
 }
 
-print( sayHelloAgain(&quot;Peter&quot;, anotherName: &quot;Tom&quot;)) // Hello Peter, Tom
-</code></pre>
-
-<p>ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
+print( sayHelloAgain(&#34;Peter&#34;, anotherName: &#34;Tom&#34;)) // Hello Peter, Tom
+</code></pre></td></tr></table>
+</div>
+</div><p>ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
 Ta có thể làm rõ nghĩa của cả param đầu tiên bằng cách cho thêm external name. Mỗi khi thêm external name thì ta bắt buộc phải sử dụng nó khi gọi hàm.
 Ở ví dụ dưới đây external name là <em>to</em> và <em>and</em></p>
-
-<pre><code>func sayHello(to person: String, and anotherPerson: String) -&gt; String 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func sayHello(to person: String, and anotherPerson: String) -&gt; String 
 {
-    return &quot;Hello \(person) and \(anotherPerson)!&quot;
+    return &#34;Hello \(person) and \(anotherPerson)!&#34;
 }
-print(sayHello(to: &quot;Bill&quot;, and: &quot;Ted&quot;)) // Hello Bill and Ted!
-</code></pre>
-
-<p>Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.</p>
-
-<pre><code>func someFunction(firstParameterName: Int, _ secondParameterName: Int) 
+print(sayHello(to: &#34;Bill&#34;, and: &#34;Ted&#34;)) // Hello Bill and Ted!
+</code></pre></td></tr></table>
+</div>
+</div><p>Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func someFunction(firstParameterName: Int, _ secondParameterName: Int) 
 {
     // function body goes here
     // firstParameterName and secondParameterName refer to
     // the argument values for the first and second parameters
 }
 someFunction(1, 2)
-</code></pre>
-
-<p>Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết
-&gt; someFunction(1, secondParameterName:2)</p>
-
-<h3 id="func-với-param-dạng">Func với param dạng &hellip;</h3>
-
-<pre><code>func arithmeticMean(numbers: Double...) -&gt; Double {
+</code></pre></td></tr></table>
+</div>
+</div><p>Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết</p>
+<blockquote>
+<p>someFunction(1, secondParameterName:2)</p>
+</blockquote>
+<h3 id="func-với-param-dạng-">Func với param dạng &hellip;</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func arithmeticMean(numbers: Double...) -&gt; Double {
     var total: Double = 0
     for number in numbers {
         total += number
@@ -237,23 +269,48 @@ someFunction(1, 2)
     return total / Double(numbers.count)
 }
 arithmeticMean(1, 2, 3, 4, 5) // 3.0
-</code></pre>
-
-<p>Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
+</code></pre></td></tr></table>
+</div>
+</div><p>Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
 Lưu ý: tất cả những param truyền vào phải cùng một kiểu dữ liệu.</p>
-
 <h3 id="thay-đổi-giá-trị-param-trong-func">Thay đổi giá trị param trong func</h3>
-
 <p>Theo mặc định, param truyền vào sẽ là const, tức là ta không thể thay đổi giá trị của nó. Để thay đổi có hai cách, cách đầu tiên là sử dụng keyword var như ở ví dụ sau</p>
-
-<pre><code>var minMaxValue = minMax([2,1,5,9,8])!;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">var minMaxValue = minMax([2,1,5,9,8])!;
 print(minMaxValue.1); // max
 
 let minAndMax = minMax([]);
 print(minAndMax?.min);
-</code></pre>
-
-<pre><code>func alignRight(var string: String, totalLength: Int, pad: Character) -&gt; String {
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func alignRight(var string: String, totalLength: Int, pad: Character) -&gt; String {
     let amountToPad = totalLength - string.characters.count
     if amountToPad &lt; 1 {
         return string
@@ -264,18 +321,30 @@ print(minAndMax?.min);
     }
     return string
 }
-var originalString = &quot;hello&quot;
-var paddedString = alignRight(originalString, totalLength: 10, pad: &quot;-&quot;)
-print(originalString, terminator:&quot;&quot;) // hello
-print(paddedString, terminator:&quot;&quot;) // -----hello
-</code></pre>
-
-<p>Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
+var originalString = &#34;hello&#34;
+var paddedString = alignRight(originalString, totalLength: 10, pad: &#34;-&#34;)
+print(originalString, terminator:&#34;&#34;) // hello
+print(paddedString, terminator:&#34;&#34;) // -----hello
+</code></pre></td></tr></table>
+</div>
+</div><p>Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
 Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài func alignRight sẽ không bị thay đổi theo. Vậy để thay đổi giá trị của originalString ta phải làm sao? Ta sử dụng cách thứ hai là In-Out param.</p>
-
 <h3 id="in-out-param">In-Out param</h3>
-
-<pre><code>func swapTwoInts(inout a: Int, inout _ b: Int) {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">func swapTwoInts(inout a: Int, inout _ b: Int) {
     let temporaryA = a
     a = b
     b = temporaryA
@@ -283,19 +352,16 @@ Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài fun
 var someInt = 3
 var anotherInt = 107
 swapTwoInts(&amp;someInt, &amp;anotherInt)
-print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;)
-// prints &quot;someInt is now 107, and anotherInt is now 3
-</code></pre>
-
-<p>Khi gọi những hàm có keyword inout ta phải thêm &amp; đằng trước tên biến.</p>
-
+print(&#34;someInt is now \(someInt), and anotherInt is now \(anotherInt)&#34;)
+// prints &#34;someInt is now 107, and anotherInt is now 3
+</code></pre></td></tr></table>
+</div>
+</div><p>Khi gọi những hàm có keyword inout ta phải thêm &amp; đằng trước tên biến.</p>
 <p>Đây là những điều cơ bản nhất khi triển khai 1 func trong swift. Để đi sâu hơn, bạn nên tham khảo tài liệu của apple.</p>
-
 <p>P/S: những ví dụ trên tham khảo trong swift 2.0 programming của apple. Tài liệu này mới cập nhật, hình như chưa có bản pdf. 😛</p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -303,34 +369,26 @@ print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2016-09-05</span>
+    <span class="item-content">
+        2016-09-05
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/uu-tien-toan-tu/">
+        <a class="prev" href="/hugosite/post/uu-tien-toan-tu/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Ưu tiên toán tử</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/">
+        <a class="next" href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/">
             <span class="next-text nav-default">C&#43;&#43;11 những cái hay dùng</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -339,8 +397,7 @@ print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -354,6 +411,8 @@ print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -383,28 +442,24 @@ print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -413,13 +468,5 @@ print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

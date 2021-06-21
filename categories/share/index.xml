@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Share on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Share on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Jan 2020 00:33:52 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/share/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 16 Jan 2020 00:33:52 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/categories/share/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Một số tip cho ngày cuối năm</title>
       <link>https://gg4acrossover.github.io/hugosite/post/mot-so-tip-cho-ngay-cuoi-nam/</link>
@@ -20,8 +16,7 @@
       <description>Lâu rồi không viết các tip nho nhỏ, hôm nay tranh thủ lúc tâm tư thư thái, viết một bài.
 Git Chẳng mấy khi viết về các lệnh git.
  Check remote đến responsitory nào   git remote -v
-  Add thì đơn giản hơn   git remote add origin 
-  Xóa thì sao, trước hết cần check xem đang remote đến đâu mới biết mà xóa   git remote rm origin</description>
+  Add thì đơn giản hơn   git remote add origin   Xóa thì sao, trước hết cần check xem đang remote đến đâu mới biết mà xóa   git remote rm origin</description>
     </item>
     
   </channel>

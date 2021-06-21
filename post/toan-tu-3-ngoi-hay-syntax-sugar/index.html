@@ -16,22 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Tình huống Hôm nay có chút buồn ngủ nên mình tạo động lực cho bản thân bằng cách tự làm thử toán tử ba ngôi trong swift. Đôi khi chơi theo kiểu hardcore cũng mang lại liều doping khá mạnh, giống như phê thuốc vầy :D.
-Bình thường mình không dùng autoclosure vì thấy nó cũng không có gì đặc sắc, chỉ là syntax sugar. Áp dụng đúng chỗ thì ngon, áp dụng không đúng chỗ thì càng làm code khó hiểu." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Tình huống Hôm nay có chút buồn ngủ nên mình tạo động lực cho bản thân bằng cách tự làm thử toán tử ba ngôi trong swift. Đôi khi chơi theo kiểu hardcore cũng mang lại liều doping khá mạnh, giống như phê thuốc vầy :D.
+Bình thường mình không dùng autoclosure vì thấy nó cũng không có gì đặc sắc, chỉ là syntax sugar. Áp dụng đúng chỗ thì ngon, áp dụng không đúng chỗ thì càng làm code khó hiểu." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,31 +36,23 @@ Bình thường mình không dùng autoclosure vì thấy nó cũng không có g
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Toán tử 3 ngôi  hay sugar syntax" />
 <meta property="og:description" content="Tình huống Hôm nay có chút buồn ngủ nên mình tạo động lực cho bản thân bằng cách tự làm thử toán tử ba ngôi trong swift. Đôi khi chơi theo kiểu hardcore cũng mang lại liều doping khá mạnh, giống như phê thuốc vầy :D.
 Bình thường mình không dùng autoclosure vì thấy nó cũng không có gì đặc sắc, chỉ là syntax sugar. Áp dụng đúng chỗ thì ngon, áp dụng không đúng chỗ thì càng làm code khó hiểu." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/" /><meta property="article:published_time" content="2018-11-06T09:36:44&#43;07:00"/>
-<meta property="article:modified_time" content="2018-11-06T09:36:44&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/toan-tu-3-ngoi-hay-syntax-sugar/" />
+<meta property="article:published_time" content="2018-11-06T09:36:44+07:00" />
+<meta property="article:modified_time" content="2018-11-06T09:36:44+07:00" />
 <meta itemprop="name" content="Toán tử 3 ngôi  hay sugar syntax">
 <meta itemprop="description" content="Tình huống Hôm nay có chút buồn ngủ nên mình tạo động lực cho bản thân bằng cách tự làm thử toán tử ba ngôi trong swift. Đôi khi chơi theo kiểu hardcore cũng mang lại liều doping khá mạnh, giống như phê thuốc vầy :D.
 Bình thường mình không dùng autoclosure vì thấy nó cũng không có gì đặc sắc, chỉ là syntax sugar. Áp dụng đúng chỗ thì ngon, áp dụng không đúng chỗ thì càng làm code khó hiểu.">
-
-
-<meta itemprop="datePublished" content="2018-11-06T09:36:44&#43;07:00" />
-<meta itemprop="dateModified" content="2018-11-06T09:36:44&#43;07:00" />
-<meta itemprop="wordCount" content="372">
+<meta itemprop="datePublished" content="2018-11-06T09:36:44+07:00" />
+<meta itemprop="dateModified" content="2018-11-06T09:36:44+07:00" />
+<meta itemprop="wordCount" content="398">
 
 
 
@@ -109,12 +97,21 @@ Bình thường mình không dùng autoclosure vì thấy nó cũng không có g
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -131,6 +128,7 @@ Bình thường mình không dùng autoclosure vì thấy nó cũng không có g
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -145,63 +143,77 @@ Bình thường mình không dùng autoclosure vì thấy nó cũng không có g
         <span class="post-time"> 2018-11-06 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#tình-huống">Tình huống</a></li>
-<li><a href="#code">Code</a></li>
-<li><a href="#tác-dụng-phụ">Tác dụng phụ</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#tình-huống">Tình huống</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#tác-dụng-phụ">Tác dụng phụ</a></li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h2 id="tình-huống">Tình huống</h2>
-
+      <h2 id="tình-huống">Tình huống</h2>
 <p>Hôm nay có chút buồn ngủ nên mình tạo động lực cho bản thân bằng cách tự làm thử toán tử ba ngôi trong swift. Đôi khi chơi theo kiểu hardcore cũng mang lại liều doping khá mạnh, giống như phê thuốc vầy :D.</p>
-
 <p>Bình thường mình không dùng <strong>autoclosure</strong> vì thấy nó cũng không có gì đặc sắc, chỉ là <strong>syntax sugar</strong>. Áp dụng đúng chỗ thì ngon, áp dụng không đúng chỗ thì càng làm code khó hiểu. Đâu phải cứ ngắn là hay. Tuy nhiên ở tình huống này, không dùng <strong>sugar syntax</strong> thì không được. t.t</p>
-
 <h2 id="code">Code</h2>
-
 <p>Bình thường toán tử ba ngôi sẽ viết kiểu này</p>
-
-<pre><code>condition ? trueValue : failureValue
-</code></pre>
-
-<p>Ở trường hợp đơn giản nhất, điều kiện và các giá trị trong toán tử ba ngôi sẽ là value type. Tuy nhiên đời mà, mong muốn của bạn đâu chỉ dừng ở đó.</p>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">condition ? trueValue : failureValue
+</code></pre></td></tr></table>
+</div>
+</div><p>Ở trường hợp đơn giản nhất, điều kiện và các giá trị trong toán tử ba ngôi sẽ là value type. Tuy nhiên đời mà, mong muốn của bạn đâu chỉ dừng ở đó.</p>
 <p>Thế nên đôi khi nó thành như này</p>
-
-<pre><code>&lt;function return Bool&gt; ? &lt;function return trueValue&gt; : &lt;function return failureValue&gt; 
-</code></pre>
-
-<p>Làm thế nào để có thể đáp ứng được cả 2 trường hợp trên chỉ với 1 cách duy nhất, swift có <strong>autoclosure</strong>. Xong vấn đề đầu tiên.</p>
-
-<p>Vấn đề thứ hai, ở đây chúng ta có <strong>2 toán tử</strong>  <strong>&rdquo;?&rdquo;</strong> và <strong>&ldquo;:&rdquo;</strong> như vậy ta cần custom 2 toán tử mới và kết hợp chúng để có thể tạo hiệu ứng tương tự toán tử ba ngôi.</p>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;function return Bool&gt; ? &lt;function return trueValue&gt; : &lt;function return failureValue&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><p>Làm thế nào để có thể đáp ứng được cả 2 trường hợp trên chỉ với 1 cách duy nhất, swift có <strong>autoclosure</strong>. Xong vấn đề đầu tiên.</p>
+<p>Vấn đề thứ hai, ở đây chúng ta có <strong>2 toán tử</strong>  <strong>&quot;?&quot;</strong> và <strong>&quot;:&quot;</strong> như vậy ta cần custom 2 toán tử mới và kết hợp chúng để có thể tạo hiệu ứng tương tự toán tử ba ngôi.</p>
 <p>Ok, phân tích bài toán xong, đến giờ show code</p>
-
-<pre><code>precedencegroup MyBoolApplication {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">precedencegroup MyBoolApplication {
     associativity: left
     higherThan: MyConditionApplication
 }
@@ -224,18 +236,15 @@ func &lt;??&gt;&lt;T&gt;(lsh: @autoclosure () -&gt; Bool, rhs: (Bool) -&gt; T) -
     return rhs(lsh())
 }
 
-let x = true &lt;??&gt; &quot;true&quot; &lt;||&gt; &quot;false&quot;
-</code></pre>
-
-<h2 id="tác-dụng-phụ">Tác dụng phụ</h2>
-
+let x = true &lt;??&gt; &#34;true&#34; &lt;||&gt; &#34;false&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="tác-dụng-phụ">Tác dụng phụ</h2>
 <p>Bài này có tác dụng <strong>for fun</strong> là chính chứ toán tử ba ngôi đã có sẵn trong bản thân ngôn ngữ rồi. Tuy nhiên, nếu nó có ích cho mọi người thì mình cũng rất vui :D.</p>
-
 <p>Have fun!</p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -243,32 +252,25 @@ let x = true &lt;??&gt; &quot;true&quot; &lt;||&gt; &quot;false&quot;
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-11-06</span>
+    <span class="item-content">
+        2018-11-06
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift/">swift</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/clickable-label/">
+        <a class="prev" href="/hugosite/post/clickable-label/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Clickable label</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/style-view-2/">
+        <a class="next" href="/hugosite/post/style-view-2/">
             <span class="next-text nav-default">Tạo Style cho UIView</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -277,8 +279,7 @@ let x = true &lt;??&gt; &quot;true&quot; &lt;||&gt; &quot;false&quot;
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -292,6 +293,8 @@ let x = true &lt;??&gt; &quot;true&quot; &lt;||&gt; &quot;false&quot;
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -321,28 +324,24 @@ let x = true &lt;??&gt; &quot;true&quot; &lt;||&gt; &quot;false&quot;
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -351,13 +350,5 @@ let x = true &lt;??&gt; &quot;true&quot; &lt;||&gt; &quot;false&quot;
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

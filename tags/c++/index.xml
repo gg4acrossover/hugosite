@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>c&#43;&#43; on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,11 +6,7 @@
     <description>Recent content in c&#43;&#43; on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Sep 2016 16:32:39 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/c++/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 05 Sep 2016 16:32:39 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ưu tiên toán tử</title>
       <link>https://gg4acrossover.github.io/hugosite/post/uu-tien-toan-tu/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://gg4acrossover.github.io/hugosite/post/uu-tien-toan-tu/</guid>
       <description>Hôm nay mình sẽ nói về một số cái hay nhầm lẫn khi lập trình, tập trung vào những vấn đề như trên tựa đã ghi smiley (làm cái tựa for fun tý)
-mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b != 0) a &amp;lt;&amp;lt; 4 + b (a &amp;lt;&amp;lt; 4) + b a &amp;lt;&amp;lt; (4 + b)  !</description>
+1 2 3 4 5  mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) int *ap[] int (*ap)[] int *(ap[]) a &amp;amp; b != 0 (a &amp;amp; b) != 0 a &amp;amp; (b !</description>
     </item>
     
     <item>
@@ -31,7 +27,7 @@ mọi người thấy mọi người hay nghĩ thực tế *p.f (*p).f *(p.f) in
  http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer
  Sử dụng auto Trong C++11 từ khóa auto được dùng để compiler có thể tự nhận diện type của dữ liệu đầu vào thông qua rvalue
 VD:
-auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();  Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.</description>
+1 2 3  auto a = 1; // is equal with int a = 1 auto a = 1f // is equal with float a = 1.f auto a = new foo(); // is equal with *a = new foo();   Có một lưu ý là khi sử dụng auto cho biến bất kì thì ta luôn phải initialize cho biến đó.</description>
     </item>
     
     <item>

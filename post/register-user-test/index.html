@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/register-user-test/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -39,29 +35,21 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Register user và thực hiện test" />
 <meta property="og:description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/register-user-test/" /><meta property="article:published_time" content="2017-08-09T16:41:23&#43;07:00"/>
-<meta property="article:modified_time" content="2017-08-09T16:41:23&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/register-user-test/" />
+<meta property="article:published_time" content="2017-08-09T16:41:23+07:00" />
+<meta property="article:modified_time" content="2017-08-09T16:41:23+07:00" />
 <meta itemprop="name" content="Register user và thực hiện test">
 <meta itemprop="description" content="Giới thiệu Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.">
-
-
-<meta itemprop="datePublished" content="2017-08-09T16:41:23&#43;07:00" />
-<meta itemprop="dateModified" content="2017-08-09T16:41:23&#43;07:00" />
-<meta itemprop="wordCount" content="698">
+<meta itemprop="datePublished" content="2017-08-09T16:41:23+07:00" />
+<meta itemprop="dateModified" content="2017-08-09T16:41:23+07:00" />
+<meta itemprop="wordCount" content="781">
 
 
 
@@ -105,12 +93,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -127,6 +124,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -141,180 +139,260 @@
         <span class="post-time"> 2017-08-09 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#giới-thiệu">Giới thiệu</a></li>
-<li><a href="#chuẩn-bị-toy">Chuẩn bị toy</a></li>
-<li><a href="#xác-thực-và-test">Xác thực và test</a></li>
-<li><a href="#tổng-hợp">Tổng hợp</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#giới-thiệu">Giới thiệu</a></li>
+        <li><a href="#chuẩn-bị-toy">Chuẩn bị toy</a></li>
+        <li><a href="#xác-thực-và-test">Xác thực và test</a></li>
+        <li><a href="#tổng-hợp">Tổng hợp</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<h3 id="giới-thiệu">Giới thiệu</h3>
-
+      <h3 id="giới-thiệu">Giới thiệu</h3>
 <p>Việc xác thực quá trình đăng kí mới là công việc mà coder nào cũng phải gặp, thậm chí nó quen thuộc đến mức như cầm đũa hàng ngày vậy. Chúng ta có thể thực hiện việc validate ngay trên viewcontroller, tuy nhiên cách này khó test và sẽ khó quản lý nếu có nhiều điều kiện đầu vào. Cách hay hơn là chúng ta có thể tách ra 1 object validator nhận thông tin đầu vào và trả ra thông báo thành công nếu thông tin nhập vào đúng, trả ra mã lỗi nếu thông tin nhập vào sai.</p>
-
 <p>Mình sẽ làm một ví dụ đơn giản thực hiện việc đăng ký mới user với các điều kiện: xác thực format email, xác thực password lớn hơn 8 ký tự có ít nhất 1 kí tự dạng số và ít nhất 1 ký tự dạng chữ và viết test cho việc validate.</p>
-
 <h3 id="chuẩn-bị-toy">Chuẩn bị toy</h3>
-
 <p>Mình tạo một enum Error chứa các case lỗi có thể phát sinh, ở đây để đơn giản chỉ có 2 case. Tiếp theo là một protocol hỗ trợ check thông tin và trả ra mã lỗi, tất cả các object validator sẽ implement protocol này.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">enum</span> <span class="nl">ONRegisterUserError</span> <span class="p">:</span> <span class="n">Error</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">invalidEmail</span>
+    <span class="k">case</span> <span class="n">invalidPassword</span>
+<span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">enum</span> ONRegisterUserError : Error {
-    <span style="color:#66d9ef">case</span> invalidEmail
-    <span style="color:#66d9ef">case</span> invalidPassword
-}
-
-protocol ONRegisterUserProtocol {
-    var error: ONRegisterUserError { get }
-    func isValid() <span style="color:#f92672">-&gt;</span> Bool
-}</code></pre></div>
-
+<span class="n">protocol</span> <span class="n">ONRegisterUserProtocol</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">error</span><span class="p">:</span> <span class="n">ONRegisterUserError</span> <span class="p">{</span> <span class="n">get</span> <span class="p">}</span>
+    <span class="n">func</span> <span class="n">isValid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Bool</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="xác-thực-và-test">Xác thực và test</h3>
-
 <p>Mình sẽ bắt đầu với việc xác thực format email, sử dụng protocol ONRegisterUserProtocol như ở trên</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">class</span> ONEmailValidateItem: ONRegisterUserProtocol {
-    var error: ONRegisterUserError <span style="color:#f92672">=</span> .invalidEmail
-    private let email: String
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">class</span> <span class="nl">ONEmailValidateItem</span><span class="p">:</span> <span class="n">ONRegisterUserProtocol</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">error</span><span class="p">:</span> <span class="n">ONRegisterUserError</span> <span class="o">=</span> <span class="p">.</span><span class="n">invalidEmail</span>
+    <span class="n">private</span> <span class="n">let</span> <span class="nl">email</span><span class="p">:</span> <span class="n">String</span>
     
-    init(email: String) {
-        self.email <span style="color:#f92672">=</span> email
-    }
+    <span class="n">init</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+    <span class="p">}</span>
    
-    func isValid() <span style="color:#f92672">-&gt;</span> Bool {
-        <span style="color:#66d9ef">return</span> true
-    }
-}</code></pre></div>
-
+    <span class="n">func</span> <span class="n">isValid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">true</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Ở đây mình chưa implement hàm <em>isValid</em> (chỉ để 1 giá trị default là true trước), công việc trước nhất là viết unit test.
 Mình tạo lớp <em>ONTestEmailValid</em> kế thừa <em>XCTestCase</em> trong thư mục [ProjectName]Tests ([ProjectName] là tên project của bạn).
 Chú ý: nhớ thêm dòng @testable import [Projectname]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">@</span><span class="n">testable</span> <span class="n">import</span> <span class="n">ONRegisterUser</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">@testable import ONRegisterUser
-
-<span style="color:#66d9ef">class</span> ONTestEmailValid: XCTestCase {
-    func testEmailInvalidCharacter() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@gmail,com&#34;</span>).isValid()
-        XCTAssertFalse(isValid)
-    }
+<span class="k">class</span> <span class="nl">ONTestEmailValid</span><span class="p">:</span> <span class="n">XCTestCase</span> <span class="p">{</span>
+    <span class="n">func</span> <span class="n">testEmailInvalidCharacter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="n">isValid</span> <span class="o">=</span> <span class="n">ONEmailValidateItem</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="s">&#34;example@gmail,com&#34;</span><span class="p">).</span><span class="n">isValid</span><span class="p">()</span>
+        <span class="n">XCTAssertFalse</span><span class="p">(</span><span class="n">isValid</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func testEmailInvalidProvider() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@.com&#34;</span>).isValid()
-        XCTAssertFalse(isValid)
-    }
+    <span class="n">func</span> <span class="n">testEmailInvalidProvider</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="n">isValid</span> <span class="o">=</span> <span class="n">ONEmailValidateItem</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="s">&#34;example@.com&#34;</span><span class="p">).</span><span class="n">isValid</span><span class="p">()</span>
+        <span class="n">XCTAssertFalse</span><span class="p">(</span><span class="n">isValid</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func testEmailInvalidInComplete() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@&#34;</span>).isValid()
-        XCTAssertFalse(isValid)
-    }
+    <span class="n">func</span> <span class="n">testEmailInvalidInComplete</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="n">isValid</span> <span class="o">=</span> <span class="n">ONEmailValidateItem</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="s">&#34;example@&#34;</span><span class="p">).</span><span class="n">isValid</span><span class="p">()</span>
+        <span class="n">XCTAssertFalse</span><span class="p">(</span><span class="n">isValid</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func testEmailInvalidUserName() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;@a.com&#34;</span>).isValid()
-        XCTAssertFalse(isValid)
-    }
+    <span class="n">func</span> <span class="n">testEmailInvalidUserName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="n">isValid</span> <span class="o">=</span> <span class="n">ONEmailValidateItem</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="s">&#34;@a.com&#34;</span><span class="p">).</span><span class="n">isValid</span><span class="p">()</span>
+        <span class="n">XCTAssertFalse</span><span class="p">(</span><span class="n">isValid</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func testEmailValid() {
-        let isValid <span style="color:#f92672">=</span> ONEmailValidateItem(email: <span style="color:#e6db74">&#34;example@a.com&#34;</span>).isValid()
-        XCTAssertTrue(isValid)
-    }
-}</code></pre></div>
-
+    <span class="n">func</span> <span class="n">testEmailValid</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="n">isValid</span> <span class="o">=</span> <span class="n">ONEmailValidateItem</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="s">&#34;example@a.com&#34;</span><span class="p">).</span><span class="n">isValid</span><span class="p">()</span>
+        <span class="n">XCTAssertTrue</span><span class="p">(</span><span class="n">isValid</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Khi build test (command u) thì các test case hầu hết là fail :D</p>
-
-<p><img src="/hugosite/images/note/testcase.png" alt="testcase" /></p>
-
+<p><img src="/hugosite/images/note/testcase.png" alt="testcase"></p>
 <p>Bây giờ mới đến bước implement hàm <em>isValid</em> để nó pass tất cả các case mình định nghĩa</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">func <span style="color:#a6e22e">isValid</span>() <span style="color:#f92672">-&gt;</span> Bool {
-    let emailRegEx <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">.[A-Za-z]{2,}&#34;</span>
-    let emailTest <span style="color:#f92672">=</span> NSPredicate(format: <span style="color:#e6db74">&#34;SELF MATCHES %@&#34;</span>, emailRegEx)
-    <span style="color:#66d9ef">return</span> emailTest.evaluate(with: self.email)
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">func</span> <span class="nf">isValid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Bool</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">emailRegEx</span> <span class="o">=</span> <span class="s">&#34;[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span class="se">\\</span><span class="s">.[A-Za-z]{2,}&#34;</span>
+    <span class="n">let</span> <span class="n">emailTest</span> <span class="o">=</span> <span class="n">NSPredicate</span><span class="p">(</span><span class="nl">format</span><span class="p">:</span> <span class="s">&#34;SELF MATCHES %@&#34;</span><span class="p">,</span> <span class="n">emailRegEx</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">emailTest</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="nl">with</span><span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="n">email</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Để nhanh chóng thì mình sử dụng NSPredicate và regEx cho việc filter (regEx thì copy qua google xài luôn thôi :D).
 check password làm tương tự như cách triển khai class <em>ONTestEmailValid</em>.</p>
-
 <p>Sau khi implement lại hàm <em>isValid</em>, chúng ta chạy lại test, Done!</p>
-
-<p><img src="/hugosite/images/note/testcase_pass.png" alt="testcase" /></p>
-
+<p><img src="/hugosite/images/note/testcase_pass.png" alt="testcase"></p>
 <p>OK, chúng ta đã có 2 class thực thi chức năng validate riêng biệt. Tiếp theo, mình xây dựng đối tượng đảm nhận việc quản lý các validator. Mục đích cho việc tạo lớp này là nhận đầu vào input và đưa ra output chung cho tất cả các validator.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">class</span> ONValidateRegisterUser {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">class</span> <span class="n">ONValidateRegisterUser</span> <span class="p">{</span>
     
-    <span style="color:#66d9ef">enum</span> ONRegisterResult {
-        <span style="color:#66d9ef">case</span> success(String)
-        <span style="color:#66d9ef">case</span> fail(String)
-    }
+    <span class="k">enum</span> <span class="n">ONRegisterResult</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">success</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">fail</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    let result: ONRegisterResult
+    <span class="n">let</span> <span class="nl">result</span><span class="p">:</span> <span class="n">ONRegisterResult</span>
     
-    init(email: String, password: String) {
-        let validator: [ONRegisterUserProtocol] <span style="color:#f92672">=</span> [ONEmailValidateItem(email: email),
-                                                   ONPasswordValidateItem(password: password)]
-        let invalids <span style="color:#f92672">=</span> validator.filter { <span style="color:#f92672">!</span><span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0.</span>isValid() }
+    <span class="n">init</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="nl">password</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">let</span> <span class="nl">validator</span><span class="p">:</span> <span class="p">[</span><span class="n">ONRegisterUserProtocol</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ONEmailValidateItem</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="n">email</span><span class="p">),</span>
+                                                   <span class="n">ONPasswordValidateItem</span><span class="p">(</span><span class="nl">password</span><span class="p">:</span> <span class="n">password</span><span class="p">)]</span>
+        <span class="n">let</span> <span class="n">invalids</span> <span class="o">=</span> <span class="n">validator</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="o">!</span><span class="err">$</span><span class="mf">0.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">}</span>
         
-        <span style="color:#66d9ef">if</span> invalids.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> {
-            self.result <span style="color:#f92672">=</span> .fail(<span style="color:#e6db74">&#34;Wrong format&#34;</span>)
-        } <span style="color:#66d9ef">else</span> {
-            self.result <span style="color:#f92672">=</span> .success(<span style="color:#e6db74">&#34;Done&#34;</span>)
-        }
-    }
-}</code></pre></div>
-
+        <span class="k">if</span> <span class="n">invalids</span><span class="p">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="p">.</span><span class="n">fail</span><span class="p">(</span><span class="s">&#34;Wrong format&#34;</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="p">.</span><span class="n">success</span><span class="p">(</span><span class="s">&#34;Done&#34;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Mình tạo enum <em>ONRegisterResult</em> trả về case success khi cả email và pass đều validate thành công, ngược lại ra fail.
 Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">validator</span> <span class="o">=</span> <span class="n">ONValidateRegisterUser</span><span class="p">(</span><span class="nl">email</span><span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="n">userNameTextField</span><span class="p">.</span><span class="n">text</span><span class="o">!</span><span class="p">,</span> <span class="nl">password</span><span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="n">passwordTextField</span><span class="p">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let validator <span style="color:#f92672">=</span> ONValidateRegisterUser(email: self.userNameTextField.text<span style="color:#f92672">!</span>, password: self.passwordTextField.text<span style="color:#f92672">!</span>)
-
-<span style="color:#66d9ef">switch</span> validator.result {
-<span style="color:#66d9ef">case</span> .success(let str)<span style="color:#f92672">:</span>
-    SHOW_ALERT(message: str, vc: self)
-<span style="color:#66d9ef">case</span> .fail(let str)<span style="color:#f92672">:</span>
-    SHOW_ALERT(message: str, vc: self)
-}</code></pre></div>
-
+<span class="k">switch</span> <span class="n">validator</span><span class="p">.</span><span class="n">result</span> <span class="p">{</span>
+<span class="k">case</span> <span class="p">.</span><span class="n">success</span><span class="p">(</span><span class="n">let</span> <span class="n">str</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">SHOW_ALERT</span><span class="p">(</span><span class="nl">message</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="nl">vc</span><span class="p">:</span> <span class="nb">self</span><span class="p">)</span>
+<span class="k">case</span> <span class="p">.</span><span class="n">fail</span><span class="p">(</span><span class="n">let</span> <span class="n">str</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">SHOW_ALERT</span><span class="p">(</span><span class="nl">message</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="nl">vc</span><span class="p">:</span> <span class="nb">self</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="tổng-hợp">Tổng hợp</h3>
-
 <p>Tóm lược bài viết: để thực hiện việc register và TDD ta chú ý 3 việc sau:</p>
-
 <ul>
 <li>Tạo các lớp validator check đầu vào như username, password,&hellip;</li>
 <li>Tạo một lớp quản lý các validator, nhận đầu vào là các dữ liệu cần validate và trả ra result.</li>
 <li>Test trước khi code :D</li>
 </ul>
-
 <p><a href="https://github.com/gg4acrossover/register-user-example">Source code</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -322,34 +400,26 @@ Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-08-09</span>
+    <span class="item-content">
+        2017-08-09
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift3/">swift3</a>
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/enum-swift/">
+        <a class="prev" href="/hugosite/post/enum-swift/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Enum result</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/cach-tao-query-don-gian/">
+        <a class="next" href="/hugosite/post/cach-tao-query-don-gian/">
             <span class="next-text nav-default">Cách tạo query đơn giản</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -358,8 +428,7 @@ Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -373,6 +442,8 @@ Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -402,28 +473,24 @@ Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -432,13 +499,5 @@ Khi đó ở <em>Viewcontroller</em> ta chỉ đơn giản làm như sau</p>
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

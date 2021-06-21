@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>swift on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,11 +6,7 @@
     <description>Recent content in swift on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2020 02:09:09 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/categories/swift/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 May 2020 02:09:09 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tiếng Việt có dấu</title>
       <link>https://gg4acrossover.github.io/hugosite/post/tieng-viet-co-dau/</link>
@@ -38,7 +34,7 @@ Trong lúc thao tác mở thẻ, phần nhập tên ghi trên thẻ khiến mìn
       
       <guid>https://gg4acrossover.github.io/hugosite/post/get-urls-from-string/</guid>
       <description>Từ một lời thắc mắc Bạn đã bao giờ tự hỏi làm thế nào để lấy ra url từ string ko? Cách đơn giản hướng đến đầu tiên là split string ra rồi đưa vào hàm URL.init
-var str = &amp;quot;goto https://www.google.com/&amp;quot; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]  Kết quả ra cả &amp;ldquo;goto&amp;rdquo;, có gì đó sai sai? Hóa ra thằng URL.init vốn dễ dãi. Nó nhận cả đường dẫn, tên thư mục nó lấy, url nó lấy, tên folder nó lấy, blah blah.</description>
+1 2 3 4 5  var str = &amp;#34;goto https://www.google.com/&amp;#34; let urls = str.components(separatedBy: .whitespaces) .compactMap(URL.init) // [goto, https://www.google.com/]   Kết quả ra cả &amp;ldquo;goto&amp;rdquo;, có gì đó sai sai? Hóa ra thằng URL.</description>
     </item>
     
     <item>
@@ -49,7 +45,7 @@ var str = &amp;quot;goto https://www.google.com/&amp;quot; let urls = str.compon
       <guid>https://gg4acrossover.github.io/hugosite/post/dismiss-keyboard/</guid>
       <description>Xin chào mọi người, hôm nay mình sẽ trở lại với một vấn đề quen thuộc. Đó là ẩn keyboard, xử lý tuy rằng đơn giản, nhưng để làm &amp;ldquo;mượt&amp;rdquo; thì cũng không dễ tẹo nào. Mình sẽ đi từng bước một, từ cách bình dân nhất, rồi đến những xử lý refactor.
 Cách bình dân Cách chúng ta thường thấy nhất là:
-class ViewController: UIViewController { @IBOutlet weak var txtField: UITextField!</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  class ViewController: UIViewController { @IBOutlet weak var txtField: UITextField!</description>
     </item>
     
     <item>
@@ -70,7 +66,7 @@ Trên là hình ảnh mắt chúng ta nhìn thấy khi di chuyển collection vi
       
       <guid>https://gg4acrossover.github.io/hugosite/post/new-tip-03-06-19/</guid>
       <description>Một số phương thức hỗ trợ lập trình, note lại cho bản thân.
-Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }  Storyboard protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&amp;gt; Self { let controller = storyboard().instantiateInitialViewController() return controller! as! Self } static func storyboard(fileName: String? = nil) -&amp;gt; UIStoryboard { let storyboard = UIStoryboard(name: fileName ?</description>
+Autolayout 1 2 3 4 5 6 7 8 9 10 11 12  extension UIView { func pinToBounds(_ view: UIView) { view.translatesAutoresizingMaskIntoConstraints = false NSLayoutConstraint.activate([ view.topAnchor.constraint(equalTo: topAnchor), view.bottomAnchor.constraint(equalTo: bottomAnchor), view.leadingAnchor.constraint(equalTo: leadingAnchor), view.trailingAnchor.constraint(equalTo: trailingAnchor) ]) } }   Storyboard 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  protocol Storyboardable { } extension Storyboardable where Self: UIViewController { static func instantiateInitialFromStoryboard() -&amp;gt; Self { let controller = storyboard().</description>
     </item>
     
     <item>
@@ -81,7 +77,7 @@ Autolayout extension UIView { func pinToBounds(_ view: UIView) { view.translates
       <guid>https://gg4acrossover.github.io/hugosite/post/mot-vai-tip-thang-5-2019/</guid>
       <description>CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
 Bước đầu implement phương thức gắn css style vào string
-extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&amp;gt; String in return &amp;quot;\(key): \(value)&amp;quot; }.joined(separator: &amp;quot;;&amp;quot;) try! self.init( data: Data(&amp;quot;&amp;lt;p style=\&amp;quot;\(style)\&amp;quot;&amp;gt;\(text)&amp;lt;/p&amp;gt;&amp;quot;.utf8), options: [.documentType: NSAttributedString.DocumentType.html, .</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&amp;gt; String in return &amp;#34;\(key): \(value)&amp;#34; }.</description>
     </item>
     
     <item>
@@ -91,8 +87,7 @@ extension NSAttributedString { convenience public init(text: String, styles: [St
       
       <guid>https://gg4acrossover.github.io/hugosite/post/lam-viec-voi-response/</guid>
       <description>Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
-struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
-Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.</description>
+1 2 3 4 5  struct Response { let timestamp: String let id: Int let payload: Any }   timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.</description>
     </item>
     
   </channel>

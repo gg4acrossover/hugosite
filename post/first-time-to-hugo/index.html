@@ -16,22 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
-Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
+Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,31 +36,23 @@ Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ 
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Các thuộc tính của property trong objC" />
 <meta property="og:description" content="Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
 Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/" /><meta property="article:published_time" content="2016-09-01T17:22:59&#43;07:00"/>
-<meta property="article:modified_time" content="2016-09-01T17:22:59&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/first-time-to-hugo/" />
+<meta property="article:published_time" content="2016-09-01T17:22:59+07:00" />
+<meta property="article:modified_time" content="2016-09-01T17:22:59+07:00" />
 <meta itemprop="name" content="Các thuộc tính của property trong objC">
 <meta itemprop="description" content="Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
 Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.">
-
-
-<meta itemprop="datePublished" content="2016-09-01T17:22:59&#43;07:00" />
-<meta itemprop="dateModified" content="2016-09-01T17:22:59&#43;07:00" />
-<meta itemprop="wordCount" content="856">
+<meta itemprop="datePublished" content="2016-09-01T17:22:59+07:00" />
+<meta itemprop="dateModified" content="2016-09-01T17:22:59+07:00" />
+<meta itemprop="wordCount" content="861">
 
 
 
@@ -109,12 +97,21 @@ Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ 
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -131,6 +128,7 @@ Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ 
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -145,101 +143,63 @@ Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ 
         <span class="post-time"> 2016-09-01 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#stack">Stack</a></li>
-<li><a href="#heap">Heap</a></li>
-<li><a href="#strong">Strong</a></li>
-<li><a href="#weak">Weak</a></li>
-<li><a href="#assign">Assign</a></li>
-<li><a href="#copy">Copy</a></li>
-</ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<p>Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.</p>
-
+      <p>Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.</p>
 <p>Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.</p>
-
 <h1 id="stack">Stack</h1>
-
 <p>Stack là vùng bộ nhớ để chứa biến local, biến tạm. Khi bạn tạo ra đối tượng và được lưu trên stack thì việc quản lý bộ nhớ diễn ra một cách tự động. Thế nên bạn không phải bận tâm đến vấn đề memory leak.</p>
-
 <h1 id="heap">Heap</h1>
-
 <p>Vùng bộ nhớ mà bạn muốn sử dụng tự phải cấp phát và giải phóng khi cần thiết. Bạn trực tiếp quản lý nó, thế nên khả năng rò rỉ bộ nhớ có thể xảy ra. Như C, ta đã malloc thì phải free. Vấn đề này dễ thở hơn khi sử dụng JAVA hay Obj-C (cơ chế garbage collection).</p>
-
 <p><strong>============</strong></p>
-
 <p>Lợi thế trong việc sử dụng stack là tốc độ nhanh, sự đơn giản (tự động hủy khi hàm return hoặc khi ra khỏi scope). Tuy nhiên, khi lập trình chúng ta có xu hướng muốn quản lý lifetime của đối tượng, thế nên ta sử dụng heap khá thường xuyên.</p>
-
 <p>Đối tượng trong obj-c thì hầu hết được lưu ở heap. Apple dịu dàng nghĩ ra strong, weak, copy, assign để coder quản lý bộ nhớ thuận tiện hơn (nhờ ARC). Nhưng nhiều thuộc tính như thế dễ làm coder băn khoăn cái nào nên dùng, cái nào không.</p>
-
 <h1 id="strong">Strong</h1>
-
 <p>Cơ chế quản lý bộ nhớ của ARC là nó sẽ đếm số reference đến một đối tượng cụ thể nào đó. Khi con số reference này bằng 0 thì đối tượng đó tự động giải phóng khỏi bộ nhớ. Ta không phải hủy bằng tay nữa. Strong sẽ làm cho reference tới đối tượng tăng lên 1 đơn vị, khi đó ta nói đối tượng có 1 owner. Một đối tượng có thể có nhiều owner. Nhưng tốt hơn hết là cố gắng làm sao để một đối tượng chỉ có 1 hoặc 2 owner thôi. Vì sao sẽ nói ở phần weak.</p>
-
 <p>Ta sử dụng strong đối với các UIView, UITableView,&hellip; khi tự tạo View bằng code, chứ không phải bằng storyboard hay xib.</p>
-
 <h1 id="weak">Weak</h1>
-
 <p>Cũng tương tự như strong, ngoại trừ việc nó không tăng số owner tới đối tượng . Weak không trực tiếp can thiệp vào việc hủy của đối tượng, vốn là công việc của strong. Vậy tác dụng của weak là gì? Nếu ta có nhiều owner (strong) đến đối tượng thì sẽ rắc rối cho việc giải phóng bộ nhớ, thế nên ta cần dùng đến weak.</p>
-
-<p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/173cc1b2eae8a7c4.png_tn5mgte0n5" alt="Kipalog" /></p>
-
+<p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/173cc1b2eae8a7c4.png_tn5mgte0n5" alt="Kipalog"></p>
 <p>Như ta thấy ở hình trên, Person và Apartment có reference qua nhau. Khi john và number73 không còn owner đến 2 thực thể này nữa thì 2 thực thể này vẫn không bị hủy. Lý do là vì owner tới 2 đối tượng này chưa về 0. (vẫn đang strong qua lại)</p>
-
 <p>Phương án giải quyết như sau</p>
-
-<p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/0f3a1ba4a040045d.png_w7vzy9u63n" alt="Kipalog" /></p>
-
+<p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/0f3a1ba4a040045d.png_w7vzy9u63n" alt="Kipalog"></p>
 <p>Liên kết giống như trên hay bắt gặp khi sử dụng delegate. Vậy nên ta hay dùng weak đối với delegate. Nếu các bạn tạo file xib và kéo thả giao diện vào trong class thì tất cả các đối tượng đều đã có owner trong file xib. Đấy là lý do Properties trong class chỉ liên kết weak với đối tượng, tránh xảy ra hiện tượng nhiều liên kết strong.</p>
-
 <h1 id="assign">Assign</h1>
-
 <p>Dùng cho các biến nguyên thủy như NSInteger, CGFloat, CGPoint, CGRect&hellip;</p>
-
 <h1 id="copy">Copy</h1>
-
 <p>Copy được sử dụng đối với những đối tượng Mutable như NSMutableArray, NSMutableDictionary&hellip;hoặc Immutable. Giả sử ta có đối tượng A, ta muốn tạo ra đối tượng B giống hệt A rồi thay đổi B mà không làm ảnh hưởng đến A thì lúc đó copy phát huy tác dụng.</p>
-
 <p>NSString có thể sử dụng thuộc tính strong nhưng nhiều lập trình viên sử dụng copy hơn. Ta có đoạn code như sau</p>
-
-<pre><code>NSMutableString *pStrMutable = [[NSMutableString alloc] initWithCapacity:100];
-[pStrMutable setString:@&quot;HelloWorld&quot;];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">NSMutableString *pStrMutable = [[NSMutableString alloc] initWithCapacity:100];
+[pStrMutable setString:@&#34;HelloWorld&#34;];
 NSString *pStrImmutable = pStrMutable; // helloWorld
-[pStrMutable setString:@&quot;another text&quot;];
-NSLog(@&quot;%@&quot;, pStrImmutable); // another text
-</code></pre>
-
-<p>NSMutableString <em>có thể làm NSString</em> trỏ đến một text khác, làm sai lệch text mà ta mong muốn. Ta nên sử dụng copy với những đối tượng có cả Immutable và mutable như String, Dictionary.</p>
-
+[pStrMutable setString:@&#34;another text&#34;];
+NSLog(@&#34;%@&#34;, pStrImmutable); // another text
+</code></pre></td></tr></table>
+</div>
+</div><p>NSMutableString <em>có thể làm NSString</em> trỏ đến một text khác, làm sai lệch text mà ta mong muốn. Ta nên sử dụng copy với những đối tượng có cả Immutable và mutable như String, Dictionary.</p>
 <p>Ngoài ra copy còn sử dụng với block ^{}. Block cũng là một đối tượng trong obj-c nhưng có một điều đặc biệt, đối tượng này lưu ở stack. Như giải thích ở phần stack thì ta sẽ không quản lý được lifetime của đối tượng lưu trong stack mà việc này diễn ra tự động mỗi khi hàm return hay ra khỏi scope. Thuộc tính copy để tạo ra 1 bản&hellip;copy của block, lưu ở heap. Lúc này ARC sẽ quản lý việc giải phóng bộ nhớ giúp ta.</p>
-
 <p>Một số link hay để tham khảo:
 <a href="http://www.objc.io/issue-7/value-objects.html">objc.io</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -247,26 +207,20 @@ NSLog(@&quot;%@&quot;, pStrImmutable); // another text
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2016-09-01</span>
+    <span class="item-content">
+        2016-09-01
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/objc/">objc</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/enum-flag-c-plus-plus/">
+        <a class="prev" href="/hugosite/post/enum-flag-c-plus-plus/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Enum flag c&#43;&#43;</span>
             <span class="prev-text nav-mobile">Prev</span>
@@ -276,8 +230,7 @@ NSLog(@&quot;%@&quot;, pStrImmutable); // another text
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -291,6 +244,8 @@ NSLog(@&quot;%@&quot;, pStrImmutable); // another text
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -320,28 +275,24 @@ NSLog(@&quot;%@&quot;, pStrImmutable); // another text
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -350,13 +301,5 @@ NSLog(@&quot;%@&quot;, pStrImmutable); // another text
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

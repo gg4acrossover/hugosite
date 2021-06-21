@@ -16,24 +16,20 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
+<meta name="author" content="VietHQ" /><meta name="description" content="Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
  Daynhauhoc
  Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
-Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/enum-flag-c-plus-plus/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -42,14 +38,8 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Enum flag c&#43;&#43;" />
@@ -58,19 +48,17 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
  Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
 Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/enum-flag-c-plus-plus/" /><meta property="article:published_time" content="2016-09-05T15:51:57&#43;07:00"/>
-<meta property="article:modified_time" content="2016-09-05T15:51:57&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/enum-flag-c-plus-plus/" />
+<meta property="article:published_time" content="2016-09-05T15:51:57+07:00" />
+<meta property="article:modified_time" content="2016-09-05T15:51:57+07:00" />
 <meta itemprop="name" content="Enum flag c&#43;&#43;">
 <meta itemprop="description" content="Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
  Daynhauhoc
  Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
 Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa.">
-
-
-<meta itemprop="datePublished" content="2016-09-05T15:51:57&#43;07:00" />
-<meta itemprop="dateModified" content="2016-09-05T15:51:57&#43;07:00" />
-<meta itemprop="wordCount" content="419">
+<meta itemprop="datePublished" content="2016-09-05T15:51:57+07:00" />
+<meta itemprop="dateModified" content="2016-09-05T15:51:57+07:00" />
+<meta itemprop="wordCount" content="459">
 
 
 
@@ -117,12 +105,21 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -139,6 +136,7 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -153,117 +151,153 @@ Bitwise Sử dụng bitwise trong lập trình nói chung làm cho code của b�
         <span class="post-time"> 2016-09-05 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#bitwise">Bitwise</a></li>
-</ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<p>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field</p>
-
+      <p>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field</p>
 <blockquote>
 <p><a href="http://www.wikiwand.com/en/Bit_field">Daynhauhoc</a></p>
 </blockquote>
-
 <p>Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise</p>
-
 <h1 id="bitwise">Bitwise</h1>
-
 <p>Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa. Giả sử bạn làm game, nhân vật của bạn có thể có nhiều hơn một thuộc tính như CHAO, NORLMAL, MAGIC&hellip;Bạn sẽ tạo mấy biến để lưu trữ thuộc tính nhân vật?</p>
-
 <p>Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
 Giống như cách define sau</p>
-
-<pre><code>#define KEY_UP       (1 &lt;&lt; 0)  // 000001
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#define KEY_UP       (1 &lt;&lt; 0)  // 000001
 #define KEY_RIGHT    (1 &lt;&lt; 1)  // 000010
 #define KEY_DOWN     (1 &lt;&lt; 2)  // 000100
 #define KEY_LEFT     (1 &lt;&lt; 3)  // 001000
 #define KEY_BUTTON1  (1 &lt;&lt; 4)  // 010000
 #define KEY_BUTTON2  (1 &lt;&lt; 5)  // 100000
-</code></pre>
-
-<p>Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.</p>
-
-<pre><code>enum FLAG
+</code></pre></td></tr></table>
+</div>
+</div><p>Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">enum FLAG
 {
          UNKNOW    = 0, 
          NORMAL    = 1 &lt;&lt; 0,
          MAGIC     = 1 &lt;&lt; 1,
          CHAO      = 1 &lt;&lt; 2
 };
-</code></pre>
-
-<p>Hàm main</p>
-
-<pre><code>int main(int argc, const char * argv[])
+</code></pre></td></tr></table>
+</div>
+</div><p>Hàm main</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int main(int argc, const char * argv[])
 {
          FLAG flag = MAGIC | CHAO;
    
          if( flag &amp; NORMAL)
          {
-         	cout&lt;&lt;&quot;Normal&quot;&lt;&lt;endl;
+         	cout&lt;&lt;&#34;Normal&#34;&lt;&lt;endl;
          }   
    
          if( flag &amp; CHAO)
          {
-   		cout&lt;&lt;&quot;Chao&quot;&lt;&lt;endl;
+   		cout&lt;&lt;&#34;Chao&#34;&lt;&lt;endl;
          }
    
          return 0;
 };
-</code></pre>
-
-<p>Tuy nhiên nếu bạn chạy ngay code này thì sẽ lỗi. Ta cần phải overload toán tử | (OR)</p>
-
-<pre><code>inline FLAG operator|(FLAG a, FLAG b)
+</code></pre></td></tr></table>
+</div>
+</div><p>Tuy nhiên nếu bạn chạy ngay code này thì sẽ lỗi. Ta cần phải overload toán tử | (OR)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">inline FLAG operator|(FLAG a, FLAG b)
 {
     return static_cast&lt;FLAG&gt; ( static_cast&lt;int&gt;(a) | 
                                static_cast&lt;int&gt;(b));
 };
-</code></pre>
-
-<p>OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
+</code></pre></td></tr></table>
+</div>
+</div><p>OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
 Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)</p>
-
-<pre><code>MAGIC             00000010 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">MAGIC             00000010 
 CHAO              00000100 
 MAGIC | CHAO      00000110
-</code></pre>
-
-<p>Khi ta thực hiện phép toán &amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)</p>
-
-<pre><code>MAGIC | CHAO      	00000110 
+</code></pre></td></tr></table>
+</div>
+</div><p>Khi ta thực hiện phép toán &amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">MAGIC | CHAO      	00000110 
 CHAO              	00000100
 CHAO &amp; (MAGIC | CHAO)   00000100
-</code></pre>
-
-<p>Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
+</code></pre></td></tr></table>
+</div>
+</div><p>Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
 Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp; với cờ đó.</p>
-
 <p>P/S: Lập trình ios thì các bạn sẽ thấy cái này khá nhiều.</p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -271,32 +305,25 @@ CHAO &amp; (MAGIC | CHAO)   00000100
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2016-09-05</span>
+    <span class="item-content">
+        2016-09-05
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/c&#43;&#43;/">c&#43;&#43;</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/">
+        <a class="prev" href="/hugosite/post/c-plus-11-nhung-cai-hay-dung/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">C&#43;&#43;11 những cái hay dùng</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/first-time-to-hugo/">
+        <a class="next" href="/hugosite/post/first-time-to-hugo/">
             <span class="next-text nav-default">Các thuộc tính của property trong objC</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -305,8 +332,7 @@ CHAO &amp; (MAGIC | CHAO)   00000100
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -320,6 +346,8 @@ CHAO &amp; (MAGIC | CHAO)   00000100
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -349,28 +377,24 @@ CHAO &amp; (MAGIC | CHAO)   00000100
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -379,13 +403,5 @@ CHAO &amp; (MAGIC | CHAO)   00000100
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

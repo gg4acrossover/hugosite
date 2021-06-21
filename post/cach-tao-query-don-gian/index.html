@@ -16,22 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
-Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm." />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
+Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,31 +36,23 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="Cách tạo query đơn giản" />
 <meta property="og:description" content="Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
 Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/" /><meta property="article:published_time" content="2017-07-20T10:43:13&#43;07:00"/>
-<meta property="article:modified_time" content="2017-07-20T10:43:13&#43;07:00"/>
-
+<meta property="og:url" content="https://gg4acrossover.github.io/hugosite/post/cach-tao-query-don-gian/" />
+<meta property="article:published_time" content="2017-07-20T10:43:13+07:00" />
+<meta property="article:modified_time" content="2017-07-20T10:43:13+07:00" />
 <meta itemprop="name" content="Cách tạo query đơn giản">
 <meta itemprop="description" content="Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.
 Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm.">
-
-
-<meta itemprop="datePublished" content="2017-07-20T10:43:13&#43;07:00" />
-<meta itemprop="dateModified" content="2017-07-20T10:43:13&#43;07:00" />
-<meta itemprop="wordCount" content="455">
+<meta itemprop="datePublished" content="2017-07-20T10:43:13+07:00" />
+<meta itemprop="dateModified" content="2017-07-20T10:43:13+07:00" />
+<meta itemprop="wordCount" content="503">
 
 
 
@@ -109,12 +97,21 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -131,6 +128,7 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -145,125 +143,169 @@ Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình 
         <span class="post-time"> 2017-07-20 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#enum">Enum</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#enum">Enum</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      
-
-<p>Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.</p>
-
+      <p>Có nhiều cách viết blog công nghệ hơn là làm bánh hay làm tình.</p>
 <p>Những ngày này Hà Nội mưa liên miên, được cái mát giời, mình lại tức cảnh sinh tình, bỗng dưng thèm viết blog. Chả là, dự án mình đang làm, phía đối tác cung cấp khá nhiều query để call api được thuận tiện. Để tạo một chuỗi query không phải là khó, có nhiều phương pháp thực hiện như tạo string format chẳng hạn, dùng query builder cũng chẳng ai cấm. Dưới đây mình sẽ trình bày cách mình tạo query builder bằng enum và reduce trong swift.</p>
-
 <h3 id="enum">Enum</h3>
-
 <p>Enum dùng khá nhiều trong swift, với việc tạo 1 chuỗi query thì enum là lựa chọn không hề tồi.</p>
-
 <p>Giả sử ta có các query filter, fields, sort, hints,&hellip;ta có thể tạo enum với mỗi case là 1 query mà ta mong muốn như sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">enum</span> ONNodeQuery : String {
-    <span style="color:#66d9ef">case</span> filterSport <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;filter={</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">:</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">SPORTS</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">}&#34;</span>
-    <span style="color:#66d9ef">case</span> fieldsParentChild <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fields=[</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">parent</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">, </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">children</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">descendants</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">]&#34;</span>
-    <span style="color:#66d9ef">case</span> sortTitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sort=[[</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Title</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,1]]&#34;</span>
-    <span style="color:#66d9ef">case</span> hints <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hints=true&amp;hintLevel=%@&#34;</span>
-    <span style="color:#66d9ef">case</span> filterAncestors <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">ancestors</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">:{</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">$in</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">: [ </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%@</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> ]}&#34;</span>
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">enum</span> <span class="nl">ONNodeQuery</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">filterSport</span> <span class="o">=</span> <span class="s">&#34;filter={</span><span class="se">\&#34;</span><span class="s">Title</span><span class="se">\&#34;</span><span class="s">:</span><span class="se">\&#34;</span><span class="s">SPORTS</span><span class="se">\&#34;</span><span class="s">}&#34;</span>
+    <span class="k">case</span> <span class="n">fieldsParentChild</span> <span class="o">=</span> <span class="s">&#34;fields=[</span><span class="se">\&#34;</span><span class="s">Title</span><span class="se">\&#34;</span><span class="s">,</span><span class="se">\&#34;</span><span class="s">parent</span><span class="se">\&#34;</span><span class="s">, </span><span class="se">\&#34;</span><span class="s">children</span><span class="se">\&#34;</span><span class="s">,</span><span class="se">\&#34;</span><span class="s">descendants</span><span class="se">\&#34;</span><span class="s">]&#34;</span>
+    <span class="k">case</span> <span class="n">sortTitle</span> <span class="o">=</span> <span class="s">&#34;sort=[[</span><span class="se">\&#34;</span><span class="s">Title</span><span class="se">\&#34;</span><span class="s">,1]]&#34;</span>
+    <span class="k">case</span> <span class="n">hints</span> <span class="o">=</span> <span class="s">&#34;hints=true&amp;hintLevel=%@&#34;</span>
+    <span class="k">case</span> <span class="n">filterAncestors</span> <span class="o">=</span> <span class="s">&#34;</span><span class="se">\&#34;</span><span class="s">ancestors</span><span class="se">\&#34;</span><span class="s">:{</span><span class="se">\&#34;</span><span class="s">$in</span><span class="se">\&#34;</span><span class="s">: [ </span><span class="se">\&#34;</span><span class="s">%@</span><span class="se">\&#34;</span><span class="s"> ]}&#34;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Với case <em>hint</em> hoặc <em>filterAncestors</em> ta cần truyền param từ bên ngoài theo string format qua <em>%@</em></p>
-
 <p>Mình tạo tiếp enum khác để truyền param vào những query nói trên và 1 struct helper với nhiệm vụ nối các câu lệnh query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="k">enum</span> <span class="n">ONNodeQueryParam</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">query</span><span class="p">(</span><span class="n">ONNodeQuery</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">addParam</span><span class="p">(</span><span class="nl">str</span> <span class="p">:</span> <span class="n">String</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">addAnd</span>
+<span class="p">}</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">enum</span> ONNodeQueryParam {
-    <span style="color:#66d9ef">case</span> query(ONNodeQuery)
-    <span style="color:#66d9ef">case</span> addParam(str : String)
-    <span style="color:#66d9ef">case</span> addAnd
-}
-
-<span style="color:#66d9ef">struct</span> ONMakeQuery {
-    var toDrawQuery : String <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+<span class="k">struct</span> <span class="n">ONMakeQuery</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nl">toDrawQuery</span> <span class="p">:</span> <span class="n">String</span> <span class="o">=</span> <span class="s">&#34;&#34;</span>
     
-    mutating func handler(cmd : ONNodeQueryParam) {
-        <span style="color:#66d9ef">switch</span> cmd {
-        <span style="color:#66d9ef">case</span> .query(let query)<span style="color:#f92672">:</span>
-            self.toDrawQuery <span style="color:#f92672">+=</span> query.rawValue
-        <span style="color:#66d9ef">case</span> .addParam(let str)<span style="color:#f92672">:</span>
-            self.toDrawQuery <span style="color:#f92672">=</span> String(format: self.toDrawQuery, str)
-        <span style="color:#66d9ef">case</span> .addAnd:
-            self.toDrawQuery <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&amp;&#34;</span>
-        }
-    }
-}</code></pre></div>
-
+    <span class="n">mutating</span> <span class="n">func</span> <span class="n">handler</span><span class="p">(</span><span class="nl">cmd</span> <span class="p">:</span> <span class="n">ONNodeQueryParam</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">cmd</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">let</span> <span class="n">query</span><span class="p">)</span><span class="o">:</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">toDrawQuery</span> <span class="o">+=</span> <span class="n">query</span><span class="p">.</span><span class="n">rawValue</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">addParam</span><span class="p">(</span><span class="n">let</span> <span class="n">str</span><span class="p">)</span><span class="o">:</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">toDrawQuery</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="nl">format</span><span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="n">toDrawQuery</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+        <span class="k">case</span> <span class="p">.</span><span class="nl">addAnd</span><span class="p">:</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">toDrawQuery</span> <span class="o">+=</span> <span class="s">&#34;&amp;&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Biến toDrawQuery gán giá trị default để ko phải tạo init method.</p>
-
 <p>Ok, hiện tại mình đã đủ tool để ghép nối các query thành 1 chuỗi</p>
-
 <p>Ta tạo 1 mảng query như sau</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let query : [ONNodeQueryParam] <span style="color:#f92672">=</span> [.query(.filterSport), .addAnd,
-                                  .query(.fieldsParentChild), .addAnd,
-                                  .query(.sortTitle), .addAnd,
-                                  .query(.hints), .addParam(str: <span style="color:#e6db74">&#34;20&#34;</span>)]</code></pre></div>
-
-<p>Cũng khá dễ hiểu: ta cần lấy ra các node sport với 1 số trường mong muốn (child, parent), lấy ra hints với 20 records, nối các query bằng kí tự &ldquo;&amp;&ldquo;.</p>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="nl">query</span> <span class="p">:</span> <span class="p">[</span><span class="n">ONNodeQueryParam</span><span class="p">]</span> <span class="o">=</span> <span class="p">[.</span><span class="n">query</span><span class="p">(.</span><span class="n">filterSport</span><span class="p">),</span> <span class="p">.</span><span class="n">addAnd</span><span class="p">,</span>
+                                  <span class="p">.</span><span class="n">query</span><span class="p">(.</span><span class="n">fieldsParentChild</span><span class="p">),</span> <span class="p">.</span><span class="n">addAnd</span><span class="p">,</span>
+                                  <span class="p">.</span><span class="n">query</span><span class="p">(.</span><span class="n">sortTitle</span><span class="p">),</span> <span class="p">.</span><span class="n">addAnd</span><span class="p">,</span>
+                                  <span class="p">.</span><span class="n">query</span><span class="p">(.</span><span class="n">hints</span><span class="p">),</span> <span class="p">.</span><span class="n">addParam</span><span class="p">(</span><span class="nl">str</span><span class="p">:</span> <span class="s">&#34;20&#34;</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Cũng khá dễ hiểu: ta cần lấy ra các node sport với 1 số trường mong muốn (child, parent), lấy ra hints với 20 records, nối các query bằng kí tự &ldquo;&amp;&rdquo;.</p>
 <p>Tạo chuỗi query bằng struct như sau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">var</span> <span class="n">makeQuery</span> <span class="o">=</span> <span class="n">ONMakeQuery</span><span class="p">()</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">var makeQuery <span style="color:#f92672">=</span> ONMakeQuery()
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">query</span> <span class="p">{</span>
+    <span class="n">makeQuery</span><span class="p">.</span><span class="n">handler</span><span class="p">(</span><span class="nl">cmd</span><span class="p">:</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
 
-<span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> query {
-    makeQuery.handler(cmd: i)
-}
-
-print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need</code></pre></div>
-
+<span class="n">print</span><span class="p">(</span><span class="n">makeQuery</span><span class="p">.</span><span class="n">toDrawQuery</span><span class="p">)</span> <span class="o">//</span> <span class="n">query</span> <span class="n">we</span> <span class="n">need</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Tuy nhiên giờ functional programming khá là phổ biến, ta có thể dùng cách khác ngắn hơn mà không cần tạo struct, đó là sử dụng reduce</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">let toDrawQuery <span style="color:#f92672">=</span> query.reduce(<span style="color:#e6db74">&#34;&#34;</span>) { (text, value) <span style="color:#f92672">-&gt;</span> String <span style="color:#66d9ef">in</span>
-    <span style="color:#66d9ef">switch</span> value {
-        <span style="color:#66d9ef">case</span> .query(let query)<span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> text <span style="color:#f92672">+</span> query.rawValue
-        <span style="color:#66d9ef">case</span> .addParam(let str)<span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> String(format: text, str)
-        <span style="color:#66d9ef">case</span> .addAnd:
-            <span style="color:#66d9ef">return</span> text <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&amp;&#34;</span>
-    }
-}</code></pre></div>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="n">let</span> <span class="n">toDrawQuery</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">value</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">let</span> <span class="n">query</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">return</span> <span class="n">text</span> <span class="o">+</span> <span class="n">query</span><span class="p">.</span><span class="n">rawValue</span>
+        <span class="k">case</span> <span class="p">.</span><span class="n">addParam</span><span class="p">(</span><span class="n">let</span> <span class="n">str</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">return</span> <span class="n">String</span><span class="p">(</span><span class="nl">format</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+        <span class="k">case</span> <span class="p">.</span><span class="nl">addAnd</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">text</span> <span class="o">+</span> <span class="s">&#34;&amp;&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Khá là đơn giản phải không :D.</p>
-
 <p>Code <a href="https://gist.github.com/gg4acrossover/7d49d0c2c922486e37f622c73808597c">ví dụ</a></p>
-
 <p>Tham khảo <a href="http://www.cocoawithlove.com/blog/statements-messages-reducers.html">Statements, messages and reducers</a></p>
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -271,34 +313,26 @@ print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-07-20</span>
+    <span class="item-content">
+        2017-07-20
+        
+    </span>
   </p>
   
   
 </div>
-
-    
-    
-
-    <footer class="post-footer">
+<footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/hugosite/tags/swift3/">swift3</a>
-          
           <a href="/hugosite/tags/ios/">ios</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/hugosite/post/register-user-test/">
+        <a class="prev" href="/hugosite/post/register-user-test/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Register user và thực hiện test</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/hugosite/post/filter-sort-in-action/">
+        <a class="next" href="/hugosite/post/filter-sort-in-action/">
             <span class="next-text nav-default">Filter, sort in action</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -307,8 +341,7 @@ print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -322,6 +355,8 @@ print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
 
   
 
@@ -351,28 +386,24 @@ print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -381,13 +412,5 @@ print(makeQuery.toDrawQuery) <span style="color:#f92672">//</span> query we need
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

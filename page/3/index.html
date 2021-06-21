@@ -16,22 +16,19 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="VietHQ" />
-  <meta name="description" content="Tìm đơn giản trong phức tạp." />
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="VietHQ" /><meta name="description" content="Tìm đơn giản trong phức tạp." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://gg4acrossover.github.io/hugosite/" />
-<link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
+  <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="alternate" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
   <link href="https://gg4acrossover.github.io/hugosite/index.xml" rel="feed" type="application/rss+xml" title="VietHQ - Tìm đơn giản trong phức tạp" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/hugosite/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/hugosite/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/hugosite/favicon-16x16.png">
@@ -40,25 +37,17 @@
 
 
 
-
-
-
-
-<link href="/hugosite/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/hugosite/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
 <link href="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
 
 
 <meta property="og:title" content="VietHQ - Tìm đơn giản trong phức tạp" />
 <meta property="og:description" content="Tìm đơn giản trong phức tạp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gg4acrossover.github.io/hugosite/" />
-<meta property="og:updated_time" content="2019-05-20T02:21:43&#43;07:00"/>
-
+<meta property="og:updated_time" content="2021-06-22T02:06:08+07:00" />
 <meta itemprop="name" content="VietHQ - Tìm đơn giản trong phức tạp">
 <meta itemprop="description" content="Tìm đơn giản trong phức tạp.">
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VietHQ - Tìm đơn giản trong phức tạp"/>
 <meta name="twitter:description" content="Tìm đơn giản trong phức tạp."/>
@@ -98,12 +87,21 @@
         <li class="mobile-menu-item">About me</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/hugosite/" class="logo">Vie</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -120,44 +118,61 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-  <section id="posts" class="posts">
-    
-    
-    
-      <article class="post">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/hugosite/post/mot-vai-tip-thang-5-2019/">Tip iOS cho tháng năm</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-05-23 </span>
+      <div class="post-category">
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      CSS string Nếu ta muốn sử dụng style có sẵn trên web thì có thể nghiên cứu phương án tận dụng nó lại trên iOS.
+Bước đầu implement phương thức gắn css style vào string
+1 2 3 4 5 6 7 8 9 10 11 12 13  extension NSAttributedString { convenience public init(text: String, styles: [String: String]) { let style = styles.compactMap { (key, value) -&gt; String in return &#34;\(key): \(value)&#34; }.
+    </div>
+    <div class="read-more">
+      <a href="/hugosite/post/mot-vai-tip-thang-5-2019/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/on-tap-ios/">Ôn tập iOS</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-05-20 </span>
-      
       
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      Một số câu hỏi ôn tập iOS Begin Câu 1 struct Question { var level: Int = 1 } var question1 = Question() var question2 = question1 question2.level = 2  Giá trị của question1.level sẽ như nào? Nếu Question là class thì có gì khác không? Tại sao?
-Câu 2 var view1 = UIView() view1.alpha = 0.5 let view2 = UIView() view2.alpha = 0.5 // compile error?  Dòng code view2.
+      Một số câu hỏi ôn tập iOS Begin Câu 1 1 2 3 4 5 6 7  struct Question { var level: Int = 1 } var question1 = Question() var question2 = question1 question2.level = 2   Giá trị của question1.level sẽ như nào? Nếu Question là class thì có gì khác không? Tại sao?
+Câu 2 1 2 3 4 5  var view1 = UIView() view1.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/on-tap-ios/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/on-tap-ios/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/codable-remake-part-1/">Codable remake part 1</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-04-26 </span>
-      
       
     </div>
   </header>
@@ -165,48 +180,41 @@ Câu 2 var view1 = UIView() view1.alpha = 0.5 let view2 = UIView() view2.alpha =
   <div class="post-content">
     <div class="post-summary">
       Dạo này mình hơi bận nên bỏ bê blog quá. Hôm nay quyết định chăm chút trở lại bằng một series về Codable, coi như làm nóng bản thân :D. Đã có một bài mình đề cập đến vấn đề này. Tuy nhiên bài viết đó chỉ ở mức giới thiệu, lần này mình sẽ tăng độ khó cho game thêm chút nữa.
-Codable let json = &quot;&quot;&quot; { &quot;userName&quot;: &quot;crossover&quot;, &quot;position&quot;: &quot;SG&quot;, &quot;id&quot;: 234 } &quot;&quot;&quot;.
+Codable 1 2 3 4 5 6 7 8 9 10 11 12 13  let json = &#34;&#34;&#34; { &#34;userName&#34;: &#34;crossover&#34;, &#34;position&#34;: &#34;SG&#34;, &#34;id&#34;: 234 } &#34;&#34;&#34;.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/codable-remake-part-1/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/codable-remake-part-1/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/lam-viec-voi-response/">Làm việc với response</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-03-20 </span>
       <div class="post-category">
-          
-            <a href="/hugosite/categories/swift/"> swift </a>
-          
-        </div>
-      
+          <a href="/hugosite/categories/swift/"> swift </a>
+          </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
       Bài toán Khi nhận response từ server, chúng ta thường thấy json có điểm chung như sau
-struct Response { let timestamp: String let id: Int let payload: Any }  timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
-Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết chính xác nó-là-gì để ép kiểu trước khi sử dụng.
+1 2 3 4 5  struct Response { let timestamp: String let id: Int let payload: Any }   timestamp và id là những trường mặc định luôn được trả về, chúng có type cố định. Còn type của payload lại phụ thuộc vào api bạn call, thế nên mình đang để dưới dạng Any.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/lam-viec-voi-response/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/lam-viec-voi-response/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
+    <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/hugosite/post/if-else-and-another/">Nếu thì và những cách thay thế</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-12-19 </span>
-      
       
     </div>
   </header>
@@ -218,50 +226,23 @@ Tuy nhiên sử dụng type Any có nhiều hạn chế: chúng ta phải biết
 Dictionary Đây là phương pháp mình sử dụng từ lâu.
     </div>
     <div class="read-more">
-      <a href="/hugosite/post/if-else-and-another/" class="read-more-link">Read more..</a>
+      <a href="/hugosite/post/if-else-and-another/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/hugosite/post/make-swift-great-again/">Make swift great again</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-12-11 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Làm swift toẹt vời trở lại Dạo này thời tiết Hà Nội trở lạnh, post một bài cho nóng người :D. Lần này mình sẽ trình bày về một số tip để làm code trông swifty hơn.
-defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng của defer là nó sẽ chạy sau khi hàm return.
- var x = 1 func doDefer(_ value: inout Int) -&gt; Int { // effect after return defer { value += 1 } value += 1 return value } print(doDefer(&amp;x)) // 2 print(x) // 3  Với tác dụng của hàm defer ta có thể tận dụng để giải phóng bộ nhớ, close file hay bất cứ tác vụ nào đòi hỏi 2 bước ràng buộc lúc bắt đầu và kết thúc.
-    </div>
-    <div class="read-more">
-      <a href="/hugosite/post/make-swift-great-again/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-  </section>
+    </section>
   
   <nav class="pagination">
-    
-      <a class="prev" href="/hugosite/page/2/">
+    <a class="prev" href="/hugosite/page/2/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">Prev</span>
       </a>
-    
-      <a class="next" href="/hugosite/page/4/">
+    <a class="next" href="/hugosite/page/4/">
         <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
   </nav>
-
         </div>
         
 
@@ -291,28 +272,24 @@ defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng 
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">VietHQ</span>
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>VietHQ</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-<script src="/hugosite/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/hugosite/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/hugosite/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
-<script type="text/javascript" src="/hugosite/dist/even.min.js?v=3.1.1"></script>
+
+<script type="text/javascript" src="/hugosite/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
@@ -321,13 +298,5 @@ defer Sử dụng defer nếu như bạn là người hay quên :D. Tác dụng 
 
 
 
-
-
-<script>
-  var _gaq=[['_setAccount','UA-99127158-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 </body>
 </html>

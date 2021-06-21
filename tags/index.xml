@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on VietHQ - Tìm đơn giản trong phức tạp</title>
@@ -6,17 +6,31 @@
     <description>Recent content in Tags on VietHQ - Tìm đơn giản trong phức tạp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jan 2020 11:41:03 +0700</lastBuildDate>
-    
-	<atom:link href="https://gg4acrossover.github.io/hugosite/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 22 Jun 2021 02:06:08 +0700</lastBuildDate><atom:link href="https://gg4acrossover.github.io/hugosite/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>oop</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/oop/</link>
+      <pubDate>Tue, 22 Jun 2021 02:06:08 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/oop/</guid>
+      <description></description>
+    </item>
     
     <item>
-      <title>Architecture</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/architecture/</link>
-      <pubDate>Thu, 09 Jan 2020 11:41:03 +0700</pubDate>
+      <title>swift</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/swift/</link>
+      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/architecture/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unicode</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/unicode/</link>
+      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/unicode/</guid>
       <description></description>
     </item>
     
@@ -30,20 +44,11 @@
     </item>
     
     <item>
-      <title>about me</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/about-me/</link>
-      <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
+      <title>Architecture</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/architecture/</link>
+      <pubDate>Thu, 09 Jan 2020 11:41:03 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/about-me/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>c&#43;&#43;</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</link>
-      <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
-      
-      <guid>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/architecture/</guid>
       <description></description>
     </item>
     
@@ -66,11 +71,11 @@
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/hugo/</link>
-      <pubDate>Wed, 11 Jan 2017 14:27:47 +0700</pubDate>
+      <title>swift4</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/swift4/</link>
+      <pubDate>Fri, 15 Jun 2018 17:21:29 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/hugo/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/swift4/</guid>
       <description></description>
     </item>
     
@@ -84,20 +89,11 @@
     </item>
     
     <item>
-      <title>objc</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/objc/</link>
-      <pubDate>Tue, 20 Sep 2016 16:01:11 +0700</pubDate>
+      <title>swift3</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/swift3/</link>
+      <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/objc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>swift</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/swift/</link>
-      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
-      
-      <guid>https://gg4acrossover.github.io/hugosite/tags/swift/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/swift3/</guid>
       <description></description>
     </item>
     
@@ -111,29 +107,38 @@
     </item>
     
     <item>
-      <title>swift3</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/swift3/</link>
-      <pubDate>Wed, 09 Aug 2017 16:41:23 +0700</pubDate>
+      <title>hugo</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/hugo/</link>
+      <pubDate>Wed, 11 Jan 2017 14:27:47 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/swift3/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>swift4</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/swift4/</link>
-      <pubDate>Fri, 15 Jun 2018 17:21:29 +0700</pubDate>
+      <title>objc</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/objc/</link>
+      <pubDate>Tue, 20 Sep 2016 16:01:11 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/swift4/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/objc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>unicode</title>
-      <link>https://gg4acrossover.github.io/hugosite/tags/unicode/</link>
-      <pubDate>Mon, 11 May 2020 02:09:09 +0700</pubDate>
+      <title>c&#43;&#43;</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</link>
+      <pubDate>Mon, 05 Sep 2016 16:32:39 +0700</pubDate>
       
-      <guid>https://gg4acrossover.github.io/hugosite/tags/unicode/</guid>
+      <guid>https://gg4acrossover.github.io/hugosite/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about me</title>
+      <link>https://gg4acrossover.github.io/hugosite/tags/about-me/</link>
+      <pubDate>Mon, 05 Sep 2016 13:17:19 +0700</pubDate>
+      
+      <guid>https://gg4acrossover.github.io/hugosite/tags/about-me/</guid>
       <description></description>
     </item>
     
